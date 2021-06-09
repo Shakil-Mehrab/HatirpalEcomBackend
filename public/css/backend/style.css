@@ -1,0 +1,132 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+body {
+    /* font-family: "Gugi", cursive; */
+    font-family: "Roboto", sans-serif;
+    font-size: 14px;
+}
+.has-error input {
+  border: 1px solid red;
+}
+.has-error label {
+  color: red;
+}
+/* status button  */
+.toggle-on.btn,
+.toggle-off.btn {
+    font-size: 12px;
+    padding: 0 !important;
+}
+.toggle.btn {
+    width: 50px !important;
+    min-width: 50px !important;
+    height: 20px !important;
+    min-height: 20px !important;
+}
+
+.main_content {
+    margin-bottom: 50px;
+}
+
+/* create page */
+.control-label {
+    font-size: 15px;
+    font-weight: bold;
+    margin-top: 5px;
+}
+.slug_disabled {
+    cursor: none;
+}
+.select2-search--dropdown .select2-search__field {
+    outline: none;
+}
+/* view */
+.search_head {
+    /* display: flex; */
+}
+.total_data_rows {
+    font-weight: bold;
+}
+.search {
+    display: flex;
+    justify-content: flex-end;
+}
+.search select {
+    width: 50px;
+    height: 27px;
+    outline: none;
+}
+.search input {
+    outline: none;
+    margin-left: 2px;
+}
+.bulk_option {
+    display: flex;
+    justify-items: center;
+    height: 21px;
+    margin-bottom: 5px;
+}
+.bulk_option select {
+    outline: none;
+    margin-left: 5px;
+}
+.bulk_option input {
+    margin-left: 5px;
+    background-color: brown;
+    border-radius: 5px;
+    color: white;
+    padding-bottom: 17px;
+    height: 10px;
+    overflow: hidden;
+}
+#newData {
+    z-index: 222;
+}
+.pagination_display {
+    display: none !important;
+}
+.pagintion_nav {
+    display: flex;
+    justify-content: center;
+}
+/* edit  */
+.edit_model_heading {
+    background-color: #3b4a42;
+    padding: 5px 0;
+    color: white;
+}
+.edit_model_heading h5 {
+    margin: auto;
+    font-weight: bold;
+}
+/* footer */
+footer {
+    border: 1px solid #bdbaba;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    min-height: 50px;
+    background-color: white;
+    z-index: 333;
+}
+.copyright {
+    margin-top: 16px;
+}
+
+@media (min-width: 768px) {
+    .navbar-expand-md .navbar-nav .dropdown-menu {
+        left: -34px;
+    }
+}
+@media only screen and (max-width: 575px) {
+    .left_navigation {
+        position: absolute;
+        width: 50%;
+    }
+    .toggle_left_navigation {
+        display: none;
+    }
+    .navbar-toggler {
+        display: block;
+    }
+}
