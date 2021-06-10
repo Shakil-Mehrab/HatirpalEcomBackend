@@ -12,7 +12,7 @@
         <div class="row">
             @forelse($columns as $column)
             
-            <div class="form-group{{ $errors->has($column) ? ' has-error' : '' }} col-lg-6 col-md-6 col-sm-12">
+            <div class="form-group{{ $errors->has($column) ? ' has-error' : '' }} col-lg-6 col-md-6 col-sm-12 my-3">
                 <label for="{{$column}}" class="control-label">{{ucfirst(str_replace('_',' ',$column))}}</label>
                 <input type="text" class="form-control" name="{{$column}}" id="{{$column}}" placeholder="{{ucfirst(str_replace('_',' ',$column))}}" value="{{Request::old($column)}}">
                 @if ($errors->has($column))
@@ -21,6 +21,7 @@
                 </span>
                 @endif
             </div>
+            
             @empty
             @endforelse
 
@@ -42,7 +43,7 @@
             @if($model=='address')
             @include('layouts.address.partial')
             @endif
-            <div class="col-lg-12 col-md-12 col-sm-12 mt-2" style="order: 20;">
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-2" style="order: 20;" >
                 <input type="submit" class="form-control btn btn-success" value="Submit">
             </div>
         </div>

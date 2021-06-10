@@ -1,4 +1,4 @@
-<div class="form-group {{ $errors->has('division_id') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12" style="order:4">
+<div class="form-group {{ $errors->has('division_id') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3" style="order:4">
     <label for="division_id" class="control-label">Division</label>
     <select class="form-control" name="division_id" id="division_id">
         <option></option>
@@ -15,7 +15,7 @@
     </span>
     @endif
 </div>
-<div class="form-group {{ $errors->has('district_id') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12" style="order:4">
+<div class="form-group {{ $errors->has('district_id') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3" style="order:4">
     <label for="district_id" class="control-label">District</label>
     <select class="form-control" name="district_id" id="district_id" disabled>
 
@@ -26,7 +26,7 @@
     </span>
     @endif
 </div>
-<div class="form-group {{ $errors->has('place_id') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12" style="order:4">
+<div class="form-group {{ $errors->has('place_id') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3" style="order:4">
     <label for="place_id" class="control-label">Checkout Place</label>
     <select class="form-control" name="place_id" id="checking_place_id" disabled>
 

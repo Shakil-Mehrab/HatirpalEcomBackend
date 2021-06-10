@@ -32,6 +32,7 @@ class ProductController extends Controller
   public function search()
   {
     $datas = Product::where('name', 'LIKE', "%" . request('query') . "%")
+    ->orWhere('slug', 'LIKE', "%" . request('query') . "%")
       ->searchPagination(request('per-page'));
     $columns = Product::columns();
     $model = 'product';

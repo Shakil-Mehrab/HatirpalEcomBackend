@@ -11,7 +11,6 @@
 </head>
 <body>
     <div class="row">
-
     <div class="com-md-12">
         @forelse($products as $product)
         <div>
