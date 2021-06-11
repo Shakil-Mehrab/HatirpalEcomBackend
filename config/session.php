@@ -155,7 +155,7 @@ return [
     |
     */
 
-    'domain' => env('SESSION_DOMAIN','localhost'), //localhost by shakil for cors problem. previous 'null'
+    'domain' => env('SESSION_DOMAIN',null), 
 
     /*
     |--------------------------------------------------------------------------

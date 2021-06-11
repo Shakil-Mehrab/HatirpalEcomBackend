@@ -15,7 +15,7 @@ return [
     |
     */
 
-    'paths' => ['api/*'],
+    'paths' => ['api/*','sanctum/csrf-cookie'],
 
     'allowed_methods' => ['*'],
 
@@ -30,6 +30,5 @@ return [
     'max_age' => 0,
 
     'supports_credentials' => true,
-    'Access-Control-Allow-Origin'=>['*'], //by shakil for cors problem
 
 ];

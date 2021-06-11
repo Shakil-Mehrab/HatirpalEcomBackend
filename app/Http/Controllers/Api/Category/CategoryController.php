@@ -27,4 +27,8 @@ class CategoryController extends Controller
             'selects' => new SelectedCategoryScope(),
         ];
     }
+
+    public function action(){
+        return 'lkjkl';
+    }
 }
