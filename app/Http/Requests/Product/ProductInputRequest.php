@@ -28,6 +28,7 @@ class ProductInputRequest extends FormRequest
             'price'=>'required|numeric',
             'brand'=>'required|max:50',
             'image'=>'mimes:jpg,png',
+            'images.*'=>'mimes:jpg,png',
         ];
     }
 }

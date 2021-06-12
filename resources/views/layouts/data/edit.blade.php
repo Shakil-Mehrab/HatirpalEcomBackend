@@ -2,15 +2,15 @@
 @section('content')
 <div class="mt-2">
     <div class="edit_model_heading">
-        <h5 class="text-center">{{ucfirst($model)}} Edit</h5>
+        <h5 class="text-center">Edit {{ucfirst($model)}}</h5>
     </div>
     <form action="{{url('admin/update/'.$model.'/'.$data->slug)}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
             @forelse($columns as $column)
-            <div class="form-group{{ $errors->has($column) ? ' has-error' : '' }} col-lg-6 col-md-6 col-sm-12">
+            <div class="form-group{{ $errors->has($column) ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3">
                 <label for="{{$column}}" class="control-label">{{ucfirst(str_replace('_',' ',$column))}}</label>
-                <input type="text" class="form-control" name="{{$column}}" id="{{$column}}" placeholder="{{ucfirst(str_replace('_',' ',$column))}}" value="{{$data->$column}}">
+                <input type="text" class="form-control" name="{{$column}}" id="{{$column}}" placeholder="{{ucfirst(str_replace('_',' ',$column))}}" value="{{old($column)?old($column):$data->$column}}">
                 @if ($errors->has($column))
                 <span class="help-block">
                     <strong style="color:red">{{ $errors->first($column) }}</strong>

@@ -6,10 +6,10 @@ body {
     font-size: 14px;
 }
 .has-error input {
-  border: 1px solid red;
+    border: 1px solid red;
 }
 .has-error label {
-  color: red;
+    color: red;
 }
 /* status button  */
 .toggle-on.btn,
@@ -94,10 +94,10 @@ body {
     background-color: #3b4a42;
     padding: 5px 0;
     color: white;
+    border-radius: 5px;
 }
 .edit_model_heading h5 {
     margin: auto;
-    font-weight: bold;
 }
 /* footer */
 footer {

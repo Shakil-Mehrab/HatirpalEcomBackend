@@ -30,3 +30,35 @@
         </li>
     </ul>
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="form-group {{ $errors->has('size_id') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3" style="order: 3;">
+    <label for="size_id" class="control-label">Select Size</label>
+    <div>
+    <!-- {{ old('size_id.'.'4') }} -->
+    <!-- $data?$data->sizes->contains($size->id)?'checked':'':'' -->
+        @forelse($sizes as $index=>$size)
+        <input type="checkbox" class="form-checkbox" name="size_id[]" id="size_id" value="{{$size->id}}" 
+        @if(old('name'))
+        {{ old('size_id.'.$size->id)?'checked':''}}
+        @else
+        @endif
+        >
+        <span>{{$size->size}}</span>
+        @empty
+        @endforelse
+    </div>

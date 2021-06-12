@@ -77,7 +77,7 @@ class ProductController extends Controller
   }
   public function update(ProductUpdateRequest $request, ImageHandling $imageHandling, StoreUpdateData $input, $slug)
   {
-    // dd($request['image']);
+    // dd($request->size_id);
     $product = Product::where('slug', $slug)
       ->firstOrFail();
 
