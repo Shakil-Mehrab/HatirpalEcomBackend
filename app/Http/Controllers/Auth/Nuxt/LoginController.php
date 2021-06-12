@@ -13,7 +13,7 @@ class LoginController extends Controller
         if(!$token = auth()->attempt($request->only(['email','password']))){
             return response()->json([
                 'errors'=>[
-                    'email'=>['Could not singn you in with those details']
+                    'loginerror'=>'These credentials do not match our records.'
                 ]
                 ],422);
         }
