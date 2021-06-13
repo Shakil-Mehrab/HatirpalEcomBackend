@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Bulk;
 use App\Models\User;
 use App\Models\Order;
 use App\Models\Region;
+use App\Models\Slider;
 use App\Models\Address;
 use App\Models\Product;
 use App\Models\Category;
@@ -71,7 +72,16 @@ class BulkController extends Controller
                 $datas = User::orderBy('id', 'desc')
                     ->pagination(request('per-page'));
                 $columns = User::columns();
-            }else{
+            }
+            elseif ($request['model'] == 'slider') {
+                foreach ($request['checked_slug'] as $slug) {
+                    $delete->sliderDelete($slug);
+                }
+                $datas = Slider::orderBy('id', 'desc')
+                    ->pagination(request('per-page'));
+                $columns = Slider::columns();
+            }
+            else{
                 return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
             }
             $model = $request['model'];

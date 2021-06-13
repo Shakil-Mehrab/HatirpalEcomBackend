@@ -29,7 +29,12 @@
             @include('layouts.data.thumbnail')
             @include('layouts.product.partial')
             @endif
+
             @if($model=='user')
+            @include('layouts.data.thumbnail')
+            @endif
+
+            @if($model=='slider')
             @include('layouts.data.thumbnail')
             @endif
 
@@ -40,6 +45,7 @@
             @if($model=='region')
             @include('layouts.region.partial')
             @endif
+
             @if($model=='address')
             @include('layouts.address.partial')
             @endif

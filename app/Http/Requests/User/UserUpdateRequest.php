@@ -27,7 +27,7 @@ class UserUpdateRequest extends FormRequest
         return [
             'name'=>'required|max:255',
             'email'=>'required|max:255',
-            'image'=>'mimes:jpg,png',
+            'thumbnail'=>'mimes:jpg,png',
         ];
     }
 }

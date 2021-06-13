@@ -23,7 +23,7 @@ Route::get('/product',[App\Http\Controllers\Api\Product\ProductController::class
 Route::get('/product/{slug}',[App\Http\Controllers\Api\Product\ProductController::class, 'show']);
 // Route::post('login',[App\Http\Controllers\Api\Category\CategoryController::class, 'action']);
 Route::group(['prefix' => 'auth'], function () {
-    Route::post('/login', [App\Http\Controllers\Auth\Nuxt\LoginController::class,'action']);
-    Route::post('/register', [App\Http\Controllers\Auth\Nuxt\RegisterController::class,'register']);
-    Route::post('/user', [App\Http\Controllers\Auth\Nuxt\RegisterController::class,'user']);
+    Route::post('/login', [App\Http\Controllers\Auth\Nuxt\LoginController::class,'login']);
+    Route::post('/register', [App\Http\Controllers\Auth\Nuxt\LoginController::class,'register']);
+    Route::post('/user', [App\Http\Controllers\Auth\Nuxt\LoginController::class,'user']);
 });

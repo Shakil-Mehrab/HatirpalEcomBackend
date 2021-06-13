@@ -44,7 +44,7 @@ Route::get('/product/variation',[App\Http\Controllers\Api\Cart\CartController::c
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
+Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum']], function () {
   // product 
   Route::get('/view/product', [App\Http\Controllers\Admin\Product\ProductController::class, 'view']);
   Route::get('/create/product', [App\Http\Controllers\Admin\Product\ProductController::class, 'create']);
@@ -113,5 +113,14 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth']], function () {
    Route::get('/edit/shippingmethod/{slug}', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'edit']);
    Route::post('/update/shippingmethod/{slug}', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'update']);
    Route::get('/search/shippingmethod', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'search']);
-});
+
+// Slider
+Route::get('/view/slider', [App\Http\Controllers\Admin\Slider\SliderController::class, 'view']);
+Route::get('/create/slider', [App\Http\Controllers\Admin\Slider\SliderController::class, 'create']);
+Route::post('/store/slider', [App\Http\Controllers\Admin\Slider\SliderController::class, 'store']);
+Route::get('/delete/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderController::class, 'delete']);
+Route::get('/edit/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderController::class, 'edit']);
+Route::post('/update/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderController::class, 'update']);
+Route::get('/search/slider', [App\Http\Controllers\Admin\Slider\SliderController::class, 'search']);
+  });
 

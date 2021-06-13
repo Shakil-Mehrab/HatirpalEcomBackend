@@ -10,6 +10,7 @@ use App\Models\Product;
 use App\Models\Category;
 use App\Models\ProductImage;
 use App\Models\ShippingMethod;
+use App\Models\Slider;
 
 class DeleteData
 {
@@ -62,9 +63,15 @@ class DeleteData
        $this->fileCheck($product);
         $product->delete();
     }
+    public function sliderDelete($slug)
+    {
+        $product = Slider::where('slug', $slug)->firstOrFail();
+       $this->fileCheck($product);
+        $product->delete();
+    }
     public static function fileCheck($data){
-        if (file_exists($data->thumbnail)) {
-            unlink($data->thumbnail);
+        if (file_exists(substr($data->thumbnail,22,100))) {
+            unlink(substr($data->thumbnail,22,100));
           }
     }
     

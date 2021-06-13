@@ -29,6 +29,10 @@
             @include('layouts.data.thumbnail')
             @endif
 
+            @if($model=='slider')
+            @include('layouts.data.thumbnail')
+            @endif
+            
             @if($model=='category')
             @include('layouts.category.partial')
             @endif

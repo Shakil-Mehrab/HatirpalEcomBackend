@@ -81,4 +81,8 @@ class StoreUpdateData
     $product->address = $request['address'];
     $product->postal_code = $request['postal_code'];
   }
+  public function sliderStoreUpdate($product, $request)
+  {
+    $product->heading = $request['heading'];
+  }
 }
