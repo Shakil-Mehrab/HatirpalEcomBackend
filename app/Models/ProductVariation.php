@@ -17,4 +17,7 @@ class ProductVariation extends Model
 
         });
     }
+    public function productStock(){
+      return $this->hasOne(Stock::class);
+    }
 }

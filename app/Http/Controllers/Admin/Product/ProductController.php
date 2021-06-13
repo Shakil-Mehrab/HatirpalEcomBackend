@@ -47,6 +47,7 @@ class ProductController extends Controller
   }
   public function store(ProductInputRequest $request, ImageHandling $imageHandling, StoreUpdateData $input)
   {
+    // dd($request->stock);
     $product = new Product();
 
     $input->productStoreUpdate($product, $request);
@@ -58,7 +59,7 @@ class ProductController extends Controller
     $imageHandling->uploadRelatedImage($product, $request);
     $input->productPivotData($product, $request);
     $variation=$input->productVariation($product);
-    $input->productStock($variation);
+    $input->productStoreStock($variation,$request);
 
 
     
@@ -85,6 +86,7 @@ class ProductController extends Controller
     $imageHandling->uploadImage($product, $request,'product');
     $imageHandling->uploadRelatedImage($product, $request);
     $input->productPivotData($product, $request);
+    $input->productUpdateStock($product,$request);
 
     $product->update();
 

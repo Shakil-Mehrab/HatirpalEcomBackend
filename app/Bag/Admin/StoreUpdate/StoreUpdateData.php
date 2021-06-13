@@ -50,12 +50,22 @@ class StoreUpdateData
     $variation->save();
     return $variation;
   }
-  public function productStock($variation)
+  public function productStoreStock($variation,$request)
   {
     $stock = new Stock();
-    $stock->quantity = 500;
+    $stock->quantity = $request['stock'];
     $stock->product_variation_id = $variation->id;
     $stock->save();
+  }
+  public function productUpdateStock($product,$request)
+  {
+    if(!empty($product->variations[0])){
+      $stock =Stock::where('product_variation_id',$product->variations[0]->id)->firstOrFail();
+      $stock->quantity = $request['stock'];
+      $stock->update();
+      return;
+     }
+   
   }
   public function shippingMethodstoreUpdate($product, $request)
   {

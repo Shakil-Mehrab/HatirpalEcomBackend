@@ -25,10 +25,15 @@
     </span>
     @endif
 </div>
-
+@php 
+$stock='';
+if(!empty($data->variations[0]->productStock->quantity)){
+ $stock=$data->variations[0]->productStock->quantity;
+}
+@endphp
 <div class="form-group {{ $errors->has('stock') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3" style="order: 3;">
     <label for="stock" class="control-label">Stock</label>
-    <input type="text" class="form-control" name="stock" id="stock" placeholder="Stock" value="{{$data?$data->name:old('stock')}}">
+    <input type="text" class="form-control" name="stock" id="stock" placeholder="Stock" value="{{old('stock')?old('stock'):$stock}}">
     @if ($errors->has('stock'))
     <span class="help-block">
         <strong style="color:red">{{ $errors->first('stock') }}</strong>
@@ -38,8 +43,6 @@
 <div class="form-group {{ $errors->has('size_id') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3" style="order: 3;">
     <label for="size_id" class="control-label">Select Size</label>
     <div>
-    <!-- {{ old('size_id.'.'4') }} -->
-    <!-- $data?$data->sizes->contains($size->id)?'checked':'':'' -->
         @forelse($sizes as $index=>$size)
         <input type="checkbox" class="form-checkbox" name="size_id[{{$size->id}}]" id="size_id" value="{{$size->id}}" 
         @if(old('name'))

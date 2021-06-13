@@ -43,7 +43,7 @@
             @if($model=='address')
             @include('layouts.address.partial')
             @endif
-            <div class="col-lg-12 col-md-12 col-sm-12 mt-2" style="order: 20;" >
+            <div class="col-lg-12 col-md-12 col-sm-12 mt-2 mb-5" style="order: 20;" >
                 <input type="submit" class="form-control btn btn-success" value="Submit">
             </div>
         </div>
