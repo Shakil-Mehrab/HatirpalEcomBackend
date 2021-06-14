@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\User::factory(10)->create();
         \App\Models\Category::factory(20)->create();
         \App\Models\Product::factory(100)->create();
+        \App\Models\Slider::factory(30)->create();
         $this->call(ProductCategorySeeder::class);
         $this->call(SizeSeeder::class);
         $this->call(ProductSizeSeeder::class);
