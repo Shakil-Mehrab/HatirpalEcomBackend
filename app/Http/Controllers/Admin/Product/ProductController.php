@@ -10,6 +10,7 @@ use App\Models\ProductVariation;
 use App\Bag\Admin\Delete\DeleteData;
 use App\Http\Controllers\Controller;
 use App\Bag\Admin\Image\ImageHandling;
+use App\Bag\Admin\Status\ChangeStatus;
 use App\Bag\Admin\StoreUpdate\StoreUpdateData;
 use App\Http\Requests\Product\ProductInputRequest;
 use App\Http\Requests\Product\ProductUpdateRequest;
@@ -32,7 +33,7 @@ class ProductController extends Controller
   public function search()
   {
     $datas = Product::where('name', 'LIKE', "%" . request('query') . "%")
-    ->orWhere('slug', 'LIKE', "%" . request('query') . "%")
+      ->orWhere('slug', 'LIKE', "%" . request('query') . "%")
       ->searchPagination(request('per-page'));
     $columns = Product::columns();
     $model = 'product';
@@ -52,17 +53,17 @@ class ProductController extends Controller
 
     $input->productStoreUpdate($product, $request);
     $product->slug = time() . '-' . Str::slug($request['name']);
-    $imageHandling->uploadImage($product, $request,'product');
+    $imageHandling->uploadImage($product, $request, 'product');
 
     $request->user()->products()->save($product);
 
     $imageHandling->uploadRelatedImage($product, $request);
     $input->productPivotData($product, $request);
-    $variation=$input->productVariation($product);
-    $input->productStoreStock($variation,$request);
+    $variation = $input->productVariation($product);
+    $input->productStoreStock($variation, $request);
 
 
-    
+
 
 
 
@@ -83,10 +84,10 @@ class ProductController extends Controller
       ->firstOrFail();
 
     $input->productStoreUpdate($product, $request);
-    $imageHandling->uploadImage($product, $request,'product');
+    $imageHandling->uploadImage($product, $request, 'product');
     $imageHandling->uploadRelatedImage($product, $request);
     $input->productPivotData($product, $request);
-    $input->productUpdateStock($product,$request);
+    $input->productUpdateStock($product, $request);
 
     $product->update();
 
@@ -95,6 +96,15 @@ class ProductController extends Controller
   public function delete(DeleteData $delete, $slug)
   {
     $delete->productDelete($slug);
+    $datas = Product::orderBy('id', 'desc')
+      ->pagination(request('per-page'));
+    $columns = Product::columns();
+    $model = 'product';
+    return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+  }
+  public function status(ChangeStatus $status,$slug)
+  {
+    $status->productStatusChange($slug);
     $datas = Product::orderBy('id', 'desc')
       ->pagination(request('per-page'));
     $columns = Product::columns();

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Resources\User;
+namespace App\Http\Resources\Slider;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class LoginUserResource extends JsonResource
+class SliderResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,9 +16,9 @@ class LoginUserResource extends JsonResource
     {
         return [
             'id'=>$this->id,
-            'name'=>$this->name,
-            'email'=>$this->email,
+            'heading'=>$this->heading,
             'slug'=>$this->slug,
+            'thumbnail'=>$this->thumbnail,
         ];
     }
 }

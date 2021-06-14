@@ -19,7 +19,7 @@ class ImageHandling
       $image_ext = $image->getClientOriginalExtension();
       $image_full_name =$product->id.'.'. Str::random(10). "." . $image_ext;
       $upload_path = "images/".$model."/thumbnail/" . $image_full_name;
-      Image::make($request->file('thumbnail'))->resize(200, 200)->save($upload_path);
+      Image::make($request->file('thumbnail'))->resize(400, 400)->save($upload_path);
       $product->thumbnail = asset($upload_path);
     }
    }

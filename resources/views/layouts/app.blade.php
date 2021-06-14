@@ -222,6 +222,31 @@
                 });
             });
         });
+        $(function() {
+            $('#newData').on('click', '.status', function(e) {
+                e.preventDefault();
+                var link = $(this).attr("href");
+
+                    if (link) {
+                        $.get(link, function(data) {
+                            // window.location.href = link;
+                            $('#newData').empty().append(data);
+                            if ($.isEmptyObject(data.error)) {
+                                Toast.fire({
+                                    icon: 'success',
+                                    title: 'Stutus Changed Successfully!'
+                                })
+                            } else {
+                                Toast.fire({
+                                    icon: 'error',
+                                    title: 'Status Not Changed!'
+                                })
+                            }
+                        });
+                    };
+                
+            });
+        });
     </script>
 </body>
 

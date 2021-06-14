@@ -52,8 +52,14 @@
                     <td>{{$data->user_id}}</td>
                     @elseif($column=='status')
                     <td>
-                        <input type="checkbox" id="toggle-demo" class="ArtStatus btn btn-success btn-sm" rel="1" data-toggle="toggle" data-on="Enabled" data-of="Disabled" data-onstyle="success" data-offstyle="danger" checked>
-                        <div id="myElem" style="display:none;" class="alert alert-success">Status Enabled</div>
+                       <a href="{{url('admin/status/'.$model,$data->slug)}}" class="status">
+                       <input type="checkbox" id="toggle-demo" class="ArtStatus btn btn-success btn-sm" rel="1" data-toggle="toggle" data-on="Enabled" data-of="Disabled" data-onstyle="success" data-offstyle="danger"
+                        @if($data->status === 'published' or $data->status == 1)
+                            checked
+                        @endif
+                         >
+                        <!-- <div id="myElem" style="display:none;" class="alert alert-success">Status Enabled</div> -->
+                       </a>
                     </td>
                     @else
                     <td>{{$data->$column}}</td>

@@ -37,4 +37,7 @@ class LoginController extends Controller
         }
         return new LoginUserResource($user);
    }
+   public function user(Request $request){
+       return new LoginUserResource($request->user());
+   }
 }

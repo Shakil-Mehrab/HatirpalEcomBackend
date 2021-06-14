@@ -61,7 +61,7 @@ if(!empty($data->variations[0]->productStock->quantity)){
     </span>
     @endif
 </div>
-<div class="form-group {{ $errors->has('category_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 my-5" style="order: 4;">
+<!-- <div class="form-group {{ $errors->has('category_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 my-5" style="order: 4;">
     <label for="category_id" class="control-label">Select Category</label>
     <div>
         @forelse($categories as $category)
@@ -82,4 +82,15 @@ if(!empty($data->variations[0]->productStock->quantity)){
         <strong style="color:red">{{ $errors->first('category_id') }}</strong>
     </span>
     @endif
+</div> -->
+<div class="form-group {{ $errors->has('parent_id') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3" style="order:3">
+    <label for="parent_id" class="control-label">Category</label>
+    <select class="form-control" name="parent_id" id="parent_id">
+        <option>Select One</option>
+        @forelse($categories as $category)
+        <option value="{{$category->id}}" {{$data?$data->parent_id==$category->id?'selected':'':''}}>{{$category->name}}</option>
+        @empty
+        <option value="">No Category</option>
+        @endforelse
+    </select>
 </div>

@@ -44,4 +44,5 @@ class ProductController extends Controller
             'brand' => new BrandScope(),
         ];
     }
+    
 }

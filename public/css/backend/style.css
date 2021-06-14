@@ -41,6 +41,20 @@ body {
     outline: none;
 }
 /* view */
+.add_button {
+    background-color: #3b4a42;
+    display: flex;
+    justify-content: space-between;
+    padding-top: 6px;
+    color: white;
+    border-radius: 4px;
+}
+.add_button i {
+    font-size: 25px;
+}
+.add_button a {
+    color: white;
+}
 .search_head {
     /* display: flex; */
 }

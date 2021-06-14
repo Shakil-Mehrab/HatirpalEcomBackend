@@ -1,0 +1,39 @@
+$categories=[
+    [
+        'name'=>'Food',
+        'slug'=>'food',
+        'children'=>[
+            [
+                'name'=>'Dry Food',
+                'slug'=>'dry-food',
+                'children'=>[
+                    [
+                        'name'=>'Cake',
+                        'slug'=>'Cake',
+                        
+                    ]
+                ]
+            ]
+        ]
+    ],
+    [
+        'name'=>'Fashion',
+        'slug'=>'fashion',
+        'children'=>[
+            [
+            'name'=>"Girl",
+            'slug'=>"girl",
+            'children'=>[  
+            ]
+            ],
+            [
+                'name'=>'Boys',
+                'slug'=>'boys',
+            ]
+        ]
+    ]
+    [
+        'name'=>'Electronics',
+        'slug'=>'electronics'
+    ]
+]

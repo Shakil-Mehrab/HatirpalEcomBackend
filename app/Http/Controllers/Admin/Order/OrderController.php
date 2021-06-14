@@ -6,6 +6,7 @@ use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Bag\Admin\Delete\DeleteData;
 use App\Http\Controllers\Controller;
+use App\Bag\Admin\Status\ChangeStatus;
 use App\Bag\Admin\StoreUpdate\StoreUpdateData;
 use App\Http\Requests\Order\OrderInputRequest;
 
@@ -64,6 +65,15 @@ class OrderController extends Controller
     $datas = Order::orderBy('id', 'desc')
       ->pagination(request('per-page'));
 
+    $columns = Order::columns();
+    $model = 'order';
+    return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+  }
+  public function status(ChangeStatus $status,$slug)
+  {
+    $status->orderStatusChange($slug);
+    $datas = Order::orderBy('id', 'desc')
+      ->pagination(request('per-page'));
     $columns = Order::columns();
     $model = 'order';
     return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();

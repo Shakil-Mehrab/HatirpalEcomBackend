@@ -53,6 +53,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum']], function (
   Route::get('/edit/product/{slug}', [App\Http\Controllers\Admin\Product\ProductController::class, 'edit']);
   Route::post('/update/product/{slug}', [App\Http\Controllers\Admin\Product\ProductController::class, 'update']);
   Route::get('/search/product', [App\Http\Controllers\Admin\Product\ProductController::class, 'search']);
+  Route::get('/status/product/{slug}', [App\Http\Controllers\Admin\Product\ProductController::class, 'status']);
+
   // category
   Route::get('/view/category', [App\Http\Controllers\Admin\Category\CategoryController::class, 'view']);
   Route::get('/create/category', [App\Http\Controllers\Admin\Category\CategoryController::class, 'create']);
@@ -61,6 +63,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum']], function (
   Route::get('/edit/category/{slug}', [App\Http\Controllers\Admin\Category\CategoryController::class, 'edit']);
   Route::post('/update/category/{id}', [App\Http\Controllers\Admin\Category\CategoryController::class, 'update']);
   Route::get('/search/category', [App\Http\Controllers\Admin\Category\CategoryController::class, 'search']);
+
   // user
   Route::get('/view/user', [App\Http\Controllers\Admin\User\UserController::class, 'view']);
   Route::get('/delete/user/{slug}', [App\Http\Controllers\Admin\User\UserController::class, 'delete']);
@@ -92,27 +95,29 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum']], function (
   Route::get('/edit/address/{slug}', [App\Http\Controllers\Admin\Address\AddressController::class, 'edit']);
   Route::post('/update/address/{slug}', [App\Http\Controllers\Admin\Address\AddressController::class, 'update']);
   Route::get('/search/address', [App\Http\Controllers\Admin\Address\AddressController::class, 'search']);
-   // order 
-   Route::get('/view/order', [App\Http\Controllers\Admin\Order\OrderController::class, 'view']);
-   Route::get('/create/order', [App\Http\Controllers\Admin\Order\OrderController::class, 'create']);
-   Route::post('/store/order', [App\Http\Controllers\Admin\Order\OrderController::class, 'store']);
-   Route::get('/delete/order/{slug}', [App\Http\Controllers\Admin\Order\OrderController::class, 'delete']);
-   Route::get('/edit/order/{slug}', [App\Http\Controllers\Admin\Order\OrderController::class, 'edit']);
-   Route::post('/update/order/{slug}', [App\Http\Controllers\Admin\Order\OrderController::class, 'update']);
-   Route::get('/search/order', [App\Http\Controllers\Admin\Order\OrderController::class, 'search']);
-  // Bulk option 
-  Route::post('/bulk/delete', [App\Http\Controllers\Admin\Bulk\BulkController::class, 'delete']);
-  //checkout
-  Route::get('/division', [App\Http\Controllers\Admin\Cascading\CascadingController::class, 'division']);
-  Route::get('/district', [App\Http\Controllers\Admin\Cascading\CascadingController::class, 'district']);
-   // shipping method 
-   Route::get('/view/shippingmethod', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'view']);
-   Route::get('/create/shippingmethod', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'create']);
-   Route::post('/store/shippingmethod', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'store']);
-   Route::get('/delete/shippingmethod/{slug}', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'delete']);
-   Route::get('/edit/shippingmethod/{slug}', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'edit']);
-   Route::post('/update/shippingmethod/{slug}', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'update']);
-   Route::get('/search/shippingmethod', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'search']);
+  // order 
+  Route::get('/view/order', [App\Http\Controllers\Admin\Order\OrderController::class, 'view']);
+  Route::get('/create/order', [App\Http\Controllers\Admin\Order\OrderController::class, 'create']);
+  Route::post('/store/order', [App\Http\Controllers\Admin\Order\OrderController::class, 'store']);
+  Route::get('/delete/order/{slug}', [App\Http\Controllers\Admin\Order\OrderController::class, 'delete']);
+  Route::get('/edit/order/{slug}', [App\Http\Controllers\Admin\Order\OrderController::class, 'edit']);
+  Route::post('/update/order/{slug}', [App\Http\Controllers\Admin\Order\OrderController::class, 'update']);
+  Route::get('/search/order', [App\Http\Controllers\Admin\Order\OrderController::class, 'search']);
+  Route::get('/status/order/{slug}', [App\Http\Controllers\Admin\Order\OrderController::class, 'status']);
+
+// Bulk option 
+Route::post('/bulk/delete', [App\Http\Controllers\Admin\Bulk\BulkController::class, 'delete']);
+//checkout
+Route::get('/division', [App\Http\Controllers\Admin\Cascading\CascadingController::class, 'division']);
+Route::get('/district', [App\Http\Controllers\Admin\Cascading\CascadingController::class, 'district']);
+  // shipping method 
+  Route::get('/view/shippingmethod', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'view']);
+  Route::get('/create/shippingmethod', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'create']);
+  Route::post('/store/shippingmethod', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'store']);
+  Route::get('/delete/shippingmethod/{slug}', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'delete']);
+  Route::get('/edit/shippingmethod/{slug}', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'edit']);
+  Route::post('/update/shippingmethod/{slug}', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'update']);
+  Route::get('/search/shippingmethod', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'search']);
 
 // Slider
 Route::get('/view/slider', [App\Http\Controllers\Admin\Slider\SliderController::class, 'view']);
@@ -122,5 +127,7 @@ Route::get('/delete/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderCon
 Route::get('/edit/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderController::class, 'edit']);
 Route::post('/update/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderController::class, 'update']);
 Route::get('/search/slider', [App\Http\Controllers\Admin\Slider\SliderController::class, 'search']);
+Route::get('/status/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderController::class, 'status']);
+
   });
 
