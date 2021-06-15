@@ -51,11 +51,11 @@
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
 <script>
-    tinymce.init({
+   tinymce.init({
         selector: 'textarea'
     });
     $("#parent_id").select2({
-        // placeholder: "Select One",
+        placeholder: "Select One",
         allowClear: true
     })
     $("#division_id").select2({
@@ -70,5 +70,9 @@
         placeholder: "Select a District",
         allowClear: true
     })
+    function toggleCategoryDiv() {
+        $('.product_cat_div').toggleClass('product_cat_toggle_div');
+    }
+</script>
 </script>
 @endsection

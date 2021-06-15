@@ -128,6 +128,15 @@ Route::get('/edit/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderContr
 Route::post('/update/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderController::class, 'update']);
 Route::get('/search/slider', [App\Http\Controllers\Admin\Slider\SliderController::class, 'search']);
 Route::get('/status/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderController::class, 'status']);
+//  UserbProfile
+Route::get('/view/userprofile', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'view']);
+Route::get('/create/userprofile', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'create']);
+Route::post('/store/userprofile', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'store']);
+Route::get('/delete/userprofile/{slug}', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'delete']);
+Route::get('/edit/userprofile/{slug}', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'edit']);
+Route::post('/update/userprofile/{slug}', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'update']);
+Route::get('/search/userprofile', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'search']);
+Route::get('/status/userprofile/{slug}', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'status']);
 
   });
 

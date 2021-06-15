@@ -25,10 +25,10 @@
     </span>
     @endif
 </div>
-@php 
+@php
 $stock='';
 if(!empty($data->variations[0]->productStock->quantity)){
- $stock=$data->variations[0]->productStock->quantity;
+$stock=$data->variations[0]->productStock->quantity;
 }
 @endphp
 <div class="form-group {{ $errors->has('stock') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3" style="order: 3;">
@@ -44,13 +44,7 @@ if(!empty($data->variations[0]->productStock->quantity)){
     <label for="size_id" class="control-label">Select Size</label>
     <div>
         @forelse($sizes as $index=>$size)
-        <input type="checkbox" class="form-checkbox" name="size_id[{{$size->id}}]" id="size_id" value="{{$size->id}}" 
-        @if(old('name'))
-        {{ old('size_id.'.$size->id)?'checked':''}}
-        @else
-        {{$data?$data->sizes->contains($size->id)?'checked':'':''}}
-        @endif
-        >
+        <input type="checkbox" class="form-checkbox" name="size_id[{{$size->id}}]" id="size_id" value="{{$size->id}}" @if(old('name')) {{ old('size_id.'.$size->id)?'checked':''}} @else {{$data?$data->sizes->contains($size->id)?'checked':'':''}} @endif>
         <span>{{$size->size}}</span>
         @empty
         @endforelse
@@ -61,18 +55,17 @@ if(!empty($data->variations[0]->productStock->quantity)){
     </span>
     @endif
 </div>
-<!-- <div class="form-group {{ $errors->has('category_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 my-5" style="order: 4;">
-    <label for="category_id" class="control-label">Select Category</label>
-    <div>
+
+<div class="form-group {{ $errors->has('category_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 my-5" style="order: 4;">
+    <div class="form-control product_cat_menu" onclick="toggleCategoryDiv()">
+        <a href="#" >Select Category</a>
+        <i class="fas fa-angle-down"></i>
+    </div>
+    <div class="product_cat_div">
         @forelse($categories as $category)
-        <input type="checkbox" class="form-checkbox" name="category_id[{{$category->id}}]" id="category_id" value="{{$category->id}}"
-        @if(old('name'))
-        {{ old('category_id.'.$category->id)?'checked':''}}
-        @else
-        {{$data?$data->categories->contains($category->id)?'checked':'':''}}
-        @endif
-         >
+        <input type="checkbox" class="form-checkbox" name="category_id[{{$category->id}}]" id="category_id" value="{{$category->id}}" @if(old('name')) {{ old('category_id.'.$category->id)?'checked':''}} @else {{$data?$data->categories->contains($category->id)?'checked':'':''}} @endif>
         <span>{{$category->name}}</span>
+        <br>
         @empty
         @endforelse
     </div>
@@ -82,10 +75,10 @@ if(!empty($data->variations[0]->productStock->quantity)){
         <strong style="color:red">{{ $errors->first('category_id') }}</strong>
     </span>
     @endif
-</div> -->
-<div class="form-group {{ $errors->has('parent_id') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3" style="order:3">
+</div>
+<!-- <div class="form-group {{ $errors->has('parent_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 my-3" style="order:3">
     <label for="parent_id" class="control-label">Category</label>
-    <select class="form-control" name="parent_id" id="parent_id">
+    <select class="form-control js-example-basic-multiple" name="category_id[]" id="category_id" multiple="multiple">
         <option>Select One</option>
         @forelse($categories as $category)
         <option value="{{$category->id}}" {{$data?$data->parent_id==$category->id?'selected':'':''}}>{{$category->name}}</option>
@@ -93,4 +86,4 @@ if(!empty($data->variations[0]->productStock->quantity)){
         <option value="">No Category</option>
         @endforelse
     </select>
-</div>
+</div> -->

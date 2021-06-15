@@ -1,8 +1,8 @@
 @extends('layouts.app')
 @section('content')
 <div class="mt-4">
-<div class="col-md-12 add_button mb-2 px-4">
-    <h5 class="btn btn-primary btn-sm">Add {{ucfirst($model)}}</h5>
+<div class="col-md-12 add_button mb-2">
+    <a href="{{url('admin/create/'.$model)}}" class="btn btn-success btn-sm"><h5 >Add {{ucfirst($model)}}</h5></a>
     <a href="{{url('admin/create/'.$model)}}"><i class="far fa-plus-square"></i></a>
     </div>
     <div class="row search_head mb-2">

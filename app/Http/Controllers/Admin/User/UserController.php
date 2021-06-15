@@ -16,7 +16,7 @@ class UserController extends Controller
     $datas = User::orderBy('id', 'desc')
         ->pagination(request('per-page'));
       $columns = User::columns();
-      $model = 'user';
+      $model = 'user'; 
       if (request('per-page') or request('page')) {
       return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
     }

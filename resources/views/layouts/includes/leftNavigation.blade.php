@@ -106,6 +106,16 @@
             </ul>
         </li>
         <li class="tree_li mb-2">
+            <a class="change_color_to_dark_white" href="#" style="position: relative;">
+                User Profile
+                <i class="fas fa-chevron-right"></i>
+            </a>
+            <ul class="tree_li_ul">
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/create/supplier')}}">Supply and Regestation</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/view/userprofile')}}">View User Profile</a></li>
+            </ul>
+        </li>
+        <li class="tree_li mb-2">
 
             <a class="change_color_to_dark_white" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
