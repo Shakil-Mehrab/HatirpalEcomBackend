@@ -20,7 +20,7 @@ trait UserColumn
     {
         return collect(Schema::getColumnListing(User::getQuery()->from))
             ->reject(function ($column) {
-                return in_array($column,['id','uuid','email_verified_at','thumbnail','remember_token','password','slug','updated_at','created_at']);
+                return in_array($column,['id','uuid','email_verified_at','thumbnail','remember_token','password','slug','updated_at','created_at','two_factor_secret','two_factor_recovery_codes']);
 
             })
             ->toArray();     

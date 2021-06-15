@@ -19,6 +19,7 @@ ul {
 }
 a {
     text-decoration: none;
+    color: #8aa4af;
 }
 
 /* status button  */
@@ -67,13 +68,13 @@ a {
     color: white;
     display: flex;
 }
-.add_button a h5{
+.add_button a h5 {
     display: flex;
     align-items: center;
     height: 4px;
-    margin-top: .5rem;
+    margin-top: 0.5rem;
 }
-.add_button a:hover i{
+.add_button a:hover i {
     color: green;
 }
 .search_head {
@@ -124,18 +125,18 @@ a {
     justify-content: center;
 }
 /* create */
-.product_cat_div{
+.product_cat_div {
     display: none;
 }
-.product_cat_menu{
+.product_cat_menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.product_cat_menu i{
+.product_cat_menu i {
     font-size: 20px;
 }
-.product_cat_toggle_div{
+.product_cat_toggle_div {
     display: block;
 }
 /* edit  */
@@ -148,6 +149,25 @@ a {
 .edit_model_heading h5 {
     margin: auto;
 }
+/* uder profile */
+.seller {
+    border: 1px solid #e6e5e5;
+    box-shadow: 0 0 4px 0 rgb(0 0 0 / 20%);
+}
+.seller p {
+    text-align: justify;
+}
+.seller .btn {
+    display: flex;
+    justify-content: center;
+}
+.seller a {
+    color: violet;
+}
+.seller a:hover {
+    color: rgb(175, 76, 175);
+}
+
 /* footer */
 footer {
     border: 1px solid #bdbaba;
