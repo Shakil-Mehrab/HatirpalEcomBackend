@@ -4,6 +4,7 @@
     <div class="edit_model_heading">
         <h5 class="text-center">Edit {{ucfirst($model)}}</h5>
     </div>
+ 
     <form action="{{url('admin/update/'.$model.'/'.$data->slug)}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">

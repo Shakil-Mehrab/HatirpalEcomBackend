@@ -19,9 +19,10 @@
 <div class="form-group {{ $errors->has('images') ? ' has-error' : '' }} col-lg-6 col-md-6 col-sm-12 my-3" style="order: 12;">
     <label for="images" class="control-label">Related Images</label>
     <input type="file" class="form-control" name="images[]" id="images" multiple>
-    @if ($errors->has('images'))
+    @if ($errors->has('images.*'))
     <span class="help-block">
-        <strong style="color:red">{{ $errors->first('images') }}</strong>
+        hi
+        <strong style="color:red">{{ $errors->first('images.*') }}</strong>
     </span>
     @endif
 </div>
