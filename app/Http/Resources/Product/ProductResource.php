@@ -21,7 +21,7 @@ class ProductResource extends ProductIndexResource
 
 
             'variations' => ProductVariationResource::collection(
-                $this->variations->groupBy('type.name') //whole beam and ground er under data dekhay
+                $this->variations //whole beam and ground er under data dekhay
             ),
         ]);
     }

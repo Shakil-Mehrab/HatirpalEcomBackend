@@ -126,18 +126,22 @@ a {
 }
 /* create */
 .product_cat_div {
-    display: none;
+    margin-left: 10px;
+    cursor: pointer;
 }
-.product_cat_menu {
+.cat_child_div {
+    margin-left: 20px;
+}
+.toggle_menu {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.product_cat_menu i {
+.toggle_menu i {
     font-size: 20px;
 }
-.product_cat_toggle_div {
-    display: block;
+.hidden {
+    display: none;
 }
 /* edit  */
 .edit_model_heading {

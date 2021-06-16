@@ -11,9 +11,16 @@ Route::group(['prefix' => 'auth'], function () {
 });
 Route::group(['middleware' => ['auth:sanctum']], function () {
     Route::get('/user', [App\Http\Controllers\Auth\Nuxt\LoginController::class,'user']);
+
 });
 
 Route::get('/category',[App\Http\Controllers\Api\Category\CategoryController::class, 'index']);
 Route::get('/product',[App\Http\Controllers\Api\Product\ProductController::class, 'index']);
 Route::get('/product/{slug}',[App\Http\Controllers\Api\Product\ProductController::class, 'show']);
 Route::get('slider',[App\Http\Controllers\Api\Slider\SliderController::class, 'index']);
+
+// Route::resource('/cart','App\Http\Controllers\Api\Cart\CartController',[
+//     'parameters'=>[
+//         'cart'=>'productVariation'
+//     ]
+//   ]);

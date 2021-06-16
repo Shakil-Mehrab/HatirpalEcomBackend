@@ -23,6 +23,7 @@
     @yield('css')
 
 </head>
+
 <body>
     <div id="app">
         @include('layouts.includes.nav')
@@ -73,9 +74,9 @@
             showConfirmButton: false,
             timer: 3000,
         });
-        $(function(){
-            $('.navbar-toggler').on('click',function(){
-                var click=document.getElementById('toggle_left_navigation');
+        $(function() {
+            $('.navbar-toggler').on('click', function() {
+                var click = document.getElementById('toggle_left_navigation');
                 click.classList.toggle("toggle_left_navigation");
             })
         })
@@ -227,27 +228,37 @@
                 e.preventDefault();
                 var link = $(this).attr("href");
 
-                    if (link) {
-                        $.get(link, function(data) {
-                            // window.location.href = link;
-                            $('#newData').empty().append(data);
-                            if ($.isEmptyObject(data.error)) {
-                                Toast.fire({
-                                    icon: 'success',
-                                    title: 'Stutus Changed Successfully!'
-                                })
-                            } else {
-                                Toast.fire({
-                                    icon: 'error',
-                                    title: 'Status Not Changed!'
-                                })
-                            }
-                        });
-                    };
-                
+                if (link) {
+                    $.get(link, function(data) {
+                        // window.location.href = link;
+                        $('#newData').empty().append(data);
+                        if ($.isEmptyObject(data.error)) {
+                            Toast.fire({
+                                icon: 'success',
+                                title: 'Stutus Changed Successfully!'
+                            })
+                        } else {
+                            Toast.fire({
+                                icon: 'error',
+                                title: 'Status Not Changed!'
+                            })
+                        }
+                    });
+                };
+
             });
         });
+        // $(function() {
+        //     $('.toggle_menu').on('click', function(e) {
+        //         $('.toggle_div').toggleClass('toggle_div_show');
+        //     });
+        // });
+        function toggleMenu(parameter) {
+            console.log(parameter)
+            $('.toggle_div_'+parameter).toggleClass('hidden');
+        }
     </script>
+
 </body>
 
 </html>

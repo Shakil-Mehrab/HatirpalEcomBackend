@@ -16,26 +16,17 @@ use Illuminate\Support\Facades\Route;
 
 
 
-
-
-
-
-
-
-
-
-
-
+Route::resource('/api/cart','App\Http\Controllers\Api\Cart\CartController',[
+  'parameters'=>[
+      'cart'=>'productVariation'
+  ]
+]);
+ 
 
 
 Route::get('/',[App\Http\Controllers\Api\Product\ProductController::class, 'view']);
 Route::get('/product/show/{id}',[App\Http\Controllers\Api\Product\ProductController::class, 'show']);
 
-Route::resource('/cart','App\Http\Controllers\Api\Cart\CartController',[
-  'parameters'=>[
-      'cart'=>'productVariation'
-  ]
-]);
 
 Route::get('/product/variation',[App\Http\Controllers\Api\Cart\CartController::class, 'variation']);
 

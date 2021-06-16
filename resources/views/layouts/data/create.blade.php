@@ -80,8 +80,6 @@
         placeholder: "Select a District",
         allowClear: true
     })
-    function toggleCategoryDiv() {
-        $('.product_cat_div').toggleClass('product_cat_toggle_div');
-    }
+    
 </script>
 @endsection

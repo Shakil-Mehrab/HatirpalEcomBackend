@@ -21,6 +21,8 @@ class Cart
         return $this;
     }
     public function add($products){
+
+        // dd($products);
         $this->user->cart()->syncWithoutDetaching(
             $this->getStorePayload($products)
         );
@@ -58,20 +60,19 @@ class Cart
     public function isEmpty(){
       return $this->user->cart->sum('pivot.quantity')<=0;
     }
-    public function subtotal(){
-        $subtotal=$this->user->cart->sum(function($product){//here $product=$variation
-            return $product->price->amount()*$product->pivot->quantity; //$product->price from pro_vari and $product->pivot->quantity from cart_user
-        // amount() table er price amount dey.not converted currency
-
-        });
-        return new Money($subtotal);
-    }
-    public function total(){
-        if($this->shipping){
-          return $this->subtotal()->add($this->shipping->price);
-        }
-        return $this->subtotal();
-    }
+//     public function subtotal(){
+//         $subtotal=$this->user->cart->sum(function($product){
+//             return $product->price->amount()*$product->pivot->quantity; 
+// 
+//         });
+//         return new Money($subtotal);
+//     }
+//     public function total(){
+//         if($this->shipping){
+//           return $this->subtotal()->add($this->shipping->price);
+//         }
+//         return $this->subtotal();
+//     }
     protected function getStorePayload($products){//product variations $products from request
        return collect($products)->keyBy('id')->map(function($product){
             return[
@@ -81,7 +82,7 @@ class Cart
         ->toArray();
     }
     protected function getCurrentQuantity($productId){ //pro_var id
-        dd( $this->user->cart());
+        // dd( $this->user->cart());
         if($product = $this->user->cart->where('id',$productId)->first()){
             return $product->pivot->quantity;
         }

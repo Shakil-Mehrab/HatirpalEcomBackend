@@ -1,4 +1,4 @@
-<div class="form-group{{ $errors->has('thumbnail') ? ' has-error' : '' }} col-lg-6 col-md-6 col-sm-12 my-3" style="order: 12;">
+<div class="form-group{{ $errors->has('thumbnail') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3" style="order: 12;">
     <label for="thumbnail" class="control-label">Thumbnail</label>
     <input type="file" class="form-control" name="thumbnail" id="thumbnail">
     @if ($errors->has('thumbnail'))

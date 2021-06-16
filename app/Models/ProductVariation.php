@@ -20,4 +20,13 @@ class ProductVariation extends Model
     public function productStock(){
       return $this->hasOne(Stock::class);
     }
+    public function stock(){
+        //jodi product_variation_stock thakto tahole return $this->belongsToMany(Stock::class) dilei hoto
+            return $this->belongsToMany(
+                ProductVariation::class,'product_variation_stock_view'  ///product variation asbe.mirror tai stock r ekti table ja connected
+                )->withPivot([  //product_variation_stock_view theke stock and in_stock
+                    'stock',
+                    'in_stock'
+                ]);
+        }
 }

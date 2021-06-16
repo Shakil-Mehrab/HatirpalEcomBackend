@@ -22,6 +22,7 @@ class ProductVariationResource extends JsonResource
         return[
             'id'=>$this->id, // id foreign key tai error dekhay.tai uporer if
             'name'=>$this->name,
+            'slug'=>$this->slug,
             // 'price'=>$this->formattedPrice,  //hasprice er vitor **return new Money($value)** @@bt protteker alada@@
             // 'price_varies'=>$this->priceVaries(),
             // 'stock_count'=>(int)$this->stockCount(), //stockCount()->stock()->sum(pro_vari belongsTomany pro_vari_stick_view)
