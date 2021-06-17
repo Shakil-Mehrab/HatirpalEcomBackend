@@ -14,17 +14,16 @@ class Cart
         $this->user=$user;
     }
     public function products(){
+        dd('ok');
         return $this->user->cart;//product_variation
     }
     public function withShipping($shippingId){
         $this->shipping=ShippingMethod::find($shippingId);
         return $this;
     }
-    public function add($products){
-
-        // dd($products);
+    public function add($productVariations){
         $this->user->cart()->syncWithoutDetaching(
-            $this->getStorePayload($products)
+            $this->getStorePayload($productVariations)
         );
     }
     public function update($productId,$quantity){
@@ -73,18 +72,18 @@ class Cart
 //         }
 //         return $this->subtotal();
 //     }
-    protected function getStorePayload($products){//product variations $products from request
-       return collect($products)->keyBy('id')->map(function($product){
+    protected function getStorePayload($productVariations){//product variations $products from request
+       return collect($productVariations)->keyBy('id')->map(function($productVariation){
             return[
-                'quantity'=>$product['quantity'] + $this->getCurrentQuantity($product['id'])//pro_var id from request
+                'quantity'=>$productVariation['quantity'] + $this->getCurrentQuantity($productVariation['id'])//pro_var id from request
             ];
         })
         ->toArray();
     }
-    protected function getCurrentQuantity($productId){ //pro_var id
+    protected function getCurrentQuantity($productVariationId){ //pro_var id
         // dd( $this->user->cart());
-        if($product = $this->user->cart->where('id',$productId)->first()){
-            return $product->pivot->quantity;
+        if($productVariation = $this->user->cart->where('id',$productVariationId)->first()){
+            return $productVariation->pivot->quantity;
         }
         return 0;
     }

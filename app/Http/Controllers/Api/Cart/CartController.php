@@ -18,35 +18,37 @@ class CartController extends Controller
         $this->middleware('auth:sanctum');
     }
     public function index(Request $request,Cart $cart){
+        dd($cart);
         $cart->sync();
-        $request->user()->load([  // n+ problem
-            'cart.product',
-            'cart.product.variations.stock',
-            'cart.stock',
-            'cart.type'
-            ]);
+        $request->user();
+        // ->load([  
+        //     'cart.product',
+        //     'cart.product.variations.stock',
+        //     'cart.stock',
+        //     'cart.type'
+        //     ]);
         // dd($cart);
-    //    return (new CartResource($request->user())) ///only auth user er jonno single time call tai new
-    //    ->additional([
-    //     'meta'=>$this->meta($cart,$request)
-    //    ]);
+       return (new CartResource($request->user()))
+       ->additional([
+        'meta'=>$this->meta($cart,$request)
+       ]);
     }
-    // protected function meta(Cart $cart,Request $request){
-    //     return[
-    //         'empty'=>$cart->isEmpty(),
-    //         'subtotal'=>$cart->subtotal()->formatted(),
-    //         'total'=>$cart->withShipping($request->shipping_method_id)->total()->formatted(),
-    //         'changed'=>$cart->hasChanged(),
-    //     ];
-    // }
-    public function store(Cart $cart,CartStoreRequest $request){
+    protected function meta(Cart $cart,Request $request){
+        return[
+            'empty'=>$cart->isEmpty(),
+            // 'subtotal'=>$cart->subtotal()->formatted(),
+            // 'total'=>$cart->withShipping($request->shipping_method_id)->total()->formatted(),
+            'changed'=>$cart->hasChanged(),
+        ];
+    }
+    public function store(Cart $cart,Request $request){
         $productVariations=array(
             array(
                 'id'=>$request[0]['variation_id'],
                 'quantity'=>$request[0]['quantity'],
             ),
             // array(
-            //     'id'=>'6',
+            //     'id'=>'3',
             //     'quantity'=>'5',
             // )
             );

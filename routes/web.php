@@ -21,6 +21,7 @@ Route::resource('/api/cart','App\Http\Controllers\Api\Cart\CartController',[
       'cart'=>'productVariation'
   ]
 ]);
+Route::get('/cart',[App\Http\Controllers\Api\Cart\CartController::class, 'store']);
  
 
 
