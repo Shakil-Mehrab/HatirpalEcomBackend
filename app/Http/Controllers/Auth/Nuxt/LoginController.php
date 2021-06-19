@@ -11,7 +11,7 @@ use App\Http\Resources\User\LoginUserResource;
 
 class LoginController extends Controller
 {
-    public function login(LoginRequest $request){
+    public function login(Request $request){
         if(!$token = auth()->attempt($request->only(['email','password']))){
             return response()->json([
                 'errors'=>[

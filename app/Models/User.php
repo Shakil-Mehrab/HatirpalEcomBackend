@@ -11,6 +11,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+// use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
@@ -85,8 +86,8 @@ class User extends Authenticatable
     }
     public function cart()
     {
-        return $this->belongsToMany(ProductVariation::class, 'cart_user') //first table related and 2nd tabl jar dara ai relation hoiche
-            ->withPivot('quantity') //cart user theke quantity
+        return $this->belongsToMany(ProductVariation::class, 'cart_user')
+            ->withPivot(['quantity','product_image_id','size_id'])
             ->withTimestamps();
     }
 }

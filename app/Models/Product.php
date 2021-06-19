@@ -46,5 +46,11 @@ class Product extends Model
      public function variations(){
         return $this->hasMany(ProductVariation::class)->orderBy('order','asc');
     }
+    public function stockCount(){
+        return $this->variations   //1kg 300ti,2kg er 200ti
+        ->sum(function($variation){  //eta ki foreach er moto
+            return $variation->stockCount();
+        });
+    }
    
 }

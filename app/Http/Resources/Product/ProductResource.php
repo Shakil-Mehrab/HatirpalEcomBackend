@@ -16,12 +16,9 @@ class ProductResource extends ProductIndexResource
     {
         return array_merge(parent::toArray($request), [
             'name'=>$this->name,
-            'sizes'=>$this->sizes,
             'productImages'=>$this->productImages,
-
-
             'variations' => ProductVariationResource::collection(
-                $this->variations //whole beam and ground er under data dekhay
+                $this->variations
             ),
         ]);
     }

@@ -1,11 +1,10 @@
 <?php
 
-namespace App\Http\Resources\Cart;
+namespace App\Http\Resources\Size;
 
 use Illuminate\Http\Resources\Json\JsonResource;
-use App\Http\Resources\Cart\CartProductVariationResource;
 
-class CartResource extends JsonResource
+class SizeResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,7 +15,8 @@ class CartResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'productVariations'=>CartProductVariationResource::collection($this->cart),
+            'size'=>$this->size,
+            'id'=>$this->id,
         ];
     }
 }

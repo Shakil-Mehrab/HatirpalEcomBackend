@@ -18,16 +18,15 @@ class CartController extends Controller
         $this->middleware('auth:sanctum');
     }
     public function index(Request $request,Cart $cart){
-        dd($cart);
-        $cart->sync();
+        // return 'hi';
+        $cart->sync();//cart_user er quantity mirror table er quantity compare kore min ta cart user a update
         $request->user();
-        // ->load([  
+        // ->load([
         //     'cart.product',
         //     'cart.product.variations.stock',
         //     'cart.stock',
         //     'cart.type'
         //     ]);
-        // dd($cart);
        return (new CartResource($request->user()))
        ->additional([
         'meta'=>$this->meta($cart,$request)
@@ -36,29 +35,41 @@ class CartController extends Controller
     protected function meta(Cart $cart,Request $request){
         return[
             'empty'=>$cart->isEmpty(),
+            'subtotal'=>$cart->subtotal(),
+            'total'=>$cart->withShipping($request->shipping_method_id)->total(),
             // 'subtotal'=>$cart->subtotal()->formatted(),
             // 'total'=>$cart->withShipping($request->shipping_method_id)->total()->formatted(),
             'changed'=>$cart->hasChanged(),
         ];
     }
     public function store(Cart $cart,Request $request){
+        // return $request->all();
         $productVariations=array(
             array(
                 'id'=>$request[0]['variation_id'],
                 'quantity'=>$request[0]['quantity'],
+                'product_image_id'=>$request[0]['image_id'],
+                'size_id'=>$request[0]['size_id'],
             ),
             // array(
             //     'id'=>'3',
             //     'quantity'=>'5',
+            //     'product_image_id'=>3,
+            //     'size_id'=>2
             // )
             );
-           
         $cart->add($productVariations);
     }
-    public function update(ProductVariation $productVariation, CartUpdateRequest $request,Cart $cart){
-        $cart->update($productVariation->id, $request->quantity);
+    // ProductVariation $productVariation, Request $request,Cart $cart
+    public function update(Cart $cart){
+        // return 'ok';
+        // $cart->update($productVariation->id, $request->quantity);
+        $cart->update(3, 15);
     }
     public function destroy(ProductVariation $productVariation,Cart $cart){
         $cart->delete($productVariation->id);
+    }
+    public function show(){
+        return "this cart controller show function it can be called for get update route.be carefull";
     }
 }

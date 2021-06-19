@@ -17,6 +17,8 @@ class CreateTableCartUser extends Migration
             $table->integer('user_id')->unsigned()->index();
             $table->integer('product_variation_id')->unsigned()->index();
             $table->integer('quantity')->unsigned()->default(1);
+            $table->foreignId('product_image_id')->constrained('product_images');
+            $table->foreignId('size_id')->constrained('sizes');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('product_variation_id')->references('id')->on('product_variations');

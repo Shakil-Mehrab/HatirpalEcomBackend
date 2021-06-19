@@ -15,13 +15,17 @@ use Illuminate\Support\Facades\Route;
 */
 
 
+// Route::post('/update',[App\Http\Controllers\Api\Cart\CartController::class,'update']);
 
-Route::resource('/api/cart','App\Http\Controllers\Api\Cart\CartController',[
-  'parameters'=>[
-      'cart'=>'productVariation'
-  ]
-]);
-Route::get('/cart',[App\Http\Controllers\Api\Cart\CartController::class, 'store']);
+
+
+// Route::resource('/api/cart','App\Http\Controllers\Api\Cart\CartController',[
+//   'parameters'=>[
+//       'cart'=>'productVariation'
+//   ]
+// ]);
+
+// Route::get('/cart',[App\Http\Controllers\Api\Cart\CartController::class, 'update']);
  
 
 
