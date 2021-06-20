@@ -42,14 +42,14 @@ class CartController extends Controller
             'changed'=>$cart->hasChanged(),
         ];
     }
-    public function store(Cart $cart,Request $request){
-        // return $request->all();
+    public function store(Cart $cart,CartStoreRequest $request){
+        // return $request['products'][0]['variation_id'];
         $productVariations=array(
             array(
-                'id'=>$request[0]['variation_id'],
-                'quantity'=>$request[0]['quantity'],
-                'product_image_id'=>$request[0]['image_id'],
-                'size_id'=>$request[0]['size_id'],
+                'id'=>$request['products'][0]['variation_id'],
+                'quantity'=>$request['products'][0]['quantity'],
+                'product_image_id'=>$request['products'][0]['image_id'],
+                'size_id'=>$request['products'][0]['size_id'],
             ),
             // array(
             //     'id'=>'3',
@@ -60,11 +60,9 @@ class CartController extends Controller
             );
         $cart->add($productVariations);
     }
-    // ProductVariation $productVariation, Request $request,Cart $cart
-    public function update(Cart $cart){
-        // return 'ok';
-        // $cart->update($productVariation->id, $request->quantity);
-        $cart->update(3, 15);
+    public function update(ProductVariation $productVariation,Request $request,Cart $cart){
+        $cart->update($productVariation->id, $request->quantity);
+        // $cart->update(3, 15);
     }
     public function destroy(ProductVariation $productVariation,Cart $cart){
         $cart->delete($productVariation->id);

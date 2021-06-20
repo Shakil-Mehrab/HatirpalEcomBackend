@@ -25,7 +25,9 @@ class CartStoreRequest extends FormRequest
     {
         return [
             'products'=>'required|array',
-            'products.*.id'=>'required|exists:product_variations,id',
+            'products.*.variation_id'=>'required|exists:product_variations,id',
+            'products.*.size_id'=>'required|exists:sizes,id',
+            'products.*.image_id'=>'required|exists:product_images,id',
             'products.*.quantity'=>'numeric|min:1',
         ];
     }

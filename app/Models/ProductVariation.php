@@ -39,7 +39,10 @@ class ProductVariation extends Model
         return $this->hasOne(Stock::class);
     }
     public function cartProductImage($image_id){
-        $productImage=ProductImage::find($image_id);
+        $productImage=ProductImage::where('id',$image_id)->first();
+        if($productImage==null){
+            return "";
+        }
         return $productImage->thumbnail;
     }
     public function stock()//cart controller theke kivabe auto call hoy
