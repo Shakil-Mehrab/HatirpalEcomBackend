@@ -19,12 +19,12 @@ class AddressIndexResource extends JsonResource
             'id'=>$this->id,
             'slug'=>$this->slug,
             'address'=>$this->address,
-            'country'=>$this->country->name,
-            'division'=>$this->division->name,
-            'district'=>$this->district->name,
-            'place'=>$this->place->name,
+            'country'=>$this->country,
+            'division'=>$this->division,
+            'district'=>$this->district,
+            'place'=>$this->delivery_place,
             'postal_code'=>$this->postal_code,
-            'expense'=>$this->district->expense,
+            'expense'=>$this->expense,
             'default'=>$this->default,
         ];
     }

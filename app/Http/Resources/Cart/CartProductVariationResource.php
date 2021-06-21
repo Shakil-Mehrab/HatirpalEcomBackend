@@ -18,7 +18,7 @@ class CartProductVariationResource extends JsonResource
     {
         return array_merge(parent::toArray($request), [
             // 'product' => new ProductIndexResource($this->product),
-            'product'=>'',
+            'product_slug'=>$this->product->slug,
             'sizes'=>SizeResource::collection($this->product->sizes),//ajaira product r stock call hoye array barche.tai faka kore dichi
             'stock'=>'',
             'quantity' => $this->pivot->quantity,

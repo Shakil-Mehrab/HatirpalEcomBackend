@@ -61,7 +61,8 @@ class CartController extends Controller
         $cart->add($productVariations);
     }
     public function update(ProductVariation $productVariation,Request $request,Cart $cart){
-        $cart->update($productVariation->id, $request->quantity);
+        // return $request->all();
+        $cart->update($productVariation->id, $request->quantity,$request->size_id);
         // $cart->update(3, 15);
     }
     public function destroy(ProductVariation $productVariation,Cart $cart){

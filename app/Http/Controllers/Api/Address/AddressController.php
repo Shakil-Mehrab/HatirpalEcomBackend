@@ -14,9 +14,9 @@ class AddressController extends Controller
         $this->middleware(['auth:sanctum']);
     }
     public function index(Request $request){
-        // return $request->user;
         return AddressIndexResource::collection(
            $request->user()->addresses
+        //    auth()->user()->addresses
         );
     }
 }

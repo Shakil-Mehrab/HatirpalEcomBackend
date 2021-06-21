@@ -27,5 +27,4 @@ Route::resource('/cart','App\Http\Controllers\Api\Cart\CartController',[
         'cart'=>'productVariation'
     ]
   ]);
-  Route::post('/cart/update',[App\Http\Controllers\Api\Cart\CartController::class,'update']);
-  
+Route::resource('/address','App\Http\Controllers\Api\Address\AddressController');  

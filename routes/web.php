@@ -15,7 +15,6 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-// Route::post('/update',[App\Http\Controllers\Api\Cart\CartController::class,'update']);
 
 
 
@@ -25,14 +24,12 @@ use Illuminate\Support\Facades\Route;
 //   ]
 // ]);
 
-// Route::get('/cart',[App\Http\Controllers\Api\Cart\CartController::class, 'update']);
+// Route::resource('/api/address','App\Http\Controllers\Api\Address\AddressController');  
  
 
 
 Route::get('/',[App\Http\Controllers\Api\Product\ProductController::class, 'view']);
 Route::get('/product/show/{id}',[App\Http\Controllers\Api\Product\ProductController::class, 'show']);
-
-
 Route::get('/product/variation',[App\Http\Controllers\Api\Cart\CartController::class, 'variation']);
 
 

@@ -26,9 +26,10 @@ class Cart
             $this->getStorePayload($productVariations)
         );
     }
-    public function update($productVariationId,$quantity){
+    public function update($productVariationId,$quantity,$size_id){
         $this->user->cart()->updateExistingPivot($productVariationId,[
-            'quantity'=>$quantity
+            'quantity'=>$quantity,
+            'size_id'=>$size_id
         ]);
     }
     public function sync(){
@@ -45,8 +46,8 @@ class Cart
     public function hasChanged(){
         return $this->changed;
     }
-    public function delete($productId){
-        $this->user->cart()->detach($productId);
+    public function delete($productCariationId){
+        $this->user->cart()->detach($productCariationId);
     }
     public function empty(){
         $this->user->cart()->detach();

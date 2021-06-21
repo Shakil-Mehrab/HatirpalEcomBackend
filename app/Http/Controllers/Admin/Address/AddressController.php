@@ -47,7 +47,7 @@ class AddressController extends Controller
   {
     $product = new Address();
     $input->addressStoreUpdate($product, $request);
-    $request->user()->address()->save($product);
+    $request->user()->addresses()->save($product);
     return redirect('admin/view/address')
       ->withSuccess('Address Created Successfully');
   }

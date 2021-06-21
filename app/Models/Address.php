@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Region;
 use Illuminate\Support\Str;
 use App\Models\Traits\PaginationTrait;
 use Illuminate\Database\Eloquent\Model;
@@ -28,5 +29,17 @@ class Address extends Model
     {
         return $this->belongsToMany(Product::class, 'product_category')
             ->withTimestamps();
+    }
+    public function country(){
+        return $this->belongsTo(Region::class);
+    }
+    public function division(){
+        return $this->belongsTo(Region::class);
+    }
+    public function district(){
+        return $this->belongsTo(Region::class);
+    }
+    public function place(){
+        return $this->belongsTo(Region::class);
     }
 }

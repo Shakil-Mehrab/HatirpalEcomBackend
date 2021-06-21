@@ -17,10 +17,11 @@ class CreateAddressesTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned()->index();
             $table->string('slug')->unique()->index();
-            $table->integer('country_id')->unsigned()->index();
-            $table->integer('division_id')->unsigned()->index();
-            $table->integer('district_id')->unsigned()->index();
-            $table->integer('place_id')->unsigned()->index();
+            $table->string('country')->index();
+            $table->string('division')->index();
+            $table->string('district')->index();
+            $table->string('delivery_place')->index();
+            $table->integer('expense');
             $table->string('address');
             $table->string('postal_code');
             $table->boolean('default')->default(0);
