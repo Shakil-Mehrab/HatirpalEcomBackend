@@ -25,12 +25,12 @@ use Illuminate\Support\Facades\Route;
 // ]);
 
 // Route::resource('/api/address','App\Http\Controllers\Api\Address\AddressController');  
- 
 
 
-Route::get('/',[App\Http\Controllers\Api\Product\ProductController::class, 'view']);
-Route::get('/product/show/{id}',[App\Http\Controllers\Api\Product\ProductController::class, 'show']);
-Route::get('/product/variation',[App\Http\Controllers\Api\Cart\CartController::class, 'variation']);
+
+Route::get('/', [App\Http\Controllers\Api\Product\ProductController::class, 'view']);
+Route::get('/product/show/{id}', [App\Http\Controllers\Api\Product\ProductController::class, 'show']);
+Route::get('/product/variation', [App\Http\Controllers\Api\Cart\CartController::class, 'variation']);
 
 
 
@@ -98,11 +98,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum']], function (
   Route::get('/search/order', [App\Http\Controllers\Admin\Order\OrderController::class, 'search']);
   Route::get('/status/order/{slug}', [App\Http\Controllers\Admin\Order\OrderController::class, 'status']);
 
-// Bulk option 
-Route::post('/bulk/delete', [App\Http\Controllers\Admin\Bulk\BulkController::class, 'delete']);
-//checkout
-Route::get('/division', [App\Http\Controllers\Admin\Cascading\CascadingController::class, 'division']);
-Route::get('/district', [App\Http\Controllers\Admin\Cascading\CascadingController::class, 'district']);
+  // Bulk option 
+  Route::post('/bulk/delete', [App\Http\Controllers\Admin\Bulk\BulkController::class, 'delete']);
+  //checkout
+  Route::get('/division', [App\Http\Controllers\Admin\Cascading\CascadingController::class, 'division']);
+  Route::get('/district', [App\Http\Controllers\Admin\Cascading\CascadingController::class, 'district']);
   // shipping method 
   Route::get('/view/shippingmethod', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'view']);
   Route::get('/create/shippingmethod', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'create']);
@@ -112,24 +112,22 @@ Route::get('/district', [App\Http\Controllers\Admin\Cascading\CascadingControlle
   Route::post('/update/shippingmethod/{slug}', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'update']);
   Route::get('/search/shippingmethod', [App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class, 'search']);
 
-// Slider
-Route::get('/view/slider', [App\Http\Controllers\Admin\Slider\SliderController::class, 'view']);
-Route::get('/create/slider', [App\Http\Controllers\Admin\Slider\SliderController::class, 'create']);
-Route::post('/store/slider', [App\Http\Controllers\Admin\Slider\SliderController::class, 'store']);
-Route::get('/delete/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderController::class, 'delete']);
-Route::get('/edit/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderController::class, 'edit']);
-Route::post('/update/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderController::class, 'update']);
-Route::get('/search/slider', [App\Http\Controllers\Admin\Slider\SliderController::class, 'search']);
-Route::get('/status/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderController::class, 'status']);
-//  UserbProfile
-Route::get('/view/userprofile', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'view']);
-Route::get('/create/userprofile', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'create']);
-Route::post('/store/userprofile', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'store']);
-Route::get('/delete/userprofile/{slug}', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'delete']);
-Route::get('/edit/userprofile/{slug}', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'edit']);
-Route::post('/update/userprofile/{slug}', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'update']);
-Route::get('/search/userprofile', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'search']);
-Route::get('/status/userprofile/{slug}', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'status']);
-
-  });
-
+  // Slider
+  Route::get('/view/slider', [App\Http\Controllers\Admin\Slider\SliderController::class, 'view']);
+  Route::get('/create/slider', [App\Http\Controllers\Admin\Slider\SliderController::class, 'create']);
+  Route::post('/store/slider', [App\Http\Controllers\Admin\Slider\SliderController::class, 'store']);
+  Route::get('/delete/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderController::class, 'delete']);
+  Route::get('/edit/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderController::class, 'edit']);
+  Route::post('/update/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderController::class, 'update']);
+  Route::get('/search/slider', [App\Http\Controllers\Admin\Slider\SliderController::class, 'search']);
+  Route::get('/status/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderController::class, 'status']);
+  //  UserbProfile
+  Route::get('/view/userprofile', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'view']);
+  Route::get('/create/userprofile', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'create']);
+  Route::post('/store/userprofile', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'store']);
+  Route::get('/delete/userprofile/{slug}', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'delete']);
+  Route::get('/edit/userprofile/{slug}', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'edit']);
+  Route::post('/update/userprofile/{slug}', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'update']);
+  Route::get('/search/userprofile', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'search']);
+  Route::get('/status/userprofile/{slug}', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'status']);
+});

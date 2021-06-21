@@ -153,6 +153,10 @@ a {
 .edit_model_heading h5 {
     margin: auto;
 }
+.view_button {
+    display: flex;
+    justify-content: flex-end;
+}
 /* uder profile */
 .seller {
     border: 1px solid #e6e5e5;

@@ -32,7 +32,6 @@ class AddressFactory extends Factory
             'division' => $this->faker->word,
             'district' => $this->faker->word,
             'delivery_place' => $this->faker->word,
-            // 'slug' => Str::slug($name),
             'expense' => $this->faker->numberBetween(1000, 9000),
             'postal_code' => $this->faker->numberBetween(1000, 9000),
             'address' => $this->faker->sentence,
