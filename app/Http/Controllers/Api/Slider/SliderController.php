@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class SliderController extends Controller
 {
     public function index(){
-        $sliders=Slider::where('status',1)->get();
+        $sliders=Slider::orderBy('id','desc')->where('status',1)->get();
         return SliderResource::collection($sliders);
     }
 }

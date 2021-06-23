@@ -24,7 +24,7 @@ Route::get('slider',[App\Http\Controllers\Api\Slider\SliderController::class, 'i
 
 Route::resource('/cart','App\Http\Controllers\Api\Cart\CartController',[
     'parameters'=>[
-        'cart'=>'productVariation'
+        'cart'=>'product'
     ]
   ]);
 Route::resource('/address','App\Http\Controllers\Api\Address\AddressController');  

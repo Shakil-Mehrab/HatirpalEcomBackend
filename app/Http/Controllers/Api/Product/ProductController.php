@@ -20,12 +20,7 @@ class ProductController extends Controller
         // $items = \Cart::getContent();
         return view('welcome', compact('products'));
     }
-    public function show($slug)
-    {
-        $data = Product::where('slug', $slug)
-            ->firstOrFail();
-        return new ProductResource($data);
-    }
+   
     public function index()
     {
         $datas = Product::latest()
@@ -34,6 +29,12 @@ class ProductController extends Controller
             )
             ->get();
         return ProductIndexResource::collection($datas);
+    }
+    public function show($slug)
+    {
+        $data = Product::where('slug', $slug)
+            ->firstOrFail();
+        return new ProductResource($data);
     }
     protected function scopes()
     {

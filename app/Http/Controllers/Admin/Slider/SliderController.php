@@ -15,7 +15,7 @@ use App\Http\Requests\Slider\SliderUpdateRequest;
 
 class SliderController extends Controller
 {
-  public function view()
+  public function index()
   {
     $datas = Slider::orderBy('id', 'desc')
       ->pagination(request('per-page'));
@@ -53,7 +53,7 @@ class SliderController extends Controller
     $imageHandling->uploadSliderImage($product, $request, 'slider');
 
     $product->save();
-    return redirect('admin/view/slider')
+    return redirect('admin/slider')
       ->withSuccess('Slider Created Successfully');
   }
   public function edit($slug)

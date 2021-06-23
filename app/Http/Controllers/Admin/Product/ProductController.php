@@ -17,7 +17,7 @@ use App\Http\Requests\Product\ProductUpdateRequest;
 
 class ProductController extends Controller
 {
-  public function view()
+  public function index()
   {
     $datas = Product::orderBy('id', 'desc')
       ->pagination(request('per-page'));
@@ -59,15 +59,10 @@ class ProductController extends Controller
 
     $imageHandling->uploadRelatedImage($product, $request);
     $input->productPivotData($product, $request);
-    $variation = $input->productVariation($product);
-    $input->productStoreStock($variation, $request);
+    // $variation = $input->productVariation($product);
+    $input->productStoreStock($product, $request);
 
-
-
-
-
-
-    return redirect('admin/view/product')
+    return redirect('admin/product')
       ->withSuccess('Product Created Successfully');
   }
   public function edit($slug)

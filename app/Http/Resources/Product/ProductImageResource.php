@@ -2,11 +2,9 @@
 
 namespace App\Http\Resources\Product;
 
-use Illuminate\Support\Str;
-use App\Http\Resources\Size\SizeResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class ProductIndexResource extends JsonResource
+class ProductImageResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -18,14 +16,8 @@ class ProductIndexResource extends JsonResource
     {
         return [
             'id'=>$this->id,
-            'name'=>Str::limit($this->name,20),
             'slug'=>$this->slug,
-            'short_description'=>$this->short_description,
-            'description'=>$this->description,
-            'price'=>$this->price,
             'thumbnail'=>$this->thumbnail,
-            // 'sizes'=>SizeResource::collection($this->sizes),
-            // 'stock_count'=>$this->stockCount(),
         ];
     }
 }

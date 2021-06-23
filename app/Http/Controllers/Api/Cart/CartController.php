@@ -18,8 +18,7 @@ class CartController extends Controller
         $this->middleware('auth:sanctum');
     }
     public function index(Request $request,Cart $cart){
-        // return 'hi';
-        $cart->sync();//cart_user er quantity mirror table er quantity compare kore min ta cart user a update
+        $cart->sync();
         $request->user();
         // ->load([
         //     'cart.product',
@@ -43,30 +42,31 @@ class CartController extends Controller
         ];
     }
     public function store(Cart $cart,CartStoreRequest $request){
-        // return $request['products'][0]['variation_id'];
-        $productVariations=array(
+        // return $request['products'][0]['quantity'];
+        $products=array(
             array(
-                'id'=>$request['products'][0]['variation_id'],
+                'id'=>$request['products'][0]['product_id'],
                 'quantity'=>$request['products'][0]['quantity'],
                 'product_image_id'=>$request['products'][0]['image_id'],
                 'size_id'=>$request['products'][0]['size_id'],
             ),
             // array(
-            //     'id'=>'3',
+            //     'id'=>'103',
             //     'quantity'=>'5',
             //     'product_image_id'=>3,
             //     'size_id'=>2
             // )
             );
-        $cart->add($productVariations);
+            // return $products;
+
+        $cart->add($products);
     }
-    public function update(ProductVariation $productVariation,Request $request,Cart $cart){
-        // return $request->all();
-        $cart->update($productVariation->id, $request->quantity,$request->size_id);
-        // $cart->update(3, 15);
+    public function update($productId,Request $request,Cart $cart){
+        $cart->update($productId, $request->quantity,$request->size_id);
+        // $cart->update(3, 10,3);
     }
-    public function destroy(ProductVariation $productVariation,Cart $cart){
-        $cart->delete($productVariation->id);
+    public function destroy($productId,Cart $cart){
+        $cart->delete($productId);
     }
     public function show(){
         return "this cart controller show function it can be called for get update route.be carefull";

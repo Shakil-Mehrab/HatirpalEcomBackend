@@ -11,7 +11,7 @@ use App\Http\Requests\User\UserUpdateRequest;
 
 class UserController extends Controller
 {
-  public function view()
+  public function index()
   {
     $datas = User::orderBy('id', 'desc')
         ->pagination(request('per-page'));

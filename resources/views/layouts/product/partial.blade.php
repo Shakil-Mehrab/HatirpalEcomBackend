@@ -49,8 +49,8 @@
 </div>
 @php
 $stock='';
-if(!empty($data->variations[0]->productStock->quantity)){
-$stock=$data->variations[0]->productStock->quantity;
+if(!empty($data->productStock->quantity)){
+$stock=$data->productStock->quantity;
 }
 @endphp
 <div class="form-group {{ $errors->has('stock') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3" style="order: 3;">

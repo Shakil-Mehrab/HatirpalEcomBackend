@@ -52,5 +52,33 @@ class Product extends Model
             return $variation->stockCount();
         });
     }
+    public function stock()//cart controller theke kivabe auto call hoy
+    {
+        return $this->belongsToMany(Product::class,'product_stock_view')
+        ->withPivot([  
+            'stock',
+            'in_stock'
+        ]);
+    }
+    public function minStock($count){
+        return min($this->presentStockCount(),$count);
+    }
+    public function presentStockCount(){
+        return $this->stock->sum('pivot.stock');//cart_user er protteker jonno pro_vari*Pro_vari_stock_view bar call hove
+    }
+    public function product(){
+        return $this->belongsTo(Product::class);
+    }
+    public function productStock()
+    {
+        return $this->hasOne(Stock::class);
+    }
+    public function cartProductImage($image_id){
+        $productImage=ProductImage::where('id',$image_id)->first();
+        if($productImage==null){
+            return "";
+        }
+        return $productImage->thumbnail;
+    }
    
 }

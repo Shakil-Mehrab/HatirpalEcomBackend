@@ -14,31 +14,30 @@ class Cart
         $this->user=$user;
     }
     public function products(){
-        return $this->user->cart;//product_variation
+        return $this->user->cart;
     }
     public function withShipping($shippingId){
         $this->shipping=ShippingMethod::find($shippingId);
         return $this;
     }
-    public function add($productVariations){
-
+    public function add($products){
         $this->user->cart()->syncWithoutDetaching(
-            $this->getStorePayload($productVariations)
+            $this->getStorePayload($products)
         );
     }
-    public function update($productVariationId,$quantity,$size_id){
-        $this->user->cart()->updateExistingPivot($productVariationId,[
+    public function update($productId,$quantity,$size_id){
+        $this->user->cart()->updateExistingPivot($productId,[
             'quantity'=>$quantity,
             'size_id'=>$size_id
         ]);
     }
     public function sync(){
-        $this->user->cart->each(function($productVariation){
-            $quantity=$productVariation->minStock($productVariation->pivot->quantity);
-            if($quantity != $productVariation->pivot->quantity){
+        $this->user->cart->each(function($product){
+            $quantity=$product->minStock($product->pivot->quantity);
+            if($quantity != $product->pivot->quantity){
                 $this->changed=true;
             }
-            $productVariation->pivot->update([
+            $product->pivot->update([
                 'quantity'=>$quantity,
             ]);
         });
@@ -46,8 +45,8 @@ class Cart
     public function hasChanged(){
         return $this->changed;
     }
-    public function delete($productCariationId){
-        $this->user->cart()->detach($productCariationId);
+    public function delete($productId){
+        $this->user->cart()->detach($productId);
     }
     public function empty(){
         $this->user->cart()->detach();
@@ -56,9 +55,9 @@ class Cart
       return $this->user->cart->sum('pivot.quantity')<=0;//sync a update korar pore jodi 0 or nagative hoy
     }
     public function subtotal(){
-        $subtotal=$this->user->cart->sum(function($productVariation){
-            // return $productVariation->price->amount()*$productVariation->pivot->quantity; 
-            return $productVariation->product->price*$productVariation->pivot->quantity; 
+        $subtotal=$this->user->cart->sum(function($product){
+            // return $product->price->amount()*$product->pivot->quantity; 
+            return $product->price*$product->pivot->quantity; 
         });
         // return new Money($subtotal);
         return $subtotal;
@@ -70,19 +69,19 @@ class Cart
         }
         return $this->subtotal();
     }
-    protected function getStorePayload($productVariations){
-       return collect($productVariations)->keyBy('id')->map(function($productVariation){
+    protected function getStorePayload($products){
+       return collect($products)->keyBy('id')->map(function($product){
             return[
-                'quantity'=>$productVariation['quantity'] + $this->getCurrentQuantity($productVariation['id']),
-                'product_image_id'=>$productVariation['product_image_id'],
-                'size_id'=>$productVariation['size_id'],
+                'quantity'=>$product['quantity'] + $this->getCurrentQuantity($product['id']),
+                'product_image_id'=>$product['product_image_id'],
+                'size_id'=>$product['size_id'],
             ];
         })
         ->toArray();
     }
-    protected function getCurrentQuantity($productVariationId){ 
-        if($productVariation = $this->user->cart->where('id',$productVariationId)->first()){
-            return $productVariation->pivot->quantity;
+    protected function getCurrentQuantity($productId){ 
+        if($product = $this->user->cart->where('id',$productId)->first()){
+            return $product->pivot->quantity;
         }
         return 0;
     }

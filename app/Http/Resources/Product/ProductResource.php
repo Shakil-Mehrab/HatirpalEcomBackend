@@ -2,6 +2,7 @@
 
 namespace App\Http\Resources\Product;
 
+use App\Http\Resources\Size\SizeResource;
 use Illuminate\Http\Resources\Json\JsonResource;
 
 class ProductResource extends ProductIndexResource
@@ -16,10 +17,11 @@ class ProductResource extends ProductIndexResource
     {
         return array_merge(parent::toArray($request), [
             'name'=>$this->name,
-            'productImages'=>$this->productImages,
-            'variations' => ProductVariationResource::collection(
-                $this->variations
-            ),
+            'productImages'=>ProductImageResource::collection($this->productImages),
+            'sizes'=>SizeResource::collection($this->sizes),
+            // 'variations' => ProductVariationResource::collection(
+            //     $this->variations
+            // ),
         ]);
     }
 }

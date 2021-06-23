@@ -9,9 +9,9 @@
     </div>
     <br>
     <div class="view_button">
-        <a href="{{url('admin/view/'.$model)}}" class="btn btn-primary btn-sm"><i class="far fa-eye"></i> View {{ucfirst($model)}}</a>
+        <a href="{{url('admin/'.$model)}}" class="btn btn-primary btn-sm"><i class="far fa-eye"></i> View {{ucfirst($model)}}</a>
     </div>
-    <form action="{{url('admin/store/'.$model)}}" method="post" enctype="multipart/form-data">
+    <form action="{{url('admin/'.$model)}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
             @forelse($columns as $column)

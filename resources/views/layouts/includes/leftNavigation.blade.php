@@ -12,8 +12,8 @@
                 <i class="fas fa-chevron-right"></i>
             </a>
             <ul class="tree_li_ul">
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/create/product')}}">Add Product</a></li>
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/view/product')}}">View Product</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/product/create')}}">Add Product</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/product')}}">View Product</a></li>
             </ul>
         </li>
         <li class="tree_li mb-2">
@@ -32,7 +32,7 @@
                 <i class="fas fa-chevron-right"></i>
             </a>
             <ul class="tree_li_ul">
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/view/user')}}">View User</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/user')}}">View User</a></li>
             </ul>
         </li>
         <li class="tree_li mb-2">
@@ -101,8 +101,8 @@
                 <i class="fas fa-chevron-right"></i>
             </a>
             <ul class="tree_li_ul">
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/create/slider')}}">Add Slider</a></li>
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/view/slider')}}">View Slider</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/slider/create')}}">Add Slider</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/slider')}}">View Slider</a></li>
             </ul>
         </li>
         <li class="px-2 mb-2">

@@ -3,7 +3,7 @@
 namespace App\Bag\Admin\StoreUpdate;
 
 use App\Models\Stock;
-use App\Models\ProductVariation;
+// use App\Models\ProductVariation;
 
 class StoreUpdateData
 {
@@ -42,30 +42,30 @@ class StoreUpdateData
       );
     return;
   }
-  public function productVariation($product)
-  {
-    $variation = new ProductVariation();
-    $variation->name = "Rakibul";
-    $variation->product_id = $product->id;
-    $variation->save();
-    return $variation;
-  }
-  public function productStoreStock($variation,$request)
+  // public function productVariation($product)
+  // {
+  //   $variation = new ProductVariation();
+  //   $variation->name = "Rakibul";
+  //   $variation->product_id = $product->id;
+  //   $variation->save();
+  //   return $variation;
+  // }
+  public function productStoreStock($product,$request)
   {
     $stock = new Stock();
     $stock->quantity = $request['stock'];
-    $stock->product_variation_id = $variation->id;
+    $stock->product_id = $product->id;
     $stock->save();
   }
   public function productUpdateStock($product,$request)
   {
-    if(!empty($product->variations[0])){
-      $stock =Stock::where('product_variation_id',$product->variations[0]->id)->firstOrFail();
-      $stock->quantity = $request['stock'];
-      $stock->update();
-      return;
-     }
-   
+      $stock =Stock::where('product_id',$product->id)->first();
+      if($stock){
+        $stock->quantity = $request['stock'];
+        $stock->update();
+        return;
+      }
+      $this->productStoreStock($product,$request);
   }
   public function shippingMethodstoreUpdate($product, $request)
   {
