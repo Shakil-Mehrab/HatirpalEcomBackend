@@ -24,7 +24,10 @@ class StoreUpdateData
   public function productStoreUpdate($product, $request)
   {
     $product->name = $request['name'];
-    $product->price = $request['price'];
+    $product->old_price = $request['old_price'];
+    $product->sale_price = $request['sale_price'];
+    $product->unit = $request['unit'];
+    $product->discount = (($request['old_price']-$request['sale_price'])/$request['old_price'])*100;
     $product->brand = $request['brand'];
     $product->short_description = $request['short_description'];
     $product->description = $request['description'];

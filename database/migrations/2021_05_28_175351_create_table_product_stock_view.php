@@ -41,6 +41,14 @@ class CreateTableProductStockView extends Migration
         //     ) AS product_variation_order USING (id)
         //     GROUP BY product_variations.id
         // ");
+        Schema::create('product_stock_view', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('product_id')->unsigned();
+            $table->integer('stock')->index();
+            $table->integer('in_stock')->default(0);
+            $table->timestamps();
+            $table->foreign('product_id')->references('id')->on('products');
+        });
     }
 
 

@@ -22,8 +22,8 @@
                 <i class="fas fa-chevron-right"></i>
             </a>
             <ul class="tree_li_ul">
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/create/category')}}">Add Category</a></li>
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/view/category')}}">View Category</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/category/create')}}">Add Category</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/category')}}">View Category</a></li>
             </ul>
         </li>
         <li class="tree_li mb-2">

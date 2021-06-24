@@ -143,6 +143,9 @@ a {
 .hidden {
     display: none;
 }
+.select2-container--default .select2-selection--single {
+    height: 40px !important;
+}
 /* edit  */
 .edit_model_heading {
     background-color: #3b4a42;

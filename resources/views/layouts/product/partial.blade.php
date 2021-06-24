@@ -1,10 +1,58 @@
+<div class="form-group {{ $errors->has('unit') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3" style="order:3">
+    <label for="unit" class="control-label">Product Unit</label>
+    <select class="form-control" name="unit" id="parent_id">
+        <option value="">Select One</option>
+        <option value="piece" {{$data?$data->unit=='piece'?'selected':'':''}}>Piece</option>
+        <option value="ft" {{$data?$data->unit=='ft'?'selected':'':''}}>Ft</option>
+        <option value="square_ft" {{$data?$data->unit=='square_ft'?'selected':'':''}}>Square Ft</option>
+        <option value="square_metre" {{$data?$data->unit=='square_metre'?'selected':'':''}}>Square Metre</option>
+        <option value="kg" {{$data?$data->unit=='kg'?'selected':'':''}}>Kg</option>
+        <option value="litre" {{$data?$data->unit=='litre'?'selected':'':''}}>Litre</option>
+        <option value="km" {{$data?$data->unit=='km'?'selected':'':''}}>Km</option>
+        <option value="metre" {{$data?$data->unit=='metre'?'selected':'':''}}>Metre</option>
+        <option value="dozen" {{$data?$data->unit=='dozen'?'selected':'':''}}>Dozen</option>
+        <option value="inch" {{$data?$data->unit=='inch'?'selected':'':''}}>Inch</option>
+        <option value="sack" {{$data?$data->unit=='sack'?'selected':'':''}}>Sack</option>
+        <option value="unit" {{$data?$data->unit=='unit'?'selected':'':''}}>Unit</option>
+        <option value="set" {{$data?$data->unit=='set'?'selected':'':''}}>Set</option>
+        <option value="carton" {{$data?$data->unit=='carton'?'selected':'':''}}>Carton</option>
+    </select>
+    @if ($errors->has('unit'))
+    <span class="help-block">
+        <strong style="color:red">{{ $errors->first('unit') }}</strong>
+    </span>
+    @endif
+</div>
+<div class="col-lg-4 col-md-4 col-sm-12 my-3" style="order: 3;">
+<label for="images" class="control-label">Waranty (After Sale)</label>
+    <div class="form-control toggle_menu mb-2" onclick="toggleMenu('waranty')">
+        <span><strong>Like</strong></span>
+        <i class="fas fa-angle-down"></i>
+    </div>
+    <div class="toggle_div_waranty hidden">
+        <div class="form-group {{ $errors->has('waranty') ? ' has-error' : '' }}">
+            <div>
+                <input type="text" class="form-control mt-1" name="waranty" id="waranty" placeholder="Days">
+                <input type="text" class="form-control mt-1" name="waranty" id="waranty" placeholder="Weeks">
+                <input type="text" class="form-control mt-1" name="waranty" id="waranty" placeholder="Months">
+                <input type="text" class="form-control mt-1" name="waranty" id="waranty" placeholder="Years">
+                
+            </div>
+            @if ($errors->has('waranty'))
+            <span class="help-block">
+                <strong style="color:red">{{ $errors->first('waranty') }}</strong>
+            </span>
+            @endif
+        </div>
+    </div>
+</div>
 <div style="order: 9;">
     <div class="form-control toggle_menu mb-2" onclick="toggleMenu('des')">
         <span><strong>Description</strong></span>
         <i class="fas fa-angle-down"></i>
     </div>
     <div class="toggle_div_des hidden">
-        <div class="form-group{{ $errors->has('short_description') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 mt-5">
+        <div class="form-group{{ $errors->has('short_description') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12">
             <label for="short_description" class="control-label">Short Description</label>
             <textarea type="text" class="form-control my-editor" name="short_description" id="short_description" placeholder="Short Description" cols="30" rows="15">
             @if(old('short_description'))
@@ -42,7 +90,6 @@
     <input type="file" class="form-control" name="images[]" id="images" multiple>
     @if ($errors->has('images.*'))
     <span class="help-block">
-        hi
         <strong style="color:red">{{ $errors->first('images.*') }}</strong>
     </span>
     @endif
@@ -53,7 +100,7 @@ if(!empty($data->productStock->quantity)){
 $stock=$data->productStock->quantity;
 }
 @endphp
-<div class="form-group {{ $errors->has('stock') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3" style="order: 3;">
+<div class="form-group {{ $errors->has('stock') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3" style="order: 2;">
     <label for="stock" class="control-label">Stock</label>
     <input type="text" class="form-control" name="stock" id="stock" placeholder="Stock" value="{{old('stock')?old('stock'):$stock}}">
     @if ($errors->has('stock'))
@@ -62,11 +109,11 @@ $stock=$data->productStock->quantity;
     </span>
     @endif
 </div>
-<div class="form-group {{ $errors->has('size_id') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3" style="order: 3;">
+<div class="form-group {{ $errors->has('size_id') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3" style="order: 2;">
     <label for="size_id" class="control-label">Select Size</label>
     <div>
         @forelse($sizes as $index=>$size)
-        <input type="checkbox" class="form-checkbox" name="size_id[{{$size->id}}]" id="size_id" value="{{$size->id}}" @if(old('name')) {{ old('size_id.'.$size->id)?'checked':''}} @else {{$data?$data->sizes->contains($size->id)?'checked':'':''}} @endif>
+        <input type="checkbox" class="form-checkbox" name="size_id[{{$size->id}}]" id="size_id" value="{{$size->id}}" @if(old('cat')) {{ old('size_id.'.$size->id)?'checked':''}} @else {{$data?$data->sizes->contains($size->id)?'checked':'':''}} @endif>
         <span>{{$size->size}}</span>
         @empty
         @endforelse
@@ -93,6 +140,14 @@ $stock=$data->productStock->quantity;
             <input type="checkbox" class="form-checkbox" name="category_id[{{$cat->id}}]" id="category_id" value="{{$cat->id}}" @if(old('cat')) {{ old('category_id.'.$cat->id)?'checked':''}} @else {{$data?$data->categories->contains($cat->id)?'checked':'':''}} @endif>
             <span>{{$cat->name}}</span>
             <br>
+            <div class="cat_child_div">
+                @forelse($cat->children as $cat)
+                <input type="checkbox" class="form-checkbox" name="category_id[{{$cat->id}}]" id="category_id" value="{{$cat->id}}" @if(old('cat')) {{ old('category_id.'.$cat->id)?'checked':''}} @else {{$data?$data->categories->contains($cat->id)?'checked':'':''}} @endif>
+                <span>{{$cat->name}}</span>
+                <br>
+                @empty
+                @endforelse
+            </div>
             @empty
             @endforelse
         </div>
@@ -107,24 +162,3 @@ $stock=$data->productStock->quantity;
     @endif
 </div>
 
-
-<!-- <div class="form-group {{ $errors->has('category_id') ? ' has-error' : '' }} col-lg-12 col-md-12 col-sm-12 my-5" style="order: 4;">
-    <div class="form-control product_cat_menu" onclick="toggleCategoryDiv()">
-        <a href="#" >Select Category</a>
-        <i class="fas fa-angle-down"></i>
-    </div>
-    <div class="product_cat_div">
-        @forelse($categories as $category)
-        <input type="checkbox" class="form-checkbox" name="category_id[{{$category->id}}]" id="category_id" value="{{$category->id}}" @if(old('name')) {{ old('category_id.'.$category->id)?'checked':''}} @else {{$data?$data->categories->contains($category->id)?'checked':'':''}} @endif>
-        <span>{{$category->name}}</span>
-        <br>
-        @empty
-        @endforelse
-    </div>
-
-    @if ($errors->has('category_id'))
-    <span class="help-block">
-        <strong style="color:red">{{ $errors->first('category_id') }}</strong>
-    </span>
-    @endif
-</div> -->

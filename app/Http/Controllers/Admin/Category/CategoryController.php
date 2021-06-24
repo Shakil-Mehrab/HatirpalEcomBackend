@@ -13,7 +13,7 @@ use App\Http\Requests\Category\CategoryUpdateRequest;
 
 class CategoryController extends Controller
 {
-  public function view()
+  public function index()
   {
     $datas = Category::orderBy('id', 'desc')
       ->pagination(request('per-page'));
@@ -49,7 +49,9 @@ class CategoryController extends Controller
   }
   public function edit($slug)
   {
+    
     $data = Category::where('slug', $slug)->firstOrFail();
+    
     $columns = Category::edit_columns();
     $model = 'category';
     return view('layouts.data.edit', compact('data', 'columns', 'model'));
