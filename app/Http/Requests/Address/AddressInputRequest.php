@@ -24,10 +24,12 @@ class AddressInputRequest extends FormRequest
     public function rules()
     {
         return [
-            'district_id'=>'required|numeric',
-            'place_id'=>'required|numeric',
-            'division_id'=>'required|numeric',
-            'postal_code'=>'required|numeric',
+            'country'=>'required',
+            'division'=>'required',
+            'district'=>'required',
+            'delivery_place'=>'required',
+            'postal_code'=>'required',
+            'expense'=>'required',
             'address'=>'required',
         ];
     }

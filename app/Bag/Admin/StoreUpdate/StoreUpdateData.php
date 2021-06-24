@@ -42,14 +42,7 @@ class StoreUpdateData
       );
     return;
   }
-  // public function productVariation($product)
-  // {
-  //   $variation = new ProductVariation();
-  //   $variation->name = "Rakibul";
-  //   $variation->product_id = $product->id;
-  //   $variation->save();
-  //   return $variation;
-  // }
+
   public function productStoreStock($product,$request)
   {
     $stock = new Stock();
