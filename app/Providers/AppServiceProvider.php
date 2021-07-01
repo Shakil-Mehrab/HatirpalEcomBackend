@@ -40,7 +40,6 @@ class AppServiceProvider extends ServiceProvider
             if($app->auth->user()){
                 $app->auth->user()->load(['cart.stock']);
             }
-              ///cart.stock from product variation
             return new Cart($app->auth->user());
         });
     }

@@ -27,6 +27,7 @@ class ProductInputRequest extends FormRequest
             'name'=>'required|max:255',
             'old_price'=>'required|numeric',
             'sale_price'=>'required|numeric',
+            'minimum_order'=>'required|numeric',
             'unit'=>'required|',
             'brand'=>'required|max:50',
             'stock'=>'required|numeric',

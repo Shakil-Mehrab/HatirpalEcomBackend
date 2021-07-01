@@ -28,7 +28,7 @@ class CartProductResource extends ProductIndexResource
     }
     protected function getTotal()
     {
-        return $this->pivot->quantity * $this->price;
+        return $this->pivot->quantity * $this->sale_price;
         // return new Money($this->pivot->quantity * $this->price->amount());
     }
 }

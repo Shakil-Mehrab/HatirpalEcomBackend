@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use Database\Seeders\SizeSeeder;
 use Database\Seeders\RegionSeeder;
+use Database\Seeders\CategorySeeder;
 use Database\Seeders\ShippingMethodSeeder;
 use Database\Seeders\ProductCategorySeeder;
 
@@ -17,15 +18,15 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
-        // \App\Models\Category::factory(20)->create();
-        // \App\Models\Product::factory(100)->create();
+        \App\Models\User::factory(1)->create();
+        $this->call(CategorySeeder::class);
+        \App\Models\Product::factory(50)->create();
         \App\Models\Slider::factory(5)->create();
-        // \App\Models\Address::factory(5)->create();
-        // $this->call(ProductCategorySeeder::class);
-        // $this->call(SizeSeeder::class);
-        // $this->call(ProductSizeSeeder::class);
-        // $this->call(ShippingMethodSeeder::class);
-        // $this->call(RegionSeeder::class);
+        \App\Models\Address::factory(5)->create();
+        $this->call(ProductCategorySeeder::class);
+        $this->call(SizeSeeder::class);
+        $this->call(ProductSizeSeeder::class);
+        $this->call(ShippingMethodSeeder::class);
+        $this->call(RegionSeeder::class);
     }
 }

@@ -19,9 +19,6 @@ class ProductResource extends ProductIndexResource
             'name'=>$this->name,
             'productImages'=>ProductImageResource::collection($this->productImages),
             'sizes'=>SizeResource::collection($this->sizes),
-            // 'variations' => ProductVariationResource::collection(
-            //     $this->variations
-            // ),
         ]);
     }
 }

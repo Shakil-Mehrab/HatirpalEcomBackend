@@ -26,6 +26,7 @@ class CreateProductsTable extends Migration
             $table->float('sale_price');
             $table->float('discount')->default(0);
             $table->string('unit');
+            $table->integer('minimum_order');
             $table->string('thumbnail')->default('images/default/product.png');
             $table->longText('short_description')->nullable();
             $table->longText('description')->nullable();

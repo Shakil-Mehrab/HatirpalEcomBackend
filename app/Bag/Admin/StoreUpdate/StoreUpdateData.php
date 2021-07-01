@@ -27,10 +27,12 @@ class StoreUpdateData
     $product->old_price = $request['old_price'];
     $product->sale_price = $request['sale_price'];
     $product->unit = $request['unit'];
-    $product->discount = (($request['old_price']-$request['sale_price'])/$request['old_price'])*100;
+    $product->discount = $this->discount($request);
     $product->brand = $request['brand'];
     $product->short_description = $request['short_description'];
-    $product->description = $request['description'];
+    $product->minimum_order = $request['minimum_order'];
+    $product->waranty = $request['waranty'];
+
   }
 
   public function productPivotData($product, $request)
@@ -80,5 +82,13 @@ class StoreUpdateData
   public function sliderStoreUpdate($product, $request)
   {
     $product->heading = $request['heading'];
+  }
+  protected function discount($request){
+    if($request['old_price']==0){
+      $discount=0;
+    }else{
+      $discount=(($request['old_price']-$request['sale_price'])/$request['old_price'])*100;
+    }
+    return $discount;
   }
 }
