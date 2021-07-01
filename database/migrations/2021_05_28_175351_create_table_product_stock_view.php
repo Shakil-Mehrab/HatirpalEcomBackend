@@ -14,41 +14,41 @@ class CreateTableProductStockView extends Migration
      */
     public function up()
     {
-        // DB::statement("
-        //     CREATE VIEW product_stock_view AS
-        //     SELECT
-        //         product_variations.product_id AS product_id,
-        //         product_variations.id as product_variation_id,
-        //         COALESCE(SUM(stocks.quantity) - COALESCE(SUM(product_variation_order.quantity), 0), 0) as stock,
-        //         case when COALESCE(SUM(stocks.quantity) - COALESCE(SUM(product_variation_order.quantity), 0), 0) > 0
-        //             then true
-        //             else false
-        //         end in_stock
-        //     FROM product_variations
-        //     LEFT JOIN (
-        //         SELECT
-        //             stocks.product_variation_id as id,
-        //             SUM(stocks.quantity) as quantity
-        //         FROM stocks
-        //         GROUP BY stocks.product_variation_id
-        //     ) AS stocks USING (id)
-        //     LEFT JOIN (
-        //         SELECT
-        //             product_variation_order.product_variation_id as id,
-        //             SUM(product_variation_order.quantity) as quantity
-        //         FROM product_variation_order
-        //         GROUP BY product_variation_order.product_variation_id
-        //     ) AS product_variation_order USING (id)
-        //     GROUP BY product_variations.id
-        // ");
-        Schema::create('product_stock_view', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('product_id')->unsigned();
-            $table->integer('stock')->index();
-            $table->integer('in_stock')->default(0);
-            $table->timestamps();
-            $table->foreign('product_id')->references('id')->on('products');
-        });
+        DB::statement("
+            CREATE VIEW product_stock_view AS
+            SELECT
+
+                products.id as product_id,
+                COALESCE(SUM(stocks.quantity) - COALESCE(SUM(product_order.quantity), 0), 0) as stock,
+                case when COALESCE(SUM(stocks.quantity) - COALESCE(SUM(product_order.quantity), 0), 0) > 0
+                    then true
+                    else false
+                end in_stock
+            FROM products
+            LEFT JOIN (
+                SELECT
+                    stocks.product_id as id,
+                    SUM(stocks.quantity) as quantity
+                FROM stocks
+                GROUP BY stocks.product_id
+            ) AS stocks USING (id)
+            LEFT JOIN (
+                SELECT
+                    product_order.product_id as id,
+                    SUM(product_order.quantity) as quantity
+                FROM product_order
+                GROUP BY product_order.product_id
+            ) AS product_order USING (id)
+            GROUP BY products.id
+        ");
+        // Schema::create('product_stock_view', function (Blueprint $table) {
+        //     $table->increments('id');
+        //     $table->integer('product_id')->unsigned();
+        //     $table->integer('stock')->index();
+        //     $table->integer('in_stock')->default(0);
+        //     $table->timestamps();
+        //     $table->foreign('product_id')->references('id')->on('products');
+        // });
     }
 
 
