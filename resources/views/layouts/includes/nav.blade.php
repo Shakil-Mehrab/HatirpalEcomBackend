@@ -27,12 +27,12 @@
                 @endif
                 @else
                 <li class="nav-item dropdown">
-                    <a class="nav-link change_color_to_white" href="{{url('admin/view/userprofile/')}}">
+                    <a class="nav-link change_color_to_white" href="{{url('admin/userprofile/'.auth()->user()->slug.'/edit')}}">
                     <i class="fas fa-cog"></i> Settings
                     </a>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link change_color_to_white" href="{{url('admin/view/userprofile/')}}">
+                    <a class="nav-link change_color_to_white" href="{{url('admin/userprofile/')}}">
                         {{ Auth::user()->name }}
                     </a>
                 </li>

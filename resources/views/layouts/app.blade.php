@@ -91,7 +91,7 @@
                     page = lastpage;
                 }
                 if (per_page) {
-                    $.get("{{URL::to('/admin/view')}}" + '/' + model + '?per-page=' + per_page + '&&page=' + page, function(data) {
+                    $.get("{{URL::to('/admin')}}" + '/' + model + '?per-page=' + per_page + '&&page=' + page, function(data) {
                         $('#newData').html(data);
                     });
                 }

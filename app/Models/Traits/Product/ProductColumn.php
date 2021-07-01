@@ -19,7 +19,7 @@ trait ProductColumn
   {
     return collect(Schema::getColumnListing(Product::getQuery()->from))
       ->reject(function ($column) {
-        return in_array($column, ['id', 'uuid','slug', 'user_id', 'description', 'short_description', 'thumbnail','top', 'order', 'status', 'viewers', 'deleted_at', 'created_at', 'updated_at']);
+        return in_array($column, ['id', 'uuid','vat','waranty','rating','unit','discount','slug', 'user_id', 'description', 'short_description', 'thumbnail','top', 'order', 'status', 'viewer', 'deleted_at', 'created_at', 'updated_at']);
       })
       ->toArray();
   }
@@ -27,7 +27,7 @@ trait ProductColumn
   {
     return collect(Schema::getColumnListing(Product::getQuery()->from))
       ->reject(function ($column) {
-        return in_array($column, ['id', 'uuid', 'user_id', 'description', 'short_description', 'thumbnail','slug', 'top', 'order', 'status', 'viewers', 'deleted_at', 'created_at', 'updated_at']);
+        return in_array($column, ['id', 'uuid','vat','waranty','rating','unit', 'user_id','discount', 'description', 'short_description', 'thumbnail','slug', 'top', 'order', 'status', 'viewer', 'deleted_at', 'created_at', 'updated_at']);
       })
       ->toArray();
     // $collection=collect(['name','brand','price','short_description','description','thumbnail']);

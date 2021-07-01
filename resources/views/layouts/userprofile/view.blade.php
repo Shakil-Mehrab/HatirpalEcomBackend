@@ -5,7 +5,7 @@
         <div class="my-3 p-2" style="background-color: #f1f1f1;border: 1px solid #e6e5e5;box-shadow: 0 0 4px 0 rgb(0 0 0 / 20%);">
             <img src="{{auth()->user()->thumbnail}}" alt="{{auth()->user()->name}}" width="100%">
             <div class="text-center mt-2">
-                <a href="{{url('admin/edit/user/'.auth()->user()->slug)}}">Edit Profile</a>
+                <a href="{{url('admin/user/'.auth()->user()->slug.'/edit')}}">Edit Profile</a>
             </div>
             <div class="profile_detail mt-4">
                 <ul>
@@ -19,6 +19,26 @@
                     <li><strong>Account Type</strong> : User</li>
                 </ul>
             </div>
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="my-3 p-2" style="background-color: #f1f1f1;border: 1px solid #e6e5e5;box-shadow: 0 0 4px 0 rgb(0 0 0 / 20%);">
+            <img src="{{auth()->user()->thumbnail}}" alt="{{auth()->user()->name}}" width="100%" height="470px">
+            <div class="text-center mt-2">
+                <a href="{{url('admin/user/'.auth()->user()->slug.'/edit')}}">Edit Profile</a>
+            </div>
+            <!-- <div class="profile_detail mt-4">
+                <ul>
+                    <li class="mb-2">
+                        <h6><strong>Country</strong> : Bangladesh</h6>
+                    </li>
+                    <li class="mb-2">
+                        <h6><strong>Name</strong> : {{auth()->user()->name}}</h6>
+                    </li>
+                    <li class="mb-2"><strong>Email</strong> : kuyashaafrim18@gmail.com</li>
+                    <li><strong>Account Type</strong> : User</li>
+                </ul>
+            </div> -->
         </div>
     </div>
 

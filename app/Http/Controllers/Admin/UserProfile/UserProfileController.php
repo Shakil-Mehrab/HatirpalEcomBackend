@@ -8,7 +8,7 @@ use App\Http\Controllers\Controller;
 
 class UserProfileController extends Controller
 {
-    public function view()
+    public function index()
     {
         return view('layouts.userprofile.view');
     }

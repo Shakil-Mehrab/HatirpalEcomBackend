@@ -32,6 +32,7 @@ class AppServiceProvider extends ServiceProvider
         // Schema::defaultStringLength(191);
 
         View::share('categories',Category::orderBy('name', 'asc')->whereNull('parent_id')->get());
+        View::share('allcategories',Category::orderBy('name', 'asc')->get());
         View::share('regions',Region::orderBy('name', 'asc')->get());
         View::share('sizes',Size::get());
         

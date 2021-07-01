@@ -3,7 +3,7 @@
     <select class="form-control" name="parent_id" id="parent_id">
         <option>Select One</option>
         <option value="">None</option>
-        @forelse($categories as $category)
+        @forelse($allcategories as $category)
         <option value="{{$category->id}}" {{$data?$data->parent_id==$category->id?'selected':'':''}}>{{$category->name}}</option>
         @empty
         <option value="">No Category</option>
