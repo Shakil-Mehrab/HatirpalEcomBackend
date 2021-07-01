@@ -12,10 +12,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Address extends Model
 {
     use HasFactory,PaginationTrait,AddressColumn;
-    public function getRouteKeyName()
-    {
-        return 'slug';
-    }
+    // public function getRouteKeyName()
+    // {
+    //     return 'slug';
+    // }
     public static function booted(){
         static::creating(function(Model $model){
             $model->slug=Str::uuid();

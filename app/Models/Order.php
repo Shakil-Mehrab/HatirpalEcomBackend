@@ -11,6 +11,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Order extends Model
 {
     use HasFactory,PaginationTrait,OrderColumn;
+    const PENDING = 'pending';
+    const PROSSESING = 'processing';
+    const PAYMENTA_FAILED = 'payment_failed';
+    const COMPLETED = 'completed';
     public function getRouteKeyName()
     {
         return 'slug';
@@ -18,15 +22,30 @@ class Order extends Model
     public static function booted(){
         static::creating(function(Model $model){
             $model->slug=Str::uuid();
+            $model->status=self::PENDING;
+
         });
+    }
+    // public function getSubtotalAttribute($subtotal){
+    //     return new Money($subtotal);
+    // }
+    public function total(){
+        if($this->address){
+        return $this->subtotal+$this->address->expense;
+        }
+        return $this->subtotal;
     }
     public function user(){
         return $this->belongsTo('App\Models\User');
     }
+    public function address(){
+        return $this->belongsTo('App\Models\Address');
+    }
     
     public function products()
     {
-        return $this->belongsToMany(Product::class, 'product_category')
+        return $this->belongsToMany(Product::class, 'product_order')
+        ->withPivot("quantity","size","product_image_id")
             ->withTimestamps();
     }
 }

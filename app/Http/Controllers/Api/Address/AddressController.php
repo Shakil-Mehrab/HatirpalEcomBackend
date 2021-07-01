@@ -11,10 +11,10 @@ use App\Http\Resources\Address\AddressIndexResource;
 
 class AddressController extends Controller
 {
-    public function __construct()
-    {
-        $this->middleware(['auth:sanctum']);
-    }
+    // public function __construct()
+    // {
+    //     $this->middleware(['auth:sanctum']);
+    // }
     public function index(Request $request){
         return AddressIndexResource::collection(
            $request->user()->addresses
@@ -43,5 +43,10 @@ class AddressController extends Controller
         return new AddressIndexResource(
             $address
          );
+    }
+    public function action(Address $address){
+        return new AddressIndexResource(
+            $address
+        );
     }
 }

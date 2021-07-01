@@ -1,6 +1,8 @@
 <?php
 
 namespace App\Cart;
+
+use App\Models\Address;
 use App\Models\User;
 use App\Models\ShippingMethod;
 
@@ -17,7 +19,8 @@ class Cart
         return $this->user->cart;
     }
     public function withShipping($shippingId){
-        $this->shipping=ShippingMethod::find($shippingId);
+
+        $this->shipping=Address::find($shippingId);
         return $this;
     }
     public function add($products){
@@ -65,7 +68,7 @@ class Cart
     }
     public function total(){
         if($this->shipping){
-          return $this->subtotal()->add($this->shipping->price);
+          return $this->subtotal()+$this->shipping->expense;
         }
         return $this->subtotal();
     }

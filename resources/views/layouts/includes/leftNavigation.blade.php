@@ -22,8 +22,8 @@
                 <i class="fas fa-chevron-right"></i>
             </a>
             <ul class="tree_li_ul">
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/create/category')}}">Add Category</a></li>
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/view/category')}}">View Category</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/category/create')}}">Add Category</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/category')}}">View Category</a></li>
             </ul>
         </li>
         <li class="tree_li mb-2">
@@ -41,8 +41,8 @@
                 <i class="fas fa-chevron-right"></i>
             </a>
             <ul class="tree_li_ul">
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/create/region')}}">Add Region</a></li>
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/view/region')}}">View Region</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/region/create')}}">Add Region</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/region')}}">View Region</a></li>
             </ul>
         </li>
         </li>
@@ -52,8 +52,8 @@
                 <i class="fas fa-chevron-right"></i>
             </a>
             <ul class="tree_li_ul">
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/create/contact')}}">Add Contact</a></li>
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/view/contact')}}">View Contact</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/contact/create')}}">Add Contact</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/contact')}}">View Contact</a></li>
             </ul>
         </li>
         <li class="tree_li mb-2">
@@ -62,7 +62,7 @@
                 <i class="fas fa-chevron-right"></i>
             </a>
             <ul class="tree_li_ul">
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/view/productimage')}}">View Product Image</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/productimage')}}">View Product Image</a></li>
             </ul>
         </li>
         <li class="tree_li mb-2">
@@ -71,8 +71,8 @@
                 <i class="fas fa-chevron-right"></i>
             </a>
             <ul class="tree_li_ul">
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/create/address')}}">Add Address</a></li>
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/view/address')}}">View Address</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/address/create')}}">Add Address</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/address')}}">View Address</a></li>
             </ul>
         </li>
         <li class="tree_li mb-2">
@@ -81,8 +81,8 @@
                 <i class="fas fa-chevron-right"></i>
             </a>
             <ul class="tree_li_ul">
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/create/order')}}">Add Order</a></li>
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/view/order')}}">View Order</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/order/create')}}">Add Order</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/order')}}">View Order</a></li>
             </ul>
         </li>
         <li class="tree_li mb-2">
@@ -91,8 +91,8 @@
                 <i class="fas fa-chevron-right"></i>
             </a>
             <ul class="tree_li_ul">
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/create/shippingmethod')}}">Add Shipping Method</a></li>
-                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/view/shippingmethod')}}">View Shipping Method</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/shippingmethod/create')}}">Add Shipping Method</a></li>
+                <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/shippingmethod')}}">View Shipping Method</a></li>
             </ul>
         </li>
         <li class="tree_li mb-2">

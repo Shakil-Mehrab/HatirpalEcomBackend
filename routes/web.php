@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
+// Route::resource('/order', App\Http\Controllers\Api\Order\OrderController::class);
 
 
 Route::get('/cart/store',[App\Http\Controllers\Api\Cart\CartController::class,'store']);  
@@ -39,8 +40,8 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum']], function (
   Route::get('/delete/region/{slug}', [App\Http\Controllers\Admin\Region\RegionController::class, 'delete']);
   Route::get('/search/region', [App\Http\Controllers\Admin\Region\RegionController::class, 'search']);
   //  Contact
-  Route::resource('/contact', App\Http\Controllers\Contact\ContactController::class);
-  Route::get('/delete/contact/{slug}', [App\Http\Controllers\Admin\Contact\ContactController::class, 'delete']);
+  Route::resource('/contact', App\Http\Controllers\Admin\Contact\ContactController::class);
+  Route::get('/delete/contact/{slug}', [App\Http\Admin\Controllers\Admin\Contact\ContactController::class, 'delete']);
   Route::get('/search/contact', [App\Http\Controllers\Admin\Contact\ContactController::class, 'search']);
   //  Product Image
   Route::resource('/productimage', App\Http\Controllers\Admin\Productimage\ProductImageController::class);

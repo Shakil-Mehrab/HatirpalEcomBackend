@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Support\Str;
+use App\Models\Traits\CanBeScoped;
 use App\Models\Traits\PaginationTrait;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\Model;
@@ -11,7 +12,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Region extends Model
 {
-    use HasFactory,PaginationTrait,RegionColumn;
+    use HasFactory, PaginationTrait, RegionColumn, CanBeScoped;
     protected $fillable = [
         'name',
         'uuid',
@@ -30,15 +31,14 @@ class Region extends Model
     {
         static::creating(function (Model $model) {
             $model->uuid = Str::uuid();
-//             $model->slug=Str::uuid();
-//             $model->eng_name = $model->slug;
-// 
-//             $prefix = $model->parent ? $model->parent->slug . ' ' : '';
-//             $model->slug = Str::slug($prefix . $model->slug);
+            //             $model->slug=Str::uuid();
+            //             $model->eng_name = $model->slug;
+            // 
+            //             $prefix = $model->parent ? $model->parent->slug . ' ' : '';
+            //             $model->slug = Str::slug($prefix . $model->slug);
         });
     }
-   
-   
-   
-
+    public function children(){
+        return $this->hasMany(Region::class,"parent_id");
+    }
 }
