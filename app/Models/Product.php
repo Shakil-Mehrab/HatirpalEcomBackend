@@ -10,6 +10,7 @@ use App\Models\Traits\PaginationTrait;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Traits\Product\ProductColumn;
+use App\Models\Collections\ProductCollection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
@@ -80,5 +81,15 @@ class Product extends Model
         }
         return $productImage->thumbnail;
     }
-   
+    public function cartProductSize($size_id){
+        $size=Size::where('id',$size_id)->first();
+        if($size==null){
+            return "";
+        }
+        return $size->size;
+    }
+    public function newCollection(array $models = [])
+    {
+        return new ProductCollection($models);
+    }
 }

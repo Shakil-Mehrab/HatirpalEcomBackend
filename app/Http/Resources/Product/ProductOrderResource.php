@@ -21,7 +21,7 @@ class ProductOrderResource extends JsonResource
             'name'=>Str::limit($this->name,20),
             'slug'=>$this->slug,
             'qty'=>$this->pivot->quantity,
-            "size"=> $this->pivot->size,
+            "size_id"=> $this->cartProductSize($this->pivot->size_id) ,
             "thumbnail"=> $this->cartProductImage($this->pivot->product_image_id),
         ];
     }

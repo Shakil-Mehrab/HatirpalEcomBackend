@@ -19,7 +19,7 @@ class CreateOrdersTable extends Migration
             $table->string('slug')->unique()->index();
             $table->integer('address_id');
             $table->string('shipping_method');
-            $table->integer('payment_method_id')->unsigned()->index();
+            $table->integer('payment_method')->unsigned()->index();
             $table->string('status')->default('pending');
             $table->integer('subtotal');
             $table->timestamps();

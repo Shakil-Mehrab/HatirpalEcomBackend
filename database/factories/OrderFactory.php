@@ -27,8 +27,8 @@ class OrderFactory extends Factory
             'user_id' => function () {
                 return User::all()->random()->id;
             },
-            'slug' => Str::slug('uuid'),
-            'address_id' => default(1),
+            'slug' => Str::uuid(),
+            'address_id' => 1,
             'shipping_method' => $this->faker->word,
             'payment_method_id' => '1',
             'subtotal' => $this->faker->word,

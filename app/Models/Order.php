@@ -11,6 +11,13 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Order extends Model
 {
     use HasFactory,PaginationTrait,OrderColumn;
+    protected $fillable=[
+        "address_id",
+        "shipping_method",
+        "payment_method",
+        "subtotal",
+        "total"
+    ];
     const PENDING = 'pending';
     const PROSSESING = 'processing';
     const PAYMENTA_FAILED = 'payment_failed';
@@ -45,7 +52,7 @@ class Order extends Model
     public function products()
     {
         return $this->belongsToMany(Product::class, 'product_order')
-        ->withPivot("quantity","size","product_image_id")
+        ->withPivot("quantity","size_id","product_image_id")
             ->withTimestamps();
     }
 }
