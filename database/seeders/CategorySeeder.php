@@ -18,41 +18,41 @@ class CategorySeeder extends Seeder
         $category = [
             "name" => "Category",
             "slug" => "category",
-            "children" =>[
+            "children" => [
                 [
                     'name' => 'Fashion',
                     'slug' => 'fashion',
-                    'parent_id'=>NULL,
-                    "children"=>[
+                    'parent_id' => NULL,
+                    "children" => [
                         [
                             'name' => 'Boys',
                             'slug' => 'boys',
-                            'parent_id'=>1,
+                            'parent_id' => 1,
                         ],
                         [
                             'name' => 'Girls',
                             'slug' => 'girls',
-                            'parent_id'=>1,
+                            'parent_id' => 1,
                         ],
                     ]
-                    
+
                 ],
                 [
                     'name' => 'Electronics',
                     'slug' => 'electronics',
-                    'parent_id'=>NULL,
-                    "children"=>[
-                        
-                    ]
+                    'parent_id' => NULL,
+                    "children" => []
                 ]
             ]
-            
+
         ];
         foreach ($category['children'] as $cat) {
             Category::create([
                 'name' => $cat['name'],
                 'slug' => $cat['slug'],
-                'parent_id' => $cat['parent_id']
+                'parent_id' => $cat['parent_id'],
+                // 'user_id' => 1
+
             ]);
         }
         foreach ($category['children'] as $cat) {
@@ -60,7 +60,8 @@ class CategorySeeder extends Seeder
                 Category::create([
                     'name' => $child['name'],
                     'slug' => $child['slug'],
-                    'parent_id' => $child['parent_id']
+                    'parent_id' => $child['parent_id'],
+                    // 'user_id' => 1
                 ]);
             }
         }

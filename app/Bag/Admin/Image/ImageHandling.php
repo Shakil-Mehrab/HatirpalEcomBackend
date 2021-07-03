@@ -55,4 +55,19 @@ class ImageHandling
       $product->thumbnail = asset($upload_path);
     }
    }
+   public function uploadSupplierImage($product,$request,$model){    
+    $image = $request->file("thumbnail");
+    if ($image) {
+      if (file_exists(substr($product->thumbnail,22,100))) {
+        
+        unlink(substr($product->thumbnail,22,100));
+        // parse_url($product->thumbnail,PHP_URL_PATH)//it will remove localhost:8000 from linik
+      }
+      $image_ext = $image->getClientOriginalExtension();
+      $image_full_name =$product->id.'.'. Str::random(10). "." . $image_ext;
+      $upload_path = "images/".$model."/thumbnail/" . $image_full_name;
+      Image::make($request->file('thumbnail'))->resize(400, 300)->save($upload_path);
+      $product->thumbnail = asset($upload_path);
+    }
+   }
 }

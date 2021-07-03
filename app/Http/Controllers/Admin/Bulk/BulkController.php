@@ -13,6 +13,8 @@ use App\Models\ProductImage;
 use Illuminate\Http\Request;
 use App\Bag\Admin\Delete\DeleteData;
 use App\Http\Controllers\Controller;
+use App\Models\Contact;
+use App\Models\Supplier;
 
 class BulkController extends Controller
 {
@@ -80,6 +82,22 @@ class BulkController extends Controller
                 $datas = Slider::orderBy('id', 'desc')
                     ->pagination(request('per-page'));
                 $columns = Slider::columns();
+            }
+            elseif ($request['model'] == 'supplier') {
+                foreach ($request['checked_slug'] as $slug) {
+                    $delete->supplierDelete($slug);
+                }
+                $datas = Supplier::orderBy('id', 'desc')
+                    ->pagination(request('per-page'));
+                $columns = Supplier::columns();
+            }
+            elseif ($request['model'] == 'contact') {
+                foreach ($request['checked_slug'] as $slug) {
+                    $delete->contactDelete($slug);
+                }
+                $datas = Contact::orderBy('id', 'desc')
+                    ->pagination(request('per-page'));
+                $columns = Contact::columns();
             }
             else{
                 return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();

@@ -2,9 +2,11 @@
 
 namespace App\Bag\Admin\Status;
 
+use App\Models\Contact;
 use App\Models\Order;
 use App\Models\Slider;
 use App\Models\Product;
+use App\Models\Supplier;
 
 class ChangeStatus
 {
@@ -31,6 +33,26 @@ class ChangeStatus
     public function sliderStatusChange($slug)
     {
         $data = Slider::where('slug', $slug)->firstOrFail();
+        if ($data->status != 1) {
+            $data->status = 1;
+        } else {
+            $data->status = 0;
+        }
+        $data->update();
+    }
+    public function supplierStatusChange($slug)
+    {
+        $data = Supplier::where('slug', $slug)->firstOrFail();
+        if ($data->status != 1) {
+            $data->status = 1;
+        } else {
+            $data->status = 0;
+        }
+        $data->update();
+    }
+    public function contactStatusChange($slug)
+    {
+        $data = Contact::where('slug', $slug)->firstOrFail();
         if ($data->status != 1) {
             $data->status = 1;
         } else {

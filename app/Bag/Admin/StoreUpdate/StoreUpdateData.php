@@ -34,6 +34,21 @@ class StoreUpdateData
     $product->waranty = $request['waranty'];
 
   }
+  public function supplierStoreUpdate($product, $request)
+  {
+    $product->country = $request['country'];
+    $product->phone = $request['phone'];
+    $product->email = $request['email'];
+    $product->description = $request['description'];
+    $product->address = $request['address'];
+    $product->type = $request['type'];
+    $product->company_name = $request['company_name'];
+  }
+  public function contactStoreUpdate($product, $request)
+  {
+    $product->name = $request['name'];
+    $product->price = $request['price'];
+  }
 
   public function productPivotData($product, $request)
   {

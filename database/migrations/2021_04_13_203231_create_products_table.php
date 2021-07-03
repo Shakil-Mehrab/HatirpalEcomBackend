@@ -22,7 +22,7 @@ class CreateProductsTable extends Migration
             $table->string('brand')->index();
             $table->boolean('top')->default(false);
             $table->float('order')->default(1);
-            $table->float('old_price');
+            $table->float('old_price')->default(0);;
             $table->float('sale_price');
             $table->float('discount')->default(0);
             $table->string('unit');

@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\Contact;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class SupplierInputRequest extends FormRequest
+class ContactInputRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,7 +13,7 @@ class SupplierInputRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,8 @@ class SupplierInputRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'name'=>'required',
+            'price'=>'required|numeric'
         ];
     }
 }

@@ -71,6 +71,11 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum']], function (
   Route::get('/delete/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderController::class, 'delete']);
   Route::get('/search/slider', [App\Http\Controllers\Admin\Slider\SliderController::class, 'search']);
   Route::get('/status/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderController::class, 'status']);
+  // Supplier
+  Route::resource('/supplier', App\Http\Controllers\Admin\Supplier\SupplierController::class);
+  Route::get('/delete/supplier/{slug}', [App\Http\Controllers\Admin\Supplier\SupplierController::class, 'delete']);
+  Route::get('/search/supplier', [App\Http\Controllers\Admin\Supplier\SupplierController::class, 'search']);
+  Route::get('/status/supplier/{slug}', [App\Http\Controllers\Admin\Supplier\SupplierController::class, 'status']);
   //  UserbProfile
   Route::resource('/userprofile', App\Http\Controllers\Admin\UserProfile\UserProfileController::class);
   Route::get('/delete/userprofile/{slug}', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'delete']);

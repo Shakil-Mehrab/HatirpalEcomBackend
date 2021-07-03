@@ -8,9 +8,11 @@ use App\Models\Region;
 use App\Models\Address;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Contact;
 use App\Models\ProductImage;
 use App\Models\ShippingMethod;
 use App\Models\Slider;
+use App\Models\Supplier;
 
 class DeleteData
 {
@@ -66,6 +68,18 @@ class DeleteData
     public function sliderDelete($slug)
     {
         $product = Slider::where('slug', $slug)->firstOrFail();
+       $this->fileCheck($product);
+        $product->delete();
+    }
+    public function supplierDelete($slug)
+    {
+        $product = Supplier::where('slug', $slug)->firstOrFail();
+       $this->fileCheck($product);
+        $product->delete();
+    }
+    public function contactDelete($slug)
+    {
+        $product = Contact::where('slug', $slug)->firstOrFail();
        $this->fileCheck($product);
         $product->delete();
     }
