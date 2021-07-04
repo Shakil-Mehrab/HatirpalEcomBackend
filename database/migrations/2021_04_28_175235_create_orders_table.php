@@ -19,14 +19,15 @@ class CreateOrdersTable extends Migration
             $table->string('slug')->unique()->index();
             $table->integer('address_id');
             $table->string('shipping_method');
-            $table->integer('payment_method')->unsigned()->index();
+            $table->string('payment_method')->index();
             $table->string('status')->default('pending');
             $table->integer('subtotal');
+            $table->integer('total');
             $table->timestamps();
             $table->foreign('user_id')->references('id')->on('users');
             $table->foreign('address_id')->references('id')->on('addresses');
             // $table->foreign('shipping_method_id')->references('id')->on('shipping_methods');
-            $table->foreign('payment_method_id')->references('id')->on('payment_methods');
+            // $table->foreign('payment_method_id')->references('id')->on('payment_methods');
         });
     }
 

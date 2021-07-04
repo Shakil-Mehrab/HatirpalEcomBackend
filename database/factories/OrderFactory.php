@@ -30,8 +30,10 @@ class OrderFactory extends Factory
             'slug' => Str::uuid(),
             'address_id' => 1,
             'shipping_method' => $this->faker->word,
-            'payment_method_id' => '1',
-            'subtotal' => $this->faker->word,
+            'payment_method' => 'bkash',
+            'subtotal' => $this->faker->numberBetween(1000, 9000),
+            'total' =>$this->faker->numberBetween(1000, 9000),
+
         ];
     }
 }

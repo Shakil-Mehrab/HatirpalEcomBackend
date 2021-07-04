@@ -20,7 +20,8 @@ class SizeSeeder extends Seeder
             'l',
             'xl',
             '2xl',
-            '4xl'
+            '4xl',
+            'all',
         ];
         foreach ($sizes as $index => $size) {
             Size::create([

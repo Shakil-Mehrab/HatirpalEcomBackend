@@ -11,7 +11,7 @@ use App\Http\Requests\ShippingMethod\ShippingMethodInputRequest;
 
 class ShippingMethodController extends Controller
 {
-    public function view()
+    public function index()
     {
       $datas = ShippingMethod::orderBy('id', 'desc')
         ->pagination(request('per-page'));
@@ -37,7 +37,7 @@ class ShippingMethodController extends Controller
       $input->shippingMethodstoreUpdate($product, $request);
       $product->save();
   
-      return redirect('admin/view/shippingmethod')
+      return redirect('admin/shippingmethod')
         ->withSuccess('Shipping Method Created Successfully');
     }
     public function edit($slug)

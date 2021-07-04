@@ -15,7 +15,7 @@ class OrderController extends Controller
     public function __construct()
     {
         $this->middleware(['auth:sanctum']);
-        $this->middleware(['cart.sync','cart.isnotempty'])->only('store');//only store er upor kaj korbe
+        // $this->middleware(['cart.sync','cart.isnotempty'])->only('store');//only store er upor kaj korbe
     }
     public function index(Request $request){
         $orders=$request->user()->orders()
