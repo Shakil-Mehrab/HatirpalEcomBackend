@@ -3,16 +3,18 @@
 namespace App\Bag\Admin\Delete;
 
 use App\Models\User;
+use App\Models\About;
 use App\Models\Order;
 use App\Models\Region;
+use App\Models\Slider;
 use App\Models\Address;
+use App\Models\Contact;
 use App\Models\Product;
 use App\Models\Category;
-use App\Models\Contact;
+use App\Models\Supplier;
+use App\Models\Condition;
 use App\Models\ProductImage;
 use App\Models\ShippingMethod;
-use App\Models\Slider;
-use App\Models\Supplier;
 
 class DeleteData
 {
@@ -80,6 +82,18 @@ class DeleteData
     public function contactDelete($slug)
     {
         $product = Contact::where('slug', $slug)->firstOrFail();
+       $this->fileCheck($product);
+        $product->delete();
+    }
+    public function conditionDelete($slug)
+    {
+        $product = Condition::where('slug', $slug)->firstOrFail();
+       $this->fileCheck($product);
+        $product->delete();
+    }
+    public function aboutDelete($slug)
+    {
+        $product = About::where('slug', $slug)->firstOrFail();
        $this->fileCheck($product);
         $product->delete();
     }

@@ -25,10 +25,10 @@ class CreateSuppliersTable extends Migration
             $table->string('status')->default('pending');
             $table->string('address');
             $table->string('thumbnail')->default('images/default/supplier.png');
+            $table->string('thumbnail1')->default('images/default/supplier.png');
             $table->string('thumbnail2')->default('images/default/supplier.png');
             $table->string('thumbnail3')->default('images/default/supplier.png');
             $table->string('thumbnail4')->default('images/default/supplier.png');
-            $table->string('thumbnail5')->default('images/default/supplier.png');
             $table->longText('description')->nullable();
             $table->timestamps();
         });

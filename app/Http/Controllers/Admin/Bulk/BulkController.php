@@ -3,18 +3,20 @@
 namespace App\Http\Controllers\Admin\Bulk;
 
 use App\Models\User;
+use App\Models\About;
 use App\Models\Order;
 use App\Models\Region;
 use App\Models\Slider;
 use App\Models\Address;
+use App\Models\Contact;
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\Supplier;
+use App\Models\Condition;
 use App\Models\ProductImage;
 use Illuminate\Http\Request;
 use App\Bag\Admin\Delete\DeleteData;
 use App\Http\Controllers\Controller;
-use App\Models\Contact;
-use App\Models\Supplier;
 
 class BulkController extends Controller
 {
@@ -98,6 +100,22 @@ class BulkController extends Controller
                 $datas = Contact::orderBy('id', 'desc')
                     ->pagination(request('per-page'));
                 $columns = Contact::columns();
+            }
+            elseif ($request['model'] == 'condition') {
+                foreach ($request['checked_slug'] as $slug) {
+                    $delete->conditionDelete($slug);
+                }
+                $datas = Condition::orderBy('id', 'desc')
+                    ->pagination(request('per-page'));
+                $columns = Condition::columns();
+            }
+            elseif ($request['model'] == 'about') {
+                foreach ($request['checked_slug'] as $slug) {
+                    $delete->aboutDelete($slug);
+                }
+                $datas = About::orderBy('id', 'desc')
+                    ->pagination(request('per-page'));
+                $columns = About::columns();
             }
             else{
                 return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();

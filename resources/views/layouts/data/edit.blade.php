@@ -47,6 +47,15 @@
             @if($model=='region')
             @include('layouts.region.partial')
             @endif
+
+            @if($model=='condition')
+            @include('layouts.condition.partial')
+            @endif
+
+            @if($model=='about')
+            @include('layouts.data.thumbnail')
+            @include('layouts.about.partial')
+            @endif
             <div class="col-lg-12 col-md-12 col-sm-12 mt-2 mb-5" style="order: 20;">
                 <input type="submit" class="form-control btn btn-success" value="Update">
             </div>

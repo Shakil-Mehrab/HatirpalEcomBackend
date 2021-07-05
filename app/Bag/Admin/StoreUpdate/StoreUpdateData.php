@@ -49,6 +49,18 @@ class StoreUpdateData
     $product->name = $request['name'];
     $product->price = $request['price'];
   }
+  public function conditionStoreUpdate($product, $request)
+  {
+    $product->short_description = $request['short_description'];
+    $product->description = $request['description'];
+  }
+  public function aboutStoreUpdate($product, $request)
+  {
+    $product->heading = $request['heading'];
+    $product->short_description = $request['short_description'];
+    $product->description = $request['description'];
+  }
+
 
   public function productPivotData($product, $request)
   {

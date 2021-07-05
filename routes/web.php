@@ -76,6 +76,16 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum']], function (
   Route::get('/delete/supplier/{slug}', [App\Http\Controllers\Admin\Supplier\SupplierController::class, 'delete']);
   Route::get('/search/supplier', [App\Http\Controllers\Admin\Supplier\SupplierController::class, 'search']);
   Route::get('/status/supplier/{slug}', [App\Http\Controllers\Admin\Supplier\SupplierController::class, 'status']);
+  // Condition
+  Route::resource('/condition', App\Http\Controllers\Admin\Condition\ConditionController::class);
+  Route::get('/delete/condition/{slug}', [App\Http\Controllers\Admin\Condition\ConditionController::class, 'delete']);
+  Route::get('/search/condition', [App\Http\Controllers\Admin\Condition\ConditionController::class, 'search']);
+  Route::get('/status/condition/{slug}', [App\Http\Controllers\Admin\Condition\ConditionController::class, 'status']);
+   // About
+   Route::resource('/about', App\Http\Controllers\Admin\About\AboutController::class);
+   Route::get('/delete/about/{slug}', [App\Http\Controllers\Admin\About\AboutController::class, 'delete']);
+   Route::get('/search/about', [App\Http\Controllers\Admin\About\AboutController::class, 'search']);
+   Route::get('/status/about/{slug}', [App\Http\Controllers\Admin\About\AboutController::class, 'status']);
   //  UserbProfile
   Route::resource('/userprofile', App\Http\Controllers\Admin\UserProfile\UserProfileController::class);
   Route::get('/delete/userprofile/{slug}', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'delete']);
