@@ -203,22 +203,43 @@
                 e.preventDefault();
                 var link = $(this).attr("href");
                 bootbox.confirm("Are you sure to delete", function(confirmed) {
+                    console.log(link);
                     if (confirmed) {
-                        $.get(link, function(data) {
-                            // window.location.href = link;
-                            $('#newData').empty().append(data);
-                            if ($.isEmptyObject(data.error)) {
-                                Toast.fire({
-                                    icon: 'success',
-                                    title: 'Deleted Successfully!'
-                                })
-                            } else {
-                                Toast.fire({
-                                    icon: 'error',
-                                    title: 'Not Deleted!'
-                                })
-                            }
-                        });
+                        $.ajax({
+                        url: link,
+                        type: 'DELETE',
+                        data: {
+                            "_token":"{{csrf_token()}}"
+                        },
+                    })
+                    .done(function(data) {
+                        $('#newData').empty().append(data);
+                        Toast.fire({
+                            icon: 'success',
+                            title: 'Deleted Successfully!'
+                        })
+                    })
+                    .fail(function(error) {
+                        Toast.fire({
+                            icon: 'error',
+                            title: 'Something Wrong!'
+                        })
+                    });
+                        // $.get(link, function(data) {
+                        //     // window.location.href = link;
+                        //     $('#newData').empty().append(data);
+                        //     if ($.isEmptyObject(data.error)) {
+                        //         Toast.fire({
+                        //             icon: 'success',
+                        //             title: 'Deleted Successfully!'
+                        //         })
+                        //     } else {
+                        //         Toast.fire({
+                        //             icon: 'error',
+                        //             title: 'Not Deleted!'
+                        //         })
+                        //     }
+                        // });
                     };
                 });
             });

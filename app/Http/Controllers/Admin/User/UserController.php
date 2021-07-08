@@ -48,7 +48,7 @@ class UserController extends Controller
     $product->update();
     return back()->withSuccess('User Updated Successfully');;
   }
-  public function delete(DeleteData $delete,$slug)
+  public function destroy(DeleteData $delete,$slug)
   {
     $delete->userDelete($slug);
 

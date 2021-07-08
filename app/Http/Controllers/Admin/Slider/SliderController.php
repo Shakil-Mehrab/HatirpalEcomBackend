@@ -74,7 +74,7 @@ class SliderController extends Controller
 
     return back()->withSuccess('Slider Updated Successfully');;
   }
-  public function delete(DeleteData $delete, $slug)
+  public function destroy(DeleteData $delete, $slug)
   {
     $delete->sliderDelete($slug);
     $datas = Slider::orderBy('id', 'desc')

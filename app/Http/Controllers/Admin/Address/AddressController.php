@@ -13,7 +13,7 @@ use App\Http\Requests\Address\AddressUpdateRequest;
 
 class AddressController extends Controller
 {
-  public function view()
+  public function index()
   {
     $datas = Address::orderBy('id', 'desc')
       ->pagination(request('per-page'));
@@ -66,7 +66,7 @@ class AddressController extends Controller
     $product->update();
     return back()->withSuccess('Address Updated Successfully');;
   }
-  public function delete(DeleteData $delete, $slug)
+  public function destroy(DeleteData $delete, $slug)
   {
     $delete->addressDelete($slug);
     $datas = Address::orderBy('id', 'desc')

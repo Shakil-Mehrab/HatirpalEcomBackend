@@ -72,7 +72,7 @@ class ConditionController extends Controller
 
     return back()->withSuccess('Condition Updated Successfully');;
   }
-  public function delete(DeleteData $delete, $slug)
+  public function destroy(DeleteData $delete, $slug)
   {
     $delete->conditionDelete($slug);
     $datas = Condition::orderBy('id', 'desc')

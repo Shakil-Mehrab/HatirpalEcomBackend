@@ -72,7 +72,7 @@ class ContactController extends Controller
 
     return back()->withSuccess('Contact Updated Successfully');;
   }
-  public function delete(DeleteData $delete, $slug)
+  public function destroy(DeleteData $delete, $slug)
   {
     $delete->contactDelete($slug);
     $datas = Contact::orderBy('id', 'desc')

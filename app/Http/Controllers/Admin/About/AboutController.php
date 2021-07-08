@@ -74,7 +74,7 @@ class AboutController extends Controller
 
         return back()->withSuccess('About Updated Successfully');;
     }
-    public function delete(DeleteData $delete, $slug)
+    public function destroy(DeleteData $delete, $slug)
     {
         $delete->aboutDelete($slug);
         $datas = About::orderBy('id', 'desc')

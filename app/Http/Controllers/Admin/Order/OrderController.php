@@ -12,7 +12,7 @@ use App\Http\Requests\Order\OrderInputRequest;
 
 class OrderController extends Controller
 {
-    public function view()
+    public function index()
     {
       $datas = Order::orderBy('id', 'desc')
         ->pagination(request('per-page'));
@@ -58,7 +58,7 @@ class OrderController extends Controller
     $product->update();
     return back()->withSuccess('Order Updated Successfully');;
   }
-  public function delete(DeleteData $delete,$slug)
+  public function destroy(DeleteData $delete,$slug)
   {
     $delete->orderDelete($slug);
     

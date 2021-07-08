@@ -64,7 +64,7 @@ class CategoryController extends Controller
     $product->update();
     return back()->withSuccess('Category Updated Successfully');;
   }
-  public function delete(DeleteData $delete, $slug)
+  public function destroy(DeleteData $delete, $slug)
   {
     $delete->catDelete($slug);
     $datas = Category::orderBy('id', 'desc')

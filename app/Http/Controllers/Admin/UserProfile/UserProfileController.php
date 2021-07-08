@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Admin\UserProfile;
 
 use App\Models\User;
-use Illuminate\Http\Request;
+use App\Bag\Admin\Delete\DeleteData;
 use App\Http\Controllers\Controller;
+use App\Bag\Admin\Image\ImageHandling;
+use App\Http\Requests\User\UserUpdateRequest;
 
 class UserProfileController extends Controller
 {
@@ -38,7 +40,7 @@ class UserProfileController extends Controller
         $product->update();
         return back()->withSuccess('User Updated Successfully');;
     }
-    public function delete(DeleteData $delete, $slug)
+    public function destroy(DeleteData $delete, $slug)
     {
         $delete->userDelete($slug);
 

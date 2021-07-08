@@ -12,7 +12,7 @@ use App\Http\Requests\Region\RegionUpdateRequest;
 
 class RegionController extends Controller
 {
-  public function view()
+  public function index()
   {
     $datas = Region::orderBy('id', 'desc')
       ->pagination(request('per-page'));
@@ -68,7 +68,7 @@ class RegionController extends Controller
     $product->update();
     return back()->withSuccess('Region Updated Successfully');;
   }
-  public function delete(DeleteData $delete,$slug)
+  public function destroy(DeleteData $delete,$slug)
   {
     $delete->regionDelete($slug);
     

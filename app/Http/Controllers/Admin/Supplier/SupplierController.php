@@ -74,7 +74,7 @@ class SupplierController extends Controller
 
     return back()->withSuccess('Supplier Updated Successfully');;
   }
-  public function delete(DeleteData $delete, $slug)
+  public function destroy(DeleteData $delete, $slug)
   {
     $delete->supplierDelete($slug);
     $datas = Supplier::orderBy('id', 'desc')

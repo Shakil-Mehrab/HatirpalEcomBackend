@@ -56,7 +56,7 @@ class ShippingMethodController extends Controller
       $product->update();
       return back()->withSuccess('Shipping Method Updated Successfully');;
     }
-    public function delete(DeleteData $delete,$slug)
+    public function destroy(DeleteData $delete,$slug)
     {
       $delete->shippingMethodDelete($slug);
       

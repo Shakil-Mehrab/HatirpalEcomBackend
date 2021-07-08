@@ -4,12 +4,12 @@ namespace App\Http\Controllers\Admin\ProductImage;
 
 use App\Models\ProductImage;
 use Illuminate\Http\Request;
-use App\Bag\Delete\DeleteData;
+use App\Bag\Admin\Delete\DeleteData;
 use App\Http\Controllers\Controller;
 
 class ProductImageController extends Controller
 {
-  public function view()
+  public function index()
   {
     $datas = ProductImage::orderBy('id', 'desc')
       ->pagination(request('per-page'));
@@ -21,7 +21,7 @@ class ProductImageController extends Controller
     }
     return view('layouts.data.view', compact('datas', 'columns', 'model'));
   }
-  public function delete(DeleteData $delete,$slug)
+  public function destroy(DeleteData $delete,$slug)
   {
     $delete->productImageDelete($slug);
    

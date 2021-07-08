@@ -85,7 +85,7 @@
 
                     <td>
                         <a href="{{url('admin/'.$model.'/'.$data->slug.'/edit')}}" style="color:blue"><i class="fas fa-pencil-alt"></i></a>
-                        <a href="{{url('admin/delete/'.$model.'/'.$data->slug)}}" class="delete" style="color:red"><i class="far fa-trash-alt"></i></a>
+                        <a href="{{url('admin/'.$model.'/'.$data->slug)}}" class="delete" style="color:red"><i class="far fa-trash-alt"></i></a>
                         @if($model=='category'){{$data->products->count()}}@endif
                     </td>
                 </tr>

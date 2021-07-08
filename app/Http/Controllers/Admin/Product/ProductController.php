@@ -88,7 +88,7 @@ class ProductController extends Controller
 
     return back()->withSuccess('Product Updated Successfully');;
   }
-  public function delete(DeleteData $delete, $slug)
+  public function destroy(DeleteData $delete, $slug)
   {
     $delete->productDelete($slug);
     $datas = Product::orderBy('id', 'desc')
