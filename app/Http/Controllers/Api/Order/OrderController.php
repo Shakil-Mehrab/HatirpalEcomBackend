@@ -23,6 +23,7 @@ class OrderController extends Controller
         $orders=$request->user()->orders()
         ->with([
             'products',
+            'address',
             // 'products.stock',
             // 'products.type',
             // 'products.product',
@@ -48,6 +49,7 @@ class OrderController extends Controller
     public function show($slug)
     {
        $order=Order::where('slug',$slug)->first();
+       $order->load(['address']);
         return new OrderResource($order);
     }
     protected function createOrder(Request $request,Cart $cart){

@@ -52,6 +52,10 @@
             @include('layouts.condition.partial')
             @endif
 
+            @if($model=='order')
+            @include('layouts.order.partial')
+            @endif
+
             @if($model=='about')
             @include('layouts.data.thumbnail')
             @include('layouts.about.partial')

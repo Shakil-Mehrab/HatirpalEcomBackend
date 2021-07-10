@@ -31,4 +31,11 @@ class CartStoreRequest extends FormRequest
             'products.*.quantity'=>'numeric|min:1',
         ];
     }
+    public function messages()
+    {
+        return[
+            'products.*.image.required'=>"Please Select a Color",
+            'products.*.size_id.required'=>"Please Select a Size"
+        ];
+    }
 }
