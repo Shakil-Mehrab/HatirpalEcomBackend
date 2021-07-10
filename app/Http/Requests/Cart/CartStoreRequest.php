@@ -27,7 +27,7 @@ class CartStoreRequest extends FormRequest
             'products'=>'required|array',
             'products.*.product_id'=>'required|exists:products,id',
             'products.*.size_id'=>'required|exists:sizes,id',
-            'products.*.image_id'=>'required|exists:product_images,id',
+            'products.*.image'=>'required',
             'products.*.quantity'=>'numeric|min:1',
         ];
     }

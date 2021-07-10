@@ -17,7 +17,7 @@ class CreateTableProductOrder extends Migration
             $table->integer('order_id')->unsigned()->index();
             $table->integer('product_id')->unsigned()->index();
             $table->integer('quantity')->unsigned();
-            $table->integer('product_image_id')->unsigned();
+            $table->string('product_image');
             $table->string('size_id');
             $table->timestamps();
             $table->foreign('order_id')->references('id')->on('orders');

@@ -12,7 +12,6 @@ class ImageHandling
     $image = $request->file("thumbnail");
     if ($image) {
       if (file_exists(substr($product->thumbnail,22,100))) {
-        
         unlink(substr($product->thumbnail,22,100));
         // parse_url($product->thumbnail,PHP_URL_PATH)//it will remove localhost:8000 from linik
       }
@@ -32,7 +31,6 @@ class ImageHandling
          $image_full_name =$product->id.'.'.Str::random(10). "." .$image_ext;
          $upload_path = "images/product/related/" . $image_full_name;
          Image::make($image)->resize(200, 200)->save($upload_path);
- 
          $produtImage = new ProductImage();
          $produtImage->product_id = $product->id;
          $produtImage->thumbnail = asset($upload_path);

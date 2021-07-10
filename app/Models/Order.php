@@ -29,6 +29,7 @@ class Order extends Model
     public static function booted(){
         static::creating(function(Model $model){
             $model->slug=Str::uuid();
+            $model->order_id="Hpl-".rand(111, 99999);
             $model->status=self::PENDING;
 
         });
@@ -52,7 +53,7 @@ class Order extends Model
     public function products()
     {
         return $this->belongsToMany(Product::class, 'product_order')
-        ->withPivot("quantity","size_id","product_image_id")
+        ->withPivot("quantity","size_id","product_image")
             ->withTimestamps();
     }
 }

@@ -33,6 +33,8 @@ class ProductInputRequest extends FormRequest
             'stock'=>'required|numeric',
             'thumbnail'=>'mimes:jpg,png',
             'images.*'=>'mimes:jpg,png',
+            'size_id'=>"required"
+
         ];
     }
 }

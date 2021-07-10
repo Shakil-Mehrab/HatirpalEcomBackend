@@ -17,9 +17,12 @@ class StoreUpdateData
   public function orderStoreUpdate($product, $request)
   {
     $product->address_id = $request['address_id'];
-    $product->shipping_method_id = $request['shipping_method_id'];
-    $product->payment_method_id = $request['payment_method_id'];
+    $product->shipping_method = $request['shipping_method'];
+    $product->payment_method = $request['payment_method'];
     $product->subtotal = $request['subtotal'];
+    $product->total = $request['total'];
+    $product->status = $request['status'];
+
   }
   public function productStoreUpdate($product, $request)
   {
@@ -30,6 +33,7 @@ class StoreUpdateData
     $product->discount = $this->discount($request);
     $product->brand = $request['brand'];
     $product->short_description = $request['short_description'];
+    $product->description = $request['description'];
     $product->minimum_order = $request['minimum_order'];
     $product->waranty = $request['waranty'];
 

@@ -17,9 +17,12 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->integer('user_id')->unsigned()->index();
             $table->string('slug')->unique()->index();
+            $table->string('order_id')->unique();
             $table->integer('address_id');
             $table->string('shipping_method');
             $table->string('payment_method')->index();
+            $table->string('payment_id')->nullable();
+            $table->string('payment_status')->default('pending');
             $table->string('status')->default('pending');
             $table->integer('subtotal');
             $table->integer('total');

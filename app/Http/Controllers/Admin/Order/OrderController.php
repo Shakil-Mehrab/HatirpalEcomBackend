@@ -12,19 +12,28 @@ use App\Http\Requests\Order\OrderInputRequest;
 
 class OrderController extends Controller
 {
-    public function index()
-    {
-      $datas = Order::orderBy('id', 'desc')
-        ->pagination(request('per-page'));
-      $model = 'order';
-      $columns = Order::columns();
-  
-      if (request('per-page') or request('page')) {
-        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-      }
-      return view('layouts.data.view', compact('datas', 'columns', 'model'));
+  public function index()
+  {
+    $datas = Order::orderBy('id', 'desc')
+      ->pagination(request('per-page'));
+    $model = 'order';
+    $columns = Order::columns();
+
+    if (request('per-page') or request('page')) {
+      return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
     }
-    public function create()
+    return view('layouts.data.view', compact('datas', 'columns', 'model'));
+  }
+  public function search()
+  {
+    $datas = Order::Where('slug', 'LIKE', "%" . request('query') . "%")
+      ->orWhere('order_id', 'LIKE', "%" . request('query') . "%")
+      ->searchPagination(request('per-page'));
+    $columns = Order::columns();
+    $model = 'order';
+    return view('layouts.data.table', compact('datas', 'columns', 'model'));
+  }
+  public function create()
   {
     $data = '';
     $columns = Order::create_columns();
@@ -39,7 +48,7 @@ class OrderController extends Controller
 
     $request->user()->orders()->save($product);
 
-    return redirect('admin/view/order')
+    return redirect('admin/order')
       ->withSuccess('Order Created Successfully');
   }
   public function edit($slug)
@@ -58,10 +67,10 @@ class OrderController extends Controller
     $product->update();
     return back()->withSuccess('Order Updated Successfully');;
   }
-  public function destroy(DeleteData $delete,$slug)
+  public function destroy(DeleteData $delete, $slug)
   {
     $delete->orderDelete($slug);
-    
+
     $datas = Order::orderBy('id', 'desc')
       ->pagination(request('per-page'));
 
@@ -69,7 +78,7 @@ class OrderController extends Controller
     $model = 'order';
     return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
   }
-  public function status(ChangeStatus $status,$slug)
+  public function status(ChangeStatus $status, $slug)
   {
     $status->orderStatusChange($slug);
     $datas = Order::orderBy('id', 'desc')

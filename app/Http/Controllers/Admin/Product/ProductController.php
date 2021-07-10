@@ -81,6 +81,7 @@ class ProductController extends Controller
     $input->productStoreUpdate($product, $request);
     $imageHandling->uploadImage($product, $request, 'product');
     $imageHandling->uploadRelatedImage($product, $request);
+
     $input->productPivotData($product, $request);
     $input->productUpdateStock($product, $request);
 
@@ -97,7 +98,7 @@ class ProductController extends Controller
     $model = 'product';
     return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
   }
-  public function status(ChangeStatus $status,$slug)
+  public function status(ChangeStatus $status, $slug)
   {
     $status->productStatusChange($slug);
     $datas = Product::orderBy('id', 'desc')

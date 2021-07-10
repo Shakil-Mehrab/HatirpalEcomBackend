@@ -21,7 +21,7 @@ class CartProductResource extends ProductIndexResource
             // 'stock'=>'',
             'quantity' => $this->pivot->quantity,
             'size_id' => $this->pivot->size_id,
-            'thumbnail' => $this->cartProductImage($this->pivot->product_image_id),
+            'thumbnail' => $this->pivot->product_image,
             // 'total' => $this->getTotal()->formatted(),
             'total' => $this->getTotal(),
         ]);

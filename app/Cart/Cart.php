@@ -76,7 +76,7 @@ class Cart
        return collect($products)->keyBy('id')->map(function($product){
             return[
                 'quantity'=>$product['quantity'] + $this->getCurrentQuantity($product['id']),
-                'product_image_id'=>$product['product_image_id'],
+                'product_image'=>$product['product_image'],
                 'size_id'=>$product['size_id'],
             ];
         })

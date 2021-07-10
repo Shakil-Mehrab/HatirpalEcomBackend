@@ -25,10 +25,10 @@ class OrderInputRequest extends FormRequest
     {
         return [
             'address_id'=>'required',
-            'shipping_method_id'=>'required|numeric',
-            'payment_method_id'=>'required|numeric',
-            'subtotal'=>'required|numeric'
-
+            'shipping_method'=>'required',
+            'payment_method'=>'required',
+            'subtotal'=>'required|numeric',
+            'total'=>'required|numeric'
         ];
     }
 }

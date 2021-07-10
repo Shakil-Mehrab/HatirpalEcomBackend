@@ -22,10 +22,7 @@ class CartResource extends JsonResource
         return [
             'products'=>CartProductResource::collection($this->cart),
             // 'size_id' => $this->size_id,
-            // 'thumbnail' => cartProductImage($this->product_image_id),
-
-
-
+            // 'thumbnail' => $this->product_image,
         ];
     }
 }

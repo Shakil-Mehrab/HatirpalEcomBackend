@@ -23,6 +23,7 @@
                     <th>
                         <input type="checkbox" id="selectallboxes">
                     </th>
+                    <th>Action</th>
                     @foreach($columns as $column)
                     <th>{{ucfirst(str_replace('_',' ',$column))}}</th>
                     @endforeach
@@ -32,7 +33,7 @@
                     <th>Size</th>
                     @endif
 
-                    <th>Action</th>
+                    
 
                 </tr>
             </thead>
@@ -41,6 +42,11 @@
                 <tr class="bordered">
                     <td>
                         <input type="checkbox" name="checked_slug[]" value="{{$data->slug}}" class="selectall">
+                    </td>
+                    <td>
+                        <a href="{{url('admin/'.$model.'/'.$data->slug.'/edit')}}" style="color:blue"><i class="fas fa-pencil-alt"></i></a>
+                        <a href="{{url('admin/'.$model.'/'.$data->slug)}}" class="delete" style="color:red"><i class="far fa-trash-alt"></i></a>
+                        @if($model=='category'){{$data->products->count()}}@endif
                     </td>
                     @foreach($columns as $column)
                     @if($column=='thumbnail')
@@ -83,11 +89,7 @@
                     </td>
                     @endif
 
-                    <td>
-                        <a href="{{url('admin/'.$model.'/'.$data->slug.'/edit')}}" style="color:blue"><i class="fas fa-pencil-alt"></i></a>
-                        <a href="{{url('admin/'.$model.'/'.$data->slug)}}" class="delete" style="color:red"><i class="far fa-trash-alt"></i></a>
-                        @if($model=='category'){{$data->products->count()}}@endif
-                    </td>
+                  
                 </tr>
                 @empty
                 @endforelse

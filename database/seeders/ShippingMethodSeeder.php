@@ -18,12 +18,12 @@ class ShippingMethodSeeder extends Seeder
             'Sundarban Kuriar'=>'100',
             'Continental'=>'100',
             'S A Paribahan'=>'100',
-            'Bus'=>'100',
-            'Truck  (Extra charge required. Contact us)'=>'200',
-            'Pickup Van (Extra charge required. Contact us)'=>'2000',
-            'Home Delivary'=>'50',
-            'Ship  (Extra charge required. Contact us)'=>'1000',
-            'Flight  (Extra charge required. Contact us)'=>'2000',
+            // 'Bus'=>'100',
+            'Truck'=>'200',
+            'Pickup Van'=>'2000',
+            // 'Home Delivary'=>'50',
+            'Ship'=>'1000',
+            'Flight'=>'2000',
         ];
         collect($shippingmethods)->each(function($price,$name){
             ShippingMethod::create([

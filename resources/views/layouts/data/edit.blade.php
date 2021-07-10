@@ -6,7 +6,7 @@
     </div>
     <br>
     <div class="view_button">
-        <a href="{{url('admin/view/'.$model)}}" class="btn btn-primary btn-sm"><i class="far fa-eye"></i> View {{ucfirst($model)}}</a>
+        <a href="{{url('admin/'.$model)}}" class="btn btn-primary btn-sm"><i class="far fa-eye"></i> View {{ucfirst($model)}}</a>
     </div>
 
     <form action="{{url('admin/'.$model.'/'.$data->slug)}}" method="post" enctype="multipart/form-data">

@@ -47,11 +47,11 @@ class Product extends Model
      public function variations(){
         return $this->hasMany(ProductVariation::class)->orderBy('order','asc');
     }
+    // public function inStock(){
+    //     return $this->stockCount()>0;
+    // }
     public function stockCount(){
-        return $this->variations   //1kg 300ti,2kg er 200ti
-        ->sum(function($variation){  //eta ki foreach er moto
-            return $variation->stockCount();
-        });
+        return $this->stock->sum('pivot.stock');
     }
     public function stock()//cart controller theke kivabe auto call hoy
     {
@@ -74,13 +74,13 @@ class Product extends Model
     {
         return $this->hasOne(Stock::class);
     }
-    public function cartProductImage($image_id){
-        $productImage=ProductImage::where('id',$image_id)->first();
-        if($productImage==null){
-            return "";
-        }
-        return $productImage->thumbnail;
-    }
+    // public function cartProductImage($image_id){
+    //     $productImage=ProductImage::where('id',$image_id)->first();
+    //     if($productImage==null){
+    //         return "";
+    //     }
+    //     return $productImage->thumbnail;
+    // }
     public function cartProductSize($size_id){
         $size=Size::where('id',$size_id)->first();
         if($size==null){

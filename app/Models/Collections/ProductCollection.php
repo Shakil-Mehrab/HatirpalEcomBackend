@@ -10,7 +10,7 @@ class ProductCollection extends Collection
         return $this->keyBy('id')->map(function($product){
             return [
                 'quantity'=>$product->pivot->quantity,
-                'product_image_id'=>$product->pivot->product_image_id,
+                'product_image'=>$product->pivot->product_image,
                 'size_id'=>$product->pivot->size_id,
             ];
         })->toArray();

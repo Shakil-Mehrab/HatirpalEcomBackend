@@ -42,12 +42,11 @@ class CartController extends Controller
         ];
     }
     public function store(Cart $cart,CartStoreRequest $request){
-        // return $request['products'][0]['quantity'];
         $products=array(
             array(
                 'id'=>$request['products'][0]['product_id'],
                 'quantity'=>$request['products'][0]['quantity'],
-                'product_image_id'=>$request['products'][0]['image_id'],
+                'product_image'=>$request['products'][0]['image'],
                 'size_id'=>$request['products'][0]['size_id'],
             ),
             // array(

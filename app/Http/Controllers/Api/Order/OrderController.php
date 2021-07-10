@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Api\Order;
 
 use App\Cart\Cart;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use App\Events\Order\OrderCreated;
 use App\Http\Controllers\Controller;
@@ -18,6 +19,7 @@ class OrderController extends Controller
         // $this->middleware(['cart.sync','cart.isnotempty'])->only('store');//only store er upor kaj korbe
     }
     public function index(Request $request){
+        
         $orders=$request->user()->orders()
         ->with([
             'products',
@@ -29,7 +31,7 @@ class OrderController extends Controller
             // 'address','shippingMethod'
         ])
         ->latest()
-        ->paginate(10);
+        ->paginate(2);
         return OrderResource::collection($orders);
     }
     public function store(OrderRequest $request,Cart $cart)
@@ -41,6 +43,11 @@ class OrderController extends Controller
         ); 
         //   $order->load(['shippingMethod']);//resource load
         event(new OrderCreated($order));
+        return new OrderResource($order);
+    }
+    public function show($slug)
+    {
+       $order=Order::where('slug',$slug)->first();
         return new OrderResource($order);
     }
     protected function createOrder(Request $request,Cart $cart){
