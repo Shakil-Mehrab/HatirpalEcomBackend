@@ -65,7 +65,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-toggle/2.2.2/js/bootstrap-toggle.js"></script>
 
 
-
     @yield('js')
     <script type="text/javascript">
         const Toast = Swal.mixin({
