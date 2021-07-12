@@ -94,4 +94,9 @@ class User extends Authenticatable
             ->withPivot(['quantity','product_image','size_id'])
             ->withTimestamps();
     }
+    public function cartProduct($productId,$size_id,$image)
+    {
+        return $this->hasMany(CartUser::class)->where('product_id',$productId)->where('size_id',$size_id)->where('product_image',$image);
+    }
+    
 }

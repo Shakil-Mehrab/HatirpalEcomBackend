@@ -19,13 +19,11 @@ class CartController extends Controller
     }
     public function index(Request $request,Cart $cart){
         $cart->sync();
-        $request->user();
-        // ->load([
-        //     'cart.product',
-        //     'cart.product.variations.stock',
-        //     'cart.stock',
-        //     'cart.type'
-        //     ]);
+        $request->user()
+        ->load([
+            'cart.product',
+            'cart.stock',
+            ]);
        return (new CartResource($request->user()))
        ->additional([
         'meta'=>$this->meta($cart,$request)
@@ -41,7 +39,7 @@ class CartController extends Controller
             'changed'=>$cart->hasChanged(),
         ];
     }
-    public function store(Cart $cart,CartStoreRequest $request){
+    public function store(Cart $cart,Request $request){
         $products=array(
             array(
                 'id'=>$request['products'][0]['product_id'],

@@ -2,8 +2,9 @@
 
 namespace App\Cart;
 
-use App\Models\Address;
 use App\Models\User;
+use App\Models\Address;
+use App\Models\Product;
 use App\Models\ShippingMethod;
 
 class Cart
@@ -24,9 +25,16 @@ class Cart
         return $this;
     }
     public function add($products){
-        $this->user->cart()->syncWithoutDetaching(
-            $this->getStorePayload($products)
-        );
+        
+        $cartProduct=$this->user->cartProduct($products[0]['id'],$products[0]['size_id'],$products[0]['product_image'])->get();
+        
+        if($cartProduct->count()>0){
+            $this->user->cart()->syncWithoutDetaching(
+                $this->getStorePayload($products)
+            );
+            return "sync done";
+        }
+        return "work later";
     }
     public function update($productId,$quantity,$size_id){
         $this->user->cart()->updateExistingPivot($productId,[
