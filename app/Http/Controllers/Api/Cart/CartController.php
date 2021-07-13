@@ -39,7 +39,7 @@ class CartController extends Controller
             'changed'=>$cart->hasChanged(),
         ];
     }
-    public function store(Cart $cart,Request $request){
+    public function store(Cart $cart,CartStoreRequest $request){
         $products=array(
             array(
                 'id'=>$request['products'][0]['product_id'],

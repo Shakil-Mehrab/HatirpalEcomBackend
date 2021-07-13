@@ -4,6 +4,7 @@ namespace App\Cart;
 
 use App\Models\User;
 use App\Models\Address;
+use App\Models\CartUser;
 use App\Models\Product;
 use App\Models\ShippingMethod;
 
@@ -34,7 +35,9 @@ class Cart
             );
             return "sync done";
         }
-        return "work later";
+      $this->addNewProduct($products);
+       return "New added done";
+
     }
     public function update($productId,$quantity,$size_id){
         $this->user->cart()->updateExistingPivot($productId,[
@@ -95,6 +98,15 @@ class Cart
             return $product->pivot->quantity;
         }
         return 0;
+    }
+    protected function addNewProduct($products){
+        $cart=new CartUser();
+        $cart->product_id=$products[0]['id'];
+        $cart->user_id=$this->user->id;
+        $cart->size_id=$products[0]['size_id'];
+        $cart->product_image=$products[0]['product_image'];
+        $cart->quantity=$products[0]['quantity'];
+        $cart->save();
     }
 
 }
