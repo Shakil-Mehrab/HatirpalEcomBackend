@@ -45,13 +45,13 @@ class CategoryController extends Controller
     $input->categoryStoreUpdate($product, $request);
     $product->slug =  time() . '-' . Str::slug($request['name']);
     $request->user()->categories()->save($product);
-    return redirect('admin/view/category')->withSuccess('Category Created Successfully');
+    return redirect('admin/category')->withSuccess('Category Created Successfully');
   }
   public function edit($slug)
   {
-    
+
     $data = Category::where('slug', $slug)->firstOrFail();
-    
+
     $columns = Category::edit_columns();
     $model = 'category';
     return view('layouts.data.edit', compact('data', 'columns', 'model'));

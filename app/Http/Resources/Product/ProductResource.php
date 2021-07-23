@@ -17,10 +17,10 @@ class ProductResource extends ProductIndexResource
     public function toArray($request)
     {
         return array_merge(parent::toArray($request), [
-            'name'=>$this->name,
-            'productImages'=>ProductImageResource::collection($this->productImages),
-            'sizes'=>SizeResource::collection($this->sizes),
-            'categories'=>CategoryResource::collection($this->categories),
+            // 'name' => $this->name,
+            'productImages' => ProductImageResource::collection($this->productImages),
+            'sizes' => SizeResource::collection($this->sizes),
+            'categories' => CategoryResource::collection($this->categories),
 
         ]);
     }

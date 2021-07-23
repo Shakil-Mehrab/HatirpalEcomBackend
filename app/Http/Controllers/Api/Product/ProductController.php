@@ -20,14 +20,14 @@ class ProductController extends Controller
         // $items = \Cart::getContent();
         return view('welcome', compact('products'));
     }
-   
+
     public function index()
     {
         $datas = Product::latest()
             ->withScopes(
                 $this->scopes()
             )
-            ->get();
+            ->paginate(1);
         return ProductIndexResource::collection($datas);
     }
     public function show($slug)
@@ -45,5 +45,4 @@ class ProductController extends Controller
             'brand' => new BrandScope(),
         ];
     }
-    
 }
