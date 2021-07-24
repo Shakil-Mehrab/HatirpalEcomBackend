@@ -7,11 +7,12 @@ use Illuminate\Support\Str;
 use App\Models\Traits\PaginationTrait;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Traits\Address\AddressColumn;
+use App\Models\Traits\User\RelationWithUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Address extends Model
 {
-    use HasFactory,PaginationTrait,AddressColumn;
+    use HasFactory,PaginationTrait,AddressColumn,RelationWithUser;
     // public function getRouteKeyName()
     // {
     //     return 'slug';
@@ -20,9 +21,6 @@ class Address extends Model
         static::creating(function(Model $model){
             $model->slug=Str::uuid();
         });
-    }
-    public function user(){
-        return $this->belongsTo('App\Models\User');
     }
     
     public function products()

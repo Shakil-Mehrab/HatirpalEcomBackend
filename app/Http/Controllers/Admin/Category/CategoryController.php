@@ -73,7 +73,7 @@ class CategoryController extends Controller
   }
   protected function datas()
   {
-    $datas = Category::orderBy('id', 'desc')->with('products')
+    $datas = Category::orderBy('id', 'desc')->with('products','user')
       ->pagination(request('per-page'));
     return $datas;
   }

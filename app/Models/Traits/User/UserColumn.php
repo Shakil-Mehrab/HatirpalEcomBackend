@@ -11,7 +11,7 @@ trait UserColumn
     {
         return collect(Schema::getColumnListing(User::getQuery()->from))
             ->reject(function ($column) {
-                return in_array($column,['email_verified_at','remember_token','updated_at','created_at','password',]);
+                return in_array($column,['email_verified_at','remember_token','updated_at','created_at','password','two_factor_secret','two_factor_recovery_codes']);
 
             })
             ->toArray();

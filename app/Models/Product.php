@@ -10,12 +10,13 @@ use App\Models\Traits\PaginationTrait;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Traits\Product\ProductColumn;
+use App\Models\Traits\User\RelationWithUser;
 use App\Models\Collections\ProductCollection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
-    use HasFactory,PaginationTrait,ProductColumn,CanBeScoped;
+    use HasFactory,PaginationTrait,ProductColumn,CanBeScoped,RelationWithUser;
     public function getRouteKeyName()
     {
         return 'slug';
@@ -25,10 +26,6 @@ class Product extends Model
             $model->uuid=Str::uuid();
             $model->status = ProductStatus::PENDING;
         });
-    }
-    
-    public function user(){
-        return $this->belongsTo('App\Models\User');
     }
     
     public function categories()
@@ -74,13 +71,6 @@ class Product extends Model
     {
         return $this->hasOne(Stock::class);
     }
-    // public function cartProductImage($image_id){
-    //     $productImage=ProductImage::where('id',$image_id)->first();
-    //     if($productImage==null){
-    //         return "";
-    //     }
-    //     return $productImage->thumbnail;
-    // }
     public function cartProductSize($size_id){
         $size=Size::where('id',$size_id)->first();
         if($size==null){
