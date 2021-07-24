@@ -19,8 +19,7 @@ class ProductController extends Controller
 {
   public function index()
   {
-    $datas = Product::orderBy('id', 'desc')
-      ->pagination(request('per-page'));
+    $datas = $this->datas();
     $model = 'product';
     $columns = Product::columns();
 
@@ -92,8 +91,7 @@ class ProductController extends Controller
   public function destroy(DeleteData $delete, $slug)
   {
     $delete->productDelete($slug);
-    $datas = Product::orderBy('id', 'desc')
-      ->pagination(request('per-page'));
+    $datas = $this->datas();
     $columns = Product::columns();
     $model = 'product';
     return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
@@ -101,10 +99,15 @@ class ProductController extends Controller
   public function status(ChangeStatus $status, $slug)
   {
     $status->productStatusChange($slug);
-    $datas = Product::orderBy('id', 'desc')
-      ->pagination(request('per-page'));
+    $datas = $this->datas();
     $columns = Product::columns();
     $model = 'product';
     return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+  }
+  protected function datas()
+  {
+    $datas = Product::orderBy('id', 'desc')->with('categories', 'sizes', 'productImages')
+      ->pagination(request('per-page'));
+    return $datas;
   }
 }

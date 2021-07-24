@@ -15,8 +15,7 @@ class CategoryController extends Controller
 {
   public function index()
   {
-    $datas = Category::orderBy('id', 'desc')
-      ->pagination(request('per-page'));
+    $datas = $this->datas();
     $columns = Category::columns();
     $model = 'category';
     if (request('per-page') or request('page')) {
@@ -67,10 +66,15 @@ class CategoryController extends Controller
   public function destroy(DeleteData $delete, $slug)
   {
     $delete->catDelete($slug);
-    $datas = Category::orderBy('id', 'desc')
-      ->pagination(request('per-page'));
+    $datas = $this->datas();
     $columns = Category::columns();
     $model = 'category';
     return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+  }
+  protected function datas()
+  {
+    $datas = Category::orderBy('id', 'desc')->with('products')
+      ->pagination(request('per-page'));
+    return $datas;
   }
 }

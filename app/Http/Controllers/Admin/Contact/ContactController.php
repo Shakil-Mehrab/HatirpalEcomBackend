@@ -15,10 +15,9 @@ use App\Http\Requests\Contact\ContactUpdateRequest;
 
 class ContactController extends Controller
 {
-    public function index()
+  public function index()
   {
-    $datas = Contact::orderBy('id', 'desc')
-      ->pagination(request('per-page'));
+    $datas = $this->datas();
     $model = 'contact';
     $columns = Contact::columns();
 
@@ -75,8 +74,7 @@ class ContactController extends Controller
   public function destroy(DeleteData $delete, $slug)
   {
     $delete->contactDelete($slug);
-    $datas = Contact::orderBy('id', 'desc')
-      ->pagination(request('per-page'));
+    $datas = $this->datas();
     $columns = Contact::columns();
     $model = 'contact';
     return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
@@ -84,10 +82,15 @@ class ContactController extends Controller
   public function status(ChangeStatus $status, $slug)
   {
     $status->contactStatusChange($slug);
-    $datas = Contact::orderBy('id', 'desc')
-      ->pagination(request('per-page'));
+    $datas = $this->datas();
     $columns = Contact::columns();
     $model = 'contact';
     return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+  }
+  protected function datas()
+  {
+    $datas = Contact::orderBy('id', 'desc')
+      ->pagination(request('per-page'));
+    return $datas;
   }
 }

@@ -11,25 +11,27 @@ class ProductImageController extends Controller
 {
   public function index()
   {
-    $datas = ProductImage::orderBy('id', 'desc')
-      ->pagination(request('per-page'));
+    $datas = $this->datas();
     $model = 'productimage';
     $columns = ProductImage::columns();
-   
+
     if (request('per-page') or request('page')) {
       return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
     }
     return view('layouts.data.view', compact('datas', 'columns', 'model'));
   }
-  public function destroy(DeleteData $delete,$slug)
+  public function destroy(DeleteData $delete, $slug)
   {
     $delete->productImageDelete($slug);
-   
-    $datas = ProductImage::orderBy('id', 'desc')
-      ->pagination(request('per-page'));
+    $datas = $this->datas();
     $columns = ProductImage::columns();
     $model = 'productimage';
     return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
   }
-
+  protected function datas()
+  {
+    $datas = ProductImage::orderBy('id', 'desc')
+      ->pagination(request('per-page'));
+    return $datas;
+  }
 }

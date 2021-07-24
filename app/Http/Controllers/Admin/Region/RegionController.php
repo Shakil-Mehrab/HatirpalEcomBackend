@@ -14,8 +14,7 @@ class RegionController extends Controller
 {
   public function index()
   {
-    $datas = Region::orderBy('id', 'desc')
-      ->pagination(request('per-page'));
+    $datas = $this->datas();
     $columns = Region::columns();
     $model = 'region';
     if (request('per-page') or request('page')) {
@@ -35,7 +34,7 @@ class RegionController extends Controller
   }
   public function create()
   {
-    $data ='';
+    $data = '';
     $columns = Region::create_columns();
     $model = 'region';
     return view('layouts.data.create', compact('data', 'columns', 'model'));
@@ -68,15 +67,18 @@ class RegionController extends Controller
     $product->update();
     return back()->withSuccess('Region Updated Successfully');;
   }
-  public function destroy(DeleteData $delete,$slug)
+  public function destroy(DeleteData $delete, $slug)
   {
     $delete->regionDelete($slug);
-    
-    $datas = Region::orderBy('id', 'desc')
-      ->pagination(request('per-page'));
-
+    $datas = $this->datas();
     $columns = Region::columns();
     $model = 'region';
     return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+  }
+  protected function datas()
+  {
+    $datas = Region::orderBy('id', 'desc')
+      ->pagination(request('per-page'));
+    return $datas;
   }
 }

@@ -15,8 +15,7 @@ class AddressController extends Controller
 {
   public function index()
   {
-    $datas = Address::orderBy('id', 'desc')
-      ->pagination(request('per-page'));
+    $datas = $this->datas();
     $model = 'address';
     $columns = Address::columns();
 
@@ -37,11 +36,11 @@ class AddressController extends Controller
   public function create()
   {
     $data = '';
-    $divisions=Region::where('parent_id',2)->get();
+    $divisions = Region::where('parent_id', 2)->get();
 
     $columns = Address::create_columns();
     $model = 'address';
-    return view('layouts.data.create', compact('data', 'columns', 'model','divisions'));
+    return view('layouts.data.create', compact('data', 'columns', 'model', 'divisions'));
   }
   public function store(AddressInputRequest $request, StoreUpdateData $input)
   {
@@ -62,17 +61,22 @@ class AddressController extends Controller
   {
     $product = Address::where('slug', $slug)
       ->firstOrFail();
-      $input->addressStoreUpdate($product, $request);
+    $input->addressStoreUpdate($product, $request);
     $product->update();
     return back()->withSuccess('Address Updated Successfully');;
   }
   public function destroy(DeleteData $delete, $slug)
   {
     $delete->addressDelete($slug);
-    $datas = Address::orderBy('id', 'desc')
-      ->pagination(request('per-page'));
+    $datas = $this->datas();
     $columns = Address::columns();
     $model = 'address';
     return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+  }
+  protected function datas()
+  {
+    $datas = Address::orderBy('id', 'desc')
+      ->pagination(request('per-page'));
+    return $datas;
   }
 }
