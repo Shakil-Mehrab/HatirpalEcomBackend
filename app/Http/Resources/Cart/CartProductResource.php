@@ -17,8 +17,9 @@ class CartProductResource extends ProductIndexResource
     public function toArray($request)
     {
         return array_merge(parent::toArray($request), [
-            'sizes'=>SizeResource::collection($this->sizes),//ajaira product r stock call hoye array barche.tai faka kore dichi
+            'sizes' => SizeResource::collection($this->sizes), //ajaira product r stock call hoye array barche.tai faka kore dichi
             // 'stock'=>'',
+            'cart_id' => $this->pivot->id,
             'quantity' => $this->pivot->quantity,
             'size_id' => $this->pivot->size_id,
             'thumbnail' => $this->pivot->product_image,

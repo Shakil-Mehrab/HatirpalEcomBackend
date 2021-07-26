@@ -91,12 +91,15 @@ class User extends Authenticatable
     public function cart()
     {
         return $this->belongsToMany(Product::class, 'cart_user')
-            ->withPivot(['quantity','product_image','size_id'])
+            ->withPivot(['quantity', 'product_image', 'size_id', 'id'])
             ->withTimestamps();
     }
-    public function cartProduct($productId,$size_id,$image)
+    public function cartProduct($productId, $size_id, $image)
     {
-        return $this->hasMany(CartUser::class)->where('product_id',$productId)->where('size_id',$size_id)->where('product_image',$image);
+        return $this->hasMany(CartUser::class)->where('product_id', $productId)->where('size_id', $size_id)->where('product_image', $image);
     }
-    
+    public function userSpecificCart($cartId)
+    {
+        return $this->hasOne(CartUser::class)->where('id', $cartId)->first();
+    }
 }

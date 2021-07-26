@@ -13,39 +13,43 @@ use App\Http\Requests\Cart\CartUpdateRequest;
 
 class CartController extends Controller
 {
-   
-    public function __construct(){
+
+    public function __construct()
+    {
         $this->middleware('auth:sanctum');
     }
-    public function index(Request $request,Cart $cart){
+    public function index(Request $request, Cart $cart)
+    {
         $cart->sync();
         $request->user()
-        ->load([
-            'cart.product',
-            'cart.stock',
+            ->load([
+                'cart.product',
+                'cart.stock',
             ]);
-       return (new CartResource($request->user()))
-       ->additional([
-        'meta'=>$this->meta($cart,$request)
-       ]);
+        return (new CartResource($request->user()))
+            ->additional([
+                'meta' => $this->meta($cart, $request)
+            ]);
     }
-    protected function meta(Cart $cart,Request $request){
-        return[
-            'empty'=>$cart->isEmpty(),
-            'subtotal'=>$cart->subtotal(),
-            'total'=>$cart->withShipping($request->shipping_method_id)->total(),//shippping_method_id=address_id
+    protected function meta(Cart $cart, Request $request)
+    {
+        return [
+            'empty' => $cart->isEmpty(),
+            'subtotal' => $cart->subtotal(),
+            'total' => $cart->withShipping($request->shipping_method_id)->total(), //shippping_method_id=address_id
             // 'subtotal'=>$cart->subtotal()->formatted(),
             // 'total'=>$cart->withShipping($request->shipping_method_id)->total()->formatted(),
-            'changed'=>$cart->hasChanged(),
+            'changed' => $cart->hasChanged(),
         ];
     }
-    public function store(Cart $cart,CartStoreRequest $request){
-        $products=array(
+    public function store(Cart $cart, CartStoreRequest $request)
+    {
+        $products = array(
             array(
-                'id'=>$request['products'][0]['product_id'],
-                'quantity'=>$request['products'][0]['quantity'],
-                'product_image'=>$request['products'][0]['image'],
-                'size_id'=>$request['products'][0]['size_id'],
+                'id' => $request['products'][0]['product_id'],
+                'quantity' => $request['products'][0]['quantity'],
+                'product_image' => $request['products'][0]['image'],
+                'size_id' => $request['products'][0]['size_id'],
             ),
             // array(
             //     'id'=>'103',
@@ -53,19 +57,23 @@ class CartController extends Controller
             //     'product_image_id'=>3,
             //     'size_id'=>2
             // )
-            );
-            // return $products;
+        );
+        // return $products;
 
         $cart->add($products);
     }
-    public function update($productId,Request $request,Cart $cart){
-        $cart->update($productId, $request->quantity,$request->size_id);
+    public function update($cartId, Request $request, Cart $cart)
+    {
+        $cart->update($cartId, $request->quantity, $request->size_id);
         // $cart->update(3, 10,3);
     }
-    public function destroy($productId,Cart $cart){
-        $cart->delete($productId);
+    public function destroy($cartId, Cart $cart)
+    {
+
+        return $cart->delete($cartId);
     }
-    public function show(){
+    public function show()
+    {
         return "this cart controller show function it can be called for get update route.be carefull";
     }
 }

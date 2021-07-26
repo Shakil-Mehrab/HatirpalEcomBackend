@@ -7,10 +7,11 @@ use Illuminate\Http\Request;
 use App\Scoping\Scopes\SizeScope;
 use App\Scoping\Scopes\BrandScope;
 use App\Scoping\Scopes\PriceScope;
+use App\Scoping\Scopes\SearchScope;
 use App\Http\Controllers\Controller;
-use App\Http\Resources\Product\ProductIndexResource;
-use App\Http\Resources\Product\ProductResource;
 use App\Scoping\Scopes\CategoryScope;
+use App\Http\Resources\Product\ProductResource;
+use App\Http\Resources\Product\ProductIndexResource;
 
 class ProductController extends Controller
 {
@@ -27,7 +28,7 @@ class ProductController extends Controller
             ->withScopes(
                 $this->scopes()
             )
-            ->paginate(1);
+            ->paginate(request('per-page', 50));
         return ProductIndexResource::collection($datas);
     }
     public function show($slug)
@@ -43,6 +44,7 @@ class ProductController extends Controller
             'sizes' => new SizeScope(),
             'price' => new PriceScope(),
             'brand' => new BrandScope(),
+            'search' => new SearchScope(),
         ];
     }
 }
