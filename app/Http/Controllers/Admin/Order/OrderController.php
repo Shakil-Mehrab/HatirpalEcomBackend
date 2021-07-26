@@ -4,8 +4,10 @@ namespace App\Http\Controllers\Admin\Order;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
+use App\Mail\MailForOrderConfirmed;
 use App\Bag\Admin\Delete\DeleteData;
 use App\Http\Controllers\Controller;
+use Mail;
 use App\Bag\Admin\Status\ChangeStatus;
 use App\Bag\Admin\StoreUpdate\StoreUpdateData;
 use App\Http\Requests\Order\OrderInputRequest;
@@ -61,10 +63,14 @@ class OrderController extends Controller
   }
   public function update(OrderInputRequest $request, StoreUpdateData $input, $slug)
   {
-    $product = Order::where('slug', $slug)
+    $order = Order::where('slug', $slug)
       ->firstOrFail();
-    $input->orderStoreUpdate($product, $request);
-    $product->update();
+    $input->orderStoreUpdate($order, $request);
+    $order->update();
+    if ($request->status == 'confirmed') {
+      // dd($order->user->email);
+      Mail::to($order->user->email)->send(new MailForOrderConfirmed($order));
+    }
     return back()->withSuccess('Order Updated Successfully');;
   }
   public function destroy(DeleteData $delete, $slug)
