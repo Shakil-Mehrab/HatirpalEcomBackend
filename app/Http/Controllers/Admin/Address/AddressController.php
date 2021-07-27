@@ -75,7 +75,7 @@ class AddressController extends Controller
   }
   protected function datas()
   {
-    $datas = Address::orderBy('id', 'desc')
+    $datas = Address::orderBy('id', 'desc')->with('user')
       ->pagination(request('per-page'));
     return $datas;
   }

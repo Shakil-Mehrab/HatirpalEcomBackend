@@ -16,8 +16,7 @@ class OrderController extends Controller
 {
   public function index()
   {
-    $datas = Order::orderBy('id', 'desc')
-      ->pagination(request('per-page'));
+    $datas = $this->datas();
     $model = 'order';
     $columns = Order::columns();
 
@@ -76,10 +75,7 @@ class OrderController extends Controller
   public function destroy(DeleteData $delete, $slug)
   {
     $delete->orderDelete($slug);
-
-    $datas = Order::orderBy('id', 'desc')
-      ->pagination(request('per-page'));
-
+    $datas = $this->datas();
     $columns = Order::columns();
     $model = 'order';
     return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
@@ -87,10 +83,15 @@ class OrderController extends Controller
   public function status(ChangeStatus $status, $slug)
   {
     $status->orderStatusChange($slug);
-    $datas = Order::orderBy('id', 'desc')
-      ->pagination(request('per-page'));
+    $datas = $this->datas();
     $columns = Order::columns();
     $model = 'order';
     return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+  }
+  protected function datas()
+  {
+    $datas = Order::orderBy('id', 'desc')->with('user','address')
+    ->pagination(request('per-page'));
+    return $datas;
   }
 }

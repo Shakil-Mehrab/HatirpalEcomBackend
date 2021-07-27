@@ -22,7 +22,7 @@ class ProductController extends Controller
     $datas = $this->datas();
     $model = 'product';
     $columns = Product::columns();
-
+    // return response()->json(array("data" => $datas), 200);
     if (request('per-page') or request('page')) {
       return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
     }
@@ -106,7 +106,7 @@ class ProductController extends Controller
   }
   protected function datas()
   {
-    $datas = Product::orderBy('id', 'desc')->with('categories', 'sizes', 'productImages')
+    $datas = Product::orderBy('id', 'desc')->with('categories', 'sizes', 'productImages','user')
       ->pagination(request('per-page'));
     return $datas;
   }

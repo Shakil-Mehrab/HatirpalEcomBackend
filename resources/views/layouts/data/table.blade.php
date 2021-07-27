@@ -55,7 +55,9 @@
                         @if($model=='product')({{$data->productImages->count()}})@endif
                     </td>
                     @elseif($column=='user_id')
-                    <td>{{$data->user_id}}</td>
+                    <td>{{$data->user?$data->user->name:"$data->user_id not found"}}</td>
+                    @elseif($column=='address_id')
+                    <td>{{$data->address?$data->address->address.','.$data->address->delivery_place:"$data->address_id not found"}}</td>
                     @elseif($column=='status')
                     <td>
                        <a href="{{url('admin/status/'.$model,$data->slug)}}" class="status">

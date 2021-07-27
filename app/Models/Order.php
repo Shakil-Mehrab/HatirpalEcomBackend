@@ -6,11 +6,12 @@ use Illuminate\Support\Str;
 use App\Models\Traits\PaginationTrait;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Traits\Order\OrderColumn;
+use App\Models\Traits\User\RelationWithUser;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Order extends Model
 {
-    use HasFactory,PaginationTrait,OrderColumn;
+    use HasFactory,PaginationTrait,OrderColumn,RelationWithUser;
     protected $fillable=[
         "address_id",
         "shipping_method",
@@ -42,9 +43,6 @@ class Order extends Model
         return $this->subtotal+$this->address->expense;
         }
         return $this->subtotal;
-    }
-    public function user(){
-        return $this->belongsTo('App\Models\User');
     }
     public function address(){
         return $this->belongsTo('App\Models\Address');
