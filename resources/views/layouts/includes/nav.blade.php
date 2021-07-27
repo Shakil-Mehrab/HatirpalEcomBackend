@@ -11,7 +11,9 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                <a class="nav-link" href="#"><div id="google_translate_element"></div></a>
+                    <a class="nav-link" href="#">
+                        <div id="google_translate_element"></div>
+                    </a>
                 </li>
                 @guest
                 @if (Route::has('login'))
@@ -26,11 +28,11 @@
                 </li>
                 @endif
                 @else
-                <li class="nav-item dropdown">
+                <!-- <li class="nav-item dropdown">
                     <a class="nav-link change_color_to_white" href="{{url('admin/userprofile/'.auth()->user()->slug.'/edit')}}">
                     <i class="fas fa-cog"></i> Settings
                     </a>
-                </li>
+                </li> -->
                 <li class="nav-item dropdown">
                     <a class="nav-link change_color_to_white" href="{{url('admin/userprofile/')}}">
                         {{ Auth::user()->name }}

@@ -1,11 +1,13 @@
 <div class="media_body">
-    <div class="user_image">
+    <div class="user_image mb-4">
         <div class="user_img mr-1">
             <img src="{{asset(auth()->user()->thumbnail)}}" alt="user">
         </div>
         <h6><a href="#">Rakibul Islam</a></h6>
     </div>
     <ul class="tree_ul">
+
+        @if(auth()->user()->role=='admin')
         <li class="tree_li mb-2">
             <a class="change_color_to_dark_white" href="#" style="position: relative;">
                 Product
@@ -135,12 +137,14 @@
                 <li class="tree_li_ul_li"><a class="change_color_to_dark_white" href="{{url('admin/about')}}">View About As</a></li>
             </ul>
         </li>
-        <li class="px-2 mb-2">
-            <a class="change_color_to_dark_white" href="{{url('admin/edit/user/')}}">
+        @endif
+
+        <li class="mb-2 setting">
+            <a class="change_color_to_dark_white" href="{{url('admin/userprofile')}}">
                 <i class="fas fa-cog"></i> Settings
             </a>
         </li>
-        <li class="tree_li mb-2">
+        <li class="mb-2 logout">
             <a class="change_color_to_dark_white" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                 <i class="fas fa-power-off"></i> {{ __('Logout') }}

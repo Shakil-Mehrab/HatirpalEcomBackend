@@ -17,6 +17,10 @@ use App\Http\Requests\Product\ProductUpdateRequest;
 
 class ProductController extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('admin');
+  }
   public function index()
   {
     $datas = $this->datas();
@@ -106,7 +110,7 @@ class ProductController extends Controller
   }
   protected function datas()
   {
-    $datas = Product::orderBy('id', 'desc')->with('categories', 'sizes', 'productImages','user')
+    $datas = Product::orderBy('id', 'desc')->with('categories', 'sizes', 'productImages', 'user')
       ->pagination(request('per-page'));
     return $datas;
   }

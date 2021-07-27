@@ -75,3 +75,12 @@ nav {
 .navbar-toggler {
     display: none;
 }
+.setting a:hover {
+    color: white;
+}
+.logout a {
+    padding-left: 0 !important;
+}
+.logout a:hover {
+    color: white;
+}

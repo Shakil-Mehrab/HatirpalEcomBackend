@@ -47,7 +47,7 @@
     <div class="order_detail">
         <ul>
             <li><strong>Order id #</strong> {{$order->order_id}}</li>
-            <li><strong>Total#</strong> {{$order->total}}</li>
+            <li><strong>Total Amount #</strong> {{$order->total}}</li>
             <li><strong>Address #</strong> {{$order->address->address}}</li>
         </ul>
     </div>

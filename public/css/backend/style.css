@@ -77,9 +77,9 @@ a {
 .add_button a:hover i {
     color: green;
 }
-.search_head {
-    /* display: flex; */
-}
+/* .search_head {
+    display: flex;
+} */
 .total_data_rows {
     font-weight: bold;
 }
