@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Mail\MailForOrderConfirmed;
 use App\Bag\Admin\Delete\DeleteData;
 use App\Http\Controllers\Controller;
-use Mail;
+use Illuminate\Support\Facades\Mail;
 use App\Bag\Admin\Status\ChangeStatus;
 use App\Bag\Admin\StoreUpdate\StoreUpdateData;
 use App\Http\Requests\Order\OrderInputRequest;
@@ -67,7 +67,6 @@ class OrderController extends Controller
     $input->orderStoreUpdate($order, $request);
     $order->update();
     if ($request->status == 'confirmed') {
-      // dd($order->user->email);
       Mail::to($order->user->email)->send(new MailForOrderConfirmed($order));
     }
     return back()->withSuccess('Order Updated Successfully');;
@@ -90,8 +89,8 @@ class OrderController extends Controller
   }
   protected function datas()
   {
-    $datas = Order::orderBy('id', 'desc')->with('user','address')
-    ->pagination(request('per-page'));
+    $datas = Order::orderBy('id', 'desc')->with('user', 'address')
+      ->pagination(request('per-page'));
     return $datas;
   }
 }
