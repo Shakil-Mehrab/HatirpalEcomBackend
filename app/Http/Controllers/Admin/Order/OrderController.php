@@ -71,6 +71,14 @@ class OrderController extends Controller
     }
     return back()->withSuccess('Order Updated Successfully');;
   }
+  public function show($slug)
+  {
+    $data = Order::where('slug', $slug)
+      ->firstOrFail();
+    $columns = Order::columns();
+    $model = 'order';
+    return view('layouts.order.detail', compact('data', 'columns', 'model'));
+  }
   public function destroy(DeleteData $delete, $slug)
   {
     $delete->orderDelete($slug);

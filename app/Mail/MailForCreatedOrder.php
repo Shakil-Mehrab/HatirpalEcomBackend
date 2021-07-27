@@ -8,7 +8,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use App\Models\Order;
 
-class MailForOrderConfirmed extends Mailable
+class MailForCreatedOrder extends Mailable
 {
     use Queueable, SerializesModels;
     protected $order;
@@ -29,8 +29,8 @@ class MailForOrderConfirmed extends Mailable
      */
     public function build()
     {
-        return $this->view('message.order.confirm-order')->with([
+        return $this->view('message.order.created-order')->with([
             "order" => $this->order
-        ])->subject("Hatirpal Admin Has Confirmed Your Order");
+        ])->subject("Order Created");
     }
 }

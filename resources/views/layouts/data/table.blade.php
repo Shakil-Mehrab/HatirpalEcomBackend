@@ -33,7 +33,7 @@
                     <th>Size</th>
                     @endif
 
-                    
+
 
                 </tr>
             </thead>
@@ -46,6 +46,8 @@
                     <td>
                         <a href="{{url('admin/'.$model.'/'.$data->slug.'/edit')}}" style="color:blue"><i class="fas fa-pencil-alt"></i></a>
                         <a href="{{url('admin/'.$model.'/'.$data->slug)}}" class="delete" style="color:red"><i class="far fa-trash-alt"></i></a>
+                        <a href="{{url('admin/'.$model.'/'.$data->slug)}}" style="color:green"><i class="far fa-eye"></i></a>
+
                         @if($model=='category'){{$data->products->count()}}@endif
                     </td>
                     @foreach($columns as $column)
@@ -60,14 +62,13 @@
                     <td>{{$data->address?$data->address->address.','.$data->address->delivery_place:"$data->address_id not found"}}</td>
                     @elseif($column=='status')
                     <td>
-                       <a href="{{url('admin/status/'.$model,$data->slug)}}" class="status">
-                       <input type="checkbox" id="toggle-demo" class="ArtStatus btn btn-success btn-sm" rel="1" data-toggle="toggle" data-on="Enabled" data-of="Disabled" data-onstyle="success" data-offstyle="danger"
-                        @if($data->status === 'published' or $data->status == 1)
+                        <a href="{{url('admin/status/'.$model,$data->slug)}}" class="status">
+                            <input type="checkbox" id="toggle-demo" class="ArtStatus btn btn-success btn-sm" rel="1" data-toggle="toggle" data-on="Enabled" data-of="Disabled" data-onstyle="success" data-offstyle="danger" @if($data->status === 'published' or $data->status == 1)
                             checked
-                        @endif
-                         >
-                        <!-- <div id="myElem" style="display:none;" class="alert alert-success">Status Enabled</div> -->
-                       </a>
+                            @endif
+                            >
+                            <!-- <div id="myElem" style="display:none;" class="alert alert-success">Status Enabled</div> -->
+                        </a>
                     </td>
                     @else
                     <td>{{$data->$column}}</td>
@@ -91,7 +92,7 @@
                     </td>
                     @endif
 
-                  
+
                 </tr>
                 @empty
                 @endforelse
@@ -106,7 +107,7 @@
         $pageStart=($section-1) * $numbersPerSection + 1;
         $pageEnd=($section-1) * $numbersPerSection + $numbersPerSection;
         if ($section == $sections) {
-            $pageEnd= $datas->lastPage();
+        $pageEnd= $datas->lastPage();
         }
         $backword=$datas->currentPage()-$numbersPerSection;
         $forword=$datas->currentPage()+$numbersPerSection;
@@ -125,22 +126,20 @@
                     <a class="page-link" href="{{URL::to('/admin/'.$model.'?page='.$backword)}}">...</a>
                 </li>
                 @endif
-                @for($i=$pageStart;$i<=$pageEnd;$i++)
-                <li class="page-item paginate_reload_prevent {{ $datas->currentPage()==$i ? 'active' : '' }}">
+                @for($i=$pageStart;$i<=$pageEnd;$i++) <li class="page-item paginate_reload_prevent {{ $datas->currentPage()==$i ? 'active' : '' }}">
                     <a class="page-link" data-id="{{$i}}" href="{{URL::to('/admin/'.$model.'?page='.$i)}}">{{$i}}</a>
-                </li>
-                @endfor
-                @if($section < $sections)
-                <li class="page-item paginate_reload_prevent">
-                    <a class="page-link" href="{{URL::to('/admin/'.$model.'?page='.$forword)}}">...</a>
-                </li>
-                <li class="page-item paginate_reload_prevent">
-                    <a class="page-link" data-id="{{$datas->currentPage()+1}}" href="{{URL::to('/admin/'.$model.'?page='.$datas->lastPage())}}">{{$datas->lastPage()}}</a>
-                </li>
-                @endif
-                <li class="page-item paginate_reload_prevent {{$datas->currentPage()==$datas->lastPage()?'disabled':''}}">
-                    <a  class="page-link" data-id="{{$datas->currentPage()+1}}" href="{{URL::to('/admin/'.$model.'?page='.$next)}}">Next</a>
-                </li>
+                    </li>
+                    @endfor
+                    @if($section < $sections) <li class="page-item paginate_reload_prevent">
+                        <a class="page-link" href="{{URL::to('/admin/'.$model.'?page='.$forword)}}">...</a>
+                        </li>
+                        <li class="page-item paginate_reload_prevent">
+                            <a class="page-link" data-id="{{$datas->currentPage()+1}}" href="{{URL::to('/admin/'.$model.'?page='.$datas->lastPage())}}">{{$datas->lastPage()}}</a>
+                        </li>
+                        @endif
+                        <li class="page-item paginate_reload_prevent {{$datas->currentPage()==$datas->lastPage()?'disabled':''}}">
+                            <a class="page-link" data-id="{{$datas->currentPage()+1}}" href="{{URL::to('/admin/'.$model.'?page='.$next)}}">Next</a>
+                        </li>
             </ul>
         </nav>
         <br><br>
