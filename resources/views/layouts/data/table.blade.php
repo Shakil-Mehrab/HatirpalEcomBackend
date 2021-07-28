@@ -1,4 +1,4 @@
-<div id="newData">
+<div class="scroll_div" id="newData">
 
     <form action="{{url('admin/bulk/delete')}}" method="post" id="bulkDelete">
         @csrf

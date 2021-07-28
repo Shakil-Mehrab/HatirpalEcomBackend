@@ -15,82 +15,86 @@ use App\Http\Requests\Contact\ContactUpdateRequest;
 
 class ContactController extends Controller
 {
-  public function index()
-  {
-    $datas = $this->datas();
-    $model = 'contact';
-    $columns = Contact::columns();
-
-    if (request('per-page') or request('page')) {
-      return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+    public function __construct()
+    {
+        $this->middleware('admin');
     }
-    return view('layouts.data.view', compact('datas', 'columns', 'model'));
-  }
+    public function index()
+    {
+        $datas = $this->datas();
+        $model = 'contact';
+        $columns = Contact::columns();
 
-  public function search()
-  {
-    $datas = Contact::where('heading', 'LIKE', "%" . request('query') . "%")
-      ->orWhere('slug', 'LIKE', "%" . request('query') . "%")
-      ->searchPagination(request('per-page'));
-    $columns = Contact::columns();
-    $model = 'contact';
-    return view('layouts.data.table', compact('datas', 'columns', 'model'));
-  }
-  public function create()
-  {
-    $data = '';
-    $columns = Contact::create_columns();
-    $model = 'contact';
-    return view('layouts.data.create', compact('data', 'columns', 'model'));
-  }
-  public function store(ContactInputRequest $request, ImageHandling $imageHandling, StoreUpdateData $input)
-  {
-    $product = new Contact();
+        if (request('per-page') or request('page')) {
+            return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+        }
+        return view('layouts.data.view', compact('datas', 'columns', 'model'));
+    }
 
-    $input->supplierStoreUpdate($product, $request);
-    $product->slug = time() . '-' . Str::slug($request['name']);
+    public function search()
+    {
+        $datas = Contact::where('heading', 'LIKE', "%" . request('query') . "%")
+            ->orWhere('slug', 'LIKE', "%" . request('query') . "%")
+            ->searchPagination(request('per-page'));
+        $columns = Contact::columns();
+        $model = 'contact';
+        return view('layouts.data.table', compact('datas', 'columns', 'model'));
+    }
+    public function create()
+    {
+        $data = '';
+        $columns = Contact::create_columns();
+        $model = 'contact';
+        return view('layouts.data.create', compact('data', 'columns', 'model'));
+    }
+    public function store(ContactInputRequest $request, ImageHandling $imageHandling, StoreUpdateData $input)
+    {
+        $product = new Contact();
 
-    $request->user()->contact()->save($product);
-    return redirect('admin/contact')
-      ->withSuccess('Contact Created Successfully');
-  }
-  public function edit($slug)
-  {
-    $data = Contact::where('slug', $slug)->firstOrFail();
-    $columns = Contact::edit_columns();
-    $model = 'contact';
-    return view('layouts.data.edit', compact('data', 'columns', 'model'));
-  }
-  public function update(ContactUpdateRequest $request, ImageHandling $imageHandling, StoreUpdateData $input, $slug)
-  {
-    $product = Contact::where('slug', $slug)
-      ->firstOrFail();
+        $input->supplierStoreUpdate($product, $request);
+        $product->slug = time() . '-' . Str::slug($request['name']);
 
-    $input->contactStoreUpdate($product, $request);
-    $product->update();
+        $request->user()->contact()->save($product);
+        return redirect('admin/contact')
+            ->withSuccess('Contact Created Successfully');
+    }
+    public function edit($slug)
+    {
+        $data = Contact::where('slug', $slug)->firstOrFail();
+        $columns = Contact::edit_columns();
+        $model = 'contact';
+        return view('layouts.data.edit', compact('data', 'columns', 'model'));
+    }
+    public function update(ContactUpdateRequest $request, ImageHandling $imageHandling, StoreUpdateData $input, $slug)
+    {
+        $product = Contact::where('slug', $slug)
+            ->firstOrFail();
 
-    return back()->withSuccess('Contact Updated Successfully');;
-  }
-  public function destroy(DeleteData $delete, $slug)
-  {
-    $delete->contactDelete($slug);
-    $datas = $this->datas();
-    $columns = Contact::columns();
-    $model = 'contact';
-    return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-  }
-  public function status(ChangeStatus $status, $slug)
-  {
-    $status->contactStatusChange($slug);
-    $datas = $this->datas();
-    $columns = Contact::columns();
-    $model = 'contact';
-    return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-  }
-  protected function datas()
-  {
-    $datas = Contact::orderBy('id', 'desc')
-      ->pagination(request('per-page'));
-    return $datas;
-  }
+        $input->contactStoreUpdate($product, $request);
+        $product->update();
+
+        return back()->withSuccess('Contact Updated Successfully');;
+    }
+    public function destroy(DeleteData $delete, $slug)
+    {
+        $delete->contactDelete($slug);
+        $datas = $this->datas();
+        $columns = Contact::columns();
+        $model = 'contact';
+        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+    }
+    public function status(ChangeStatus $status, $slug)
+    {
+        $status->contactStatusChange($slug);
+        $datas = $this->datas();
+        $columns = Contact::columns();
+        $model = 'contact';
+        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+    }
+    protected function datas()
+    {
+        $datas = Contact::orderBy('id', 'desc')
+            ->pagination(request('per-page'));
+        return $datas;
+    }
 }

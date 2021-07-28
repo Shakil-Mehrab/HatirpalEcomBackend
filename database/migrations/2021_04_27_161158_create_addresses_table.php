@@ -14,8 +14,8 @@ class CreateAddressesTable extends Migration
     public function up()
     {
         Schema::create('addresses', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id')->unsigned()->index();
+            $table->id();
+            $table->foreignId('user_id')->default(1)->constrained('users');
             $table->string('slug')->unique()->index();
             $table->string('country')->index();
             $table->string('division')->index();
@@ -26,7 +26,6 @@ class CreateAddressesTable extends Migration
             $table->string('postal_code');
             $table->boolean('default')->default(0);
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

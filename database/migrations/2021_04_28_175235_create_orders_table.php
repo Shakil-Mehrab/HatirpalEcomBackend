@@ -15,10 +15,10 @@ class CreateOrdersTable extends Migration
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unsigned()->index();
+            $table->foreignId('user_id')->constrained('users');
             $table->string('slug')->unique()->index();
             $table->string('order_id')->unique();
-            $table->integer('address_id');
+            $table->foreignId('address_id')->constrained('addresses');
             $table->string('shipping_method');
             $table->string('payment_method')->index();
             $table->string('payment_id')->nullable();
@@ -27,10 +27,6 @@ class CreateOrdersTable extends Migration
             $table->integer('subtotal');
             $table->integer('total');
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('address_id')->references('id')->on('addresses');
-            // $table->foreign('shipping_method_id')->references('id')->on('shipping_methods');
-            // $table->foreign('payment_method_id')->references('id')->on('payment_methods');
         });
     }
 

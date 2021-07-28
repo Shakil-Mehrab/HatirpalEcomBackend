@@ -15,6 +15,10 @@ use App\Http\Requests\About\AboutUpdateRequest;
 
 class AboutController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
     public function index()
     {
         $datas = About::orderBy('id', 'desc')

@@ -47,5 +47,5 @@ class ProductSizeSeeder extends Seeder
             ],
         ]);
     }
-    
+
 }

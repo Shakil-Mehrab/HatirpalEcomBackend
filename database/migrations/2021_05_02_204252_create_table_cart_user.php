@@ -15,14 +15,12 @@ class CreateTableCartUser extends Migration
     {
         Schema::create('cart_user', function (Blueprint $table) {
             $table->id();
-            $table->integer('user_id')->unsigned()->index();
-            $table->integer('product_id')->unsigned()->index();
+            $table->foreignId('user_id')->default(1)->constrained('users');
+            $table->foreignId('product_id')->default(1)->constrained('products');
             $table->integer('quantity')->unsigned()->default(1);
             $table->string('product_image');
             $table->foreignId('size_id')->constrained('sizes');
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users');
-            $table->foreign('product_id')->references('id')->on('products');
         });
     }
 

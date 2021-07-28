@@ -11,6 +11,7 @@
     <div class="view_button">
         <a href="{{url('admin/'.$model)}}" class="btn btn-primary btn-sm"><i class="far fa-eye"></i> View {{ucfirst($model)}}</a>
     </div>
+   <div class="scroll_div">
     <form action="{{url('admin/'.$model)}}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="row">
@@ -63,7 +64,7 @@
             @if($model=='condition')
             @include('layouts.condition.partial')
             @endif
-            
+
             @if($model=='order')
             @include('layouts.order.partial')
             @endif
@@ -79,6 +80,7 @@
         </div>
     </form>
 </div>
+   </div>
 @endsection
 @section('js')
 <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>

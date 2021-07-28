@@ -4,6 +4,7 @@ namespace Database\Factories;
 
 use App\Models\User;
 use App\Models\Order;
+use App\Models\Address;
 use Illuminate\Support\Str;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -28,7 +29,9 @@ class OrderFactory extends Factory
                 return User::all()->random()->id;
             },
             'slug' => Str::uuid(),
-            'address_id' => 1,
+            'address_id' => function () {
+                return Address::all()->random()->id;
+            },
             'shipping_method' => $this->faker->word,
             'payment_method' => 'Hatirpal Pay',
             'subtotal' => $this->faker->numberBetween(1000, 9000),

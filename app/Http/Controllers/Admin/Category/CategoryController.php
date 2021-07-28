@@ -13,68 +13,72 @@ use App\Http\Requests\Category\CategoryUpdateRequest;
 
 class CategoryController extends Controller
 {
-  public function index()
-  {
-    $datas = $this->datas();
-    $columns = Category::columns();
-    $model = 'category';
-    if (request('per-page') or request('page')) {
-      return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+    public function __construct()
+    {
+        $this->middleware('admin');
     }
-    return view('layouts.data.view', compact('datas', 'columns', 'model'));
-  }
-  public function search()
-  {
-    $datas = Category::where('name', 'LIKE', "%" . request('query') . "%")
-      ->searchPagination(request('per-page'));
-    $columns = Category::columns();
-    $model = 'category';
-    return view('layouts.data.table', compact('datas', 'columns', 'model'));
-  }
-  public function create()
-  {
-    $data = '';
-    $columns = Category::create_columns();
-    $model = 'category';
-    return view('layouts.data.create', compact('data', 'columns', 'model'));
-  }
-  public function store(CategoryInputRequest $request, StoreUpdateData $input)
-  {
-    $product = new Category();
-    $input->categoryStoreUpdate($product, $request);
-    $product->slug =  time() . '-' . Str::slug($request['name']);
-    $request->user()->categories()->save($product);
-    return redirect('admin/category')->withSuccess('Category Created Successfully');
-  }
-  public function edit($slug)
-  {
+    public function index()
+    {
+        $datas = $this->datas();
+        $columns = Category::columns();
+        $model = 'category';
+        if (request('per-page') or request('page')) {
+            return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+        }
+        return view('layouts.data.view', compact('datas', 'columns', 'model'));
+    }
+    public function search()
+    {
+        $datas = Category::where('name', 'LIKE', "%" . request('query') . "%")
+            ->searchPagination(request('per-page'));
+        $columns = Category::columns();
+        $model = 'category';
+        return view('layouts.data.table', compact('datas', 'columns', 'model'));
+    }
+    public function create()
+    {
+        $data = '';
+        $columns = Category::create_columns();
+        $model = 'category';
+        return view('layouts.data.create', compact('data', 'columns', 'model'));
+    }
+    public function store(CategoryInputRequest $request, StoreUpdateData $input)
+    {
+        $product = new Category();
+        $input->categoryStoreUpdate($product, $request);
+        $product->slug =  time() . '-' . Str::slug($request['name']);
+        $request->user()->categories()->save($product);
+        return redirect('admin/category')->withSuccess('Category Created Successfully');
+    }
+    public function edit($slug)
+    {
 
-    $data = Category::where('slug', $slug)->firstOrFail();
+        $data = Category::where('slug', $slug)->firstOrFail();
 
-    $columns = Category::edit_columns();
-    $model = 'category';
-    return view('layouts.data.edit', compact('data', 'columns', 'model'));
-  }
-  public function update(CategoryUpdateRequest $request, StoreUpdateData $input, $slug)
-  {
-    $product = Category::where('slug', $slug)
-      ->firstOrFail();
-    $input->categoryStoreUpdate($product, $request);
-    $product->update();
-    return back()->withSuccess('Category Updated Successfully');;
-  }
-  public function destroy(DeleteData $delete, $slug)
-  {
-    $delete->catDelete($slug);
-    $datas = $this->datas();
-    $columns = Category::columns();
-    $model = 'category';
-    return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-  }
-  protected function datas()
-  {
-    $datas = Category::orderBy('id', 'desc')->with('products','user')
-      ->pagination(request('per-page'));
-    return $datas;
-  }
+        $columns = Category::edit_columns();
+        $model = 'category';
+        return view('layouts.data.edit', compact('data', 'columns', 'model'));
+    }
+    public function update(CategoryUpdateRequest $request, StoreUpdateData $input, $slug)
+    {
+        $product = Category::where('slug', $slug)
+            ->firstOrFail();
+        $input->categoryStoreUpdate($product, $request);
+        $product->update();
+        return back()->withSuccess('Category Updated Successfully');;
+    }
+    public function destroy(DeleteData $delete, $slug)
+    {
+        $delete->catDelete($slug);
+        $datas = $this->datas();
+        $columns = Category::columns();
+        $model = 'category';
+        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+    }
+    protected function datas()
+    {
+        $datas = Category::orderBy('id', 'desc')->with('products', 'user')
+            ->pagination(request('per-page'));
+        return $datas;
+    }
 }

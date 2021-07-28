@@ -37,8 +37,13 @@ a {
 
 .main_content {
     margin-bottom: 50px;
-}
+    margin-top: 55px;
 
+}
+.scroll_div{
+    min-height: 100vw;
+    overflow: scroll;
+}
 /* create page */
 .control-label {
     font-size: 15px;

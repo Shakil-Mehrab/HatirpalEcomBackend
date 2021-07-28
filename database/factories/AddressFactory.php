@@ -24,10 +24,9 @@ class AddressFactory extends Factory
     public function definition()
     {
         return [
-            // 'user_id' => function () {
-            //     return User::all()->random()->id;
-            // },
-            'user_id'=>11,
+            'user_id' => function () {
+                return User::all()->random()->id;
+            },
             'country' => $this->faker->word,
             'division' => $this->faker->word,
             'district' => $this->faker->word,

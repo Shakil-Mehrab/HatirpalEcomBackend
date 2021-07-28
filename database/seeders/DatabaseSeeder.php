@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         \App\Models\Address::factory(1)->create();
         $this->call(ProductCategorySeeder::class);
         $this->call(SizeSeeder::class);
-        $this->call(ProductSizeSeeder::class);
+        //$this->call(ProductSizeSeeder::class); duplicate entry problem
         $this->call(ShippingMethodSeeder::class);
         $this->call(RegionSeeder::class);
         \App\Models\Supplier::factory(1)->create();

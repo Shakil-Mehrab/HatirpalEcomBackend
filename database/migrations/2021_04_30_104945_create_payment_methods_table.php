@@ -16,13 +16,12 @@ class CreatePaymentMethodsTable extends Migration
         Schema::create('payment_methods', function (Blueprint $table) {
             $table->increments('id');
             $table->string('slug')->unique()->index();
-            $table->integer('user_id')->unsigned()->index();
+            $table->foreignId('user_id')->default(1)->constrained('users');
             $table->string('card_type')->nullable();
             $table->string('last_four')->nullable();
             $table->boolean('default')->default(true);
             $table->string('provider_id')->unique();
             $table->timestamps();
-            $table->foreign('user_id')->references('id')->on('users');
         });
     }
 

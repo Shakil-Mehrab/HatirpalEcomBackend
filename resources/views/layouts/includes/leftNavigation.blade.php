@@ -138,7 +138,13 @@
             </ul>
         </li>
         @endif
-
+        @if(auth()->user()->role=='user' && auth()->user()->suppliers->count()==0)
+        <li class="mb-2 setting">
+            <a class="change_color_to_dark_white" href="{{url('admin/supplier/create')}}">
+                <i class="fa fa-truck"></i> Register As A Supplier
+            </a>
+        </li>
+        @endif
         <li class="mb-2 setting">
             <a class="change_color_to_dark_white" href="{{url('admin/userprofile')}}">
                 <i class="fas fa-cog"></i> Settings

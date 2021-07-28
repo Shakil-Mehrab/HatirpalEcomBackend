@@ -10,7 +10,7 @@ nav {
 }
 /* left side  */
 .left_navigation {
-    min-height: 600px;
+    /* min-height: 100vw; */
     background-color: #222d32;
     padding: 0;
     z-index: 9999;

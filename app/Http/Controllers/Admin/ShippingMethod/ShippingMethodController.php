@@ -11,13 +11,17 @@ use App\Http\Requests\ShippingMethod\ShippingMethodInputRequest;
 
 class ShippingMethodController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
     public function index()
     {
       $datas = ShippingMethod::orderBy('id', 'desc')
         ->pagination(request('per-page'));
       $model = 'shippingmethod';
       $columns = ShippingMethod::columns();
-  
+
       if (request('per-page') or request('page')) {
         return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
       }
@@ -32,11 +36,11 @@ class ShippingMethodController extends Controller
     }
     public function store(ShippingMethodInputRequest $request, StoreUpdateData $input)
     {
-        
+
       $product = new ShippingMethod();
       $input->shippingMethodstoreUpdate($product, $request);
       $product->save();
-  
+
       return redirect('admin/shippingmethod')
         ->withSuccess('Shipping Method Created Successfully');
     }
@@ -59,7 +63,7 @@ class ShippingMethodController extends Controller
     public function destroy(DeleteData $delete,$slug)
     {
       $delete->shippingMethodDelete($slug);
-      
+
       $datas = ShippingMethod::orderBy('id', 'desc')
         ->pagination(request('per-page'));
       $columns = ShippingMethod::columns();
@@ -67,4 +71,4 @@ class ShippingMethodController extends Controller
       return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
     }
   }
-  
+

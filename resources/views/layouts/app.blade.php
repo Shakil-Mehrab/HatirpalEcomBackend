@@ -32,7 +32,7 @@
                 <div class="col-lg-2 col-md-3 col-sm-4 left_navigation toggle_left_navigation" id="toggle_left_navigation">
                     @include('layouts.includes.leftNavigation')
                 </div>
-                <div class="col-lg-10 col-md-9 col-sm-8 main_content" style="margin-top: 55px;height:600px;overflow:scroll;">
+                <div class="col-lg-10 col-md-9 col-sm-8 main_content">
                     @include('message.alert')
                     @yield('content')
                 </div>
@@ -44,7 +44,7 @@
             </div>
         </footer>
     </div>
-    <!-- google translator 
+    <!-- google translator
     <script type="text/javascript">
         function googleTranslateElementInit() {
             new google.translate.TranslateElement({

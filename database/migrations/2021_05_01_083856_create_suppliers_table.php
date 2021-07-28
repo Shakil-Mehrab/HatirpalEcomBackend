@@ -21,7 +21,7 @@ class CreateSuppliersTable extends Migration
             $table->string('company_name');
             $table->string('phone');
             $table->string('email');
-            $table->string('company_type');
+            $table->string('type');
             $table->string('status')->default('pending');
             $table->string('address');
             $table->string('thumbnail')->default('images/default/supplier.png');
