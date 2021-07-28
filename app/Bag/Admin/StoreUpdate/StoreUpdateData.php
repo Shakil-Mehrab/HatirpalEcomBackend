@@ -22,7 +22,6 @@ class StoreUpdateData
     $product->subtotal = $request['subtotal'];
     $product->total = $request['total'];
     $product->status = $request['status'];
-
   }
   public function productStoreUpdate($product, $request)
   {
@@ -36,7 +35,6 @@ class StoreUpdateData
     $product->description = $request['description'];
     $product->minimum_order = $request['minimum_order'];
     $product->waranty = $request['waranty'];
-
   }
   public function supplierStoreUpdate($product, $request)
   {
@@ -45,7 +43,7 @@ class StoreUpdateData
     $product->email = $request['email'];
     $product->description = $request['description'];
     $product->address = $request['address'];
-    $product->type = $request['type'];
+    $product->company_type = $request['company_type'];
     $product->company_name = $request['company_name'];
   }
   public function contactStoreUpdate($product, $request)
@@ -79,22 +77,22 @@ class StoreUpdateData
     return;
   }
 
-  public function productStoreStock($product,$request)
+  public function productStoreStock($product, $request)
   {
     $stock = new Stock();
     $stock->quantity = $request['stock'];
     $stock->product_id = $product->id;
     $stock->save();
   }
-  public function productUpdateStock($product,$request)
+  public function productUpdateStock($product, $request)
   {
-      $stock =Stock::where('product_id',$product->id)->first();
-      if($stock){
-        $stock->quantity = $request['stock'];
-        $stock->update();
-        return;
-      }
-      $this->productStoreStock($product,$request);
+    $stock = Stock::where('product_id', $product->id)->first();
+    if ($stock) {
+      $stock->quantity = $request['stock'];
+      $stock->update();
+      return;
+    }
+    $this->productStoreStock($product, $request);
   }
   public function shippingMethodstoreUpdate($product, $request)
   {
@@ -114,11 +112,12 @@ class StoreUpdateData
   {
     $product->heading = $request['heading'];
   }
-  protected function discount($request){
-    if($request['old_price']==0){
-      $discount=0;
-    }else{
-      $discount=(($request['old_price']-$request['sale_price'])/$request['old_price'])*100;
+  protected function discount($request)
+  {
+    if ($request['old_price'] == 0) {
+      $discount = 0;
+    } else {
+      $discount = (($request['old_price'] - $request['sale_price']) / $request['old_price']) * 100;
     }
     return $discount;
   }

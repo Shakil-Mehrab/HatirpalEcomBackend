@@ -44,14 +44,17 @@
                         <input type="checkbox" name="checked_slug[]" value="{{$data->slug}}" class="selectall">
                     </td>
                     <td>
-                        <a href="{{url('admin/'.$model.'/'.$data->slug.'/edit')}}" style="color:blue"><i class="fas fa-pencil-alt"></i></a>
-                        <a href="{{url('admin/'.$model.'/'.$data->slug)}}" class="delete" style="color:red"><i class="far fa-trash-alt"></i></a>
-                        <a href="{{url('admin/'.$model.'/'.$data->slug)}}" style="color:green"><i class="far fa-eye"></i></a>
-
+                        <div class="d-flex">
+                            <a class="btn btn-sm btn-primary m-1" href="{{url('admin/'.$model.'/'.$data->slug.'/edit')}}"><i class="fas fa-pencil-alt"></i></a>
+                            <a class="btn btn-sm btn-danger m-1" href="{{url('admin/'.$model.'/'.$data->slug)}}" class="delete"><i class="far fa-trash-alt"></i></a>
+                        </div>
+                        <div class="d-flex">
+                            <a class="btn btn-sm btn-success m-1" href="{{url('admin/'.$model.'/'.$data->slug)}}"><i class="far fa-eye"></i></a>
+                        </div>
                         @if($model=='category'){{$data->products->count()}}@endif
                     </td>
                     @foreach($columns as $column)
-                    @if($column=='thumbnail')
+                    @if($column=='thumbnail' or $column=='thumbnail1' or $column=='thumbnail2' or$column=='thumbnail3' or $column=='thumbnail4')
                     <td>
                         <img src="{{asset($data->$column)}}" alt="No image" width="50px">
                         @if($model=='product')({{$data->productImages->count()}})@endif

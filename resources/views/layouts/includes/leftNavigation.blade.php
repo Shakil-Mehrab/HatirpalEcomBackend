@@ -129,7 +129,7 @@
         </li>
         <li class="tree_li mb-2">
             <a class="change_color_to_dark_white" href="#" style="position: relative;">
-                About As
+                About Us
                 <i class="fas fa-chevron-right"></i>
             </a>
             <ul class="tree_li_ul">

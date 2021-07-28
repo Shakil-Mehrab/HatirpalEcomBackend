@@ -41,16 +41,49 @@
             </div> -->
         </div>
     </div>
+    <div class="col-md-12">
+        @forelse(@auth()->user()->suppliers as $supplier)
+        <ul>
+            <li>{{$supplier->country}}</li>
+            <li>{{$supplier->company_name}}</li>
+            <li>{{$supplier->phone}}</li>
+            <li>{{$supplier->email}}</li>
+            <li>{{$supplier->company_type}}</li>
+            <li>{{$supplier->status}}</li>
+            <li>{{$supplier->address}}</li>
+            <li>
+                <div class="row">
+                    <div class="col-4 mt-4">
+                        <img src="{{$supplier->thumbnail}}" alt="$supplier->company_name" width="100%">
+                    </div>
+                    <div class="col-4 mt-4">
+                        <img src="{{$supplier->thumbnail1}}" alt="$supplier->company_name" width="100%">
+                    </div>
+                    <div class="col-4 mt-4">
+                        <img src="{{$supplier->thumbnail2}}" alt="$supplier->company_name" width="100%">
+                    </div>
+                    <div class="col-4 mt-4">
+                        <img src="{{$supplier->thumbnail3}}" alt="$supplier->company_name" width="100%">
+                    </div>
+                    <div class="col-4 mt-4">
+                        <img src="{{$supplier->thumbnail4}}" alt="$supplier->company_name" width="100%">
+                    </div>
+                </div>
+            </li>
+
+        </ul>
+        @empty
+        @endforelse
+    </div>
 
     <div class="col-md-12">
         <div class="row">
             <h3 class="text-center p-2">Selling Made Simple </h3>
             <h6 class="text-center mb-3">Become a seller today</h6>
-            @forelse(collect([1,2,3,4]) as $col)
             <div class="col-md-3 mb-5">
                 <div class="p-4 seller">
                     <h6 class="text-center mb-3">
-                        <strong>DarazMall Seller</strong>
+                        <strong>Hatirpal Seller</strong>
                     </h6>
                     <p class="text-justify">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus dolorum quis facilis nobis dolore dolores sequi quaerat vero omnis?
@@ -64,14 +97,13 @@
                         @empty
                         @endforelse
                     </ul>
-                    <div class="btn btn-success btn-sm mt-2">
-                        Sign up as Hatirpal
-                    </div>
-                  
+                    <a href="{{url('admin/supplier/create')}}">
+                        <button class="btn btn-success btn-sm mt-2 form-control">
+                            Sign up as Hatirpal
+                        </button>
+                    </a>
                 </div>
             </div>
-            @empty
-            @endforelse
         </div>
     </div>
 </div>

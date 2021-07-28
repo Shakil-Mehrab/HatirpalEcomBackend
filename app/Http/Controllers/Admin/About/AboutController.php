@@ -50,7 +50,7 @@ class AboutController extends Controller
 
         $input->aboutStoreUpdate($product, $request);
         $product->slug = time() . '-' . Str::slug($request['heading']);
-        $imageHandling->uploadaboutImage($product, $request, 'about');
+        $imageHandling->uploadImage($product, $request, 'about');
 
         $product->save();
         return redirect('admin/about')
@@ -69,7 +69,7 @@ class AboutController extends Controller
             ->firstOrFail();
 
         $input->aboutStoreUpdate($product, $request);
-        $imageHandling->uploadaboutImage($product, $request, 'about');
+        $imageHandling->uploadImage($product, $request, 'about');
         $product->update();
 
         return back()->withSuccess('About Updated Successfully');;

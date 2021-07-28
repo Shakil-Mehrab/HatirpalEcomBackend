@@ -50,11 +50,21 @@ class SupplierController extends Controller
 
     $input->supplierStoreUpdate($product, $request);
     $product->slug = time() . '-' . Str::slug($request['company_name']);
-    $imageHandling->uploadsupplierImage($product, $request, 'supplier');
+    $imageHandling->uploadImage($product, $request, 'supplier');
+    $imageHandling->uploadSupplerDocument($product, $request, 'supplier');
+
 
     $request->user()->supplier()->save($product);
     return redirect('admin/supplier')
       ->withSuccess('Supplier Created Successfully');
+  }
+  public function show($slug)
+  {
+    $data = Supplier::where('slug', $slug)
+      ->firstOrFail();
+    $columns = Supplier::columns();
+    $model = 'supplier';
+    return view('layouts.data.detail', compact('data', 'columns', 'model'));
   }
   public function edit($slug)
   {
@@ -69,7 +79,9 @@ class SupplierController extends Controller
       ->firstOrFail();
 
     $input->supplierStoreUpdate($product, $request);
-    $imageHandling->uploadsupplierImage($product, $request, 'supplier');
+    $imageHandling->uploadImage($product, $request, 'supplier');
+    $imageHandling->uploadSupplerDocument($product, $request, 'supplier');
+
     $product->update();
 
     return back()->withSuccess('Supplier Updated Successfully');;

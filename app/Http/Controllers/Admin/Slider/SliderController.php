@@ -50,7 +50,7 @@ class SliderController extends Controller
 
     $input->sliderStoreUpdate($product, $request);
     $product->slug = time() . '-' . Str::slug($request['heading']);
-    $imageHandling->uploadSliderImage($product, $request, 'slider');
+    $imageHandling->uploadImage($product, $request, 'slider');
 
     $product->save();
     return redirect('admin/slider')
@@ -69,7 +69,7 @@ class SliderController extends Controller
       ->firstOrFail();
 
     $input->sliderStoreUpdate($product, $request);
-    $imageHandling->uploadSliderImage($product, $request, 'slider');
+    $imageHandling->uploadImage($product, $request, 'slider', 400, 300);
     $product->update();
 
     return back()->withSuccess('Slider Updated Successfully');;

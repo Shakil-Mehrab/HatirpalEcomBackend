@@ -124,6 +124,14 @@ a {
     display: flex;
     justify-content: center;
 }
+/* detail  */
+.detail ul li {
+    margin: 10px 0;
+    font-size: 18px;
+}
+.detail ul .image {
+    display: inline;
+}
 /* create */
 .product_cat_div {
     margin-left: 10px;

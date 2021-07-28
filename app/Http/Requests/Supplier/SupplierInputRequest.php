@@ -24,13 +24,12 @@ class SupplierInputRequest extends FormRequest
     public function rules()
     {
         return [
-            'phone'=>'required',
-            'email'=>'required|max:50',
-            'country'=>'required',
-            'address'=>'required',
-            'type'=>'required',
-            'company_name'=>'required',
-            'thumbnail'=>'mimes:jpg,png'
+            'phone' => 'required',
+            'email' => 'required|max:50',
+            'country' => 'required',
+            'address' => 'required',
+            'company_type' => 'required',
+            'company_name' => 'required',
         ];
     }
 }

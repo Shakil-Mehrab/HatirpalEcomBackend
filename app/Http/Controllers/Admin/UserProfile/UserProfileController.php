@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin\UserProfile;
 
 use App\Models\User;
+use App\Models\Supplier;
 use App\Bag\Admin\Delete\DeleteData;
 use App\Http\Controllers\Controller;
 use App\Bag\Admin\Image\ImageHandling;
