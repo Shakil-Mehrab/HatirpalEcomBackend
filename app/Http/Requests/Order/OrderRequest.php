@@ -25,10 +25,10 @@ class OrderRequest extends FormRequest
     public function rules()
     {
         return [
-            'address_id'=>[
+            'address_id' => [
                 'required',
-                Rule::exists('addresses','id')->where(function($builder){
-                    $builder->where('user_id',$this->user()->id);
+                Rule::exists('addresses', 'id')->where(function ($builder) {
+                    $builder->where('user_id', $this->user()->id);
                 })
             ],
             // 'payment_method_id'=>[
@@ -42,8 +42,8 @@ class OrderRequest extends FormRequest
             //     'exists:shipping_methods,id',
             //     new ValidShippingMethod($this->address_id)
             // ]
-            "payment_method"=>"required",
-            "shipping_method"=>"required",
+            // "payment_method"=>"required",
+            "shipping_method" => "required",
 
         ];
     }

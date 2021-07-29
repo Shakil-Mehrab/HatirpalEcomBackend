@@ -28,19 +28,38 @@ class Cart
         $this->shipping = Address::find($shippingId);
         return $this;
     }
-    public function add($products)
+    public function add($product)
     {
-
-        $cartProduct = $this->user->cartProduct($products[0]['id'], $products[0]['size_id'], $products[0]['product_image'])->get();
-
-        if ($cartProduct->count() > 0) {
-            $this->user->cart()->syncWithoutDetaching(
-                $this->getStorePayload($products)
-            );
+        $cartProduct = $this->alreadyExist($product);
+        if (!empty($cartProduct)) {
+            $this->cartQtyIncrease($cartProduct, $product);
             return "sync done";
         }
-        $this->addNewProduct($products);
+        $this->addNewProduct($product);
         return "New added done";
+    }
+    protected function alreadyExist($product)
+    {
+        return $this->user
+            ->cartProduct($product['id'], $product['size_id'], $product['product_image'])
+            ->first();
+    }
+    protected function cartQtyIncrease($cartProduct, $product)
+    {
+        $this->user->userSpecificCart($cartProduct->id)->update([
+            'quantity' => $product['quantity'] + $cartProduct->quantity
+        ]);
+    }
+    protected function addNewProduct($product)
+    {
+        $cart = new CartUser();
+        $cart->product_id = $product['id'];
+        $cart->user_id = $this->user->id;
+        $cart->size_id = $product['size_id'];
+        $cart->product_image = $product['product_image'];
+        $cart->quantity = $product['quantity'];
+        $cart->save();
+        return;
     }
     public function update($cartId, $quantity, $size_id)
     {
@@ -93,32 +112,15 @@ class Cart
         }
         return $this->subtotal();
     }
-    protected function getStorePayload($products)
-    {
-        return collect($products)->keyBy('id')->map(function ($product) {
-            return [
-                'quantity' => $product['quantity'] + $this->getCurrentQuantity($product['id']),
-                'product_image' => $product['product_image'],
-                'size_id' => $product['size_id'],
-            ];
-        })
-            ->toArray();
-    }
-    protected function getCurrentQuantity($productId)
-    {
-        if ($product = $this->user->cart->where('id', $productId)->first()) {
-            return $product->pivot->quantity;
-        }
-        return 0;
-    }
-    protected function addNewProduct($products)
-    {
-        $cart = new CartUser();
-        $cart->product_id = $products[0]['id'];
-        $cart->user_id = $this->user->id;
-        $cart->size_id = $products[0]['size_id'];
-        $cart->product_image = $products[0]['product_image'];
-        $cart->quantity = $products[0]['quantity'];
-        $cart->save();
-    }
+    // protected function getStorePayload($products)
+    // {
+    //     return collect($products)->keyBy('id')->map(function ($product) {
+    //         return [
+    //             'quantity' => $product['quantity'] + $this->getCurrentQuantity($product['id']),
+    //             'product_image' => $product['product_image'],
+    //             'size_id' => $product['size_id'],
+    //         ];
+    //     })
+    //         ->toArray();
+    // }
 }

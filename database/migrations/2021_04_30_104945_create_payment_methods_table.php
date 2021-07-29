@@ -16,7 +16,7 @@ class CreatePaymentMethodsTable extends Migration
         Schema::create('payment_methods', function (Blueprint $table) {
             $table->increments('id');
             $table->string('slug')->unique()->index();
-            $table->foreignId('user_id')->default(1)->constrained('users');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
             $table->string('card_type')->nullable();
             $table->string('last_four')->nullable();
             $table->boolean('default')->default(true);

@@ -64,7 +64,7 @@ class StoreUpdateData
   }
 
 
-  public function productPivotData($product, $request)
+  public function  productPivotData($product, $request)
   {
     $product->categories()
       ->sync(

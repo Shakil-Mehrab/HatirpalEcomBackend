@@ -16,18 +16,19 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
-    use HasFactory,PaginationTrait,ProductColumn,CanBeScoped,RelationWithUser;
+    use HasFactory, PaginationTrait, ProductColumn, CanBeScoped, RelationWithUser;
     public function getRouteKeyName()
     {
         return 'slug';
     }
-    public static function booted(){
-        static::creating(function(Model $model){
-            $model->uuid=Str::uuid();
+    public static function booted()
+    {
+        static::creating(function (Model $model) {
+            $model->uuid = Str::uuid();
             $model->status = ProductStatus::PENDING;
         });
     }
-    
+
     public function categories()
     {
         return $this->belongsToMany(Category::class, 'product_category')
@@ -38,42 +39,49 @@ class Product extends Model
         return $this->belongsToMany(Size::class, 'product_size')
             ->withTimestamps();
     }
-    public function productImages(){
+    public function productImages()
+    {
         return $this->hasMany('App\Models\ProductImage');
-     }
-     public function variations(){
-        return $this->hasMany(ProductVariation::class)->orderBy('order','asc');
+    }
+    public function variations()
+    {
+        return $this->hasMany(ProductVariation::class)->orderBy('order', 'asc');
     }
     // public function inStock(){
     //     return $this->stockCount()>0;
     // }
-    public function stockCount(){
+    public function stockCount()
+    {
         return $this->stock->sum('pivot.stock');
     }
-    public function stock()//cart controller theke kivabe auto call hoy
+    public function stock() //cart controller theke kivabe auto call hoy
     {
-        return $this->belongsToMany(Product::class,'product_stock_view')
-        ->withPivot([  
-            'stock',
-            'in_stock'
-        ]);
+        return $this->belongsToMany(Product::class, 'product_stock_view')
+            ->withPivot([
+                'stock',
+                'in_stock'
+            ]);
     }
-    public function minStock($count){
-        return min($this->presentStockCount(),$count);
+    public function minStock($count)
+    {
+        return min($this->presentStockCount(), $count);
     }
-    public function presentStockCount(){
-        return $this->stock->sum('pivot.stock');//cart_user er protteker jonno pro_vari*Pro_vari_stock_view bar call hove
+    public function presentStockCount()
+    {
+        return $this->stock->sum('pivot.stock'); //cart_user er protteker jonno pro_vari*Pro_vari_stock_view bar call hove
     }
-    public function product(){
+    public function product()
+    {
         return $this->belongsTo(Product::class);
     }
     public function productStock()
     {
         return $this->hasOne(Stock::class);
     }
-    public function cartProductSize($size_id){
-        $size=Size::where('id',$size_id)->first();
-        if($size==null){
+    public function cartProductSize($size_id)
+    {
+        $size = Size::where('id', $size_id)->first();
+        if ($size == null) {
             return "";
         }
         return $size->size;
@@ -82,4 +90,21 @@ class Product extends Model
     {
         return new ProductCollection($models);
     }
+    //     public static function forSyncing($products)
+    //     {
+    //         $collect = [];
+    //         $cart = [];
+    //         foreach ($products as $product) {
+    //             $cart = [
+    //                 $cart['quantity'] = $product->pivot->quantity,
+    //                 $cart['product_image'] = $product->pivot->product_image,
+    //                 $cart['size_id'] = $product->pivot->size_id,
+    //                 $cart['user_id'] = auth()->user()->id
+    //             ];
+    //             $collect[] = $cart;
+    //         }
+    // 
+    //         return $collect;
+    //     }
+
 }

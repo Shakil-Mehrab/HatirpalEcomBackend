@@ -15,7 +15,7 @@ class CreateAddressesTable extends Migration
     {
         Schema::create('addresses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->default(1)->constrained('users');
+            $table->foreignId('user_id')->constrained('users');
             $table->string('slug')->unique()->index();
             $table->string('country')->index();
             $table->string('division')->index();

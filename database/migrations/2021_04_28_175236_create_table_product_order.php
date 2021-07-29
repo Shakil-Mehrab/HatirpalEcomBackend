@@ -14,8 +14,9 @@ class CreateTableProductOrder extends Migration
     public function up()
     {
         Schema::create('product_order', function (Blueprint $table) {
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('product_id')->constrained('products');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('order_id')->constrained('orders')->onDelete('cascade');
+            $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
             $table->integer('quantity')->unsigned();
             $table->string('product_image');
             $table->string('size_id');

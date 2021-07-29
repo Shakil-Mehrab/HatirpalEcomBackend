@@ -20,7 +20,7 @@ class CreateOrdersTable extends Migration
             $table->string('order_id')->unique();
             $table->foreignId('address_id')->constrained('addresses');
             $table->string('shipping_method');
-            $table->string('payment_method')->index();
+            $table->string('payment_method')->nullable();
             $table->string('payment_id')->nullable();
             $table->string('payment_status')->default('pending');
             $table->string('status')->default('pending');

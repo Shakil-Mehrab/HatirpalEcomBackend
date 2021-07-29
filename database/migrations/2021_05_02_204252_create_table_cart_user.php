@@ -15,8 +15,8 @@ class CreateTableCartUser extends Migration
     {
         Schema::create('cart_user', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->default(1)->constrained('users');
-            $table->foreignId('product_id')->default(1)->constrained('products');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade');
+            $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
             $table->integer('quantity')->unsigned()->default(1);
             $table->string('product_image');
             $table->foreignId('size_id')->constrained('sizes');

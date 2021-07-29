@@ -51,7 +51,6 @@ class ProductController extends Controller
   }
   public function store(ProductInputRequest $request, ImageHandling $imageHandling, StoreUpdateData $input)
   {
-    // dd($request->stock);
     $product = new Product();
 
     $input->productStoreUpdate($product, $request);
@@ -77,7 +76,8 @@ class ProductController extends Controller
   }
   public function update(ProductUpdateRequest $request, ImageHandling $imageHandling, StoreUpdateData $input, $slug)
   {
-    // dd($request->size_id);
+    // dd($request['category_id']);
+
     $product = Product::where('slug', $slug)
       ->firstOrFail();
 

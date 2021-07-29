@@ -44,32 +44,20 @@ class CartController extends Controller
     }
     public function store(Cart $cart, CartStoreRequest $request)
     {
-        $products = array(
-            array(
-                'id' => $request['products'][0]['product_id'],
-                'quantity' => $request['products'][0]['quantity'],
-                'product_image' => $request['products'][0]['image'],
-                'size_id' => $request['products'][0]['size_id'],
-            ),
-            // array(
-            //     'id'=>'103',
-            //     'quantity'=>'5',
-            //     'product_image_id'=>3,
-            //     'size_id'=>2
-            // )
+        $product = array(
+            'id' => $request['products'][0]['product_id'],
+            'quantity' => $request['products'][0]['quantity'],
+            'product_image' => $request['products'][0]['image'],
+            'size_id' => $request['products'][0]['size_id'],
         );
-        // return $products;
-
-        $cart->add($products);
+        return $cart->add($product);
     }
     public function update($cartId, Request $request, Cart $cart)
     {
         $cart->update($cartId, $request->quantity, $request->size_id);
-        // $cart->update(3, 10,3);
     }
     public function destroy($cartId, Cart $cart)
     {
-
         return $cart->delete($cartId);
     }
     public function show()
