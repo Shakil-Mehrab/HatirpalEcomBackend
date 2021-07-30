@@ -27,6 +27,7 @@ class RegionSeeder extends Seeder
                         [
                             "name" => "বরিশাল",
                             "slug" => "Barishal",
+                            "value" => "220",
                             "children" =>
                             [
                                 [
@@ -287,6 +288,7 @@ class RegionSeeder extends Seeder
                         [
                             "name" => "চট্টগ্রাম",
                             "slug" => "Chattogram",
+                            "value" => "220",
                             "children" =>
                             [
                                 [
@@ -877,6 +879,7 @@ class RegionSeeder extends Seeder
                         [
                             "name" => "ঢাকা",
                             "slug" => "Dhaka",
+                            "value" => "50",
                             "children" =>
                             [
                                 [
@@ -1426,6 +1429,7 @@ class RegionSeeder extends Seeder
                         [
                             "name" => "খুলনা",
                             "slug" => "Khulna",
+                            "value" => "220",
                             "children" =>
                             [
                                 [
@@ -1799,6 +1803,7 @@ class RegionSeeder extends Seeder
                         [
                             "name" => "রাজশাহী",
                             "slug" => "Rajshahi",
+                            "value" => "220",
                             "children" =>
                             [
                                 [
@@ -2193,6 +2198,7 @@ class RegionSeeder extends Seeder
                         [
                             "name" => "রংপুর",
                             "slug" => "Rangpur",
+                            "value" => "220",
                             "children" =>
                             [
                                 [
@@ -2547,6 +2553,7 @@ class RegionSeeder extends Seeder
                         [
                             "name" => "সিলেট",
                             "slug" => "Sylhet",
+                            "value" => "220",
                             "children" =>
                             [
                                 [
@@ -2783,6 +2790,7 @@ class RegionSeeder extends Seeder
                         [
                             "name" => "ময়মনসিংহ",
                             "slug" => "Mymensingh",
+                            "value" => "220",
                             "children" =>
                             [
                                 [

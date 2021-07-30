@@ -15,10 +15,10 @@ class RegionIndexResource extends JsonResource
     public function toArray($request)
     {
         return [
-            "id"=>$this->id,
-            "name"=>$this->name,
-            "expense"=>$this->expense,
-            "slug"=>$this->slug
+            "id" => $this->id,
+            "name" => $this->name,
+            "value" => $this->value,
+            "slug" => $this->slug
         ];
     }
 }

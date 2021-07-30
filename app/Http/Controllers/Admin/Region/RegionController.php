@@ -31,6 +31,7 @@ class RegionController extends Controller
     {
         $query = request('query');
         $datas = Region::where('name', 'LIKE', "%" . $query . "%")
+            ->orWhere('slug', 'LIKE', "%" . $query . "%")
             ->searchPagination(request('per-page'));
         $columns = Region::columns();
         $model = 'region';
@@ -48,7 +49,7 @@ class RegionController extends Controller
         $product = new Region();
         $product->name = $request['name'];
         $product->parent_id = $request['parent_id'];
-        $product->expense = $request['expense'];
+        $product->value = $request['value'];
         $product->save();
         return redirect('admin/view/region')
             ->withSuccess('Region Created Successfully');
@@ -67,7 +68,7 @@ class RegionController extends Controller
             ->firstOrFail();
         $product->name = $request['name'];
         $product->parent_id = $request['parent_id'];
-        $product->expense = $request['expense'];
+        $product->value = $request['value'];
         $product->update();
         return back()->withSuccess('Region Updated Successfully');;
     }
@@ -81,7 +82,7 @@ class RegionController extends Controller
     }
     protected function datas()
     {
-        $datas = Region::orderBy('id', 'desc')
+        $datas = Region::orderBy('id', 'asc')
             ->pagination(request('per-page'));
         return $datas;
     }

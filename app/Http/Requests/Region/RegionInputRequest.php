@@ -24,8 +24,8 @@ class RegionInputRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required|max:255',
-            'expense'=>'required|numeric',
+            'name' => 'required|max:255',
+            'value' => 'required|numeric',
         ];
     }
 }
