@@ -10,7 +10,6 @@ nav {
 }
 /* left side  */
 .left_navigation {
-    /* min-height: 100vw; */
     background-color: #222d32;
     padding: 0;
     z-index: 9999;
@@ -38,7 +37,6 @@ nav {
     color: #c4ccd0;
 }
 .media_body {
-    height: 100%;
     padding: 10px;
 }
 .tree_ul {

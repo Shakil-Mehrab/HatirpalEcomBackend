@@ -101,7 +101,8 @@ class OrderController extends Controller
     }
     protected function datas()
     {
-        $datas = Order::orderBy('id', 'desc')->with('user', 'address')
+        $datas = Order::orderBy('id', 'desc')
+            ->with('user', 'address')
             ->pagination(request('per-page'));
         return $datas;
     }

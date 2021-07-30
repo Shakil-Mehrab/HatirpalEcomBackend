@@ -27,8 +27,8 @@
 <body>
     <div id="app">
         @include('layouts.includes.nav')
-        <div class="container-fluid">
-            <div class="row">
+        <div class="container-fluid main_container">
+            <div class="row full_height">
                 <div class="col-lg-2 col-md-3 col-sm-4 left_navigation toggle_left_navigation" id="toggle_left_navigation">
                     @include('layouts.includes.leftNavigation')
                 </div>
@@ -205,25 +205,25 @@
                     console.log(link);
                     if (confirmed) {
                         $.ajax({
-                        url: link,
-                        type: 'DELETE',
-                        data: {
-                            "_token":"{{csrf_token()}}"
-                        },
-                    })
-                    .done(function(data) {
-                        $('#newData').empty().append(data);
-                        Toast.fire({
-                            icon: 'success',
-                            title: 'Deleted Successfully!'
-                        })
-                    })
-                    .fail(function(error) {
-                        Toast.fire({
-                            icon: 'error',
-                            title: 'Something Wrong!'
-                        })
-                    });
+                                url: link,
+                                type: 'DELETE',
+                                data: {
+                                    "_token": "{{csrf_token()}}"
+                                },
+                            })
+                            .done(function(data) {
+                                $('#newData').empty().append(data);
+                                Toast.fire({
+                                    icon: 'success',
+                                    title: 'Deleted Successfully!'
+                                })
+                            })
+                            .fail(function(error) {
+                                Toast.fire({
+                                    icon: 'error',
+                                    title: 'Something Wrong!'
+                                })
+                            });
                         // $.get(link, function(data) {
                         //     // window.location.href = link;
                         //     $('#newData').empty().append(data);
@@ -275,7 +275,7 @@
         // });
         function toggleMenu(parameter) {
             console.log(parameter)
-            $('.toggle_div_'+parameter).toggleClass('hidden');
+            $('.toggle_div_' + parameter).toggleClass('hidden');
         }
     </script>
 

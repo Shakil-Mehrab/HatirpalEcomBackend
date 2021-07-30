@@ -90,21 +90,4 @@ class Product extends Model
     {
         return new ProductCollection($models);
     }
-    //     public static function forSyncing($products)
-    //     {
-    //         $collect = [];
-    //         $cart = [];
-    //         foreach ($products as $product) {
-    //             $cart = [
-    //                 $cart['quantity'] = $product->pivot->quantity,
-    //                 $cart['product_image'] = $product->pivot->product_image,
-    //                 $cart['size_id'] = $product->pivot->size_id,
-    //                 $cart['user_id'] = auth()->user()->id
-    //             ];
-    //             $collect[] = $cart;
-    //         }
-    // 
-    //         return $collect;
-    //     }
-
 }

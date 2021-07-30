@@ -21,8 +21,7 @@ class SliderController extends Controller
     }
     public function index()
     {
-        $datas = Slider::orderBy('id', 'desc')
-            ->pagination(request('per-page'));
+        $datas = $this->datas();
         $model = 'slider';
         $columns = Slider::columns();
 
@@ -81,8 +80,7 @@ class SliderController extends Controller
     public function destroy(DeleteData $delete, $slug)
     {
         $delete->sliderDelete($slug);
-        $datas = Slider::orderBy('id', 'desc')
-            ->pagination(request('per-page'));
+        $datas = $this->datas();
         $columns = Slider::columns();
         $model = 'slider';
         return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
@@ -90,10 +88,15 @@ class SliderController extends Controller
     public function status(ChangeStatus $status, $slug)
     {
         $status->sliderStatusChange($slug);
-        $datas = Slider::orderBy('id', 'desc')
-            ->pagination(request('per-page'));
+        $datas = $this->datas();
         $columns = Slider::columns();
         $model = 'slider';
         return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+    }
+    protected function datas()
+    {
+        $datas = Slider::orderBy('id', 'asc')
+            ->pagination(request('per-page'));
+        return $datas;
     }
 }

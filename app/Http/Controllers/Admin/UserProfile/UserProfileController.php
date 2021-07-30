@@ -15,21 +15,21 @@ class UserProfileController extends Controller
     {
         return view('layouts.userprofile.view');
     }
-    public function search()
+    // public function search()
+    // {
+    //     $query = request('query');
+    //     $datas = User::where('name', 'LIKE', "%" . $query . "%")
+    //         ->searchPagination(request('per-page'));
+    //     $columns = User::columns();
+    //     $model = 'user';
+    //     return view('layouts.data.table', compact('datas', 'columns', 'model'));
+    // }
+    public function edit()
     {
-        $query = request('query');
-        $datas = User::where('name', 'LIKE', "%" . $query . "%")
-            ->searchPagination(request('per-page'));
-        $columns = User::columns();
-        $model = 'user';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'));
-    }
-    public function edit($slug)
-    {
-        $data = User::where('slug', $slug)->firstOrFail();
+        $data = auth()->user();
         $columns = User::edit_columns();
         $model = 'user';
-        return view('layouts.data.edit', compact('data', 'model', 'columns'));
+        return view('layouts.userprofile.edit', compact('data', 'model', 'columns'));
     }
     public function update(UserUpdateRequest $request, ImageHandling $imageHandling, $slug)
     {
@@ -39,16 +39,16 @@ class UserProfileController extends Controller
         $product->email = $request['email'];
         $imageHandling->uploadImage($product, $request, 'user');
         $product->update();
-        return back()->withSuccess('User Updated Successfully');;
+        return back()->withSuccess('User Profile Updated Successfully');;
     }
-    public function destroy(DeleteData $delete, $slug)
-    {
-        $delete->userDelete($slug);
-
-        $datas = User::orderBy('id', 'desc')
-            ->pagination(request('per-page'));
-        $columns = User::columns();
-        $model = 'user';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-    }
+    //     public function destroy(DeleteData $delete, $slug)
+    //     {
+    //         $delete->userDelete($slug);
+    // 
+    //         $datas = User::orderBy('id', 'desc')
+    //             ->pagination(request('per-page'));
+    //         $columns = User::columns();
+    //         $model = 'user';
+    //         return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+    //     }
 }

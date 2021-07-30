@@ -21,8 +21,7 @@ class ConditionController extends Controller
     }
     public function index()
     {
-        $datas = Condition::orderBy('id', 'desc')
-            ->pagination(request('per-page'));
+        $datas = $this->datas();
         $model = 'condition';
         $columns = Condition::columns();
 
@@ -48,7 +47,7 @@ class ConditionController extends Controller
         $model = 'condition';
         return view('layouts.data.create', compact('data', 'columns', 'model'));
     }
-    public function store(ConditionInputRequest $request, ImageHandling $imageHandling, StoreUpdateData $input)
+    public function store(ConditionInputRequest $request, StoreUpdateData $input)
     {
         $product = new Condition();
 
@@ -79,8 +78,7 @@ class ConditionController extends Controller
     public function destroy(DeleteData $delete, $slug)
     {
         $delete->conditionDelete($slug);
-        $datas = Condition::orderBy('id', 'desc')
-            ->pagination(request('per-page'));
+        $datas = $this->datas();
         $columns = Condition::columns();
         $model = 'condition';
         return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
@@ -88,10 +86,15 @@ class ConditionController extends Controller
     public function status(ChangeStatus $status, $slug)
     {
         $status->conditionStatusChange($slug);
-        $datas = Condition::orderBy('id', 'desc')
-            ->pagination(request('per-page'));
+        $datas = $this->datas();
         $columns = Condition::columns();
         $model = 'condition';
         return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+    }
+    protected function datas()
+    {
+        $datas = Condition::orderBy('id', 'asc')
+            ->pagination(request('per-page'));
+        return $datas;
     }
 }

@@ -30,6 +30,7 @@ class SupplierInputRequest extends FormRequest
             'address' => 'required',
             'company_type' => 'required',
             'company_name' => 'required',
+            'thumbnail' => 'mimes:jpg,png'
         ];
     }
 }

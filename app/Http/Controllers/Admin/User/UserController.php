@@ -11,13 +11,16 @@ use App\Http\Requests\User\UserUpdateRequest;
 
 class UserController extends Controller
 {
+  public function __construct()
+  {
+    $this->middleware('admin');
+  }
   public function index()
   {
-    $datas = User::orderBy('id', 'desc')
-        ->pagination(request('per-page'));
-      $columns = User::columns();
-      $model = 'user'; 
-      if (request('per-page') or request('page')) {
+    $datas = $this->datas();
+    $columns = User::columns();
+    $model = 'user';
+    if (request('per-page') or request('page')) {
       return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
     }
     return view('layouts.data.view', compact('datas', 'columns', 'model'));
@@ -38,24 +41,29 @@ class UserController extends Controller
     $model = 'user';
     return view('layouts.data.edit', compact('data', 'model', 'columns'));
   }
-  public function update(UserUpdateRequest $request,ImageHandling $imageHandling, $slug)
+  public function update(UserUpdateRequest $request, ImageHandling $imageHandling, $slug)
   {
     $product = User::where('slug', $slug)
       ->firstOrFail();
     $product->name = $request['name'];
     $product->email = $request['email'];
-    $imageHandling->uploadImage($product,$request,'user');
+    $imageHandling->uploadImage($product, $request, 'user');
     $product->update();
     return back()->withSuccess('User Updated Successfully');;
   }
-  public function destroy(DeleteData $delete,$slug)
+  public function destroy(DeleteData $delete, $slug)
   {
     $delete->userDelete($slug);
 
-    $datas = User::orderBy('id', 'desc')
-      ->pagination(request('per-page'));
+    $datas = $this->datas();
     $columns = User::columns();
     $model = 'user';
     return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+  }
+  protected function datas()
+  {
+    $datas = User::orderBy('id', 'asc')
+      ->pagination(request('per-page'));
+    return $datas;
   }
 }

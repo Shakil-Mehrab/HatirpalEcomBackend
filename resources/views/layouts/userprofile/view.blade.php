@@ -5,7 +5,7 @@
         <div class="my-3 p-2" style="background-color: #f1f1f1;border: 1px solid #e6e5e5;box-shadow: 0 0 4px 0 rgb(0 0 0 / 20%);">
             <img src="{{auth()->user()->thumbnail}}" alt="{{auth()->user()->name}}" width="100%">
             <div class="text-center mt-2">
-                <a href="{{url('admin/user/'.auth()->user()->slug.'/edit')}}">Edit Profile</a>
+                <a href="{{url('admin/userprofile/'.auth()->user()->slug.'/edit')}}">Edit Profile</a>
             </div>
             <div class="profile_detail mt-4">
                 <ul>

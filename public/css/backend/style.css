@@ -1,9 +1,16 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
-
+html,
 body {
+    height: 100%;
+    margin: 0;
     /* font-family: "Gugi", cursive; */
     font-family: "Roboto", sans-serif;
     font-size: 14px;
+}
+#app,
+.main_container,
+.full_height {
+    height: 100%;
 }
 .has-error input {
     border: 1px solid red;
@@ -38,10 +45,8 @@ a {
 .main_content {
     margin-bottom: 50px;
     margin-top: 55px;
-
 }
-.scroll_div{
-    min-height: 100vw;
+.scroll_div {
     overflow: scroll;
 }
 /* create page */

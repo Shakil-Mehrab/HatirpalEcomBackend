@@ -21,8 +21,7 @@ class AboutController extends Controller
     }
     public function index()
     {
-        $datas = About::orderBy('id', 'desc')
-            ->pagination(request('per-page'));
+        $datas = $this->datas();
         $model = 'about';
         $columns = About::columns();
 
@@ -81,8 +80,7 @@ class AboutController extends Controller
     public function destroy(DeleteData $delete, $slug)
     {
         $delete->aboutDelete($slug);
-        $datas = About::orderBy('id', 'desc')
-            ->pagination(request('per-page'));
+        $datas = $this->datas();
         $columns = About::columns();
         $model = 'about';
         return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
@@ -90,10 +88,15 @@ class AboutController extends Controller
     public function status(ChangeStatus $status, $slug)
     {
         $status->aboutStatusChange($slug);
-        $datas = About::orderBy('id', 'desc')
-            ->pagination(request('per-page'));
+        $datas = $this->datas();
         $columns = About::columns();
         $model = 'about';
         return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+    }
+    protected function datas()
+    {
+        $datas = About::orderBy('id', 'desc')
+            ->pagination(request('per-page'));
+        return $datas;
     }
 }

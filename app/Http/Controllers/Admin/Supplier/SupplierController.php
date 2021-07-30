@@ -17,12 +17,11 @@ class SupplierController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('admin')->only('index','show','destroy','status');
+        $this->middleware('admin')->only('index', 'show', 'destroy', 'status');
     }
     public function index()
     {
-        $datas = Supplier::orderBy('id', 'desc')
-            ->pagination(request('per-page'));
+        $datas = $this->datas();
         $model = 'supplier';
         $columns = Supplier::columns();
 
@@ -58,7 +57,7 @@ class SupplierController extends Controller
         $imageHandling->uploadSupplerDocument($product, $request, 'supplier');
 
 
-        $request->user()->supplier()->save($product);
+        $request->user()->suppliers()->save($product);
         return redirect('admin/supplier')
             ->withSuccess('Supplier Created Successfully');
     }
@@ -93,8 +92,7 @@ class SupplierController extends Controller
     public function destroy(DeleteData $delete, $slug)
     {
         $delete->supplierDelete($slug);
-        $datas = Supplier::orderBy('id', 'desc')
-            ->pagination(request('per-page'));
+        $datas = $this->datas();
         $columns = Supplier::columns();
         $model = 'supplier';
         return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
@@ -102,10 +100,16 @@ class SupplierController extends Controller
     public function status(ChangeStatus $status, $slug)
     {
         $status->supplierStatusChange($slug);
-        $datas = Supplier::orderBy('id', 'desc')
-            ->pagination(request('per-page'));
+        $datas = $this->datas();
         $columns = Supplier::columns();
         $model = 'supplier';
         return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+    }
+    protected function datas()
+    {
+        $datas = Supplier::orderBy('id', 'asc')
+            ->with('user')
+            ->pagination(request('per-page'));
+        return $datas;
     }
 }
