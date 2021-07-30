@@ -17,11 +17,11 @@ class CreateRegionsTable extends Migration
         Schema::create('regions', function (Blueprint $table) {
             $table->id();
             $table->uuid('uuid');
+            $table->string('slug')->index();
             $table->string('name')->index();
             NestedSet::columns($table);
-            $table->float('expense')->nullable();
+            $table->float('value')->nullable();
             $table->string('eng_name')->index()->nullable();
-            $table->string('slug')->index();
             $table->bigInteger('order')->nullable();
             $table->float('lat')->nullable();
             $table->float('lng')->nullable();

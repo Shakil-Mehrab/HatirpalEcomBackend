@@ -36,27 +36,33 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Amtali",
-                                            "name" => "আমতলী"
+                                            "name" => "আমতলী",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bamna",
-                                            "name" => "বামনা"
+                                            "name" => "বামনা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Barguna Sadar",
-                                            "name" => "বরগুনা সদর"
+                                            "name" => "বরগুনা সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Betagi",
-                                            "name" => "বেতাগি"
+                                            "name" => "বেতাগি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Patharghata",
-                                            "name" => "পাথরঘাটা"
+                                            "name" => "পাথরঘাটা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Taltali",
-                                            "name" => "তালতলী"
+                                            "name" => "তালতলী",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -67,43 +73,53 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Muladi",
-                                            "name" => "মুলাদি"
+                                            "name" => "মুলাদি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Babuganj",
-                                            "name" => "বাবুগঞ্জ"
+                                            "name" => "বাবুগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Agailjhara",
-                                            "name" => "আগাইলঝরা"
+                                            "name" => "আগাইলঝরা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Barisal Sadar",
-                                            "name" => "বরিশাল সদর"
+                                            "name" => "বরিশাল সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bakerganj",
-                                            "name" => "বাকেরগঞ্জ"
+                                            "name" => "বাকেরগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Banaripara",
-                                            "name" => "বানাড়িপারা"
+                                            "name" => "বানাড়িপারা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Gaurnadi",
-                                            "name" => "গৌরনদী"
+                                            "name" => "গৌরনদী",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Hizla",
-                                            "name" => "হিজলা"
+                                            "name" => "হিজলা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Mehendiganj",
-                                            "name" => "মেহেদিগঞ্জ "
+                                            "name" => "মেহেদিগঞ্জ ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Wazirpur",
-                                            "name" => "ওয়াজিরপুর"
+                                            "name" => "ওয়াজিরপুর",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -114,31 +130,38 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Bhola Sadar",
-                                            "name" => "ভোলা সদর"
+                                            "name" => "ভোলা সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Burhanuddin",
-                                            "name" => "বুরহানউদ্দিন"
+                                            "name" => "বুরহানউদ্দিন",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Char Fasson",
-                                            "name" => "চর ফ্যাশন"
+                                            "name" => "চর ফ্যাশন",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Daulatkhan",
-                                            "name" => "দৌলতখান"
+                                            "name" => "দৌলতখান",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Lalmohan",
-                                            "name" => "লালমোহন"
+                                            "name" => "লালমোহন",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Manpura",
-                                            "name" => "মনপুরা"
+                                            "name" => "মনপুরা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Tazumuddin",
-                                            "name" => "তাজুমুদ্দিন"
+                                            "name" => "তাজুমুদ্দিন",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -149,19 +172,23 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Jhalokati Sadar",
-                                            "name" => "ঝালকাঠি সদর"
+                                            "name" => "ঝালকাঠি সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kathalia",
-                                            "name" => "কাঁঠালিয়া"
+                                            "name" => "কাঁঠালিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nalchity",
-                                            "name" => "নালচিতি"
+                                            "name" => "নালচিতি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Rajapur",
-                                            "name" => "রাজাপুর"
+                                            "name" => "রাজাপুর",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -172,35 +199,43 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Bauphal",
-                                            "name" => "বাউফল"
+                                            "name" => "বাউফল",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Dashmina",
-                                            "name" => "দশমিনা"
+                                            "name" => "দশমিনা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Galachipa",
-                                            "name" => "গলাচিপা"
+                                            "name" => "গলাচিপা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kalapara",
-                                            "name" => "কালাপারা"
+                                            "name" => "কালাপারা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Mirzaganj",
-                                            "name" => "মির্জাগঞ্জ "
+                                            "name" => "মির্জাগঞ্জ ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Patuakhali Sadar",
-                                            "name" => "পটুয়াখালী সদর"
+                                            "name" => "পটুয়াখালী সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Dumki",
-                                            "name" => "ডুমকি"
+                                            "name" => "ডুমকি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Rangabali",
-                                            "name" => "রাঙ্গাবালি"
+                                            "name" => "রাঙ্গাবালি",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -211,31 +246,38 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Bhandaria",
-                                            "name" => "ভ্যান্ডারিয়া"
+                                            "name" => "ভ্যান্ডারিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kaukhali",
-                                            "name" => "কাউখালি"
+                                            "name" => "কাউখালি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Mathbaria",
-                                            "name" => "মাঠবাড়িয়া"
+                                            "name" => "মাঠবাড়িয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nazirpur",
-                                            "name" => "নাজিরপুর"
+                                            "name" => "নাজিরপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nesarabad",
-                                            "name" => "নেসারাবাদ"
+                                            "name" => "নেসারাবাদ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Pirojpur Sadar",
-                                            "name" => "পিরোজপুর সদর"
+                                            "name" => "পিরোজপুর সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Zianagar",
-                                            "name" => "জিয়ানগর"
+                                            "name" => "জিয়ানগর",
+                                            "children" => []
                                         ]
                                     ]
                                 ]
@@ -254,31 +296,38 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Bandarban Sadar",
-                                            "name" => "বান্দরবন সদর"
+                                            "name" => "বান্দরবন সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Thanchi",
-                                            "name" => "থানচি"
+                                            "name" => "থানচি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Lama",
-                                            "name" => "লামা"
+                                            "name" => "লামা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Naikhongchhari",
-                                            "name" => "নাইখংছড়ি "
+                                            "name" => "নাইখংছড়ি ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Ali kadam",
-                                            "name" => "আলী কদম"
+                                            "name" => "আলী কদম",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Rowangchhari",
-                                            "name" => "রউয়াংছড়ি "
+                                            "name" => "রউয়াংছড়ি ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Ruma",
-                                            "name" => "রুমা"
+                                            "name" => "রুমা",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -289,43 +338,53 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Brahmanbaria Sadar",
-                                            "name" => "ব্রাহ্মণবাড়িয়া সদর"
+                                            "name" => "ব্রাহ্মণবাড়িয়া সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Ashuganj",
-                                            "name" => "আশুগঞ্জ"
+                                            "name" => "আশুগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nasirnagar",
-                                            "name" => "নাসির নগর"
+                                            "name" => "নাসির নগর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nabinagar",
-                                            "name" => "নবীনগর"
+                                            "name" => "নবীনগর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sarail",
-                                            "name" => "সরাইল"
+                                            "name" => "সরাইল",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Shahbazpur Town",
-                                            "name" => "শাহবাজপুর টাউন"
+                                            "name" => "শাহবাজপুর টাউন",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kasba",
-                                            "name" => "কসবা"
+                                            "name" => "কসবা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Akhaura",
-                                            "name" => "আখাউরা"
+                                            "name" => "আখাউরা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bancharampur",
-                                            "name" => "বাঞ্ছারামপুর"
+                                            "name" => "বাঞ্ছারামপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bijoynagar",
-                                            "name" => "বিজয় নগর"
+                                            "name" => "বিজয় নগর",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -336,35 +395,43 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Chandpur Sadar",
-                                            "name" => "চাঁদপুর সদর"
+                                            "name" => "চাঁদপুর সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Faridganj",
-                                            "name" => "ফরিদগঞ্জ"
+                                            "name" => "ফরিদগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Haimchar",
-                                            "name" => "হাইমচর"
+                                            "name" => "হাইমচর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Haziganj",
-                                            "name" => "হাজীগঞ্জ"
+                                            "name" => "হাজীগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kachua",
-                                            "name" => "কচুয়া"
+                                            "name" => "কচুয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Matlab Uttar",
-                                            "name" => "মতলব উত্তর"
+                                            "name" => "মতলব উত্তর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Matlab Dakkhin",
-                                            "name" => "মতলব দক্ষিণ"
+                                            "name" => "মতলব দক্ষিণ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Shahrasti",
-                                            "name" => "শাহরাস্তি"
+                                            "name" => "শাহরাস্তি",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -375,59 +442,73 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Anwara",
-                                            "name" => "আনোয়ারা"
+                                            "name" => "আনোয়ারা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Banshkhali",
-                                            "name" => "বাশখালি"
+                                            "name" => "বাশখালি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Boalkhali",
-                                            "name" => "বোয়ালখালি"
+                                            "name" => "বোয়ালখালি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Chandanaish",
-                                            "name" => "চন্দনাইশ"
+                                            "name" => "চন্দনাইশ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Fatikchhari",
-                                            "name" => "ফটিকছড়ি"
+                                            "name" => "ফটিকছড়ি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Hathazari",
-                                            "name" => "হাঠহাজারী"
+                                            "name" => "হাঠহাজারী",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Lohagara",
-                                            "name" => "লোহাগারা"
+                                            "name" => "লোহাগারা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Mirsharai",
-                                            "name" => "মিরসরাই"
+                                            "name" => "মিরসরাই",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Patiya",
-                                            "name" => "পটিয়া"
+                                            "name" => "পটিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Rangunia",
-                                            "name" => "রাঙ্গুনিয়া"
+                                            "name" => "রাঙ্গুনিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Raozan",
-                                            "name" => "রাউজান"
+                                            "name" => "রাউজান",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sandwip",
-                                            "name" => "সন্দ্বীপ"
+                                            "name" => "সন্দ্বীপ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Satkania",
-                                            "name" => "সাতকানিয়া"
+                                            "name" => "সাতকানিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sitakunda",
-                                            "name" => "সীতাকুণ্ড"
+                                            "name" => "সীতাকুণ্ড",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -438,67 +519,83 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Barura",
-                                            "name" => "বড়ুরা"
+                                            "name" => "বড়ুরা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Brahmanpara",
-                                            "name" => "ব্রাহ্মণপাড়া"
+                                            "name" => "ব্রাহ্মণপাড়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Burichong",
-                                            "name" => "বুড়িচং"
+                                            "name" => "বুড়িচং",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Chandina",
-                                            "name" => "চান্দিনা"
+                                            "name" => "চান্দিনা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Chauddagram",
-                                            "name" => "চৌদ্দগ্রাম"
+                                            "name" => "চৌদ্দগ্রাম",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Daudkandi",
-                                            "name" => "দাউদকান্দি"
+                                            "name" => "দাউদকান্দি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Debidwar",
-                                            "name" => "দেবীদ্বার"
+                                            "name" => "দেবীদ্বার",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Homna",
-                                            "name" => "হোমনা"
+                                            "name" => "হোমনা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Comilla Sadar",
-                                            "name" => "কুমিল্লা সদর"
+                                            "name" => "কুমিল্লা সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Laksam",
-                                            "name" => "লাকসাম"
+                                            "name" => "লাকসাম",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Monohorgonj",
-                                            "name" => "মনোহরগঞ্জ"
+                                            "name" => "মনোহরগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Meghna",
-                                            "name" => "মেঘনা"
+                                            "name" => "মেঘনা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Muradnagar",
-                                            "name" => "মুরাদনগর"
+                                            "name" => "মুরাদনগর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nangalkot",
-                                            "name" => "নাঙ্গালকোট"
+                                            "name" => "নাঙ্গালকোট",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Comilla Sadar South",
-                                            "name" => "কুমিল্লা সদর দক্ষিণ"
+                                            "name" => "কুমিল্লা সদর দক্ষিণ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Titas",
-                                            "name" => "তিতাস"
+                                            "name" => "তিতাস",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -509,35 +606,43 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Chakaria",
-                                            "name" => "চকরিয়া"
+                                            "name" => "চকরিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Cox's Bazar Sadar",
-                                            "name" => "কক্স বাজার সদর"
+                                            "name" => "কক্স বাজার সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kutubdia",
-                                            "name" => "কুতুবদিয়া"
+                                            "name" => "কুতুবদিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Maheshkhali",
-                                            "name" => "মহেশখালী"
+                                            "name" => "মহেশখালী",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Ramu",
-                                            "name" => "রামু"
+                                            "name" => "রামু",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Teknaf",
-                                            "name" => "টেকনাফ"
+                                            "name" => "টেকনাফ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Ukhia",
-                                            "name" => "উখিয়া"
+                                            "name" => "উখিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Pekua",
-                                            "name" => "পেকুয়া"
+                                            "name" => "পেকুয়া",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -548,27 +653,33 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Feni Sadar",
-                                            "name" => "ফেনী সদর"
+                                            "name" => "ফেনী সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Chagalnaiya",
-                                            "name" => "ছাগল নাইয়া"
+                                            "name" => "ছাগল নাইয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Daganbhyan",
-                                            "name" => "দাগানভিয়া"
+                                            "name" => "দাগানভিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Parshuram",
-                                            "name" => "পরশুরাম"
+                                            "name" => "পরশুরাম",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Fhulgazi",
-                                            "name" => "ফুলগাজি"
+                                            "name" => "ফুলগাজি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sonagazi",
-                                            "name" => "সোনাগাজি"
+                                            "name" => "সোনাগাজি",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -579,35 +690,43 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Dighinala",
-                                            "name" => "দিঘিনালা "
+                                            "name" => "দিঘিনালা ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Khagrachhari",
-                                            "name" => "খাগড়াছড়ি"
+                                            "name" => "খাগড়াছড়ি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Lakshmichhari",
-                                            "name" => "লক্ষ্মীছড়ি"
+                                            "name" => "লক্ষ্মীছড়ি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Mahalchhari",
-                                            "name" => "মহলছড়ি"
+                                            "name" => "মহলছড়ি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Manikchhari",
-                                            "name" => "মানিকছড়ি"
+                                            "name" => "মানিকছড়ি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Matiranga",
-                                            "name" => "মাটিরাঙ্গা"
+                                            "name" => "মাটিরাঙ্গা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Panchhari",
-                                            "name" => "পানছড়ি"
+                                            "name" => "পানছড়ি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Ramgarh",
-                                            "name" => "রামগড়"
+                                            "name" => "রামগড়",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -618,23 +737,28 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Lakshmipur Sadar",
-                                            "name" => "লক্ষ্মীপুর সদর"
+                                            "name" => "লক্ষ্মীপুর সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Raipur",
-                                            "name" => "রায়পুর"
+                                            "name" => "রায়পুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Ramganj",
-                                            "name" => "রামগঞ্জ"
+                                            "name" => "রামগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Ramgati",
-                                            "name" => "রামগতি"
+                                            "name" => "রামগতি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Komol Nagar",
-                                            "name" => "কমল নগর"
+                                            "name" => "কমল নগর",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -645,39 +769,48 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Noakhali Sadar",
-                                            "name" => "নোয়াখালী সদর"
+                                            "name" => "নোয়াখালী সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Begumganj",
-                                            "name" => "বেগমগঞ্জ"
+                                            "name" => "বেগমগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Chatkhil",
-                                            "name" => "চাটখিল"
+                                            "name" => "চাটখিল",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Companyganj",
-                                            "name" => "কোম্পানীগঞ্জ"
+                                            "name" => "কোম্পানীগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Shenbag",
-                                            "name" => "শেনবাগ"
+                                            "name" => "শেনবাগ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Hatia",
-                                            "name" => "হাতিয়া"
+                                            "name" => "হাতিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kobirhat",
-                                            "name" => "কবিরহাট "
+                                            "name" => "কবিরহাট ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sonaimuri",
-                                            "name" => "সোনাইমুরি"
+                                            "name" => "সোনাইমুরি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Suborno Char",
-                                            "name" => "সুবর্ণ চর "
+                                            "name" => "সুবর্ণ চর ",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -688,43 +821,53 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Rangamati Sadar",
-                                            "name" => "রাঙ্গামাটি সদর"
+                                            "name" => "রাঙ্গামাটি সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Belaichhari",
-                                            "name" => "বেলাইছড়ি"
+                                            "name" => "বেলাইছড়ি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bagaichhari",
-                                            "name" => "বাঘাইছড়ি"
+                                            "name" => "বাঘাইছড়ি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Barkal",
-                                            "name" => "বরকল"
+                                            "name" => "বরকল",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Juraichhari",
-                                            "name" => "জুরাইছড়ি"
+                                            "name" => "জুরাইছড়ি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Rajasthali",
-                                            "name" => "রাজাস্থলি"
+                                            "name" => "রাজাস্থলি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kaptai",
-                                            "name" => "কাপ্তাই"
+                                            "name" => "কাপ্তাই",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Langadu",
-                                            "name" => "লাঙ্গাডু"
+                                            "name" => "লাঙ্গাডু",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nannerchar",
-                                            "name" => "নান্নেরচর "
+                                            "name" => "নান্নেরচর ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kaukhali",
-                                            "name" => "কাউখালি"
+                                            "name" => "কাউখালি",
+                                            "children" => []
                                         ]
                                     ]
                                 ]
@@ -743,23 +886,28 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Dhamrai",
-                                            "name" => "ধামরাই"
+                                            "name" => "ধামরাই",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Dohar",
-                                            "name" => "দোহার"
+                                            "name" => "দোহার",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Keraniganj",
-                                            "name" => "কেরানীগঞ্জ"
+                                            "name" => "কেরানীগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nawabganj",
-                                            "name" => "নবাবগঞ্জ"
+                                            "name" => "নবাবগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Savar",
-                                            "name" => "সাভার"
+                                            "name" => "সাভার",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -770,39 +918,48 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Faridpur Sadar",
-                                            "name" => "ফরিদপুর সদর"
+                                            "name" => "ফরিদপুর সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Boalmari",
-                                            "name" => "বোয়ালমারী"
+                                            "name" => "বোয়ালমারী",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Alfadanga",
-                                            "name" => "আলফাডাঙ্গা"
+                                            "name" => "আলফাডাঙ্গা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Madhukhali",
-                                            "name" => "মধুখালি"
+                                            "name" => "মধুখালি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bhanga",
-                                            "name" => "ভাঙ্গা"
+                                            "name" => "ভাঙ্গা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nagarkanda",
-                                            "name" => "নগরকান্ড"
+                                            "name" => "নগরকান্ড",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Charbhadrasan",
-                                            "name" => "চরভদ্রাসন "
+                                            "name" => "চরভদ্রাসন ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sadarpur",
-                                            "name" => "সদরপুর"
+                                            "name" => "সদরপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Shaltha",
-                                            "name" => "শালথা"
+                                            "name" => "শালথা",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -813,27 +970,33 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Gazipur Sadar-Joydebpur",
-                                            "name" => "গাজীপুর সদর"
+                                            "name" => "গাজীপুর সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kaliakior",
-                                            "name" => "কালিয়াকৈর"
+                                            "name" => "কালিয়াকৈর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kapasia",
-                                            "name" => "কাপাসিয়া"
+                                            "name" => "কাপাসিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sripur",
-                                            "name" => "শ্রীপুর"
+                                            "name" => "শ্রীপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kaliganj",
-                                            "name" => "কালীগঞ্জ"
+                                            "name" => "কালীগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Tongi",
-                                            "name" => "টঙ্গি"
+                                            "name" => "টঙ্গি",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -844,23 +1007,28 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Gopalganj Sadar",
-                                            "name" => "গোপালগঞ্জ সদর"
+                                            "name" => "গোপালগঞ্জ সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kashiani",
-                                            "name" => "কাশিয়ানি"
+                                            "name" => "কাশিয়ানি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kotalipara",
-                                            "name" => "কোটালিপাড়া"
+                                            "name" => "কোটালিপাড়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Muksudpur",
-                                            "name" => "মুকসুদপুর"
+                                            "name" => "মুকসুদপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Tungipara",
-                                            "name" => "টুঙ্গিপাড়া"
+                                            "name" => "টুঙ্গিপাড়া",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -871,55 +1039,68 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Astagram",
-                                            "name" => "অষ্টগ্রাম"
+                                            "name" => "অষ্টগ্রাম",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bajitpur",
-                                            "name" => "বাজিতপুর"
+                                            "name" => "বাজিতপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bhairab",
-                                            "name" => "ভৈরব"
+                                            "name" => "ভৈরব",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Hossainpur",
-                                            "name" => "হোসেনপুর "
+                                            "name" => "হোসেনপুর ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Itna",
-                                            "name" => "ইটনা"
+                                            "name" => "ইটনা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Karimganj",
-                                            "name" => "করিমগঞ্জ"
+                                            "name" => "করিমগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Katiadi",
-                                            "name" => "কতিয়াদি"
+                                            "name" => "কতিয়াদি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kishoreganj Sadar",
-                                            "name" => "কিশোরগঞ্জ সদর"
+                                            "name" => "কিশোরগঞ্জ সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kuliarchar",
-                                            "name" => "কুলিয়ারচর"
+                                            "name" => "কুলিয়ারচর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Mithamain",
-                                            "name" => "মিঠামাইন"
+                                            "name" => "মিঠামাইন",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nikli",
-                                            "name" => "নিকলি"
+                                            "name" => "নিকলি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Pakundia",
-                                            "name" => "পাকুন্ডা"
+                                            "name" => "পাকুন্ডা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Tarail",
-                                            "name" => "তাড়াইল"
+                                            "name" => "তাড়াইল",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -930,19 +1111,23 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Madaripur Sadar",
-                                            "name" => "মাদারীপুর সদর"
+                                            "name" => "মাদারীপুর সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kalkini",
-                                            "name" => "কালকিনি"
+                                            "name" => "কালকিনি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Rajoir",
-                                            "name" => "রাজইর"
+                                            "name" => "রাজইর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Shibchar",
-                                            "name" => "শিবচর"
+                                            "name" => "শিবচর",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -953,31 +1138,38 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Manikganj Sadar",
-                                            "name" => "মানিকগঞ্জ সদর"
+                                            "name" => "মানিকগঞ্জ সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Singair",
-                                            "name" => "সিঙ্গাইর"
+                                            "name" => "সিঙ্গাইর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Shibalaya",
-                                            "name" => "শিবালয়"
+                                            "name" => "শিবালয়",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Saturia",
-                                            "name" => "সাঠুরিয়া"
+                                            "name" => "সাঠুরিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Harirampur",
-                                            "name" => "হরিরামপুর"
+                                            "name" => "হরিরামপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Ghior",
-                                            "name" => "ঘিওর"
+                                            "name" => "ঘিওর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Daulatpur",
-                                            "name" => "দৌলতপুর"
+                                            "name" => "দৌলতপুর",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -988,27 +1180,33 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Lohajang",
-                                            "name" => "লোহাজং"
+                                            "name" => "লোহাজং",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sreenagar",
-                                            "name" => "শ্রীনগর"
+                                            "name" => "শ্রীনগর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Munshiganj Sadar",
-                                            "name" => "মুন্সিগঞ্জ সদর"
+                                            "name" => "মুন্সিগঞ্জ সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sirajdikhan",
-                                            "name" => "সিরাজদিখান"
+                                            "name" => "সিরাজদিখান",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Tongibari",
-                                            "name" => "টঙ্গিবাড়ি"
+                                            "name" => "টঙ্গিবাড়ি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Gazaria",
-                                            "name" => "গজারিয়া"
+                                            "name" => "গজারিয়া",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1019,27 +1217,33 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Araihazar",
-                                            "name" => "আড়াইহাজার"
+                                            "name" => "আড়াইহাজার",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sonargaon",
-                                            "name" => "সোনারগাঁও"
+                                            "name" => "সোনারগাঁও",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bandar",
-                                            "name" => "বান্দার"
+                                            "name" => "বান্দার",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Naryanganj Sadar",
-                                            "name" => "নারায়ানগঞ্জ সদর"
+                                            "name" => "নারায়ানগঞ্জ সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Rupganj",
-                                            "name" => "রূপগঞ্জ"
+                                            "name" => "রূপগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Siddirgonj",
-                                            "name" => "সিদ্ধিরগঞ্জ"
+                                            "name" => "সিদ্ধিরগঞ্জ",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1050,27 +1254,33 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Belabo",
-                                            "name" => "বেলাবো"
+                                            "name" => "বেলাবো",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Monohardi",
-                                            "name" => "মনোহরদি"
+                                            "name" => "মনোহরদি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Narsingdi Sadar",
-                                            "name" => "নরসিংদী সদর"
+                                            "name" => "নরসিংদী সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Palash",
-                                            "name" => "পলাশ"
+                                            "name" => "পলাশ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Raipura, Narsingdi",
-                                            "name" => "রায়পুর"
+                                            "name" => "রায়পুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Shibpur",
-                                            "name" => "শিবপুর"
+                                            "name" => "শিবপুর",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1081,23 +1291,28 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Baliakandi",
-                                            "name" => "বালিয়াকান্দি"
+                                            "name" => "বালিয়াকান্দি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Goalandaghat",
-                                            "name" => "গোয়ালন্দ ঘাট"
+                                            "name" => "গোয়ালন্দ ঘাট",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Pangsha",
-                                            "name" => "পাংশা"
+                                            "name" => "পাংশা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kalukhali",
-                                            "name" => "কালুখালি"
+                                            "name" => "কালুখালি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Rajbari Sadar",
-                                            "name" => "রাজবাড়ি সদর"
+                                            "name" => "রাজবাড়ি সদর",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1108,27 +1323,33 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Shariatpur Sadar -Palong",
-                                            "name" => "শরীয়তপুর সদর "
+                                            "name" => "শরীয়তপুর সদর ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Damudya",
-                                            "name" => "দামুদিয়া"
+                                            "name" => "দামুদিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Naria",
-                                            "name" => "নড়িয়া"
+                                            "name" => "নড়িয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Jajira",
-                                            "name" => "জাজিরা"
+                                            "name" => "জাজিরা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bhedarganj",
-                                            "name" => "ভেদারগঞ্জ"
+                                            "name" => "ভেদারগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Gosairhat",
-                                            "name" => "গোসাইর হাট "
+                                            "name" => "গোসাইর হাট ",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1139,51 +1360,63 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Tangail Sadar",
-                                            "name" => "টাঙ্গাইল সদর"
+                                            "name" => "টাঙ্গাইল সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sakhipur",
-                                            "name" => "সখিপুর"
+                                            "name" => "সখিপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Basail",
-                                            "name" => "বসাইল"
+                                            "name" => "বসাইল",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Madhupur",
-                                            "name" => "মধুপুর"
+                                            "name" => "মধুপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Ghatail",
-                                            "name" => "ঘাটাইল"
+                                            "name" => "ঘাটাইল",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kalihati",
-                                            "name" => "কালিহাতি"
+                                            "name" => "কালিহাতি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nagarpur",
-                                            "name" => "নগরপুর"
+                                            "name" => "নগরপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Mirzapur",
-                                            "name" => "মির্জাপুর"
+                                            "name" => "মির্জাপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Gopalpur",
-                                            "name" => "গোপালপুর"
+                                            "name" => "গোপালপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Delduar",
-                                            "name" => "দেলদুয়ার"
+                                            "name" => "দেলদুয়ার",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bhuapur",
-                                            "name" => "ভুয়াপুর"
+                                            "name" => "ভুয়াপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Dhanbari",
-                                            "name" => "ধানবাড়ি"
+                                            "name" => "ধানবাড়ি",
+                                            "children" => []
                                         ]
                                     ]
                                 ]
@@ -1202,39 +1435,48 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Bagerhat Sadar",
-                                            "name" => "বাগেরহাট সদর"
+                                            "name" => "বাগেরহাট সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Chitalmari",
-                                            "name" => "চিতলমাড়ি"
+                                            "name" => "চিতলমাড়ি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Fakirhat",
-                                            "name" => "ফকিরহাট"
+                                            "name" => "ফকিরহাট",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kachua",
-                                            "name" => "কচুয়া"
+                                            "name" => "কচুয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Mollahat",
-                                            "name" => "মোল্লাহাট "
+                                            "name" => "মোল্লাহাট ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Mongla",
-                                            "name" => "মংলা"
+                                            "name" => "মংলা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Morrelganj",
-                                            "name" => "মরেলগঞ্জ"
+                                            "name" => "মরেলগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Rampal",
-                                            "name" => "রামপাল"
+                                            "name" => "রামপাল",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sarankhola",
-                                            "name" => "স্মরণখোলা"
+                                            "name" => "স্মরণখোলা",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1245,19 +1487,23 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Damurhuda",
-                                            "name" => "দামুরহুদা"
+                                            "name" => "দামুরহুদা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Chuadanga-S",
-                                            "name" => "চুয়াডাঙ্গা সদর"
+                                            "name" => "চুয়াডাঙ্গা সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Jibannagar",
-                                            "name" => "জীবন নগর "
+                                            "name" => "জীবন নগর ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Alamdanga",
-                                            "name" => "আলমডাঙ্গা"
+                                            "name" => "আলমডাঙ্গা",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1268,35 +1514,43 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Abhaynagar",
-                                            "name" => "অভয়নগর"
+                                            "name" => "অভয়নগর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Keshabpur",
-                                            "name" => "কেশবপুর"
+                                            "name" => "কেশবপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bagherpara",
-                                            "name" => "বাঘের পাড়া "
+                                            "name" => "বাঘের পাড়া ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Jessore Sadar",
-                                            "name" => "যশোর সদর"
+                                            "name" => "যশোর সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Chaugachha",
-                                            "name" => "চৌগাছা"
+                                            "name" => "চৌগাছা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Manirampur",
-                                            "name" => "মনিরামপুর "
+                                            "name" => "মনিরামপুর ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Jhikargachha",
-                                            "name" => "ঝিকরগাছা"
+                                            "name" => "ঝিকরগাছা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sharsha",
-                                            "name" => "সারশা"
+                                            "name" => "সারশা",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1307,27 +1561,33 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Jhenaidah Sadar",
-                                            "name" => "ঝিনাইদহ সদর"
+                                            "name" => "ঝিনাইদহ সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Maheshpur",
-                                            "name" => "মহেশপুর"
+                                            "name" => "মহেশপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kaliganj",
-                                            "name" => "কালীগঞ্জ"
+                                            "name" => "কালীগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kotchandpur",
-                                            "name" => "কোট চাঁদপুর "
+                                            "name" => "কোট চাঁদপুর ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Shailkupa",
-                                            "name" => "শৈলকুপা"
+                                            "name" => "শৈলকুপা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Harinakunda",
-                                            "name" => "হাড়িনাকুন্দা"
+                                            "name" => "হাড়িনাকুন্দা",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1338,39 +1598,48 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Terokhada",
-                                            "name" => "তেরোখাদা"
+                                            "name" => "তেরোখাদা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Batiaghata",
-                                            "name" => "বাটিয়াঘাটা "
+                                            "name" => "বাটিয়াঘাটা ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Dacope",
-                                            "name" => "ডাকপে"
+                                            "name" => "ডাকপে",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Dumuria",
-                                            "name" => "ডুমুরিয়া"
+                                            "name" => "ডুমুরিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Dighalia",
-                                            "name" => "দিঘলিয়া"
+                                            "name" => "দিঘলিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Koyra",
-                                            "name" => "কয়ড়া"
+                                            "name" => "কয়ড়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Paikgachha",
-                                            "name" => "পাইকগাছা"
+                                            "name" => "পাইকগাছা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Phultala",
-                                            "name" => "ফুলতলা"
+                                            "name" => "ফুলতলা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Rupsa",
-                                            "name" => "রূপসা"
+                                            "name" => "রূপসা",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1381,27 +1650,33 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Kushtia Sadar",
-                                            "name" => "কুষ্টিয়া সদর"
+                                            "name" => "কুষ্টিয়া সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kumarkhali",
-                                            "name" => "কুমারখালি"
+                                            "name" => "কুমারখালি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Daulatpur",
-                                            "name" => "দৌলতপুর"
+                                            "name" => "দৌলতপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Mirpur",
-                                            "name" => "মিরপুর"
+                                            "name" => "মিরপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bheramara",
-                                            "name" => "ভেরামারা"
+                                            "name" => "ভেরামারা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Khoksa",
-                                            "name" => "খোকসা"
+                                            "name" => "খোকসা",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1412,19 +1687,23 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Magura Sadar",
-                                            "name" => "মাগুরা সদর"
+                                            "name" => "মাগুরা সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Mohammadpur",
-                                            "name" => "মোহাম্মাদপুর"
+                                            "name" => "মোহাম্মাদপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Shalikha",
-                                            "name" => "শালিখা"
+                                            "name" => "শালিখা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sreepur",
-                                            "name" => "শ্রীপুর"
+                                            "name" => "শ্রীপুর",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1435,15 +1714,18 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "angni",
-                                            "name" => "আংনি"
+                                            "name" => "আংনি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Mujib Nagar",
-                                            "name" => "মুজিব নগর"
+                                            "name" => "মুজিব নগর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Meherpur-S",
-                                            "name" => "মেহেরপুর সদর"
+                                            "name" => "মেহেরপুর সদর",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1454,15 +1736,18 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Narail-S Upazilla",
-                                            "name" => "নড়াইল সদর"
+                                            "name" => "নড়াইল সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Lohagara Upazilla",
-                                            "name" => "লোহাগাড়া"
+                                            "name" => "লোহাগাড়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kalia Upazilla",
-                                            "name" => "কালিয়া"
+                                            "name" => "কালিয়া",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1473,31 +1758,38 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Satkhira Sadar",
-                                            "name" => "সাতক্ষীরা সদর"
+                                            "name" => "সাতক্ষীরা সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Assasuni",
-                                            "name" => "আসসাশুনি "
+                                            "name" => "আসসাশুনি ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Debhata",
-                                            "name" => "দেভাটা"
+                                            "name" => "দেভাটা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Tala",
-                                            "name" => "তালা"
+                                            "name" => "তালা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kalaroa",
-                                            "name" => "কলরোয়া"
+                                            "name" => "কলরোয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kaliganj",
-                                            "name" => "কালীগঞ্জ"
+                                            "name" => "কালীগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Shyamnagar",
-                                            "name" => "শ্যামনগর"
+                                            "name" => "শ্যামনগর",
+                                            "children" => []
                                         ]
                                     ]
                                 ]
@@ -1516,51 +1808,63 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Adamdighi",
-                                            "name" => "আদমদিঘী"
+                                            "name" => "আদমদিঘী",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bogra Sadar",
-                                            "name" => "বগুড়া সদর"
+                                            "name" => "বগুড়া সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sherpur",
-                                            "name" => "শেরপুর"
+                                            "name" => "শেরপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Dhunat",
-                                            "name" => "ধুনট"
+                                            "name" => "ধুনট",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Dhupchanchia",
-                                            "name" => "দুপচাচিয়া"
+                                            "name" => "দুপচাচিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Gabtali",
-                                            "name" => "গাবতলি"
+                                            "name" => "গাবতলি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kahaloo",
-                                            "name" => "কাহালু"
+                                            "name" => "কাহালু",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nandigram",
-                                            "name" => "নন্দিগ্রাম"
+                                            "name" => "নন্দিগ্রাম",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sahajanpur",
-                                            "name" => "শাহজাহানপুর"
+                                            "name" => "শাহজাহানপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sariakandi",
-                                            "name" => "সারিয়াকান্দি"
+                                            "name" => "সারিয়াকান্দি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Shibganj",
-                                            "name" => "শিবগঞ্জ"
+                                            "name" => "শিবগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sonatala",
-                                            "name" => "সোনাতলা"
+                                            "name" => "সোনাতলা",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1571,23 +1875,28 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Joypurhat S",
-                                            "name" => "জয়পুরহাট সদর"
+                                            "name" => "জয়পুরহাট সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Akkelpur",
-                                            "name" => "আক্কেলপুর"
+                                            "name" => "আক্কেলপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kalai",
-                                            "name" => "কালাই"
+                                            "name" => "কালাই",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Khetlal",
-                                            "name" => "খেতলাল"
+                                            "name" => "খেতলাল",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Panchbibi",
-                                            "name" => "পাঁচবিবি"
+                                            "name" => "পাঁচবিবি",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1598,47 +1907,58 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Naogaon Sadar",
-                                            "name" => "নওগাঁ সদর"
+                                            "name" => "নওগাঁ সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Mohadevpur",
-                                            "name" => "মহাদেবপুর"
+                                            "name" => "মহাদেবপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Manda",
-                                            "name" => "মান্দা"
+                                            "name" => "মান্দা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Niamatpur",
-                                            "name" => "নিয়ামতপুর"
+                                            "name" => "নিয়ামতপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Atrai",
-                                            "name" => "আত্রাই"
+                                            "name" => "আত্রাই",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Raninagar",
-                                            "name" => "রাণীনগর"
+                                            "name" => "রাণীনগর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Patnitala",
-                                            "name" => "পত্নীতলা"
+                                            "name" => "পত্নীতলা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Dhamoirhat",
-                                            "name" => "ধামইরহাট "
+                                            "name" => "ধামইরহাট ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sapahar",
-                                            "name" => "সাপাহার"
+                                            "name" => "সাপাহার",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Porsha",
-                                            "name" => "পোরশা"
+                                            "name" => "পোরশা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Badalgachhi",
-                                            "name" => "বদলগাছি"
+                                            "name" => "বদলগাছি",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1649,27 +1969,33 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Natore Sadar",
-                                            "name" => "নাটোর সদর"
+                                            "name" => "নাটোর সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Baraigram",
-                                            "name" => "বড়াইগ্রাম"
+                                            "name" => "বড়াইগ্রাম",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bagatipara",
-                                            "name" => "বাগাতিপাড়া"
+                                            "name" => "বাগাতিপাড়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Lalpur",
-                                            "name" => "লালপুর"
+                                            "name" => "লালপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Natore Sadar",
-                                            "name" => "নাটোর সদর"
+                                            "name" => "নাটোর সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Baraigram",
-                                            "name" => "বড়াই গ্রাম"
+                                            "name" => "বড়াই গ্রাম",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1680,23 +2006,28 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Bholahat",
-                                            "name" => "ভোলাহাট"
+                                            "name" => "ভোলাহাট",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Gomastapur",
-                                            "name" => "গোমস্তাপুর"
+                                            "name" => "গোমস্তাপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nachole",
-                                            "name" => "নাচোল"
+                                            "name" => "নাচোল",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nawabganj Sadar",
-                                            "name" => "নবাবগঞ্জ সদর"
+                                            "name" => "নবাবগঞ্জ সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Shibganj",
-                                            "name" => "শিবগঞ্জ"
+                                            "name" => "শিবগঞ্জ",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1707,39 +2038,48 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Atgharia",
-                                            "name" => "আটঘরিয়া"
+                                            "name" => "আটঘরিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bera",
-                                            "name" => "বেড়া"
+                                            "name" => "বেড়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bhangura",
-                                            "name" => "ভাঙ্গুরা"
+                                            "name" => "ভাঙ্গুরা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Chatmohar",
-                                            "name" => "চাটমোহর"
+                                            "name" => "চাটমোহর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Faridpur",
-                                            "name" => "ফরিদপুর"
+                                            "name" => "ফরিদপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Ishwardi",
-                                            "name" => "ঈশ্বরদী"
+                                            "name" => "ঈশ্বরদী",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Pabna Sadar",
-                                            "name" => "পাবনা সদর"
+                                            "name" => "পাবনা সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Santhia",
-                                            "name" => "সাথিয়া"
+                                            "name" => "সাথিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sujanagar",
-                                            "name" => "সুজানগর"
+                                            "name" => "সুজানগর",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1750,39 +2090,48 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Bagha",
-                                            "name" => "বাঘা"
+                                            "name" => "বাঘা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bagmara",
-                                            "name" => "বাগমারা"
+                                            "name" => "বাগমারা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Charghat",
-                                            "name" => "চারঘাট"
+                                            "name" => "চারঘাট",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Durgapur",
-                                            "name" => "দুর্গাপুর"
+                                            "name" => "দুর্গাপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Godagari",
-                                            "name" => "গোদাগারি"
+                                            "name" => "গোদাগারি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Mohanpur",
-                                            "name" => "মোহনপুর"
+                                            "name" => "মোহনপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Paba",
-                                            "name" => "পবা"
+                                            "name" => "পবা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Puthia",
-                                            "name" => "পুঠিয়া"
+                                            "name" => "পুঠিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Tanore",
-                                            "name" => "তানোর"
+                                            "name" => "তানোর",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1793,39 +2142,48 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Sirajganj Sadar",
-                                            "name" => "সিরাজগঞ্জ সদর"
+                                            "name" => "সিরাজগঞ্জ সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Belkuchi",
-                                            "name" => "বেলকুচি"
+                                            "name" => "বেলকুচি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Chauhali",
-                                            "name" => "চৌহালি"
+                                            "name" => "চৌহালি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kamarkhanda",
-                                            "name" => "কামারখান্দা"
+                                            "name" => "কামারখান্দা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kazipur",
-                                            "name" => "কাজীপুর"
+                                            "name" => "কাজীপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Raiganj",
-                                            "name" => "রায়গঞ্জ"
+                                            "name" => "রায়গঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Shahjadpur",
-                                            "name" => "শাহজাদপুর"
+                                            "name" => "শাহজাদপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Tarash",
-                                            "name" => "তারাশ"
+                                            "name" => "তারাশ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Ullahpara",
-                                            "name" => "উল্লাপাড়া"
+                                            "name" => "উল্লাপাড়া",
+                                            "children" => []
                                         ]
                                     ]
                                 ]
@@ -1844,55 +2202,68 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Birampur",
-                                            "name" => "বিরামপুর"
+                                            "name" => "বিরামপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Birganj",
-                                            "name" => "বীরগঞ্জ"
+                                            "name" => "বীরগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Biral",
-                                            "name" => "বিড়াল"
+                                            "name" => "বিড়াল",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bochaganj",
-                                            "name" => "বোচাগঞ্জ"
+                                            "name" => "বোচাগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Chirirbandar",
-                                            "name" => "চিরিরবন্দর"
+                                            "name" => "চিরিরবন্দর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Phulbari",
-                                            "name" => "ফুলবাড়ি"
+                                            "name" => "ফুলবাড়ি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Ghoraghat",
-                                            "name" => "ঘোড়াঘাট"
+                                            "name" => "ঘোড়াঘাট",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Hakimpur",
-                                            "name" => "হাকিমপুর"
+                                            "name" => "হাকিমপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kaharole",
-                                            "name" => "কাহারোল"
+                                            "name" => "কাহারোল",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Khansama",
-                                            "name" => "খানসামা"
+                                            "name" => "খানসামা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Dinajpur Sadar",
-                                            "name" => "দিনাজপুর সদর"
+                                            "name" => "দিনাজপুর সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nawabganj",
-                                            "name" => "নবাবগঞ্জ"
+                                            "name" => "নবাবগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Parbatipur",
-                                            "name" => "পার্বতীপুর"
+                                            "name" => "পার্বতীপুর",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1903,31 +2274,38 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Fulchhari",
-                                            "name" => "ফুলছড়ি"
+                                            "name" => "ফুলছড়ি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Gaibandha sadar",
-                                            "name" => "গাইবান্ধা সদর"
+                                            "name" => "গাইবান্ধা সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Gobindaganj",
-                                            "name" => "গোবিন্দগঞ্জ"
+                                            "name" => "গোবিন্দগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Palashbari",
-                                            "name" => "পলাশবাড়ী"
+                                            "name" => "পলাশবাড়ী",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sadullapur",
-                                            "name" => "সাদুল্যাপুর"
+                                            "name" => "সাদুল্যাপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Saghata",
-                                            "name" => "সাঘাটা"
+                                            "name" => "সাঘাটা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sundarganj",
-                                            "name" => "সুন্দরগঞ্জ"
+                                            "name" => "সুন্দরগঞ্জ",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1938,39 +2316,48 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Kurigram Sadar",
-                                            "name" => "কুড়িগ্রাম সদর"
+                                            "name" => "কুড়িগ্রাম সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nageshwari",
-                                            "name" => "নাগেশ্বরী"
+                                            "name" => "নাগেশ্বরী",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bhurungamari",
-                                            "name" => "ভুরুঙ্গামারি"
+                                            "name" => "ভুরুঙ্গামারি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Phulbari",
-                                            "name" => "ফুলবাড়ি"
+                                            "name" => "ফুলবাড়ি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Rajarhat",
-                                            "name" => "রাজারহাট"
+                                            "name" => "রাজারহাট",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Ulipur",
-                                            "name" => "উলিপুর"
+                                            "name" => "উলিপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Chilmari",
-                                            "name" => "চিলমারি"
+                                            "name" => "চিলমারি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Rowmari",
-                                            "name" => "রউমারি"
+                                            "name" => "রউমারি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Char Rajibpur",
-                                            "name" => "চর রাজিবপুর"
+                                            "name" => "চর রাজিবপুর",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -1981,23 +2368,28 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Lalmanirhat Sadar",
-                                            "name" => "লালমনিরহাট সদর"
+                                            "name" => "লালমনিরহাট সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Aditmari",
-                                            "name" => "আদিতমারি"
+                                            "name" => "আদিতমারি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kaliganj",
-                                            "name" => "কালীগঞ্জ"
+                                            "name" => "কালীগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Hatibandha",
-                                            "name" => "হাতিবান্ধা"
+                                            "name" => "হাতিবান্ধা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Patgram",
-                                            "name" => "পাটগ্রাম"
+                                            "name" => "পাটগ্রাম",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -2008,27 +2400,33 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Nilphamari Sadar",
-                                            "name" => "নীলফামারী সদর"
+                                            "name" => "নীলফামারী সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Saidpur",
-                                            "name" => "সৈয়দপুর"
+                                            "name" => "সৈয়দপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Jaldhaka",
-                                            "name" => "জলঢাকা"
+                                            "name" => "জলঢাকা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kishoreganj",
-                                            "name" => "কিশোরগঞ্জ"
+                                            "name" => "কিশোরগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Domar",
-                                            "name" => "ডোমার"
+                                            "name" => "ডোমার",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Dimla",
-                                            "name" => "ডিমলা"
+                                            "name" => "ডিমলা",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -2039,23 +2437,28 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Panchagarh Sadar",
-                                            "name" => "পঞ্চগড় সদর"
+                                            "name" => "পঞ্চগড় সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Debiganj",
-                                            "name" => "দেবীগঞ্জ"
+                                            "name" => "দেবীগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Boda",
-                                            "name" => "বোদা"
+                                            "name" => "বোদা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Atwari",
-                                            "name" => "আটোয়ারি"
+                                            "name" => "আটোয়ারি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Tetulia",
-                                            "name" => "তেতুলিয়া"
+                                            "name" => "তেতুলিয়া",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -2066,35 +2469,43 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Badarganj",
-                                            "name" => "বদরগঞ্জ"
+                                            "name" => "বদরগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Mithapukur",
-                                            "name" => "মিঠাপুকুর"
+                                            "name" => "মিঠাপুকুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Gangachara",
-                                            "name" => "গঙ্গাচরা"
+                                            "name" => "গঙ্গাচরা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kaunia",
-                                            "name" => "কাউনিয়া"
+                                            "name" => "কাউনিয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Rangpur Sadar",
-                                            "name" => "রংপুর সদর"
+                                            "name" => "রংপুর সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Pirgachha",
-                                            "name" => "পীরগাছা"
+                                            "name" => "পীরগাছা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Pirganj",
-                                            "name" => "পীরগঞ্জ"
+                                            "name" => "পীরগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Taraganj",
-                                            "name" => "তারাগঞ্জ"
+                                            "name" => "তারাগঞ্জ",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -2105,23 +2516,28 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Thakurgaon Sadar",
-                                            "name" => "ঠাকুরগাঁও সদর"
+                                            "name" => "ঠাকুরগাঁও সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Pirganj",
-                                            "name" => "পীরগঞ্জ"
+                                            "name" => "পীরগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Baliadangi",
-                                            "name" => "বালিয়াডাঙ্গি"
+                                            "name" => "বালিয়াডাঙ্গি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Haripur",
-                                            "name" => "হরিপুর"
+                                            "name" => "হরিপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Ranisankail",
-                                            "name" => "রাণীসংকইল"
+                                            "name" => "রাণীসংকইল",
+                                            "children" => []
                                         ]
                                     ]
                                 ]
@@ -2140,39 +2556,48 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Ajmiriganj",
-                                            "name" => "আজমিরিগঞ্জ"
+                                            "name" => "আজমিরিগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Baniachang",
-                                            "name" => "বানিয়াচং"
+                                            "name" => "বানিয়াচং",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bahubal",
-                                            "name" => "বাহুবল"
+                                            "name" => "বাহুবল",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Chunarughat",
-                                            "name" => "চুনারুঘাট"
+                                            "name" => "চুনারুঘাট",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Habiganj Sadar",
-                                            "name" => "হবিগঞ্জ সদর"
+                                            "name" => "হবিগঞ্জ সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Lakhai",
-                                            "name" => "লাক্ষাই"
+                                            "name" => "লাক্ষাই",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Madhabpur",
-                                            "name" => "মাধবপুর"
+                                            "name" => "মাধবপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nabiganj",
-                                            "name" => "নবীগঞ্জ"
+                                            "name" => "নবীগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Shaistagonj",
-                                            "name" => "শায়েস্তাগঞ্জ"
+                                            "name" => "শায়েস্তাগঞ্জ",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -2183,31 +2608,38 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Moulvibazar Sadar",
-                                            "name" => "মৌলভীবাজার"
+                                            "name" => "মৌলভীবাজার",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Barlekha",
-                                            "name" => "বড়লেখা"
+                                            "name" => "বড়লেখা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Juri",
-                                            "name" => "জুড়ি"
+                                            "name" => "জুড়ি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kamalganj",
-                                            "name" => "কামালগঞ্জ"
+                                            "name" => "কামালগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kulaura",
-                                            "name" => "কুলাউরা"
+                                            "name" => "কুলাউরা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Rajnagar",
-                                            "name" => "রাজনগর"
+                                            "name" => "রাজনগর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sreemangal",
-                                            "name" => "শ্রীমঙ্গল"
+                                            "name" => "শ্রীমঙ্গল",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -2218,47 +2650,58 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Bishwamvarpur",
-                                            "name" => "বিসশম্ভারপুর"
+                                            "name" => "বিসশম্ভারপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Chhatak",
-                                            "name" => "ছাতক"
+                                            "name" => "ছাতক",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Derai",
-                                            "name" => "দেড়াই"
+                                            "name" => "দেড়াই",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Dharampasha",
-                                            "name" => "ধরমপাশা"
+                                            "name" => "ধরমপাশা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Dowarabazar",
-                                            "name" => "দোয়ারাবাজার"
+                                            "name" => "দোয়ারাবাজার",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Jagannathpur",
-                                            "name" => "জগন্নাথপুর"
+                                            "name" => "জগন্নাথপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Jamalganj",
-                                            "name" => "জামালগঞ্জ"
+                                            "name" => "জামালগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sulla",
-                                            "name" => "সুল্লা"
+                                            "name" => "সুল্লা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sunamganj Sadar",
-                                            "name" => "সুনামগঞ্জ সদর"
+                                            "name" => "সুনামগঞ্জ সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Shanthiganj",
-                                            "name" => "শান্তিগঞ্জ"
+                                            "name" => "শান্তিগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Tahirpur",
-                                            "name" => "তাহিরপুর"
+                                            "name" => "তাহিরপুর",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -2269,55 +2712,68 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Sylhet Sadar",
-                                            "name" => "সিলেট সদর"
+                                            "name" => "সিলেট সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Beanibazar",
-                                            "name" => "বেয়ানিবাজার"
+                                            "name" => "বেয়ানিবাজার",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Bishwanath",
-                                            "name" => "বিশ্বনাথ"
+                                            "name" => "বিশ্বনাথ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Dakshin Surma",
-                                            "name" => "দক্ষিণ সুরমা"
+                                            "name" => "দক্ষিণ সুরমা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Balaganj",
-                                            "name" => "বালাগঞ্জ"
+                                            "name" => "বালাগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Companiganj",
-                                            "name" => "কোম্পানিগঞ্জ"
+                                            "name" => "কোম্পানিগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Fenchuganj",
-                                            "name" => "ফেঞ্চুগঞ্জ"
+                                            "name" => "ফেঞ্চুগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Golapganj",
-                                            "name" => "গোলাপগঞ্জ"
+                                            "name" => "গোলাপগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Gowainghat",
-                                            "name" => "গোয়াইনঘাট"
+                                            "name" => "গোয়াইনঘাট",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Jaintiapur",
-                                            "name" => "জয়ন্তপুর"
+                                            "name" => "জয়ন্তপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kanaighat",
-                                            "name" => "কানাইঘাট"
+                                            "name" => "কানাইঘাট",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Zakiganj",
-                                            "name" => "জাকিগঞ্জ"
+                                            "name" => "জাকিগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nobigonj",
-                                            "name" => "নবীগঞ্জ"
+                                            "name" => "নবীগঞ্জ",
+                                            "children" => []
                                         ]
                                     ]
                                 ]
@@ -2336,35 +2792,43 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Dewanganj",
-                                            "name" => "দেওয়ানগঞ্জ"
+                                            "name" => "দেওয়ানগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Baksiganj",
-                                            "name" => "বকসিগঞ্জ"
+                                            "name" => "বকসিগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Islampur",
-                                            "name" => "ইসলামপুর"
+                                            "name" => "ইসলামপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Jamalpur Sadar",
-                                            "name" => "জামালপুর সদর"
+                                            "name" => "জামালপুর সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Madarganj",
-                                            "name" => "মাদারগঞ্জ"
+                                            "name" => "মাদারগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Melandaha",
-                                            "name" => "মেলানদাহা"
+                                            "name" => "মেলানদাহা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sarishabari",
-                                            "name" => "সরিষাবাড়ি "
+                                            "name" => "সরিষাবাড়ি ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Narundi Police I.C",
-                                            "name" => "নারুন্দি"
+                                            "name" => "নারুন্দি",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -2375,51 +2839,63 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Bhaluka",
-                                            "name" => "ভালুকা"
+                                            "name" => "ভালুকা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Trishal",
-                                            "name" => "ত্রিশাল"
+                                            "name" => "ত্রিশাল",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Haluaghat",
-                                            "name" => "হালুয়াঘাট"
+                                            "name" => "হালুয়াঘাট",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Muktagachha",
-                                            "name" => "মুক্তাগাছা"
+                                            "name" => "মুক্তাগাছা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Dhobaura",
-                                            "name" => "ধবারুয়া"
+                                            "name" => "ধবারুয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Fulbaria",
-                                            "name" => "ফুলবাড়িয়া"
+                                            "name" => "ফুলবাড়িয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Gaffargaon",
-                                            "name" => "গফরগাঁও"
+                                            "name" => "গফরগাঁও",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Gauripur",
-                                            "name" => "গৌরিপুর"
+                                            "name" => "গৌরিপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Ishwarganj",
-                                            "name" => "ঈশ্বরগঞ্জ"
+                                            "name" => "ঈশ্বরগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Mymensingh Sadar",
-                                            "name" => "ময়মনসিং সদর"
+                                            "name" => "ময়মনসিং সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nandail",
-                                            "name" => "নন্দাইল"
+                                            "name" => "নন্দাইল",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Phulpur",
-                                            "name" => "ফুলপুর"
+                                            "name" => "ফুলপুর",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -2430,43 +2906,53 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Kendua Upazilla",
-                                            "name" => "কেন্দুয়া"
+                                            "name" => "কেন্দুয়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Atpara Upazilla",
-                                            "name" => "আটপাড়া"
+                                            "name" => "আটপাড়া",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Barhatta Upazilla",
-                                            "name" => "বরহাট্টা"
+                                            "name" => "বরহাট্টা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Durgapur Upazilla",
-                                            "name" => "দুর্গাপুর"
+                                            "name" => "দুর্গাপুর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Kalmakanda Upazilla",
-                                            "name" => "কলমাকান্দা"
+                                            "name" => "কলমাকান্দা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Madan Upazilla",
-                                            "name" => "মদন"
+                                            "name" => "মদন",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Mohanganj Upazilla",
-                                            "name" => "মোহনগঞ্জ"
+                                            "name" => "মোহনগঞ্জ",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Netrakona-S Upazilla",
-                                            "name" => "নেত্রকোনা সদর"
+                                            "name" => "নেত্রকোনা সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Purbadhala Upazilla",
-                                            "name" => "পূর্বধলা"
+                                            "name" => "পূর্বধলা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Khaliajuri Upazilla",
-                                            "name" => "খালিয়াজুরি"
+                                            "name" => "খালিয়াজুরি",
+                                            "children" => []
                                         ]
                                     ]
                                 ],
@@ -2477,23 +2963,28 @@ class RegionSeeder extends Seeder
                                     "children" => [
                                         [
                                             "slug" => "Jhenaigati",
-                                            "name" => "ঝিনাইগাতি"
+                                            "name" => "ঝিনাইগাতি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nakla",
-                                            "name" => "নাকলা"
+                                            "name" => "নাকলা",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Nalitabari",
-                                            "name" => "নালিতাবাড়ি"
+                                            "name" => "নালিতাবাড়ি",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sherpur Sadar",
-                                            "name" => "শেরপুর সদর"
+                                            "name" => "শেরপুর সদর",
+                                            "children" => []
                                         ],
                                         [
                                             "slug" => "Sreebardi",
-                                            "name" => "শ্রীবরদি"
+                                            "name" => "শ্রীবরদি",
+                                            "children" => []
                                         ]
                                     ]
                                 ]
@@ -2519,6 +3010,7 @@ class RegionSeeder extends Seeder
                 ],
             ]
         ];
+        Region::create($asia);
 
         // $northAmerica = [
         //     "name" => "উত্তর আমেরিকা",
@@ -2535,56 +3027,7 @@ class RegionSeeder extends Seeder
         //             ],
         //         ]
         // ];
-        $division_id = 6;
-        $district_id = 14;
-        Region::create([
-            'name' => $asia['slug'],
-            'slug' => $asia['slug']
-        ]);
-        foreach ($asia['children'] as $country) {
-            Region::create([
-                'name' => $country['slug'],
-                'slug' => $country['slug'],
-                'parent_id' => 1
-            ]);
-        }
-        foreach ($asia['children'] as $country) {
-            foreach ($country['children'] as $division) {
-                Region::create([
-                    'name' => $division['slug'],
-                    'slug' => $division['slug'],
-                    'parent_id' => 2
-                ]);
-            }
-        }
-        foreach ($asia['children'] as $country) {
-            foreach ($country['children'] as $division) {
-                foreach ($division['children'] as $district) {
-                    Region::create([
-                        'name' => $district['slug'],
-                        'slug' => $district['slug'],
-                        'expense' => $district['value'],
-                        'parent_id' => $division_id
-                    ]);
-                }
-                $division_id = $division_id + 1;
-            }
-        }
-        foreach ($asia['children'] as $country) {
-            foreach ($country['children'] as $division) {
-                foreach ($division['children'] as $district) {
-                    foreach ($district['children'] as $upazilla) {
-                        Region::create([
-                            'name' => $upazilla['slug'],
-                            'slug' => $upazilla['slug'],
-                            'parent_id' => $district_id
-                        ]);
-                    }
-                    $district_id = $district_id + 1;
-                }
-            }
-        }
-        // Region::create($asia);
+
         // Region::create($northAmerica);
     }
 }

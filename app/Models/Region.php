@@ -9,19 +9,20 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Traits\Region\RegionColumn;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Kalnoy\Nestedset\NodeTrait;
 
 class Region extends Model
 {
-    use HasFactory, PaginationTrait, RegionColumn, CanBeScoped;
+    use HasFactory, PaginationTrait, RegionColumn, CanBeScoped, NodeTrait;
     protected $fillable = [
         'name',
-        'uuid',
-        'slug',
-        'eng_name',
-        'parent_id',
-        'order',
-        'lat',
-        'lng'
+        // 'uuid',
+        // 'slug',
+        // 'eng_name',
+        // 'parent_id',
+        // 'order',
+        // 'lat',
+        // 'lng'
     ];
     public function getRouteKeyName()
     {
@@ -38,7 +39,8 @@ class Region extends Model
             //             $model->slug = Str::slug($prefix . $model->slug);
         });
     }
-    public function children(){
-        return $this->hasMany(Region::class,"parent_id");
-    }
+    // public function children()
+    // {
+    //     return $this->hasMany(Region::class, "parent_id");
+    // }
 }
