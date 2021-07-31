@@ -45,16 +45,14 @@ class UserController extends Controller
   {
     $product = User::where('slug', $slug)
       ->firstOrFail();
-    $product->name = $request['name'];
-    $product->email = $request['email'];
+    $product->update($request->only(['name', 'email']));
     $imageHandling->uploadImage($product, $request, 'user');
     $product->update();
     return back()->withSuccess('User Updated Successfully');;
   }
   public function destroy(DeleteData $delete, $slug)
   {
-    $delete->userDelete($slug);
-
+    $delete->dataDelete($slug, 'User');
     $datas = $this->datas();
     $columns = User::columns();
     $model = 'user';

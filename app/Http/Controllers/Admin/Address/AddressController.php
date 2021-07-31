@@ -71,7 +71,7 @@ class AddressController extends Controller
     }
     public function destroy(DeleteData $delete, $slug)
     {
-        $delete->addressDelete($slug);
+        $delete->dataDelete($slug, 'Address');
         $datas = $this->datas();
         $columns = Address::columns();
         $model = 'address';

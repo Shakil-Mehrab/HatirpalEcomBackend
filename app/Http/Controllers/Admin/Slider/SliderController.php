@@ -79,7 +79,7 @@ class SliderController extends Controller
     }
     public function destroy(DeleteData $delete, $slug)
     {
-        $delete->sliderDelete($slug);
+        $delete->dataDelete($slug, 'Slider');
         $datas = $this->datas();
         $columns = Slider::columns();
         $model = 'slider';

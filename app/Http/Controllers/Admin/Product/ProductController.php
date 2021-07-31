@@ -6,7 +6,6 @@ use App\Models\Stock;
 use App\Models\Product;
 use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use App\Models\ProductVariation;
 use App\Bag\Admin\Delete\DeleteData;
 use App\Http\Controllers\Controller;
 use App\Bag\Admin\Image\ImageHandling;
@@ -94,7 +93,7 @@ class ProductController extends Controller
   }
   public function destroy(DeleteData $delete, $slug)
   {
-    $delete->productDelete($slug);
+    $delete->dataDelete($slug, 'Product');
     $datas = $this->datas();
     $columns = Product::columns();
     $model = 'product';

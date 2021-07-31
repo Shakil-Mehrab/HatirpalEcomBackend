@@ -61,8 +61,7 @@ class ShippingMethodController extends Controller
   }
   public function destroy(DeleteData $delete, $slug)
   {
-    $delete->shippingMethodDelete($slug);
-
+    $delete->dataDelete($slug, 'ShippingMethod');
     $datas = $this->datas();
     $columns = ShippingMethod::columns();
     $model = 'shippingmethod';

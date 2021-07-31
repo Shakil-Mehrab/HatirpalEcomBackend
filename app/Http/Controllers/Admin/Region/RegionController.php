@@ -74,7 +74,7 @@ class RegionController extends Controller
     }
     public function destroy(DeleteData $delete, $slug)
     {
-        $delete->regionDelete($slug);
+        $delete->dataDelete($slug, 'Region');
         $datas = $this->datas();
         $columns = Region::columns();
         $model = 'region';

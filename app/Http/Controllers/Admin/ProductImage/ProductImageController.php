@@ -26,7 +26,7 @@ class ProductImageController extends Controller
     }
     public function destroy(DeleteData $delete, $slug)
     {
-        $delete->productImageDelete($slug);
+        $delete->dataDelete($slug, 'ProductImage');
         $datas = $this->datas();
         $columns = ProductImage::columns();
         $model = 'productimage';

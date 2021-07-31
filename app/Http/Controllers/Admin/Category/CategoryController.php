@@ -69,7 +69,7 @@ class CategoryController extends Controller
     }
     public function destroy(DeleteData $delete, $slug)
     {
-        $delete->catDelete($slug);
+        $delete->dataDelete($slug, 'Category');
         $datas = $this->datas();
         $columns = Category::columns();
         $model = 'category';

@@ -77,7 +77,7 @@ class ContactController extends Controller
     }
     public function destroy(DeleteData $delete, $slug)
     {
-        $delete->contactDelete($slug);
+        $delete->dataDelete($slug, 'Contact');
         $datas = $this->datas();
         $columns = Contact::columns();
         $model = 'contact';

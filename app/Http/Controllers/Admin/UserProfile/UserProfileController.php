@@ -15,15 +15,6 @@ class UserProfileController extends Controller
     {
         return view('layouts.userprofile.view');
     }
-    // public function search()
-    // {
-    //     $query = request('query');
-    //     $datas = User::where('name', 'LIKE', "%" . $query . "%")
-    //         ->searchPagination(request('per-page'));
-    //     $columns = User::columns();
-    //     $model = 'user';
-    //     return view('layouts.data.table', compact('datas', 'columns', 'model'));
-    // }
     public function edit()
     {
         $data = auth()->user();
@@ -35,20 +26,9 @@ class UserProfileController extends Controller
     {
         $product = User::where('slug', $slug)
             ->firstOrFail();
-        $product->name = $request['name'];
-        $product->email = $request['email'];
+        $product->update($request->only(['name', 'email']));
         $imageHandling->uploadImage($product, $request, 'user');
         $product->update();
         return back()->withSuccess('User Profile Updated Successfully');;
     }
-    //     public function destroy(DeleteData $delete, $slug)
-    //     {
-    //         $delete->userDelete($slug);
-    // 
-    //         $datas = User::orderBy('id', 'desc')
-    //             ->pagination(request('per-page'));
-    //         $columns = User::columns();
-    //         $model = 'user';
-    //         return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-    //     }
 }

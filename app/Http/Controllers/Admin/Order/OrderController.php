@@ -85,7 +85,7 @@ class OrderController extends Controller
     }
     public function destroy(DeleteData $delete, $slug)
     {
-        $delete->orderDelete($slug);
+        $delete->dataDelete($slug, 'Order');
         $datas = $this->datas();
         $columns = Order::columns();
         $model = 'order';

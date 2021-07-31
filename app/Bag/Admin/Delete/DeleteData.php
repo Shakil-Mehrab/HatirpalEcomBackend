@@ -18,89 +18,29 @@ use App\Models\ShippingMethod;
 
 class DeleteData
 {
-    public function productDelete($slug)
+    public function dataDelete($slug, $model)
     {
-        $product = Product::where('slug', $slug)->firstOrFail();
-        if(count($product->productImages)){
-            foreach($product->productImages as $pro)
-            $this->fileCheck($pro);
-           }
-           $this->fileCheck($product);
-        $product->delete();
+        $modelPath = 'App\Models\\' . $model;
+        $data = $modelPath::where('slug', $slug)->firstOrFail();
+        $this->relatedImageCheck($data, $model);
+        $this->fileCheck($data);
+        $data->delete();
     }
-    public function productImageDelete($slug)
+
+    public function relatedImageCheck($data, $model)
     {
-        $product = ProductImage::where('slug', $slug)->firstOrFail();
-        $this->fileCheck($product);
-        $product->delete();
+        if ($model == 'Product') {
+            if (count($data->productImages)) {
+                foreach ($data->productImages as $pro) {
+                    $this->fileCheck($pro);
+                }
+            }
+        }
     }
-    public function catDelete($slug)
+    public static function fileCheck($data)
     {
-        $product = Category::where('slug', $slug)->firstOrFail();
-        $product->delete();
-       
+        if (file_exists(substr($data->thumbnail, 22, 100))) {
+            unlink(substr($data->thumbnail, 22, 100));
+        }
     }
-    public function regionDelete($slug)
-    {
-        $product = Region::where('slug', $slug)->firstOrFail();
-        $product->delete();
-    }
-    public function addressDelete($slug)
-    {
-        $product = Address::where('slug', $slug)->firstOrFail();
-        $product->delete();
-    }
-    public function orderDelete($slug)
-    {
-        $product = Order::where('slug', $slug)->firstOrFail();
-        $product->delete();
-    }
-    public function userDelete($slug)
-    {
-        $product = User::where('slug', $slug)->firstOrFail();
-       $this->fileCheck($product);
-        $product->delete();
-    }
-    public function shippingMethodDelete($slug)
-    {
-        $product = ShippingMethod::where('slug', $slug)->firstOrFail();
-       $this->fileCheck($product);
-        $product->delete();
-    }
-    public function sliderDelete($slug)
-    {
-        $product = Slider::where('slug', $slug)->firstOrFail();
-       $this->fileCheck($product);
-        $product->delete();
-    }
-    public function supplierDelete($slug)
-    {
-        $product = Supplier::where('slug', $slug)->firstOrFail();
-       $this->fileCheck($product);
-        $product->delete();
-    }
-    public function contactDelete($slug)
-    {
-        $product = Contact::where('slug', $slug)->firstOrFail();
-       $this->fileCheck($product);
-        $product->delete();
-    }
-    public function conditionDelete($slug)
-    {
-        $product = Condition::where('slug', $slug)->firstOrFail();
-       $this->fileCheck($product);
-        $product->delete();
-    }
-    public function aboutDelete($slug)
-    {
-        $product = About::where('slug', $slug)->firstOrFail();
-       $this->fileCheck($product);
-        $product->delete();
-    }
-    public static function fileCheck($data){
-        if (file_exists(substr($data->thumbnail,22,100))) {
-            unlink(substr($data->thumbnail,22,100));
-          }
-    }
-    
 }

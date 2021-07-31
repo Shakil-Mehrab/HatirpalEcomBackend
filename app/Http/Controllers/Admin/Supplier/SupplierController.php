@@ -91,7 +91,7 @@ class SupplierController extends Controller
     }
     public function destroy(DeleteData $delete, $slug)
     {
-        $delete->supplierDelete($slug);
+        $delete->dataDelete($slug, 'Supplier');
         $datas = $this->datas();
         $columns = Supplier::columns();
         $model = 'supplier';

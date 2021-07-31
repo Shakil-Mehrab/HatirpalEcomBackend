@@ -79,7 +79,7 @@ class AboutController extends Controller
     }
     public function destroy(DeleteData $delete, $slug)
     {
-        $delete->aboutDelete($slug);
+        $delete->dataDelete($slug, 'About');
         $datas = $this->datas();
         $columns = About::columns();
         $model = 'about';

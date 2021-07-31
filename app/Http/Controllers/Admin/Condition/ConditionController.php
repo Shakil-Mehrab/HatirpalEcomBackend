@@ -77,7 +77,7 @@ class ConditionController extends Controller
     }
     public function destroy(DeleteData $delete, $slug)
     {
-        $delete->conditionDelete($slug);
+        $delete->dataDelete($slug, 'Condition');
         $datas = $this->datas();
         $columns = Condition::columns();
         $model = 'condition';

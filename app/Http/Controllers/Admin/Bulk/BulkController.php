@@ -24,105 +24,16 @@ class BulkController extends Controller
     {
 
         if ($request['with_selected'] == 'delete') {
-            if ($request['model'] == 'product') {
-                foreach ($request['checked_slug'] as $slug) {
-                    $delete->productDelete($slug);
-                }
-                $datas = Product::orderBy('id', 'desc')
-                    ->pagination(request('per-page'));
-                $columns = Product::columns();
-            } elseif ($request['model'] == 'productimage') {
-                foreach ($request['checked_slug'] as $slug) {
-                    $delete->productImageDelete($slug);
-                }
-                $datas = ProductImage::orderBy('id', 'desc')
-                    ->pagination(request('per-page'));
-                $columns = ProductImage::columns();
-            } elseif ($request['model'] == 'category') {
-                foreach ($request['checked_slug'] as $slug) {
-                    $delete->catDelete($slug);
-                }
-                $datas = Category::orderBy('id', 'desc')
-                    ->pagination(request('per-page'));
-                $columns = Category::columns();
-            } elseif ($request['model'] == 'region') {
-                foreach ($request['checked_slug'] as $slug) {
-                    $delete->regionDelete($slug);
-                }
-                $datas = Region::orderBy('id', 'desc')
-                    ->pagination(request('per-page'));
-                $columns = Region::columns();
-            } 
-            elseif ($request['model'] == 'address') {
-                foreach ($request['checked_slug'] as $slug) {
-                    $delete->addressDelete($slug);
-                }
-                $datas = Address::orderBy('id', 'desc')
-                    ->pagination(request('per-page'));
-                $columns = Address::columns();
+            foreach ($request['checked_slug'] as $slug) {
+                $delete->dataDelete($slug, ucfirst($request['model']));
             }
-            elseif ($request['model'] == 'order') {
-                foreach ($request['checked_slug'] as $slug) {
-                    $delete->orderDelete($slug);
-                }
-                $datas = Order::orderBy('id', 'desc')
-                    ->pagination(request('per-page'));
-                $columns = Order::columns();
-            }
-            elseif ($request['model'] == 'user') {
-                foreach ($request['checked_slug'] as $slug) {
-                    $delete->userDelete($slug);
-                }
-                $datas = User::orderBy('id', 'desc')
-                    ->pagination(request('per-page'));
-                $columns = User::columns();
-            }
-            elseif ($request['model'] == 'slider') {
-                foreach ($request['checked_slug'] as $slug) {
-                    $delete->sliderDelete($slug);
-                }
-                $datas = Slider::orderBy('id', 'desc')
-                    ->pagination(request('per-page'));
-                $columns = Slider::columns();
-            }
-            elseif ($request['model'] == 'supplier') {
-                foreach ($request['checked_slug'] as $slug) {
-                    $delete->supplierDelete($slug);
-                }
-                $datas = Supplier::orderBy('id', 'desc')
-                    ->pagination(request('per-page'));
-                $columns = Supplier::columns();
-            }
-            elseif ($request['model'] == 'contact') {
-                foreach ($request['checked_slug'] as $slug) {
-                    $delete->contactDelete($slug);
-                }
-                $datas = Contact::orderBy('id', 'desc')
-                    ->pagination(request('per-page'));
-                $columns = Contact::columns();
-            }
-            elseif ($request['model'] == 'condition') {
-                foreach ($request['checked_slug'] as $slug) {
-                    $delete->conditionDelete($slug);
-                }
-                $datas = Condition::orderBy('id', 'desc')
-                    ->pagination(request('per-page'));
-                $columns = Condition::columns();
-            }
-            elseif ($request['model'] == 'about') {
-                foreach ($request['checked_slug'] as $slug) {
-                    $delete->aboutDelete($slug);
-                }
-                $datas = About::orderBy('id', 'desc')
-                    ->pagination(request('per-page'));
-                $columns = About::columns();
-            }
-            else{
-                return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-            }
+            $model = 'App\Models\\' . ucfirst($request['model']);
+            $datas = $model::orderBy('id', 'desc')
+                ->pagination(request('per-page'));
+            $columns = $model::columns();
             $model = $request['model'];
             return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
         }
-        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
+        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render(); //error dekhabe.byt ok
     }
 }
