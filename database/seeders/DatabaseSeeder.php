@@ -18,19 +18,17 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(1)->create();
-        // $this->call(CategorySeeder::class);
-        // \App\Models\Product::factory(5)->create();
-        // \App\Models\Slider::factory(5)->create();
-        // \App\Models\Address::factory(1)->create();
-        // $this->call(ProductCategorySeeder::class);
-        // $this->call(SizeSeeder::class);
-        //$this->call(ProductSizeSeeder::class); duplicate entry problem
-        // $this->call(ShippingMethodSeeder::class); 
+        \App\Models\User::factory(1)->create();
+        $this->call(CategorySeeder::class);
+        \App\Models\Product::factory(5)->create();
+        \App\Models\Slider::factory(5)->create();
+        \App\Models\Address::factory(1)->create();
+        $this->call(ProductCategorySeeder::class);
+        $this->call(SizeSeeder::class);
+        // $this->call(ProductSizeSeeder::class); duplicate entry problem
+        $this->call(ShippingMethodSeeder::class);
         $this->call(RegionSeeder::class);
-        // \App\Models\Supplier::factory(1)->create();
-        // \App\Models\Order::factory(1)->create();
-
-
+        \App\Models\Supplier::factory(1)->create();
+        \App\Models\Order::factory(1)->create();
     }
 }

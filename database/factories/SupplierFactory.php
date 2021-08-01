@@ -28,11 +28,11 @@ class SupplierFactory extends Factory
                 return User::all()->random()->id;
             },
             'company_name' => $name = $this->faker->word,
-            'slug' => time().Str::slug($name),
+            'slug' => time() . Str::slug($name),
             'phone' => $this->faker->numberBetween(1000, 9000),
             'email' => $this->faker->unique()->safeEmail,
             'address' => $this->faker->sentence,
-            'type' => $this->faker->word,
+            'company_type' => $this->faker->word,
             'country' => 'Bangladesh',
         ];
     }
