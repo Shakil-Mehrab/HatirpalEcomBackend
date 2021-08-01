@@ -67,14 +67,6 @@ class CategoryController extends Controller
         $product->update();
         return back()->withSuccess('Category Updated Successfully');;
     }
-    public function destroy(DeleteData $delete, $slug)
-    {
-        $delete->dataDelete($slug, 'Category');
-        $datas = $this->datas();
-        $columns = Category::columns();
-        $model = 'category';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-    }
     protected function datas()
     {
         $datas = Category::orderBy('id', 'desc')

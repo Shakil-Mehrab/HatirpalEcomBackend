@@ -72,14 +72,6 @@ class RegionController extends Controller
         $product->update();
         return back()->withSuccess('Region Updated Successfully');;
     }
-    public function destroy(DeleteData $delete, $slug)
-    {
-        $delete->dataDelete($slug, 'Region');
-        $datas = $this->datas();
-        $columns = Region::columns();
-        $model = 'region';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-    }
     protected function datas()
     {
         $datas = Region::orderBy('id', 'asc')

@@ -59,14 +59,6 @@ class ShippingMethodController extends Controller
     $product->update();
     return back()->withSuccess('Shipping Method Updated Successfully');;
   }
-  public function destroy(DeleteData $delete, $slug)
-  {
-    $delete->dataDelete($slug, 'ShippingMethod');
-    $datas = $this->datas();
-    $columns = ShippingMethod::columns();
-    $model = 'shippingmethod';
-    return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-  }
   protected function datas()
   {
     $datas = ShippingMethod::orderBy('id', 'asc')

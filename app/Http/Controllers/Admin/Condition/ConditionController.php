@@ -75,14 +75,6 @@ class ConditionController extends Controller
 
         return back()->withSuccess('Condition Updated Successfully');;
     }
-    public function destroy(DeleteData $delete, $slug)
-    {
-        $delete->dataDelete($slug, 'Condition');
-        $datas = $this->datas();
-        $columns = Condition::columns();
-        $model = 'condition';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-    }
     public function status(ChangeStatus $status, $slug)
     {
         $status->conditionStatusChange($slug);

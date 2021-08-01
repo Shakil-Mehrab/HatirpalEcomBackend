@@ -83,14 +83,6 @@ class OrderController extends Controller
         $model = 'order';
         return view('layouts.order.detail', compact('data', 'columns', 'model'));
     }
-    public function destroy(DeleteData $delete, $slug)
-    {
-        $delete->dataDelete($slug, 'Order');
-        $datas = $this->datas();
-        $columns = Order::columns();
-        $model = 'order';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-    }
     public function status(ChangeStatus $status, $slug)
     {
         $status->orderStatusChange($slug);

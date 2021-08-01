@@ -91,14 +91,6 @@ class ProductController extends Controller
 
     return back()->withSuccess('Product Updated Successfully');;
   }
-  public function destroy(DeleteData $delete, $slug)
-  {
-    $delete->dataDelete($slug, 'Product');
-    $datas = $this->datas();
-    $columns = Product::columns();
-    $model = 'product';
-    return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-  }
   public function status(ChangeStatus $status, $slug)
   {
     $status->productStatusChange($slug);

@@ -69,14 +69,6 @@ class AddressController extends Controller
         $product->update();
         return back()->withSuccess('Address Updated Successfully');;
     }
-    public function destroy(DeleteData $delete, $slug)
-    {
-        $delete->dataDelete($slug, 'Address');
-        $datas = $this->datas();
-        $columns = Address::columns();
-        $model = 'address';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-    }
     protected function datas()
     {
         $datas = Address::orderBy('id', 'desc')->with('user')

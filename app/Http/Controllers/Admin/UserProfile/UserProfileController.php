@@ -26,7 +26,9 @@ class UserProfileController extends Controller
     {
         $product = User::where('slug', $slug)
             ->firstOrFail();
-        $product->update($request->only(['name', 'email']));
+        $product->update(
+            $request->only(['name', 'email'])
+        );
         $imageHandling->uploadImage($product, $request, 'user');
         $product->update();
         return back()->withSuccess('User Profile Updated Successfully');;

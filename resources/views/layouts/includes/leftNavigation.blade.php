@@ -150,6 +150,15 @@
                 <i class="fas fa-cog"></i> Settings
             </a>
         </li>
+        <li class="mb-2 setting">
+            <div>
+                <div class="fb-messengermessageus" messenger_app_id="451585265723432" page_id="105488687708483" color="blue" size="standard">
+                </div>
+            </div>
+            <!-- <a class="change_color_to_dark_white" href="{{url('admin/userprofile')}}">
+                <i class="fas fa-cog"></i> Settings
+            </a> -->
+        </li>
         <li class="mb-2 logout">
             <a class="change_color_to_dark_white" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

@@ -77,14 +77,6 @@ class SliderController extends Controller
 
         return back()->withSuccess('Slider Updated Successfully');;
     }
-    public function destroy(DeleteData $delete, $slug)
-    {
-        $delete->dataDelete($slug, 'Slider');
-        $datas = $this->datas();
-        $columns = Slider::columns();
-        $model = 'slider';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-    }
     public function status(ChangeStatus $status, $slug)
     {
         $status->sliderStatusChange($slug);

@@ -46,7 +46,7 @@
                     <td>
                         <div class="d-flex">
                             <a class="btn btn-sm btn-primary m-1" href="{{url('admin/'.$model.'/'.$data->slug.'/edit')}}"><i class="fas fa-pencil-alt"></i></a>
-                            <a href="{{url('admin/'.$model.'/'.$data->slug)}}" class="btn btn-sm btn-danger m-1 delete"><i class="far fa-trash-alt"></i></a>
+                            <a href="{{url('admin/delete/'.$data->slug)}}" data-model="{{$model}}" class="btn btn-sm btn-danger m-1 delete"><i class="far fa-trash-alt"></i></a>
                         </div>
                         <div class="d-flex">
                             <a class="btn btn-sm btn-success m-1" href="{{url('admin/'.$model.'/'.$data->slug)}}"><i class="far fa-eye"></i></a>

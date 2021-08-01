@@ -75,14 +75,6 @@ class ContactController extends Controller
 
         return back()->withSuccess('Contact Updated Successfully');;
     }
-    public function destroy(DeleteData $delete, $slug)
-    {
-        $delete->dataDelete($slug, 'Contact');
-        $datas = $this->datas();
-        $columns = Contact::columns();
-        $model = 'contact';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-    }
     public function status(ChangeStatus $status, $slug)
     {
         $status->contactStatusChange($slug);

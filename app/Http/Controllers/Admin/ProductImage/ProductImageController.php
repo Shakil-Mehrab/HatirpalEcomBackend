@@ -24,14 +24,6 @@ class ProductImageController extends Controller
         }
         return view('layouts.data.view', compact('datas', 'columns', 'model'));
     }
-    public function destroy(DeleteData $delete, $slug)
-    {
-        $delete->dataDelete($slug, 'ProductImage');
-        $datas = $this->datas();
-        $columns = ProductImage::columns();
-        $model = 'productimage';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-    }
     protected function datas()
     {
         $datas = ProductImage::orderBy('id', 'desc')

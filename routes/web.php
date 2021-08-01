@@ -63,6 +63,7 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum']], function (
   Route::get('/status/order/{slug}', [App\Http\Controllers\Admin\Order\OrderController::class, 'status']);
   // Bulk option 
   Route::post('/bulk/delete', [App\Http\Controllers\Admin\Bulk\BulkController::class, 'delete']);
+  Route::delete('/delete/{slug}', [App\Http\Controllers\Admin\Variable\VariableController::class, 'destroy']);
   //checkout
   Route::get('/division', [App\Http\Controllers\Admin\Cascading\CascadingController::class, 'division']);
   Route::get('/district', [App\Http\Controllers\Admin\Cascading\CascadingController::class, 'district']);

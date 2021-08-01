@@ -50,14 +50,7 @@ class UserController extends Controller
     $product->update();
     return back()->withSuccess('User Updated Successfully');;
   }
-  public function destroy(DeleteData $delete, $slug)
-  {
-    $delete->dataDelete($slug, 'User');
-    $datas = $this->datas();
-    $columns = User::columns();
-    $model = 'user';
-    return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-  }
+
   protected function datas()
   {
     $datas = User::orderBy('id', 'asc')

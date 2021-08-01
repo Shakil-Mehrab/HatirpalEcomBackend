@@ -24,13 +24,14 @@ class BulkController extends Controller
     {
 
         if ($request['with_selected'] == 'delete') {
+            $modelPath = 'App\Models\\' . ucfirst($request['model']);
+
             foreach ($request['checked_slug'] as $slug) {
-                $delete->dataDelete($slug, ucfirst($request['model']));
+                $delete->dataDelete($slug, $modelPath);
             }
-            $model = 'App\Models\\' . ucfirst($request['model']);
-            $datas = $model::orderBy('id', 'desc')
+            $datas =  $modelPath::orderBy('id', 'desc')
                 ->pagination(request('per-page'));
-            $columns = $model::columns();
+            $columns =  $modelPath::columns();
             $model = $request['model'];
             return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
         }

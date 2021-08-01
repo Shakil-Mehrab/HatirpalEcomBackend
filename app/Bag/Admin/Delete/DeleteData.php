@@ -18,18 +18,17 @@ use App\Models\ShippingMethod;
 
 class DeleteData
 {
-    public function dataDelete($slug, $model)
+    public function dataDelete($slug, $modelPath)
     {
-        $modelPath = 'App\Models\\' . $model;
         $data = $modelPath::where('slug', $slug)->firstOrFail();
-        $this->relatedImageCheck($data, $model);
+        $this->relatedImageCheck($data, $modelPath);
         $this->fileCheck($data);
         $data->delete();
     }
 
-    public function relatedImageCheck($data, $model)
+    public function relatedImageCheck($data, $modelPath)
     {
-        if ($model == 'Product') {
+        if ($modelPath == 'App\Models\Product') {
             if (count($data->productImages)) {
                 foreach ($data->productImages as $pro) {
                     $this->fileCheck($pro);
