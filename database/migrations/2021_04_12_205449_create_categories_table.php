@@ -25,6 +25,7 @@ class CreateCategoriesTable extends Migration
             NestedSet::columns($table);
             $table->bigInteger('order')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

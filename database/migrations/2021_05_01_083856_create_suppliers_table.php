@@ -31,6 +31,7 @@ class CreateSuppliersTable extends Migration
             $table->string('thumbnail4')->default('images/default/supplier.png');
             $table->longText('description')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -22,6 +22,7 @@ class CreatePaymentMethodsTable extends Migration
             $table->boolean('default')->default(true);
             $table->string('provider_id')->unique();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

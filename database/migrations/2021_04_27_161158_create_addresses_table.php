@@ -26,6 +26,7 @@ class CreateAddressesTable extends Migration
             $table->string('postal_code');
             $table->boolean('default')->default(0);
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

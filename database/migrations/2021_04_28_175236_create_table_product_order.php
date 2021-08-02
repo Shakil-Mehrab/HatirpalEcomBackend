@@ -21,6 +21,7 @@ class CreateTableProductOrder extends Migration
             $table->string('product_image');
             $table->string('size_id');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

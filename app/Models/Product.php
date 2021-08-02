@@ -13,10 +13,11 @@ use App\Models\Traits\Product\ProductColumn;
 use App\Models\Traits\User\RelationWithUser;
 use App\Models\Collections\ProductCollection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
-    use HasFactory, PaginationTrait, ProductColumn, CanBeScoped, RelationWithUser;
+    use HasFactory, PaginationTrait, ProductColumn, CanBeScoped, RelationWithUser, SoftDeletes;
     public function getRouteKeyName()
     {
         return 'slug';

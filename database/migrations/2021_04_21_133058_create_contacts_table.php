@@ -21,6 +21,7 @@ class CreateContactsTable extends Migration
             $table->string('slug')->index()->nullable();
             $table->bigInteger('order')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -27,6 +27,7 @@ class CreateOrdersTable extends Migration
             $table->integer('subtotal');
             $table->integer('total');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

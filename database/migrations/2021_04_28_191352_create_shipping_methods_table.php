@@ -19,6 +19,7 @@ class CreateShippingMethodsTable extends Migration
             $table->string('slug')->unique()->index();
             $table->float('price');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

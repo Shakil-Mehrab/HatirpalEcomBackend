@@ -26,6 +26,7 @@ class CreateRegionsTable extends Migration
             $table->float('lat')->nullable();
             $table->float('lng')->nullable();
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

@@ -19,6 +19,7 @@ class CreateProductImagesTable extends Migration
             $table->foreignId('product_id')->constrained('products')->onDelete('cascade');
             $table->string('thumbnail')->default('images/default/product.png');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 

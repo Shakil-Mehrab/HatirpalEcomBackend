@@ -19,6 +19,7 @@ class CreateConditionsTable extends Migration
             $table->text('short_description');
             $table->longText('description');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
