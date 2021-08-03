@@ -8,14 +8,22 @@ use App\Http\Controllers\Controller;
 
 class VariableController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('admin');
+    }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function search()
     {
-        //
+        $modelPath = 'App\Models\\' . ucfirst(request('model'));
+        $datas = $modelPath::search(request('query'));
+        $columns = $modelPath::columns();
+        $model = request('model');
+        return view('layouts.data.table', compact('datas', 'columns', 'model'));
     }
 
     /**

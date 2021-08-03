@@ -31,15 +31,6 @@ class ContactController extends Controller
         return view('layouts.data.view', compact('datas', 'columns', 'model'));
     }
 
-    public function search()
-    {
-        $datas = Contact::where('heading', 'LIKE', "%" . request('query') . "%")
-            ->orWhere('slug', 'LIKE', "%" . request('query') . "%")
-            ->searchPagination(request('per-page'));
-        $columns = Contact::columns();
-        $model = 'contact';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'));
-    }
     public function create()
     {
         $data = '';

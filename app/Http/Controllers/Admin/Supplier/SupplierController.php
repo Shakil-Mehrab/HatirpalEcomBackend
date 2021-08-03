@@ -30,16 +30,6 @@ class SupplierController extends Controller
         }
         return view('layouts.data.view', compact('datas', 'columns', 'model'));
     }
-
-    public function search()
-    {
-        $datas = Supplier::where('heading', 'LIKE', "%" . request('query') . "%")
-            ->orWhere('slug', 'LIKE', "%" . request('query') . "%")
-            ->searchPagination(request('per-page'));
-        $columns = Supplier::columns();
-        $model = 'slider';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'));
-    }
     public function create()
     {
         $data = '';

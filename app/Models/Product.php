@@ -13,11 +13,10 @@ use App\Models\Traits\Product\ProductColumn;
 use App\Models\Traits\User\RelationWithUser;
 use App\Models\Collections\ProductCollection;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
-    use HasFactory, PaginationTrait, ProductColumn, CanBeScoped, RelationWithUser, SoftDeletes;
+    use HasFactory, PaginationTrait, ProductColumn, CanBeScoped, RelationWithUser;
     public function getRouteKeyName()
     {
         return 'slug';
@@ -90,5 +89,12 @@ class Product extends Model
     public function newCollection(array $models = [])
     {
         return new ProductCollection($models);
+    }
+    public static function search()
+    {
+        $datas = Product::where('name', 'LIKE', "%" . request('query') . "%")
+            ->orWhere('slug', 'LIKE', "%" . request('query') . "%")
+            ->searchPagination(request('per-page'));
+        return $datas;
     }
 }

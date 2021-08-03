@@ -29,15 +29,6 @@ class OrderController extends Controller
         }
         return view('layouts.data.view', compact('datas', 'columns', 'model'));
     }
-    public function search()
-    {
-        $datas = Order::Where('slug', 'LIKE', "%" . request('query') . "%")
-            ->orWhere('order_id', 'LIKE', "%" . request('query') . "%")
-            ->searchPagination(request('per-page'));
-        $columns = Order::columns();
-        $model = 'order';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'));
-    }
     public function create()
     {
         $data = '';

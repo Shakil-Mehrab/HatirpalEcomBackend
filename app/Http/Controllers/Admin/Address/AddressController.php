@@ -29,14 +29,6 @@ class AddressController extends Controller
         return view('layouts.data.view', compact('datas', 'columns', 'model'));
     }
 
-    public function search()
-    {
-        $datas = Address::where('name', 'LIKE', "%" . request('query') . "%")
-            ->searchPagination(request('per-page'));
-        $columns = Address::columns();
-        $model = 'address';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'));
-    }
     public function create()
     {
         $data = '';

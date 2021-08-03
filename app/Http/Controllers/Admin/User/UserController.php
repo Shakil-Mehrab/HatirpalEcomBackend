@@ -25,15 +25,6 @@ class UserController extends Controller
     }
     return view('layouts.data.view', compact('datas', 'columns', 'model'));
   }
-  public function search()
-  {
-    $query = request('query');
-    $datas = User::where('name', 'LIKE', "%" . $query . "%")
-      ->searchPagination(request('per-page'));
-    $columns = User::columns();
-    $model = 'user';
-    return view('layouts.data.table', compact('datas', 'columns', 'model'));
-  }
   public function edit($slug)
   {
     $data = User::where('slug', $slug)->firstOrFail();

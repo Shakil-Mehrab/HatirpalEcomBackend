@@ -27,14 +27,6 @@ class CategoryController extends Controller
         }
         return view('layouts.data.view', compact('datas', 'columns', 'model'));
     }
-    public function search()
-    {
-        $datas = Category::where('name', 'LIKE', "%" . request('query') . "%")
-            ->searchPagination(request('per-page'));
-        $columns = Category::columns();
-        $model = 'category';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'));
-    }
     public function create()
     {
         $data = '';

@@ -27,16 +27,6 @@ class RegionController extends Controller
         return view('layouts.data.view', compact('datas', 'columns', 'model'));
     }
 
-    public function search()
-    {
-        $query = request('query');
-        $datas = Region::where('name', 'LIKE', "%" . $query . "%")
-            ->orWhere('slug', 'LIKE', "%" . $query . "%")
-            ->searchPagination(request('per-page'));
-        $columns = Region::columns();
-        $model = 'region';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'));
-    }
     public function create()
     {
         $data = '';
