@@ -45,24 +45,19 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum']], function (
   Route::resource('/address', App\Http\Controllers\Admin\Address\AddressController::class);
   Route::get('/delete/address/{slug}', [App\Http\Controllers\Admin\Address\AddressController::class, 'delete']);
   Route::resource('/order', App\Http\Controllers\Admin\Order\OrderController::class);
-  Route::get('/status/order/{slug}', [App\Http\Controllers\Admin\Order\OrderController::class, 'status']);
   // Bulk option 
   Route::post('/bulk/delete', [App\Http\Controllers\Admin\Bulk\BulkController::class, 'delete']);
   Route::delete('/delete/{slug}', [App\Http\Controllers\Admin\Variable\VariableController::class, 'destroy']);
   Route::get('/search', [App\Http\Controllers\Admin\Variable\VariableController::class, 'search']);
+  Route::get('/status/{slug}', [App\Http\Controllers\Admin\Variable\VariableController::class, 'status']);
   //checkout
   Route::get('/division', [App\Http\Controllers\Admin\Cascading\CascadingController::class, 'division']);
   Route::get('/district', [App\Http\Controllers\Admin\Cascading\CascadingController::class, 'district']);
   // shipping method 
   Route::resource('/shippingmethod', App\Http\Controllers\Admin\ShippingMethod\ShippingMethodController::class);
   Route::resource('/slider', App\Http\Controllers\Admin\Slider\SliderController::class);
-  Route::get('/status/slider/{slug}', [App\Http\Controllers\Admin\Slider\SliderController::class, 'status']);
   Route::resource('/supplier', App\Http\Controllers\Admin\Supplier\SupplierController::class);
-  Route::get('/status/supplier/{slug}', [App\Http\Controllers\Admin\Supplier\SupplierController::class, 'status']);
   Route::resource('/condition', App\Http\Controllers\Admin\Condition\ConditionController::class);
-  Route::get('/status/condition/{slug}', [App\Http\Controllers\Admin\Condition\ConditionController::class, 'status']);
   Route::resource('/about', App\Http\Controllers\Admin\About\AboutController::class);
-  Route::get('/status/about/{slug}', [App\Http\Controllers\Admin\About\AboutController::class, 'status']);
   Route::resource('/userprofile', App\Http\Controllers\Admin\UserProfile\UserProfileController::class);
-  Route::get('/status/userprofile/{slug}', [App\Http\Controllers\Admin\UserProfile\UserProfileController::class, 'status']);
 });

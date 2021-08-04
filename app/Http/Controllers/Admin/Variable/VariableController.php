@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin\Variable;
 use Illuminate\Http\Request;
 use App\Bag\Admin\Delete\DeleteData;
 use App\Http\Controllers\Controller;
+use App\Bag\Admin\Status\ChangeStatus;
 
 class VariableController extends Controller
 {
@@ -31,9 +32,14 @@ class VariableController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function status(ChangeStatus $status, $slug)
     {
-        //
+        $modelPath = 'App\Models\\' . ucfirst(request('model'));
+        $status->statusChange($slug, $modelPath, request('status'));
+        $datas = $this->datas($modelPath);
+        $columns = $modelPath::columns();
+        $model = request('model');
+        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
     }
 
     /**

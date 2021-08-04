@@ -65,13 +65,25 @@
                     <td>{{$data->address?$data->address->address.','.$data->address->delivery_place:"$data->address_id not found"}}</td>
                     @elseif($column=='status')
                     <td>
-                        <a href="{{url('admin/status/'.$model,$data->slug)}}" class="status">
+                        <?php
+                        $modelPath = 'App\Models\\' . ucfirst($model);
+                        $sts = $modelPath::statusArray();
+
+                        ?>
+                        <select class="status" name="status" id="status" data-link="{{url('admin/status/'.$data->slug.'?model='.$model)}}">
+                            <option value="">Select One</option>
+                            @forelse($sts as $st)
+                            <option value="{{$st[0]}}" {{$data->$column==$st[0]?'selected':''}}>{{ucfirst($st[0])}}</option>
+                            @empty
+                            @endforelse
+                            <!-- <option value="pending" {{$data->$column=='pending'?'selected':''}}>Pending</option> -->
+                        </select>
+                        <!-- <a href="{{url('admin/status/'.$model,$data->slug)}}" class="status">
                             <input type="checkbox" id="toggle-demo" class="ArtStatus btn btn-success btn-sm" rel="1" data-toggle="toggle" data-on="Enabled" data-of="Disabled" data-onstyle="success" data-offstyle="danger" @if($data->status === 'published' or $data->status == 1)
                             checked
                             @endif
                             >
-                            <!-- <div id="myElem" style="display:none;" class="alert alert-success">Status Enabled</div> -->
-                        </a>
+                        </a> -->
                     </td>
                     @else
                     <td>{{$data->$column}}</td>

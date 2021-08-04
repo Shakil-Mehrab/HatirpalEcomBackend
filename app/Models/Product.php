@@ -97,4 +97,16 @@ class Product extends Model
             ->searchPagination(request('per-page'));
         return $datas;
     }
+    public static function statusArray()
+    {
+        $datas = array(
+            array(
+                'pending',
+            ),
+            array(
+                'approved'
+            )
+        );
+        return $datas;
+    }
 }

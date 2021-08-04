@@ -231,13 +231,14 @@
             });
         });
         $(function() {
-            $('#newData').on('click', '.status', function(e) {
+            $('#newData').on('change', '.status', function(e) {
                 e.preventDefault();
-                var link = $(this).attr("href");
-
-                if (link) {
-                    $.get(link, function(data) {
-                        // window.location.href = link;
+                var status = $(this).val();
+                var link = $(this).data("link");
+                var dfdfd = link + '&status=' + status;
+                console.log(dfdfd)
+                if (status) {
+                    $.get(link + '&status=' + status, function(data) {
                         $('#newData').empty().append(data);
                         if ($.isEmptyObject(data.error)) {
                             Toast.fire({
