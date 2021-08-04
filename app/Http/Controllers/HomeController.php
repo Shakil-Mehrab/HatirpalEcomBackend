@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth:sanctum');
     }
 
     /**
@@ -23,6 +23,12 @@ class HomeController extends Controller
      */
     public function index()
     {
+        if (auth()->user()->status == 'user') {
+            return view('layouts.userprofile.view');
+        }
+        if (auth()->user()->status == 'supplier') {
+            return view('supplier');
+        }
         return view('home');
     }
 }
