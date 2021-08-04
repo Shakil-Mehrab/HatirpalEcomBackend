@@ -55,4 +55,26 @@ class Order extends Model
             ->withPivot("quantity", "size_id", "product_image")
             ->withTimestamps();
     }
+    public static function statusArray()
+    {
+        $datas = array(
+            array(
+                'pending'
+            ),
+            array(
+                'confirmed'
+            ), array(
+                'processing'
+            ), array(
+                'picked'
+            ), array(
+                'shipped'
+            ), array(
+                'complete'
+            ), array(
+                'failed'
+            )
+        );
+        return $datas;
+    }
 }

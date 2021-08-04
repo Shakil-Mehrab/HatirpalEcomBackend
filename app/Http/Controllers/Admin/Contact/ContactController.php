@@ -42,10 +42,10 @@ class ContactController extends Controller
     {
         $product = new Contact();
 
-        $input->supplierStoreUpdate($product, $request);
-        $product->slug = time() . '-' . Str::slug($request['name']);
+        $input->contactStoreUpdate($product, $request);
+        $product->slug = time() . '-' . Str::slug($request['phone_no1']);
 
-        $request->user()->contact()->save($product);
+        $request->user()->contacts()->save($product);
         return redirect('admin/contact')
             ->withSuccess('Contact Created Successfully');
     }
@@ -56,7 +56,7 @@ class ContactController extends Controller
         $model = 'contact';
         return view('layouts.data.edit', compact('data', 'columns', 'model'));
     }
-    public function update(ContactUpdateRequest $request, ImageHandling $imageHandling, StoreUpdateData $input, $slug)
+    public function update(ContactInputRequest $request, ImageHandling $imageHandling, StoreUpdateData $input, $slug)
     {
         $product = Contact::where('slug', $slug)
             ->firstOrFail();
@@ -65,14 +65,6 @@ class ContactController extends Controller
         $product->update();
 
         return back()->withSuccess('Contact Updated Successfully');;
-    }
-    public function status(ChangeStatus $status, $slug)
-    {
-        $status->contactStatusChange($slug);
-        $datas = $this->datas();
-        $columns = Contact::columns();
-        $model = 'contact';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
     }
     protected function datas()
     {

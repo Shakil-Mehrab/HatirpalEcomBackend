@@ -11,4 +11,16 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Supplier extends Model
 {
     use HasFactory, SupplierColumn, PaginationTrait, RelationWithUser;
+    public static function statusArray()
+    {
+        $datas = array(
+            array(
+                'pending',
+            ),
+            array(
+                'approved'
+            )
+        );
+        return $datas;
+    }
 }

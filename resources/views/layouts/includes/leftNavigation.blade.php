@@ -7,7 +7,7 @@
     </div>
     <ul class="tree_ul">
 
-        @if(auth()->user()->role=='admin')
+        @if(auth()->user()->status=='admin')
         <li class="tree_li mb-2">
             <a class="change_color_to_dark_white" href="#" style="position: relative;">
                 Product
@@ -138,7 +138,7 @@
             </ul>
         </li>
         @endif
-        @if(auth()->user()->role=='user' && auth()->user()->suppliers->count()==0)
+        @if(auth()->user()->status=='user' && auth()->user()->suppliers->count()==0)
         <li class="mb-2 setting">
             <a class="change_color_to_dark_white" href="{{url('admin/supplier/create')}}">
                 <i class="fa fa-truck"></i> Register As A Supplier

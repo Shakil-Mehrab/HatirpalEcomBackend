@@ -74,14 +74,6 @@ class OrderController extends Controller
         $model = 'order';
         return view('layouts.order.detail', compact('data', 'columns', 'model'));
     }
-    public function status(ChangeStatus $status, $slug)
-    {
-        $status->orderStatusChange($slug);
-        $datas = $this->datas();
-        $columns = Order::columns();
-        $model = 'order';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-    }
     protected function datas()
     {
         $datas = Order::orderBy('id', 'desc')

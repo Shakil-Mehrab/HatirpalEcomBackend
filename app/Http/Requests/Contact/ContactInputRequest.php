@@ -24,8 +24,9 @@ class ContactInputRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>'required',
-            'price'=>'required|numeric'
+            'phone_no1' => 'required',
+            'email' => 'required',
+            'address' => 'required'
         ];
     }
 }

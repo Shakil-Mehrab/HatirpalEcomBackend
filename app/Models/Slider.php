@@ -10,8 +10,18 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Slider extends Model
 {
-    use HasFactory,PaginationTrait,SliderColumn;
-    
-   
-}
+    use HasFactory, PaginationTrait, SliderColumn;
+    public static function statusArray()
+    {
+        $datas = array(
+            array(
+                '0',
+            ),
+            array(
+                '1'
+            ),
 
+        );
+        return $datas;
+    }
+}

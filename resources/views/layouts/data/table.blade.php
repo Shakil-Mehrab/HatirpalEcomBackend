@@ -63,7 +63,7 @@
                     <td>{{$data->user?$data->user->name:"$data->user_id not found"}}</td>
                     @elseif($column=='address_id')
                     <td>{{$data->address?$data->address->address.','.$data->address->delivery_place:"$data->address_id not found"}}</td>
-                    @elseif($column=='status')
+                    @elseif($column=='status' or $column=='role')
                     <td>
                         <?php
                         $modelPath = 'App\Models\\' . ucfirst($model);

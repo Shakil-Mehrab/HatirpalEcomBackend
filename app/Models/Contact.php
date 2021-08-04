@@ -10,10 +10,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Contact extends Model
 {
-    use HasFactory,PaginationTrait,ContactColumn;
-    public static function booted(){
-        static::creating(function(Contact $contact){
-            $contact->uuid=Str::uuid();
+    use HasFactory, PaginationTrait, ContactColumn;
+    public static function booted()
+    {
+        static::creating(function (Contact $contact) {
+            // $contact->uuid=Str::uuid();
         });
     }
 }

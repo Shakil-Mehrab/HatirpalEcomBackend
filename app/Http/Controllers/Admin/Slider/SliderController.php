@@ -67,14 +67,6 @@ class SliderController extends Controller
 
         return back()->withSuccess('Slider Updated Successfully');;
     }
-    public function status(ChangeStatus $status, $slug)
-    {
-        $status->sliderStatusChange($slug);
-        $datas = $this->datas();
-        $columns = Slider::columns();
-        $model = 'slider';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-    }
     protected function datas()
     {
         $datas = Slider::orderBy('id', 'asc')

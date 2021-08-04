@@ -68,14 +68,6 @@ class AboutController extends Controller
 
         return back()->withSuccess('About Updated Successfully');;
     }
-    public function status(ChangeStatus $status, $slug)
-    {
-        $status->aboutStatusChange($slug);
-        $datas = $this->datas();
-        $columns = About::columns();
-        $model = 'about';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-    }
     protected function datas()
     {
         $datas = About::orderBy('id', 'desc')

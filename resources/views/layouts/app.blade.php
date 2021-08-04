@@ -66,6 +66,9 @@
 
 
     @yield('js')
+
+
+
     <script type="text/javascript">
         const Toast = Swal.mixin({
             toast: true,

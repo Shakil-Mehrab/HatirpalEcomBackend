@@ -79,14 +79,6 @@ class SupplierController extends Controller
 
         return back()->withSuccess('Supplier Updated Successfully');;
     }
-    public function status(ChangeStatus $status, $slug)
-    {
-        $status->supplierStatusChange($slug);
-        $datas = $this->datas();
-        $columns = Supplier::columns();
-        $model = 'supplier';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-    }
     protected function datas()
     {
         $datas = Supplier::orderBy('id', 'asc')

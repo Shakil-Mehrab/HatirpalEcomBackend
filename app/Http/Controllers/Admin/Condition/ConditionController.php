@@ -66,14 +66,6 @@ class ConditionController extends Controller
 
         return back()->withSuccess('Condition Updated Successfully');;
     }
-    public function status(ChangeStatus $status, $slug)
-    {
-        $status->conditionStatusChange($slug);
-        $datas = $this->datas();
-        $columns = Condition::columns();
-        $model = 'condition';
-        return view('layouts.data.table', compact('datas', 'columns', 'model'))->render();
-    }
     protected function datas()
     {
         $datas = Condition::orderBy('id', 'asc')

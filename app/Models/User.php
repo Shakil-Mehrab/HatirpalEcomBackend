@@ -88,6 +88,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Order');
     }
+    public function contacts()
+    {
+        return $this->hasMany('App\Models\Contact');
+    }
     public function cart()
     {
         return $this->belongsToMany(Product::class, 'cart_user')
@@ -101,5 +105,20 @@ class User extends Authenticatable
     public function userSpecificCart($cartId)
     {
         return $this->hasOne(CartUser::class)->where('id', $cartId)->first();
+    }
+    public static function statusArray()
+    {
+        $datas = array(
+            array(
+                'admin',
+            ),
+            array(
+                'supplier'
+            ),
+            array(
+                'user'
+            )
+        );
+        return $datas;
     }
 }
