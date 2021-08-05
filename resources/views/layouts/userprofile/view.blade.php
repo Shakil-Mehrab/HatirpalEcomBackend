@@ -42,7 +42,7 @@
         </div>
     </div>
     <div class="col-md-12">
-        @forelse(@auth()->user()->suppliers as $supplier)
+        @if($supplier=@auth()->user()->supplier)
         <ul>
             <li>{{$supplier->country}}</li>
             <li>{{$supplier->company_name}}</li>
@@ -72,8 +72,8 @@
             </li>
 
         </ul>
-        @empty
-        @endforelse
+        @endif
+
     </div>
 
     <div class="col-md-12">

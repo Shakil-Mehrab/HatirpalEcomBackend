@@ -142,7 +142,7 @@
             </ul>
         </li>
         @endif
-        @if(auth()->user()->status=='user' && auth()->user()->suppliers->count()==0)
+        @if(auth()->user()->status=='user' && empty(auth()->user()->supplier))
         <li class="mb-2 setting">
             <a class="change_color_to_dark_white" href="{{url('admin/supplier/create')}}">
                 <i class="fa fa-truck"></i> Register As A Supplier

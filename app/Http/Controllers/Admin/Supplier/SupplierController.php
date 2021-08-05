@@ -47,7 +47,7 @@ class SupplierController extends Controller
         $imageHandling->uploadSupplerDocument($product, $request, 'supplier');
 
 
-        $request->user()->suppliers()->save($product);
+        $request->user()->supplier()->save($product);
         return redirect('admin/supplier')
             ->withSuccess('Supplier Created Successfully');
     }
