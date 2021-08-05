@@ -6,7 +6,11 @@
         <h6><a href="#">Rakibul Islam</a></h6>
     </div>
     <ul class="tree_ul">
-
+        <li class="mb-2 setting">
+            <a class="change_color_to_dark_white" href="{{url('/home')}}">
+                <i class="fa fa-tachometer"></i> Dashboard
+            </a>
+        </li>
         @if(auth()->user()->status=='admin')
         <li class="tree_li mb-2">
             <a class="change_color_to_dark_white" href="#" style="position: relative;">

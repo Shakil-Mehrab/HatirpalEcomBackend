@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Supplier;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -27,7 +28,10 @@ class HomeController extends Controller
             return view('layouts.userprofile.view');
         }
         if (auth()->user()->status == 'supplier') {
-            return view('supplier');
+            $data = auth()->user();
+            $columns = Supplier::columns();
+            $model = 'supplier';
+            return view('supplier', compact('data', 'columns', 'model'));
         }
         return view('home');
     }

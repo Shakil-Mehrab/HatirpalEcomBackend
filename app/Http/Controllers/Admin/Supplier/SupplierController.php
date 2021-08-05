@@ -57,7 +57,7 @@ class SupplierController extends Controller
             ->firstOrFail();
         $columns = Supplier::columns();
         $model = 'supplier';
-        return view('layouts.data.detail', compact('data', 'columns', 'model'));
+        return view('supplier', compact('data', 'columns', 'model'));
     }
     public function edit($slug)
     {

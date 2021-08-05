@@ -11,6 +11,10 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Supplier extends Model
 {
     use HasFactory, SupplierColumn, PaginationTrait, RelationWithUser;
+    public function products()
+    {
+        return $this->hasMany("App\Models\Product", 'user_id');
+    }
     public static function statusArray()
     {
         $datas = array(

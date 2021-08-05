@@ -1,5 +1,26 @@
 @extends('layouts.app')
 @section('content')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 <div class="detail mt-2">
     <ul>
         <li>
