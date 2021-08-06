@@ -6,5 +6,5 @@
         <strong style="color:red">{{ $errors->first('thumbnail') }}</strong>
     </span>
     @endif
-    <img src="{{asset($data?$data->thumbnail:'')}}" alt="{{asset($data?$data->name:'')}}" width="50px" class="mt-2">
+    <img src="{{asset($data?$data->thumbnail:'https://ui-avatars.com/api/?name=Hatirpal')}}" alt="" width="50px" class="mt-2">
 </div>

@@ -33,9 +33,8 @@ class OrderFactory extends Factory
                 return Address::all()->random()->id;
             },
             'shipping_method' => $this->faker->word,
-            'payment_method' => 'Hatirpal Pay',
             'subtotal' => $this->faker->numberBetween(1000, 9000),
-            'total' =>$this->faker->numberBetween(1000, 9000),
+            'total' => $this->faker->numberBetween(1000, 9000),
 
         ];
     }

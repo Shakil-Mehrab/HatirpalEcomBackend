@@ -4,11 +4,9 @@ namespace App\Http\Controllers\Admin\Order;
 
 use App\Models\Order;
 use Illuminate\Http\Request;
-use App\Mail\MailForOrderConfirmed;
-use App\Bag\Admin\Delete\DeleteData;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
-use App\Bag\Admin\Status\ChangeStatus;
+use App\Mail\Order\MailForOrderConfirmed;
 use App\Bag\Admin\StoreUpdate\StoreUpdateData;
 use App\Http\Requests\Order\OrderInputRequest;
 

@@ -146,6 +146,57 @@
                 </div>
             </div>
         </div>
+         <div class="col-12 my-4">
+        @if($data->status='pending')
+        <div class="scroll_div">
+            <table class="table ">
+                <thead>
+                    <tr>
+                        <th>Country</th>
+                        <th>Company Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Company Type</th>
+                        <th>Status</th>
+                        <th>Address</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{$data->country}}</td>
+                        <td>{{$data->company_name}}</td>
+                        <td>{{$data->phone}}</td>
+                        <td>{{$data->email}}</td>
+                        <td>{{$data->company_type}}</td>
+                        <td>
+                            <button class="btn btn-sm btn-outline-warning">{{$data->status}}</button>
+                        </td>
+                        <td>{{$data->address}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+                <div class="row">
+                    <div class="col-4 mt-4">
+                        <img src="{{file_exists($data->thumbnail)?asset($data->thumbnail):'https://ui-avatars.com/api/?name=Hatirpal'}}" alt="Empty Document" width="100%">
+                    </div>
+                    <div class="col-4 mt-4">
+                        <img src="{{file_exists($data->thumbnail1)?asset($data->thumbnail1):'https://ui-avatars.com/api/?name=Hatirpal'}}" alt="Empty Document" width="100%">
+                    </div>
+                    <div class="col-4 mt-4">
+                        <img src="{{file_exists($data->thumbnail2)?asset($data->thumbnail2):'https://ui-avatars.com/api/?name=Hatirpal'}}" alt="Empty Document" width="100%">
+                    </div>
+                    <div class="col-4 mt-4">
+                        <img src="{{file_exists($data->thumbnail3)?asset($data->thumbnail3):'https://ui-avatars.com/api/?name=Hatirpal'}}" alt="Empty Document" width="100%">
+                    </div>
+                    <div class="col-4 mt-4">
+                        <img src="{{file_exists($data->thumbnail4)?asset($data->thumbnail4):'https://ui-avatars.com/api/?name=Hatirpal'}}" alt="Empty Document" width="100%">
+                    </div>
+                </div>
+
+        @endif
+    </div>
     </div>
 </div>
 @endsection

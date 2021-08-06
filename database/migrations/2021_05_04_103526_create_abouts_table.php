@@ -17,11 +17,11 @@ class CreateAboutsTable extends Migration
             $table->id();
             $table->string('slug')->unique()->index();
             $table->string('heading');
-            $table->string('thumbnail')->default('images/default/about.png');
-            $table->string('thumbnail1')->default('images/default/about.png');
-            $table->string('thumbnail2')->default('images/default/about.png');
-            $table->string('thumbnail3')->default('images/default/about.png');
-            $table->string('thumbnail4')->default('images/default/about.png');
+            $table->string('thumbnail')->nullable();
+            $table->string('thumbnail1')->nullable();
+            $table->string('thumbnail2')->nullable();
+            $table->string('thumbnail3')->nullable();
+            $table->string('thumbnail4')->nullable();
             $table->Text('short_description')->nullable();
             $table->longText('description')->nullable();
             $table->timestamps();

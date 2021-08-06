@@ -21,7 +21,7 @@
         <strong style="color:red">{{ $errors->first('thumbnail1') }}</strong>
     </span>
     @endif
-    <img src="{{asset($data?$data->thumbnail1:'')}}" alt="{{asset($data?$data->name:'')}}" width="50px" class="mt-2">
+    <img src="{{asset($data?$data->thumbnail1:'https://ui-avatars.com/api/?name=Hatirpal')}}" alt="{{asset($data?$data->name:'')}}" width="50px" class="mt-2">
 </div>
 <div class="form-group{{ $errors->has('thumbnail2') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3" style="order: 12;">
     <label for="thumbnail2" class="control-label">Company Document 2</label>
@@ -31,7 +31,7 @@
         <strong style="color:red">{{ $errors->first('thumbnail2') }}</strong>
     </span>
     @endif
-    <img src="{{asset($data?$data->thumbnail2:'')}}" alt="{{asset($data?$data->name:'')}}" width="50px" class="mt-2">
+    <img src="{{asset($data?$data->thumbnail2:'https://ui-avatars.com/api/?name=Hatirpal')}}" alt="{{asset($data?$data->name:'')}}" width="50px" class="mt-2">
 </div>
 <div class="form-group{{ $errors->has('thumbnail3') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3" style="order: 12;">
     <label for="thumbnail3" class="control-label">Company Document 3</label>
@@ -41,7 +41,7 @@
         <strong style="color:red">{{ $errors->first('thumbnail3') }}</strong>
     </span>
     @endif
-    <img src="{{asset($data?$data->thumbnail3:'')}}" alt="{{asset($data?$data->name:'')}}" width="50px" class="mt-2">
+    <img src="{{asset($data?$data->thumbnail3:'https://ui-avatars.com/api/?name=Hatirpal')}}" alt="{{asset($data?$data->name:'')}}" width="50px" class="mt-2">
 </div>
 <div class="form-group{{ $errors->has('thumbnail4') ? ' has-error' : '' }} col-lg-4 col-md-4 col-sm-12 my-3" style="order: 12;">
     <label for="thumbnail4" class="control-label">Company Document 4</label>
@@ -51,5 +51,5 @@
         <strong style="color:red">{{ $errors->first('thumbnail4') }}</strong>
     </span>
     @endif
-    <img src="{{asset($data?$data->thumbnail4:'')}}" alt="{{asset($data?$data->name:'')}}" width="50px" class="mt-2">
+    <img src="{{asset($data?$data->thumbnail4:'https://ui-avatars.com/api/?name=Hatirpal')}}" alt="{{asset($data?$data->name:'')}}" width="50px" class="mt-2">
 </div>

@@ -94,7 +94,7 @@
     <div>
         @if(!empty($data->productImages))
         @forelse($data->productImages as $img)
-        <img src="{{asset($img->thumbnail)}}" alt="{{asset($img->thumbnail)}}" width="50px" class="mt-2">
+        <img src="{{file_exists($img->thumbnail)?asset($img->thumbnail):'https://ui-avatars.com/api/?name=Hatirpal'}}" alt="{{asset($img->thumbnail)}}" width="50px" class="mt-2">
         @empty
         @endforelse
         @endif

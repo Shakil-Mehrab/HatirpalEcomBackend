@@ -1,7 +1,7 @@
 <div class="media_body">
     <div class="user_image mb-4">
         <div class="user_img mr-1">
-            <img src="{{asset(auth()->user()->thumbnail)}}" alt="user">
+            <img src="{{file_exists(auth()->user()->thumbnail)?asset(auth()->user()->thumbnail):'https://ui-avatars.com/api/?name=Hatirpal'}}" alt="user">
         </div>
         <h6><a href="#">Rakibul Islam</a></h6>
     </div>

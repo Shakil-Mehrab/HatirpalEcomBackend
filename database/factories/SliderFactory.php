@@ -25,7 +25,6 @@ class SliderFactory extends Factory
         return [
             'heading' => $name = $this->faker->sentence,
             'slug' => Str::slug($name),
-            'thumbnail' => $this->faker->imageUrl(640, 480),
         ];
     }
 }

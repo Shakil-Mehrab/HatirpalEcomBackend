@@ -2,20 +2,6 @@
 
 namespace App\Bag\Admin\Delete;
 
-use App\Models\User;
-use App\Models\About;
-use App\Models\Order;
-use App\Models\Region;
-use App\Models\Slider;
-use App\Models\Address;
-use App\Models\Contact;
-use App\Models\Product;
-use App\Models\Category;
-use App\Models\Supplier;
-use App\Models\Condition;
-use App\Models\ProductImage;
-use App\Models\ShippingMethod;
-
 class DeleteData
 {
     public function dataDelete($slug, $modelPath)
@@ -38,8 +24,8 @@ class DeleteData
     }
     public static function fileCheck($data)
     {
-        if (file_exists(substr($data->thumbnail, 22, 100))) {
-            unlink(substr($data->thumbnail, 22, 100));
+        if (file_exists($data->thumbnail)) {
+            unlink($data->thumbnail);
         }
     }
 }

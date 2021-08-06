@@ -68,6 +68,8 @@ class Kernel extends HttpKernel
         'cart.sync' => \App\Http\Middleware\Cart\Sync::class,
         'cart.isnotempty' => \App\Http\Middleware\Cart\ResponseIfEmpty::class,
         'admin' => \App\Http\Middleware\Admin\AdminAuthorizationChecking::class,
+        'exist_supplier' => \App\Http\Middleware\Supplier\SupplierExistMIddleware::class,
+
 
     ];
 }

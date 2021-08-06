@@ -35,7 +35,6 @@ class ProductFactory extends Factory
             'sale_price' => $this->faker->numberBetween(1000, 9000),
             'minimum_order' => $this->faker->numberBetween(10, 100),
             'unit' => "piece",
-            'thumbnail' => $this->faker->imageUrl(640, 480),
             'short_description' => $this->faker->sentence,
             'description' => $this->faker->paragraph,
             'status' => ProductStatus::PENDING,

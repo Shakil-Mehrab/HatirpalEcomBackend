@@ -7,8 +7,10 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Bag\Admin\Delete\DeleteData;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
 use App\Bag\Admin\Image\ImageHandling;
 use App\Bag\Admin\Status\ChangeStatus;
+use App\Mail\Supplier\MailForCreatedSupplier;
 use App\Bag\Admin\StoreUpdate\StoreUpdateData;
 use App\Http\Requests\Supplier\SupplierInputRequest;
 use App\Http\Requests\Supplier\SupplierUpdateRequest;
@@ -18,6 +20,7 @@ class SupplierController extends Controller
     public function __construct()
     {
         $this->middleware('admin')->only('index', 'show', 'destroy', 'status');
+        $this->middleware('exist_supplier')->only('create');
     }
     public function index()
     {
@@ -45,9 +48,8 @@ class SupplierController extends Controller
         $product->slug = time() . '-' . Str::slug($request['company_name']);
         $imageHandling->uploadImage($product, $request, 'supplier');
         $imageHandling->uploadSupplerDocument($product, $request, 'supplier');
-
-
         $request->user()->supplier()->save($product);
+        Mail::to('mehrabhoussainshakil4@gmail.com')->send(new  MailForCreatedSupplier($product));
         return redirect('admin/supplier')
             ->withSuccess('Supplier Created Successfully');
     }

@@ -5,10 +5,10 @@ namespace App\Http\Controllers\Api\Order;
 use App\Cart\Cart;
 use App\Models\Order;
 use Illuminate\Http\Request;
-use App\Mail\MailForCreatedOrder;
 use App\Events\Order\OrderCreated;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
+use App\Mail\Order\MailForCreatedOrder;
 use App\Http\Requests\Order\OrderRequest;
 use App\Http\Resources\Order\OrderResource;
 

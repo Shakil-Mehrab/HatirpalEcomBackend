@@ -24,11 +24,11 @@ class CreateSuppliersTable extends Migration
             $table->string('company_type');
             $table->string('status')->default('pending');
             $table->string('address');
-            $table->string('thumbnail')->default('images/default/supplier.png');
-            $table->string('thumbnail1')->default('images/default/supplier.png');
-            $table->string('thumbnail2')->default('images/default/supplier.png');
-            $table->string('thumbnail3')->default('images/default/supplier.png');
-            $table->string('thumbnail4')->default('images/default/supplier.png');
+            $table->string('thumbnail')->nullable();
+            $table->string('thumbnail1')->nullable();
+            $table->string('thumbnail2')->nullable();
+            $table->string('thumbnail3')->nullable();
+            $table->string('thumbnail4')->nullable();
             $table->longText('description')->nullable();
             $table->timestamps();
             $table->softDeletes();

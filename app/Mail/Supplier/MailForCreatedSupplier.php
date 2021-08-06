@@ -1,25 +1,26 @@
 <?php
 
-namespace App\Mail;
+namespace App\Mail\Supplier;
+
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
-use App\Models\Order;
+use App\Models\Supplier;
 
-class MailForCreatedOrder extends Mailable
+class MailForCreatedSupplier extends Mailable
 {
     use Queueable, SerializesModels;
-    protected $order;
+    protected $supplier;
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Order $order)
+    public function __construct(Supplier $supplier)
     {
-        $this->order = $order;
+        $this->supplier = $supplier;
     }
 
     /**
@@ -29,8 +30,8 @@ class MailForCreatedOrder extends Mailable
      */
     public function build()
     {
-        return $this->view('message.order.created-order')->with([
-            "order" => $this->order
-        ])->subject("Order Created");
+        return $this->view('message.supplier.created')->with([
+            "supplier" => $this->supplier
+        ])->subject("New Supplier Created");
     }
 }

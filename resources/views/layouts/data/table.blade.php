@@ -31,7 +31,7 @@
                     @if($model=='product')
                     <th>Category</th>
                     <th>Size</th>
-                    @endif
+             @endif
 
 
 
@@ -56,7 +56,7 @@
                     @foreach($columns as $column)
                     @if($column=='thumbnail' or $column=='thumbnail1' or $column=='thumbnail2' or$column=='thumbnail3' or $column=='thumbnail4')
                     <td>
-                        <img src="{{asset($data->$column)}}" alt="No image" width="50px">
+                        <img src="{{file_exists($data->$column)?asset($data->$column):'https://ui-avatars.com/api/?name=Hatirpal'}}" alt="No image" width="50px">
                         @if($model=='product')({{$data->productImages->count()}})@endif
                     </td>
                     @elseif($column=='user_id')
@@ -76,14 +76,7 @@
                             <option value="{{$st[0]}}" {{$data->$column==$st[0]?'selected':''}}>{{ucfirst($st[0])}}</option>
                             @empty
                             @endforelse
-                            <!-- <option value="pending" {{$data->$column=='pending'?'selected':''}}>Pending</option> -->
                         </select>
-                        <!-- <a href="{{url('admin/status/'.$model,$data->slug)}}" class="status">
-                            <input type="checkbox" id="toggle-demo" class="ArtStatus btn btn-success btn-sm" rel="1" data-toggle="toggle" data-on="Enabled" data-of="Disabled" data-onstyle="success" data-offstyle="danger" @if($data->status === 'published' or $data->status == 1)
-                            checked
-                            @endif
-                            >
-                        </a> -->
                     </td>
                     @else
                     <td>{{$data->$column}}</td>

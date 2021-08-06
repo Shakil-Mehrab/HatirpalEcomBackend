@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use App\Bag\Admin\Delete\DeleteData;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
-use App\Mail\MailForSupplierApproved;
 use App\Bag\Admin\Status\ChangeStatus;
+use App\Mail\Supplier\MailForSupplierApproved;
 
 class VariableController extends Controller
 {
