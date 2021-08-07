@@ -29,9 +29,10 @@ class HomeController extends Controller
         }
         if (auth()->user()->status == 'supplier') {
             $data = auth()->user();
+            $products = auth()->user()->products;
             $columns = Supplier::columns();
             $model = 'supplier';
-            return view('supplier', compact('data', 'columns', 'model'));
+            return view('supplier', compact('data', 'columns', 'model', 'products'));
         }
         return view('home');
     }

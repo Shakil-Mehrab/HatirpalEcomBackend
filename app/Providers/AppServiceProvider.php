@@ -6,6 +6,7 @@ use App\Cart\Cart;
 use App\Models\Size;
 use App\Models\Region;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Support\ServiceProvider;

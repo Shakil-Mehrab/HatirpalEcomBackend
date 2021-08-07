@@ -1,0 +1,9 @@
+{
+    "editor.defaultFormatter": "Sophisticode.php-formatter",
+    "editor.formatOnType": true,
+    "editor.formatOnPaste": true,
+    "vue3snippets.enable-compile-vue-file-on-did-save-code": true,
+    "[blade]": {
+        "editor.defaultFormatter": "amirmarmul.laravel-blade-vscode"
+    }
+}

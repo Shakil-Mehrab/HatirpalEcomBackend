@@ -57,9 +57,10 @@ class SupplierController extends Controller
     {
         $data = Supplier::where('slug', $slug)
             ->firstOrFail();
+        $products = $data->products;
         $columns = Supplier::columns();
         $model = 'supplier';
-        return view('supplier', compact('data', 'columns', 'model'));
+        return view('supplier', compact('data', 'columns', 'model', 'products'));
     }
     public function edit($slug)
     {

@@ -1,12 +1,14 @@
 @extends('layouts.app')
 @section('content')
 <div class="mt-4">
-<div class="col-md-12 add_button mb-2">
-    <a href="{{url('admin/'.$model.'/create')}}" class="btn btn-success btn-sm"><h5 >Add {{ucfirst($model)}}</h5></a>
-    <a href="{{url('admin/'.$model.'/create')}}"><i class="far fa-plus-square"></i></a>
+    <div class="col-md-12 add_button mb-2">
+        <a href="{{url('admin/'.$model.'/create')}}" class="btn btn-success btn-sm">
+            <h5>Add {{ucfirst($model)}}</h5>
+        </a>
+        <a href="{{url('admin/'.$model.'/create')}}"><i class="far fa-plus-square"></i></a>
     </div>
     <div class="row search_head mb-2">
-   
+
         <div class="col-md-4">
             <h6 class="total_data_rows">{{ucfirst($model)}} Table ({{$datas->total()}})</h6>
         </div>

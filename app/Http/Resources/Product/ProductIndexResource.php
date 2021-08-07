@@ -29,7 +29,7 @@ class ProductIndexResource extends JsonResource
             'unit' => $this->unit,
             'minimum_order' => $this->minimum_order,
             'waranty' => $this->waranty,
-            'thumbnail' => $this->thumbnail,
+            'thumbnail' => $this->profilePhotoUrl,
             // 'sizes'=>SizeResource::collection($this->sizes),
             'stock_count' => $this->stockCount(),
             // 'in_stock'=>$this->inStock(),

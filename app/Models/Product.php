@@ -109,4 +109,8 @@ class Product extends Model
         );
         return $datas;
     }
+    public function getProfilePhotoUrlAttribute()
+    {
+        return asset($this->thumbnail);
+    }
 }
