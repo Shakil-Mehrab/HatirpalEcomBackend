@@ -6,11 +6,12 @@ use App\Models\Traits\PaginationTrait;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\Traits\Slider\SliderColumn;
+use App\Models\Traits\Thumbnail\HasProfilePhoto;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Slider extends Model
 {
-    use HasFactory, PaginationTrait, SliderColumn;
+    use HasFactory, PaginationTrait, SliderColumn, HasProfilePhoto;
     public static function statusArray()
     {
         $datas = array(

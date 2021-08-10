@@ -51,9 +51,15 @@ trait HasProfilePhoto
      */
     public function getProfilePhotoUrlAttribute()
     {
-        return $this->profile_photo_path
-            ? Storage::disk($this->profilePhotoDisk())->url($this->profile_photo_path)
-            : $this->defaultProfilePhotoUrl();
+
+        if ($this->thumbnail) {
+            return asset($this->thumbnail);
+        }
+        return 'https://ui-avatars.com/api/?name=Hatirpal';
+
+        // return $this->profile_photo_path
+        //     ? Storage::disk($this->profilePhotoDisk())->url($this->profile_photo_path)
+        //     : $this->defaultProfilePhotoUrl();
     }
 
     /**

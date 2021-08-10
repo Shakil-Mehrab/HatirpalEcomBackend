@@ -57,6 +57,14 @@ class ProductController extends Controller
         return redirect('admin/product')
             ->withSuccess('Product Created Successfully');
     }
+    public function show($slug)
+    {
+        $data = Product::where('slug', $slug)
+            ->firstOrFail();
+        $columns = Product::columns();
+        $model = 'product';
+        return view('layouts.data.detail', compact('data', 'columns', 'model'));
+    }
     public function edit($slug)
     {
         $data = Product::where('slug', $slug)->firstOrFail();

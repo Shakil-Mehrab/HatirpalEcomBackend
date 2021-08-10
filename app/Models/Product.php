@@ -12,11 +12,12 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\Traits\Product\ProductColumn;
 use App\Models\Traits\User\RelationWithUser;
 use App\Models\Collections\ProductCollection;
+use App\Models\Traits\Thumbnail\HasProfilePhoto;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
-    use HasFactory, PaginationTrait, ProductColumn, CanBeScoped, RelationWithUser;
+    use HasFactory, PaginationTrait, ProductColumn, CanBeScoped, RelationWithUser, HasProfilePhoto;
     public function getRouteKeyName()
     {
         return 'slug';
@@ -108,9 +109,5 @@ class Product extends Model
             )
         );
         return $datas;
-    }
-    public function getProfilePhotoUrlAttribute()
-    {
-        return asset($this->thumbnail);
     }
 }

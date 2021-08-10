@@ -1,84 +1,100 @@
 /* nav  */
+
 nav {
     height: 55px;
 }
+
 .bg-indigo {
     background-color: #3c8dbc !important;
 }
+
 .change_color_to_white {
     color: white !important;
 }
+
+
 /* left side  */
+
 .left_navigation {
-    background-color: #222d32;
+    background-color: #042331;
     padding: 0;
     z-index: 9999;
     margin-top: 55px;
 }
+
 .user_image {
     display: flex;
+    align-items: center;
+    background-color: #051b25;
 }
+
 .user_img {
     width: 50px;
     height: 50px;
     border-radius: 50%;
     overflow: hidden;
-    margin-top: 10px;
     justify-content: center;
     display: flex;
 }
-.user_image h6 {
-    padding: 20px;
+
+.user_image .user_name a {
+    color: white;
 }
-.user_image h6 a {
-    color: #8aa4af;
-}
-.user_image h6 a:hover {
+
+.user_image .user_name a:hover {
     color: #c4ccd0;
 }
-.media_body {
-    padding: 10px;
-}
+
 .tree_ul {
     transition: all 1s;
 }
+
 .tree_li {
-    height: 30px;
+    height: 40px;
+    box-sizing: border-box;
     overflow: hidden;
     transition: inherit;
+    border-top: 1px solid rgba(255, 255, 255, .1);
+    border-bottom: 1px solid black;
 }
+
 .tree_li:hover {
     height: 90px;
 }
+
 .tree_li:hover .fa-chevron-right {
     transform: rotate(90deg);
 }
+
 .tree_li a {
     color: #8aa4af !important;
     display: block;
-    padding: 5px;
+    padding: 5px 5px 5px 20px;
 }
+
 .tree_li a:hover {
     color: #c4ccd0 !important;
 }
+
 .tree_li:hover .tree_li_ul {
     background-color: #2c3b41;
     padding-left: 8px;
 }
+
 .fa-chevron-right {
     position: absolute;
     right: 2px;
     top: 10px;
 }
+
 .navbar-toggler {
     display: none;
 }
+
+.setting a {
+    padding-left: 20px;
+}
+
 .setting a:hover {
-    color: white;
-}
-.logout a {
-    padding-left: 0 !important;
-}
-.logout a:hover {
     color: white;
 }
