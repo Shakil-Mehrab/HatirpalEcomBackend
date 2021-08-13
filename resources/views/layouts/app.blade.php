@@ -38,7 +38,9 @@
                 </div>
             </div>
         </div>
+        @include('layouts.includes.messenger')
         <footer class="">
+
             <div class="text-center copyright">
                 All Rights reserver by &copy; Admin
             </div>
@@ -71,11 +73,11 @@
 
     <script type="text/javascript">
         const Toast = Swal.mixin({
-            toast: true,
-            position: 'bottom-end',
-            showConfirmButton: false,
-            timer: 3000,
-        });
+            toast: true
+            , position: 'bottom-end'
+            , showConfirmButton: false
+            , timer: 3000
+        , });
         $(function() {
             $('.navbar-toggler').on('click', function() {
                 var click = document.getElementById('toggle_left_navigation');
@@ -180,21 +182,21 @@
                 e.preventDefault();
                 var frmdata = $(this).serialize();
                 $.ajax({
-                        url: "{{url('admin/bulk/delete')}}",
-                        type: 'POST',
-                        data: frmdata,
-                    })
+                        url: "{{url('admin/bulk/delete')}}"
+                        , type: 'POST'
+                        , data: frmdata
+                    , })
                     .done(function(data) {
                         $('#newData').html(data);
                         Toast.fire({
-                            icon: 'success',
-                            title: 'Deleted Successfully!'
+                            icon: 'success'
+                            , title: 'Deleted Successfully!'
                         })
                     })
                     .fail(function(error) {
                         Toast.fire({
-                            icon: 'error',
-                            title: 'Please check the boxes and select the method!'
+                            icon: 'error'
+                            , title: 'Please check the boxes and select the method!'
                         })
                     });
             });
@@ -210,23 +212,23 @@
                     console.log(link);
                     if (confirmed) {
                         $.ajax({
-                                url: link,
-                                type: 'DELETE',
-                                data: {
+                                url: link
+                                , type: 'DELETE'
+                                , data: {
                                     "_token": "{{csrf_token()}}"
-                                },
-                            })
+                                }
+                            , })
                             .done(function(data) {
                                 $('#newData').empty().append(data);
                                 Toast.fire({
-                                    icon: 'success',
-                                    title: 'Deleted Successfully!'
+                                    icon: 'success'
+                                    , title: 'Deleted Successfully!'
                                 })
                             })
                             .fail(function(error) {
                                 Toast.fire({
-                                    icon: 'error',
-                                    title: 'Something Wrong!'
+                                    icon: 'error'
+                                    , title: 'Something Wrong!'
                                 })
                             });
                     };
@@ -245,13 +247,13 @@
                         $('#newData').empty().append(data);
                         if ($.isEmptyObject(data.error)) {
                             Toast.fire({
-                                icon: 'success',
-                                title: 'Stutus Changed Successfully!'
+                                icon: 'success'
+                                , title: 'Stutus Changed Successfully!'
                             })
                         } else {
                             Toast.fire({
-                                icon: 'error',
-                                title: 'Status Not Changed!'
+                                icon: 'error'
+                                , title: 'Status Not Changed!'
                             })
                         }
                     });
@@ -272,9 +274,9 @@
 
         window.fbAsyncInit = function() {
             FB.init({
-                appId: '451585265723432',
-                xfbml: true,
-                version: 'v2.8'
+                appId: '451585265723432'
+                , xfbml: true
+                , version: 'v2.8'
             });
             FB.AppEvents.logPageView();
         };
@@ -289,6 +291,7 @@
             js.src = "//connect.facebook.net/en_US/sdk.js";
             fjs.parentNode.insertBefore(js, fjs);
         }(document, 'script', 'facebook-jssdk'));
+
     </script>
 
 </body>

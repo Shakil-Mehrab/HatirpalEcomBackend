@@ -17,6 +17,7 @@ Route::group(['middleware' => ['auth:sanctum']], function () {
 Route::get('address/{address}/shipping', [App\Http\Controllers\Api\Address\AddressController::class, 'action']);
 Route::get('category', [App\Http\Controllers\Api\Category\CategoryController::class, 'index']);
 Route::get('product', [App\Http\Controllers\Api\Product\ProductController::class, 'index']);
+Route::get('video', [App\Http\Controllers\Api\Video\VideoController::class, 'index']);
 Route::get('product/{slug}', [App\Http\Controllers\Api\Product\ProductController::class, 'show']);
 Route::get('slider', [App\Http\Controllers\Api\Slider\SliderController::class, 'index']);
 Route::get('shipping/method', [App\Http\Controllers\Api\ShippingMethod\ShippingMethodController::class, 'index']);

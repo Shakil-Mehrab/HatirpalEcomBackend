@@ -5,6 +5,7 @@ namespace App\Http\Resources\Product;
 use Illuminate\Support\Str;
 use App\Http\Resources\Size\SizeResource;
 use Illuminate\Http\Resources\Json\JsonResource;
+use App\Http\Resources\Category\CategoryResource;
 
 class ProductIndexResource extends JsonResource
 {
@@ -33,6 +34,8 @@ class ProductIndexResource extends JsonResource
             // 'sizes'=>SizeResource::collection($this->sizes),
             'stock_count' => $this->stockCount(),
             // 'in_stock'=>$this->inStock(),
+            'categories' => CategoryResource::collection($this->categories),
+
 
         ];
     }

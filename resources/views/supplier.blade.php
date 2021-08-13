@@ -118,11 +118,15 @@
             </div>
 
             <div class="row">
-                <div class="col-md-12 add_button mb-2">
-                    <a href="{{ url('admin/product/create') }}" class="btn btn-success btn-sm">
-                        <h5>Add Product</h5>
-                    </a>
-                    <a href="{{ url('admin/product/create') }}"><i class="far fa-plus-square"></i></a>
+                <div class="col-12  mb-2">
+                    <div class="add_button">
+
+                        <a href="{{ url('admin/product/create') }}" class="btn btn-success btn-sm">
+                            <h5>Add Product</h5>
+                        </a>
+                        <a href="{{ url('admin/product/create') }}"><i class="far fa-plus-square"></i></a>
+
+                    </div>
                 </div>
 
                 <div class="col-md-12">

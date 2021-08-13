@@ -31,7 +31,7 @@
                     @if($model=='product')
                     <th>Category</th>
                     <th>Size</th>
-             @endif
+                    @endif
 
 
 
@@ -58,6 +58,12 @@
                     <td>
                         <img src="{{file_exists($data->$column)?asset($data->$column):'https://ui-avatars.com/api/?name=Hatirpal'}}" alt="No image" width="50px">
                         @if($model=='product')({{$data->productImages->count()}})@endif
+                    </td>
+                    @elseif($column=='video')
+                    <td>
+                        <video width="400" controls>
+                            <source src="{{file_exists($data->$column)?asset($data->$column):'https://ui-avatars.com/api/?name=Hatirpal'}}" type="video/mp4">
+                        </video>
                     </td>
                     @elseif($column=='user_id')
                     <td>{{$data->user?$data->user->name:"$data->user_id not found"}}</td>

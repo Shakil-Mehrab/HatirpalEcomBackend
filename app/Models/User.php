@@ -92,6 +92,10 @@ class User extends Authenticatable
     {
         return $this->hasMany('App\Models\Contact');
     }
+    public function videos()
+    {
+        return $this->hasMany('App\Models\Video');
+    }
     public function cart()
     {
         return $this->belongsToMany(Product::class, 'cart_user')

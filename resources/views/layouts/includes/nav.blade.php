@@ -33,11 +33,21 @@
                     <i class="fas fa-cog"></i> Settings
                     </a>
                 </li> -->
+
+                {{-- <li class="nav-item dropdown">
+                    <a class="nav-link change_color_to_white" href=" #">
+
+                        <div class="fb-messengermessageus" messenger_app_id="451585265723432" page_id="105488687708483" color="blue" size="standard">
+                        </div>
+                    </a>
+
+                </li> --}}
                 <li class="nav-item dropdown">
                     <a class="nav-link change_color_to_white" href="{{url('admin/userprofile/')}}">
                         {{ Auth::user()->name }}
                     </a>
                 </li>
+
                 @endguest
             </ul>
         </div>

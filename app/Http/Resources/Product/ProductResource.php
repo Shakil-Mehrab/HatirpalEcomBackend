@@ -20,7 +20,7 @@ class ProductResource extends ProductIndexResource
             // 'name' => $this->name,
             'productImages' => ProductImageResource::collection($this->productImages),
             'sizes' => SizeResource::collection($this->sizes),
-            'categories' => CategoryResource::collection($this->categories),
+            // 'categories' => CategoryResource::collection($this->categories),
 
         ]);
     }
