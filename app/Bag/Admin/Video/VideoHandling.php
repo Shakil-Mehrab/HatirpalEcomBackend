@@ -10,9 +10,9 @@ class VideoHandling
     {
         $image = $request->file("video");
         if ($image) {
-            // if (file_exists($product->thumbnail)) {
-            //     unlink($product->thumbnail);
-            // }
+            if (file_exists($product->video)) {
+                unlink($product->video);
+            }
             $image_ext = $image->getClientOriginalExtension();
             $image_full_name = $product->id . '.' . Str::random(10) . "." . $image_ext;
             $upload_path = "videos/";
