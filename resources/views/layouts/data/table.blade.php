@@ -61,7 +61,7 @@
                     </td>
                     @elseif($column=='video')
                     <td>
-                        <video width="400" controls>
+                        <video width="200" height="100" controls>
                             <source src="{{file_exists($data->$column)?asset($data->$column):'https://ui-avatars.com/api/?name=Hatirpal'}}" type="video/mp4">
                         </video>
                     </td>

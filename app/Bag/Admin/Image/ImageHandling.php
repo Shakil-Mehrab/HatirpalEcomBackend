@@ -5,6 +5,7 @@ namespace App\Bag\Admin\Image;
 use Illuminate\Support\Str;
 use App\Models\ProductImage;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Storage;
 
 class ImageHandling
 {
@@ -18,9 +19,11 @@ class ImageHandling
             }
             $image_ext = $image->getClientOriginalExtension();
             $image_full_name = $product->id . '.' . Str::random(10) . "." . $image_ext;
-            $upload_path = "images/" . $model . "/thumbnail/" . $image_full_name;
-            Image::make($request->file('thumbnail'))->resize($width,  $height)->save($upload_path);
-            $product->thumbnail = $upload_path;
+            $upload_path = "public/images/" . $model . "/thumbnail/" . $image_full_name;
+            $image_url = "storage/images/" . $model . "/thumbnail/" . $image_full_name;
+            $img = Image::make($image)->resize($width,  $height)->encode('jpg');
+            Storage::put($upload_path, $img);
+            $product->thumbnail = $image_url;
         }
     }
     public function uploadRelatedImage($product, $request)
@@ -30,7 +33,7 @@ class ImageHandling
             foreach ($images as $image) {
                 $image_ext = $image->getClientOriginalExtension();
                 $image_full_name = $product->id . '.' . Str::random(10) . "." . $image_ext;
-                $upload_path = "images/product/related/" . $image_full_name;
+                $upload_path = "public/images/product/related/" . $image_full_name;
                 Image::make($image)->resize(200, 200)->save($upload_path);
                 $produtImage = new ProductImage();
                 $produtImage->product_id = $product->id;
