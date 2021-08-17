@@ -34,10 +34,12 @@ class ImageHandling
                 $image_ext = $image->getClientOriginalExtension();
                 $image_full_name = $product->id . '.' . Str::random(10) . "." . $image_ext;
                 $upload_path = "public/images/product/related/" . $image_full_name;
-                Image::make($image)->resize(200, 200)->save($upload_path);
+                $image_url = "storage/images/product/related/" . $image_full_name;
+                $img = Image::make($image)->resize(400,  400)->encode('jpg');
+                Storage::put($upload_path, $img);
                 $produtImage = new ProductImage();
                 $produtImage->product_id = $product->id;
-                $produtImage->thumbnail = $upload_path;
+                $produtImage->thumbnail = $image_url;
                 $produtImage->save();
             }
         }
@@ -52,9 +54,11 @@ class ImageHandling
                 }
                 $image_ext = $image->getClientOriginalExtension();
                 $image_full_name = $product->id . '.' . Str::random(10) . "." . $image_ext;
-                $upload_path = "images/" . $model . "/thumbnail/" . $image_full_name;
-                Image::make($request->file('thumbnail1'))->resize($width,  $height)->save($upload_path);
-                $product->thumbnail1 = $upload_path;
+                $upload_path = "public/images/supplier/thumbnail1/" . $image_full_name;
+                $image_url = "storage/images/supplier/thumbnail1/" . $image_full_name;
+                $img = Image::make($image)->resize($width,  $height)->encode('jpg');
+                Storage::put($upload_path, $img);
+                $product->thumbnail1 = $image_url;
             }
         }
         if ($request->file("thumbnail2")) {
@@ -65,9 +69,11 @@ class ImageHandling
                 }
                 $image_ext = $image->getClientOriginalExtension();
                 $image_full_name = $product->id . '.' . Str::random(10) . "." . $image_ext;
-                $upload_path = "images/" . $model . "/thumbnail/" . $image_full_name;
-                Image::make($request->file('thumbnail2'))->resize($width,  $height)->save($upload_path);
-                $product->thumbnail2 = $upload_path;
+                $upload_path = "public/images/supplier/thumbnail2/" . $image_full_name;
+                $image_url = "storage/images/supplier/thumbnail2/" . $image_full_name;
+                $img = Image::make($image)->resize($width,  $height)->encode('jpg');
+                Storage::put($upload_path, $img);
+                $product->thumbnail2 = $image_url;
             }
         }
         if ($request->file("thumbnail3")) {
@@ -78,9 +84,11 @@ class ImageHandling
                 }
                 $image_ext = $image->getClientOriginalExtension();
                 $image_full_name = $product->id . '.' . Str::random(10) . "." . $image_ext;
-                $upload_path = "images/" . $model . "/thumbnail/" . $image_full_name;
-                Image::make($request->file('thumbnail3'))->resize($width,  $height)->save($upload_path);
-                $product->thumbnail3 = $upload_path;
+                $upload_path = "public/images/supplier/thumbnail3/" . $image_full_name;
+                $image_url = "storage/images/supplier/thumbnail3/" . $image_full_name;
+                $img = Image::make($image)->resize($width,  $height)->encode('jpg');
+                Storage::put($upload_path, $img);
+                $product->thumbnail3 = $image_url;
             }
         }
         if ($request->file("thumbnail4")) {
@@ -91,9 +99,11 @@ class ImageHandling
                 }
                 $image_ext = $image->getClientOriginalExtension();
                 $image_full_name = $product->id . '.' . Str::random(10) . "." . $image_ext;
-                $upload_path = "images/" . $model . "/thumbnail/" . $image_full_name;
-                Image::make($request->file('thumbnail4'))->resize($width,  $height)->save($upload_path);
-                $product->thumbnail4 = $upload_path;
+                $upload_path = "public/images/supplier/thumbnail4/" . $image_full_name;
+                $image_url = "storage/images/supplier/thumbnail4/" . $image_full_name;
+                $img = Image::make($image)->resize($width,  $height)->encode('jpg');
+                Storage::put($upload_path, $img);
+                $product->thumbnail4 = $image_url;
             }
         }
     }
