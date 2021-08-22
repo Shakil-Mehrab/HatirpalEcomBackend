@@ -9,9 +9,9 @@ use Illuminate\Http\Request;
 use App\Bag\Admin\Delete\DeleteData;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Mail;
-use App\Notifications\ProductCreated;
 use App\Bag\Admin\Image\ImageHandling;
 use App\Bag\Admin\Status\ChangeStatus;
+use App\Events\Product\ProductCreated;
 use App\Mail\Product\MailForCreatedProduct;
 use Illuminate\Support\Facades\Notification;
 use App\Bag\Admin\StoreUpdate\StoreUpdateData;
@@ -55,8 +55,7 @@ class ProductController extends Controller
         $imageHandling->uploadRelatedImage($product, $request);
         $input->productPivotData($product, $request);
         $input->productStoreStock($product, $request);
-        $product->user->notify(new ProductCreated($product));
-        Mail::to('mehrabhoussainshakil4@gmail.com')->send(new  MailForCreatedProduct($product));
+        event(new ProductCreated($product));
 
         return redirect('admin/product')
             ->withSuccess('Product Created Successfully');
@@ -87,8 +86,8 @@ class ProductController extends Controller
         $input->productUpdateStock($product, $request);
 
         $product->update();
-        $product->user->notify(new ProductCreated($product));
-        Mail::to('mehrabhoussainshakil4@gmail.com')->send(new  MailForCreatedProduct($product));
+
+
         return back()->withSuccess('Product Updated Successfully');;
     }
 

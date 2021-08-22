@@ -21,10 +21,10 @@ class EventServiceProvider extends ServiceProvider
             'App\Listeners\Order\ProcessPayment',
             'App\Listeners\Order\EmptyCart'
         ],
-        // Registered::class => [
-        //     SendEmailVerificationNotification::class,
-        // ],
-        
+        'App\Events\Product\ProductCreated' => [
+            'App\Listeners\Product\ProductCreatedNotifier',
+            'App\Listeners\Product\ProductCreatedMailer',
+        ],
     ];
 
     /**
