@@ -8,8 +8,12 @@ use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Bag\Admin\Delete\DeleteData;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Mail;
+use App\Notifications\ProductCreated;
 use App\Bag\Admin\Image\ImageHandling;
 use App\Bag\Admin\Status\ChangeStatus;
+use App\Mail\Product\MailForCreatedProduct;
+use Illuminate\Support\Facades\Notification;
 use App\Bag\Admin\StoreUpdate\StoreUpdateData;
 use App\Http\Requests\Product\ProductInputRequest;
 use App\Http\Requests\Product\ProductUpdateRequest;
@@ -44,15 +48,15 @@ class ProductController extends Controller
         $product = new Product();
 
         $input->productStoreUpdate($product, $request);
-        $product->slug = time() . '-' . Str::slug($request['name']);
         $imageHandling->uploadImage($product, $request, 'product');
 
         $request->user()->products()->save($product);
 
         $imageHandling->uploadRelatedImage($product, $request);
         $input->productPivotData($product, $request);
-        // $variation = $input->productVariation($product);
         $input->productStoreStock($product, $request);
+        $product->user->notify(new ProductCreated($product));
+        Mail::to('mehrabhoussainshakil4@gmail.com')->send(new  MailForCreatedProduct($product));
 
         return redirect('admin/product')
             ->withSuccess('Product Created Successfully');
@@ -74,20 +78,17 @@ class ProductController extends Controller
     }
     public function update(ProductUpdateRequest $request, ImageHandling $imageHandling, StoreUpdateData $input, $slug)
     {
-        // dd($request['category_id']);
-
         $product = Product::where('slug', $slug)
             ->firstOrFail();
-
         $input->productStoreUpdate($product, $request);
         $imageHandling->uploadImage($product, $request, 'product');
         $imageHandling->uploadRelatedImage($product, $request);
-
         $input->productPivotData($product, $request);
         $input->productUpdateStock($product, $request);
 
         $product->update();
-
+        $product->user->notify(new ProductCreated($product));
+        Mail::to('mehrabhoussainshakil4@gmail.com')->send(new  MailForCreatedProduct($product));
         return back()->withSuccess('Product Updated Successfully');;
     }
 

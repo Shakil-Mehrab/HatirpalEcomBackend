@@ -12,6 +12,24 @@ nav {
     color: white !important;
 }
 
+.notification .dropdown-toggle {
+    color: white !important
+}
+
+.notification ul {
+    right: 0;
+    left: -175px !important;
+    width: 300px;
+}
+
+.notification h6 {
+    border-bottom: 1px solid var(--gray-light);
+}
+
+.time {
+    font-size: 8px !important;
+}
+
 
 /* left side  */
 

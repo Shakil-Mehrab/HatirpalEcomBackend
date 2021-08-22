@@ -43,7 +43,6 @@ class AboutController extends Controller
         $product = new About();
 
         $input->aboutStoreUpdate($product, $request);
-        $product->slug = time() . '-' . Str::slug($request['heading']);
         $imageHandling->uploadImage($product, $request, 'about');
 
         $product->save();

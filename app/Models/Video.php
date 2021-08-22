@@ -13,7 +13,12 @@ class Video extends Model
 {
     use HasFactory, VideoColumn, PaginationTrait, RelationWithUser;
 
-
+    public static function booted()
+    {
+        static::creating(function (Model $model) {
+            $model->slug = time() . '-' . Str::slug(request('name'));
+        });
+    }
     public function product()
     {
         return $this->belongsTo(Product::class);

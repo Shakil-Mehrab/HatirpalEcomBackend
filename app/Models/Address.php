@@ -12,32 +12,37 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Address extends Model
 {
-    use HasFactory,PaginationTrait,AddressColumn,RelationWithUser;
+    use HasFactory, PaginationTrait, AddressColumn, RelationWithUser;
     // public function getRouteKeyName()
     // {
     //     return 'slug';
     // }
-    public static function booted(){
-        static::creating(function(Model $model){
-            $model->slug=Str::uuid();
+    public static function booted()
+    {
+        static::creating(function (Model $model) {
+            $model->slug = time() . '-' . Str::slug(request('address'));
         });
     }
-    
+
     public function products()
     {
         return $this->belongsToMany(Product::class, 'product_category')
             ->withTimestamps();
     }
-    public function country(){
+    public function country()
+    {
         return $this->belongsTo(Region::class);
     }
-    public function division(){
+    public function division()
+    {
         return $this->belongsTo(Region::class);
     }
-    public function district(){
+    public function district()
+    {
         return $this->belongsTo(Region::class);
     }
-    public function place(){
+    public function place()
+    {
         return $this->belongsTo(Region::class);
     }
 }

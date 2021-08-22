@@ -15,24 +15,21 @@ class CategorySeeder extends Seeder
      */
     public function run()
     {
-        $category = [
+        $categories = [
             "name" => "Category",
             "slug" => "category",
             "children" => [
                 [
                     'name' => 'Fashion',
                     'slug' => 'fashion',
-                    'parent_id' => NULL,
                     "children" => [
                         [
                             'name' => 'Boys',
                             'slug' => 'boys',
-                            'parent_id' => 1,
                         ],
                         [
                             'name' => 'Girls',
                             'slug' => 'girls',
-                            'parent_id' => 1,
                         ],
                     ]
 
@@ -40,30 +37,12 @@ class CategorySeeder extends Seeder
                 [
                     'name' => 'Electronics',
                     'slug' => 'electronics',
-                    'parent_id' => NULL,
-                    "children" => []
+
                 ]
             ]
 
         ];
-        foreach ($category['children'] as $cat) {
-            Category::create([
-                'name' => $cat['name'],
-                'slug' => $cat['slug'],
-                'parent_id' => $cat['parent_id'],
-                'user_id' => 1
 
-            ]);
-        }
-        foreach ($category['children'] as $cat) {
-            foreach ($cat['children'] as $child) {
-                Category::create([
-                    'name' => $child['name'],
-                    'slug' => $child['slug'],
-                    'parent_id' => $child['parent_id'],
-                    'user_id' => 1
-                ]);
-            }
-        }
+        Category::create($categories);
     }
 }

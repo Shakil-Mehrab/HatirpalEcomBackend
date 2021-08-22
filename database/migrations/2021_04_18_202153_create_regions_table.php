@@ -16,7 +16,6 @@ class CreateRegionsTable extends Migration
     {
         Schema::create('regions', function (Blueprint $table) {
             $table->id();
-            $table->uuid('uuid');
             $table->string('slug')->index();
             $table->string('name')->index();
             NestedSet::columns($table);

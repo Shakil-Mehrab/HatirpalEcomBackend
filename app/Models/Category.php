@@ -13,20 +13,22 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Category extends Model
 {
-    use HasFactory,PaginationTrait,CategoryColumn,HasChildren,CanBeScoped;
+    use HasFactory, PaginationTrait, CategoryColumn, HasChildren, CanBeScoped, NodeTrait;
     public function getRouteKeyName()
     {
         return 'slug';
     }
-    public static function booted(){
-        static::creating(function(Model $model){
-            $model->uuid=Str::uuid();
+    public static function booted()
+    {
+        static::creating(function (Model $model) {
+            // $model->slug =  time() . '-' . Str::slug(request('name'));
         });
     }
-    public function user(){
+    public function user()
+    {
         return $this->belongsTo('App\Models\User');
     }
-    
+
     public function products()
     {
         return $this->belongsToMany(Product::class, 'product_category')
@@ -34,7 +36,6 @@ class Category extends Model
     }
     public function children()
     {
-        return $this->hasMany(Category::class,'parent_id');
+        return $this->hasMany(Category::class, 'parent_id');
     }
-
 }

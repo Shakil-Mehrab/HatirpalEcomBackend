@@ -28,25 +28,39 @@
                 </li>
                 @endif
                 @else
-                <!-- <li class="nav-item dropdown">
-                    <a class="nav-link change_color_to_white" href="{{url('admin/userprofile/'.auth()->user()->slug.'/edit')}}">
-                    <i class="fas fa-cog"></i> Settings
-                    </a>
-                </li> -->
+                <div class="dropdown notification">
 
-                {{-- <li class="nav-item dropdown">
-                    <a class="nav-link change_color_to_white" href=" #">
-
-                        <div class="fb-messengermessageus" messenger_app_id="451585265723432" page_id="105488687708483" color="blue" size="standard">
-                        </div>
+                    <a class="btn dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fas fa-bell"></i> Notification
                     </a>
 
-                </li> --}}
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                        <h6><a class="dropdown-item" href="#"><strong>Read</strong></a></h6>
+                        <li>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item time" href="#">2 hours ago</a>
+                        </li>
+                        <li>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item time" href="#">A2 hours ago</a>
+
+                        </li>
+
+                        <h6><a class="dropdown-item" href="#"><strong>Unread</strong></a></h6>
+                        <li>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item time" href="#">A2 hours ago</a>
+                        </li>
+                    </ul>
+                </div>
+
                 <li class="nav-item dropdown">
                     <a class="nav-link change_color_to_white" href="{{url('admin/userprofile/')}}">
                         {{ Auth::user()->name }}
                     </a>
                 </li>
+
+
 
                 @endguest
             </ul>

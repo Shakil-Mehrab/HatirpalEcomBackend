@@ -43,7 +43,6 @@ class ContactController extends Controller
         $product = new Contact();
 
         $input->contactStoreUpdate($product, $request);
-        $product->slug = time() . '-' . Str::slug($request['phone_no1']);
 
         $request->user()->contacts()->save($product);
         return redirect('admin/contact')

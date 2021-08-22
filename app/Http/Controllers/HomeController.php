@@ -24,16 +24,16 @@ class HomeController extends Controller
      */
     public function index()
     {
+        $data = auth()->user();
+        $products = auth()->user()->products;
+        $columns = Supplier::columns();
+        $model = 'supplier';
         if (auth()->user()->status == 'user') {
             return view('layouts.userprofile.view');
         }
         if (auth()->user()->status == 'supplier') {
-            $data = auth()->user();
-            $products = auth()->user()->products;
-            $columns = Supplier::columns();
-            $model = 'supplier';
             return view('supplier', compact('data', 'columns', 'model', 'products'));
         }
-        return view('home');
+        return view('home', compact('data', 'columns', 'model', 'products'));
     }
 }

@@ -45,7 +45,6 @@ class SupplierController extends Controller
         $product = new Supplier();
 
         $input->supplierStoreUpdate($product, $request);
-        $product->slug = time() . '-' . Str::slug($request['company_name']);
         $imageHandling->uploadImage($product, $request, 'supplier');
         $imageHandling->uploadSupplerDocument($product, $request, 'supplier');
         $request->user()->supplier()->save($product);

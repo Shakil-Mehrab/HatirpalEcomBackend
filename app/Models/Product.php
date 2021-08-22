@@ -25,8 +25,8 @@ class Product extends Model
     public static function booted()
     {
         static::creating(function (Model $model) {
-            $model->uuid = Str::uuid();
             $model->status = ProductStatus::PENDING;
+            $model->slug = time() . '-' . Str::slug(request('name'));
         });
     }
 

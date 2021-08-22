@@ -38,7 +38,6 @@ class CategoryController extends Controller
     {
         $product = new Category();
         $input->categoryStoreUpdate($product, $request);
-        $product->slug =  time() . '-' . Str::slug($request['name']);
         $request->user()->categories()->save($product);
         return redirect('admin/category')->withSuccess('Category Created Successfully');
     }

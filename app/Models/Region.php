@@ -16,13 +16,12 @@ class Region extends Model
     use HasFactory, PaginationTrait, RegionColumn, CanBeScoped, NodeTrait;
     protected $fillable = [
         'name',
-        // 'uuid',
-        // 'slug',
-        // 'eng_name',
-        // 'parent_id',
-        // 'order',
-        // 'lat',
-        // 'lng'
+        'slug',
+        'eng_name',
+        'parent_id',
+        'order',
+        'lat',
+        'lng'
     ];
     public function getRouteKeyName()
     {
@@ -31,16 +30,8 @@ class Region extends Model
     public static function booted()
     {
         static::creating(function (Model $model) {
-            $model->uuid = Str::uuid();
-            //             $model->slug=Str::uuid();
-            //             $model->eng_name = $model->slug;
-            // 
-            //             $prefix = $model->parent ? $model->parent->slug . ' ' : '';
-            //             $model->slug = Str::slug($prefix . $model->slug);
+            $prefix = $model->parent ? $model->parent->slug . ' ' : '';
+            $model->slug = Str::slug($prefix . $model->slug);
         });
     }
-    // public function children()
-    // {
-    //     return $this->hasMany(Region::class, "parent_id");
-    // }
 }

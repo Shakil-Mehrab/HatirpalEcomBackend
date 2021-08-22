@@ -42,7 +42,6 @@ class SliderController extends Controller
         $product = new Slider();
 
         $input->sliderStoreUpdate($product, $request);
-        $product->slug = time() . '-' . Str::slug($request['heading']);
         $imageHandling->uploadImage($product, $request, 'slider');
 
         $product->save();

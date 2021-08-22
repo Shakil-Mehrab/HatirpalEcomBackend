@@ -13,8 +13,8 @@ class Contact extends Model
     use HasFactory, PaginationTrait, ContactColumn;
     public static function booted()
     {
-        static::creating(function (Contact $contact) {
-            // $contact->uuid=Str::uuid();
+        static::creating(function (Model $model) {
+            $model->slug = time() . '-' . Str::slug(request('phone_no1'));
         });
     }
 }

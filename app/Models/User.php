@@ -59,7 +59,6 @@ class User extends Authenticatable
     public static function booted()
     {
         static::creating(function (Model $model) {
-            $model->uuid = Str::uuid();
             $model->slug = Str::uuid();
         });
     }

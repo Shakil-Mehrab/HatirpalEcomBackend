@@ -40,7 +40,6 @@ class VideoController extends Controller
         $product = new Video();
 
         // $input->videoStoreUpdate($product, $request);
-        $product->slug = time() . '-' . Str::slug($request['name']);
         $videoHandling->uploadVideo($product, $request);
 
         $request->user()->videos()->save($product);

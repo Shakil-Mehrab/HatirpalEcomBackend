@@ -43,7 +43,7 @@ class ConditionController extends Controller
         $product = new Condition();
 
         $input->conditionStoreUpdate($product, $request);
-        $product->slug = Str::uuid();
+
 
         $product->save();
         return redirect('admin/condition')
