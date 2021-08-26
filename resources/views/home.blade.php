@@ -15,31 +15,83 @@
             <div class="row post">
                 <div class="col-md-4">
                     <div class="card text-white bg-primary mb-3">
-                        <div class="card-header">Posts</div>
-                        <div class="card-body">
-                            <h6 class="card-title">Published Post</h6>
-                            <p class="card-text">{{ $data->products->count() }}</p>
+                        <div class="card-header d-flex justify-content-between">
+
+                            <span>Total User</span>
+                            <span>{{$users->count()}}</span>
                         </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+                            <span>User</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+
+                            <span>Supplier</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+
+                            <span>Admin</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+
                     </div>
                 </div>
                 <div class="col-md-4">
                     <div class="card text-white bg-success mb-3">
-                        <div class="card-header">Posts</div>
-                        <div class="card-body">
-                            <h6 class="card-title">Pending Post</h6>
-                            <p class="card-text">20</p>
+
+                        <div class="card-header d-flex justify-content-between">
+
+                            <span>Total Product</span>
+                            <span>{{$users->count()}}</span>
                         </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+                            <span>Pending</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+
+                            <span>Published</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+
+                            <span>Reject</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+
                     </div>
                 </div>
+
                 <div class="col-md-4">
                     <div class="card text-white bg-danger mb-3">
-                        <div class="card-header">Posts</div>
-                        <div class="card-body">
-                            <h6 class="card-title">Rejected Post</h6>
-                            <p class="card-text">20</p>
+
+                        <div class="card-header d-flex justify-content-between">
+
+                            <span>Total Supplier</span>
+                            <span>{{$users->count()}}</span>
                         </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+                            <span>Pending</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+
+                            <span>Approved</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+
+                            <span>Reject</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+
+
                     </div>
                 </div>
+
+
+
             </div>
             <div class="row">
                 <div class="col-md-12">
@@ -54,68 +106,153 @@
 
 
                 <div class="col-md-4">
-                    <div class="card text-dark bg-warning mb-3">
-                        <div class="card-header">Orders</div>
-                        <div class="card-body">
-                            <h6 class="card-title">Pendign Order</h6>
-                            <p class="card-text">20</p>
+                    <div class="card text-white bg-warning mb-3">
+
+                        <div class="card-header d-flex justify-content-between">
+
+                            <span>Total Pending Order</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+                            <span>Today</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+
+                            <span>This Week</span>
+                            <span>{{$users->count()}}</span>
                         </div>
                     </div>
                 </div>
+
+
                 <div class="col-md-4">
-                    <div class="card text-dark bg-warning mb-3">
-                        <div class="card-header">Orders</div>
-                        <div class="card-body">
-                            <h6 class="card-title">Confirmed Order</h6>
-                            <p class="card-text">20</p>
+                    <div class="card text-white bg-info mb-3">
+
+                        <div class="card-header d-flex justify-content-between">
+
+                            <span>Total Confirmed Order</span>
+                            <span>{{$users->count()}}</span>
                         </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+                            <span>Today</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+
+                            <span>This Week</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+
+
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="card text-dark bg-info mb-3">
-                        <div class="card-header">Orders</div>
-                        <div class="card-body">
-                            <h6 class="card-title">Processing Order</h6>
-                            <p class="card-text">20</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card text-dark bg-info mb-3">
-                        <div class="card-header">Orders</div>
-                        <div class="card-body">
-                            <h6 class="card-title">Picked Order</h6>
-                            <p class="card-text">20</p>
-                        </div>
-                    </div>
-                </div>
+
                 <div class="col-md-4">
                     <div class="card text-white bg-primary mb-3">
-                        <div class="card-header">Orders</div>
-                        <div class="card-body">
-                            <h6 class="card-title">Shipped Order</h6>
-                            <p class="card-text">20</p>
+
+                        <div class="card-header d-flex justify-content-between">
+
+                            <span>Total Processing Order</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+                            <span>Today</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+
+                            <span>This Week</span>
+                            <span>{{$users->count()}}</span>
                         </div>
                     </div>
                 </div>
+
+
+                <div class="col-md-4">
+                    <div class="card text-white bg-info mb-3">
+
+                        <div class="card-header d-flex justify-content-between">
+
+                            <span>Total Picked Order</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+                            <span>Today</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+
+                            <span>This Week</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="col-md-4">
+                    <div class="card text-white bg-warning mb-3">
+
+                        <div class="card-header d-flex justify-content-between">
+
+                            <span>Total Shipped Order</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+                            <span>Today</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+
+                            <span>This Week</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                    </div>
+                </div>
+
+
                 <div class="col-md-4">
                     <div class="card text-white bg-success mb-3">
-                        <div class="card-header">Orders</div>
-                        <div class="card-body">
-                            <h6 class="card-title">Completed Order</h6>
-                            <p class="card-text">20</p>
+
+                        <div class="card-header d-flex justify-content-between">
+
+                            <span>Total Completed Order</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+                            <span>Today</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+
+                            <span>This Week</span>
+                            <span>{{$users->count()}}</span>
                         </div>
                     </div>
                 </div>
+
+
                 <div class="col-md-4">
                     <div class="card text-white bg-danger mb-3">
-                        <div class="card-header">Orders</div>
-                        <div class="card-body">
-                            <h6 class="card-title">Failed Order</h6>
-                            <p class="card-text">20</p>
+
+                        <div class="card-header d-flex justify-content-between">
+
+                            <span>Total Pending Order</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+                            <span>Today</span>
+                            <span>{{$users->count()}}</span>
+                        </div>
+                        <div class="card-body py-1 d-flex justify-content-between">
+
+                            <span>This Week</span>
+                            <span>{{$users->count()}}</span>
                         </div>
                     </div>
                 </div>
+
+
             </div>
 
             <div class="row">
