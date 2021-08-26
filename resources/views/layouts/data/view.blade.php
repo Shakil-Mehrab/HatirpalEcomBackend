@@ -19,9 +19,29 @@
                 <option value="20">20</option>
                 <option value="50">50</option>
             </select>
-            <input type="search" name="search" data-model="{{$model}}" id="search" placeholder="Search Here.....">
+            <input type="search" name="search" id="search" placeholder="Search Here.....">
+            {{-- data-model="{{$model}}" --}}
         </div>
     </div>
     @include('layouts.data.table')
 </div>
+@endsection
+@section('js')
+<script>
+    $("#search").keyup(function() {
+        var value = this.value.toLowerCase().trim();
+        $("table tr").each(function(index) {
+            if (!index) return;
+            $(this).find("td").each(function() {
+                var id = $(this).text().toLowerCase().trim();
+                var not_found = (id.indexOf(value) == -1);
+                $(this).closest('tr').toggle(!not_found);
+                return not_found;
+            });
+        });
+    });
+
+</script>
+
+
 @endsection

@@ -154,15 +154,15 @@
                 }
             });
         });
-        $(function() {
-            $('#dataTable').on('keyup', '#search', function() {
-                var model = $(this).data('model');
-                var query = $(this).val();
-                $.get("{{URL::to('/admin/search')}}" + '?model=' + model + '&query=' + query, function(data) {
-                    $('#newData').html(data);
-                });
-            });
-        });
+        // $(function() {
+        //     $('#dataTable').on('keyup', '#search', function() {
+        //         var model = $(this).data('model');
+        //         var query = $(this).val();
+        //         $.get("{{URL::to('/admin/search')}}" + '?model=' + model + '&query=' + query, function(data) {
+        //             $('#newData').html(data);
+        //         });
+        //     });
+        // });
         $(function() {
             $('#newData').on('click', '#selectallboxes', function(event) {
                 if (this.checked) {

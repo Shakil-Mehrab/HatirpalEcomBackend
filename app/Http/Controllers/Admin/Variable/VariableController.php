@@ -20,14 +20,14 @@ class VariableController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function search()
-    {
-        $modelPath = 'App\Models\\' . ucfirst(request('model'));
-        $datas = $modelPath::search(request('query'));
-        $columns = $modelPath::columns();
-        $model = request('model');
-        return view('layouts.data.table', compact('datas', 'columns', 'model'));
-    }
+    // public function search()
+    // {
+    //     $modelPath = 'App\Models\\' . ucfirst(request('model'));
+    //     $datas = $modelPath::search(request('query'));
+    //     $columns = $modelPath::columns();
+    //     $model = request('model');
+    //     return view('layouts.data.table', compact('datas', 'columns', 'model'));
+    // }
 
     /**
      * Show the form for creating a new resource.
