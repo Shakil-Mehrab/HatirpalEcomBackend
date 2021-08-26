@@ -21,7 +21,6 @@
                     page = lastpage;
                 }
                 var link = '/admin/' + model + '?per-page=' + per_page + '&&page=' + page;
-                console.log(link);
                 if (per_page) {
                     $.get(link, function(data) {
                         $('#newData').html(data);
@@ -203,33 +202,29 @@
 
             });
         });
-        // $(function() {
-        //     $('.toggle_menu').on('click', function(e) {
-        //         $('.toggle_div').toggleClass('toggle_div_show');
-        //     });
-        // });
+
         function toggleMenu(parameter) {
             console.log(parameter)
             $('.toggle_div_' + parameter).toggleClass('hidden');
         }
+        $(function() {
+            window.fbAsyncInit = function() {
+                FB.init({
+                    appId: '451585265723432',
+                    xfbml: true,
+                    version: 'v2.8'
+                });
+                FB.AppEvents.logPageView();
+            };
 
-
-        window.fbAsyncInit = function() {
-            FB.init({
-                appId: '451585265723432',
-                xfbml: true,
-                version: 'v2.8'
-            });
-            FB.AppEvents.logPageView();
-        };
-
-        (function(d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {
-                return;
-            }
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
+            (function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) {
+                    return;
+                }
+                js = d.createElement(s);
+                js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js";
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));
+        });
