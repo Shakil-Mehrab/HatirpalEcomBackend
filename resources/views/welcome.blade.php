@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,6 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
 
 </head>
+
 <body>
     <div class="container">
         <div class="row">
@@ -17,40 +19,22 @@
                         <th>Unique ID</th>
                         <th>Random ID</th>
                         <th>Price</th>
-
                     </tr>
                     @forelse ($regions as $cat)
-
-
                     <tr>
-                        <td>{{$cat->name}}</td>
-
-                        <td>{{$cat->slug}}</td>
-                        <td>{{$cat->price}}</td>
-
-
-
+                        <td>{{ $cat->name }}</td>
+                        <td>{{ $cat->slug }}</td>
+                        <td>{{ $cat->price }}</td>
                     </tr>
-
-
                     @empty
-
                     @endforelse
-
-
-
                 </table>
                 <br />
                 <input type="text" class="form-control" id="search" placeholder="live search" @onclick.keyup=search_table()>
-
-
             </div>
         </div>
     </div>
-
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-
-
     <script>
         $("#search").keyup(function() {
             var value = this.value.toLowerCase().trim();
@@ -67,6 +51,6 @@
         });
 
     </script>
-
 </body>
+
 </html>
