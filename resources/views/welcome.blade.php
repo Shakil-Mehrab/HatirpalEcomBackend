@@ -1,56 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <style>
+        .pager-nav span {
+            display: inline-block;
+            padding: 4px 8px;
+            margin: 1px;
+            cursor: pointer;
+            font-size: 14px;
+            background-color: #FFFFFF;
+            border: 1px solid #e1e1e1;
+            border-radius: 3px;
+            box-shadow: 0 1px 1px rgba(0, 0, 0, .04);
+        }
+
+        .pager-nav span:hover,
+        .pager-nav .pg-selected {
+            background-color: blue;
+            border: 1px solid #CCCCCC;
+        }
+
+    </style>
 
 </head>
-
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <table class="table table-bordered table-hover">
-                    <tr>
-                        <th>Unique ID</th>
-                        <th>Random ID</th>
-                        <th>Price</th>
-                    </tr>
-                    @forelse ($regions as $cat)
-                    <tr>
-                        <td>{{ $cat->name }}</td>
-                        <td>{{ $cat->slug }}</td>
-                        <td>{{ $cat->price }}</td>
-                    </tr>
-                    @empty
-                    @endforelse
-                </table>
-                <br />
-                <input type="text" class="form-control" id="search" placeholder="live search" @onclick.keyup=search_table()>
-            </div>
-        </div>
+    <div>
+        <ul id="test">
+            <li>dfd</li>
+            <li> dfd</li>
+        </ul>
     </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script>
-        $("#search").keyup(function() {
-            var value = this.value.toLowerCase().trim();
 
-            $("table tr").each(function(index) {
-                if (!index) return;
-                $(this).find("td").each(function() {
-                    var id = $(this).text().toLowerCase().trim();
-                    var not_found = (id.indexOf(value) == -1);
-                    $(this).closest('tr').toggle(!not_found);
-                    return not_found;
-                });
-            });
-        });
+    <table id="pager">
+        <thead>
+            <tr>
+                <th>Column #1</th>
+                <th>Column #2</th>
+            </tr>
+        </thead>
+        <tbody>
+            @forelse ($regions as $rg)
+            <tr>
+                <td>{{ $rg->name }}</td>
+                <td>{{ $rg->slug }}</td>
 
-    </script>
+            </tr>
+            @empty
+
+            @endforelse
+        </tbody>
+    </table>
+
+    <div id="pageNavPosition" class="pager-nav"></div>
+
+
+    <script src="{{ asset('page.js') }}"></script>
+
 </body>
-
 </html>
