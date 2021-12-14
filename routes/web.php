@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Route;
 
-Auth::routes();
+// Auth::routes();
 Route::get('/', [App\Http\Controllers\Api\Product\ProductController::class, 'view']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
@@ -36,3 +36,5 @@ Route::group(['prefix' => 'admin', 'middleware' => ['auth:sanctum']], function (
     Route::resource('/about', App\Http\Controllers\Admin\About\AboutController::class);
     Route::resource('/userprofile', App\Http\Controllers\Admin\UserProfile\UserProfileController::class);
 });
+
+require __DIR__ . '/auth.php';

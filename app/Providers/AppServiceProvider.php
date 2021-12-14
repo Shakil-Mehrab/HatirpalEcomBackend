@@ -31,12 +31,12 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         // Schema::defaultStringLength(191);
-
-        View::share('categories', Category::orderBy('name', 'asc')->whereNull('parent_id')->with('children')->get());
-        View::share('allcategories', Category::orderBy('name', 'asc')->with('children')->get());
-        View::share('regions', Region::orderBy('name', 'asc')->get());
-        View::share('sizes', Size::get());
-
+        if (Schema::hasTable('categories')) {
+            View::share('categories', Category::orderBy('name', 'asc')->whereNull('parent_id')->with('children')->get());
+            View::share('allcategories', Category::orderBy('name', 'asc')->with('children')->get());
+            View::share('regions', Region::orderBy('name', 'asc')->get());
+            View::share('sizes', Size::get());
+        }
         $this->app->singleton(Cart::class, function ($app) {
             if ($app->auth->user()) {
                 $app->auth->user()->load(['cart.stock']);
